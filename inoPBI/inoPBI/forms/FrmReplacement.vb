@@ -54,11 +54,15 @@ Public Class FrmReplacement
         My.Settings.Save()
     End Sub
 
-    Private Sub FrmReplacement_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmReplacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         TxtOrginal.Text = My.Settings.LastOriginal
         TxtReplace.Text = My.Settings.LastReplacement
         TxtTargetFolder.Text = My.Settings.LastFolder
         TxtCustomer.Text = My.Settings.LastCustomer
+    End Sub
+
+    Private Sub CmdInfo_Click(sender As Object, e As EventArgs) Handles CmdInfo.Click
+        FrmInfo.ShowDialog()
     End Sub
 End Class

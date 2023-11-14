@@ -8,6 +8,7 @@ Public Class ClsReplacement
         Dim StrFrom As String
         Dim StrTo As String
     End Structure
+
     Public Function ReplaceReferences(strFile As String, strReplacement As String, strFileOut As String) As Boolean
         Dim cr As Collection(Of ClsReplacement.Replacement) = GetReplacements(strReplacement)
         Dim blnReplace As Boolean = False

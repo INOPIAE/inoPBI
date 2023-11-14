@@ -35,6 +35,7 @@ Partial Class FrmReplacement
         CmdClose = New Button()
         LblCustomer = New Label()
         TxtCustomer = New TextBox()
+        CmdInfo = New Button()
         SuspendLayout()
         ' 
         ' LblOriginal
@@ -146,11 +147,21 @@ Partial Class FrmReplacement
         TxtCustomer.Size = New Size(172, 27)
         TxtCustomer.TabIndex = 1
         ' 
+        ' CmdInfo
+        ' 
+        CmdInfo.Location = New Point(216, 343)
+        CmdInfo.Name = "CmdInfo"
+        CmdInfo.Size = New Size(46, 26)
+        CmdInfo.TabIndex = 4
+        CmdInfo.Text = "Info"
+        CmdInfo.UseVisualStyleBackColor = True
+        ' 
         ' FrmReplacement
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(CmdInfo)
         Controls.Add(CmdClose)
         Controls.Add(CmdReplace)
         Controls.Add(CmdFolderTarget)
@@ -183,4 +194,5 @@ Partial Class FrmReplacement
     Friend WithEvents CmdClose As Button
     Friend WithEvents LblCustomer As Label
     Friend WithEvents TxtCustomer As TextBox
+    Friend WithEvents CmdInfo As Button
 End Class

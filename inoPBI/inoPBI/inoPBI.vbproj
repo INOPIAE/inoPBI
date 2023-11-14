@@ -6,6 +6,8 @@
     <StartupObject>inoPBI.FrmReplacement</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <Company>$(Authors) </Company>
   </PropertyGroup>
 
   <ItemGroup>
