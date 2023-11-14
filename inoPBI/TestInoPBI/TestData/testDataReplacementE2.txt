@@ -1,0 +1,4 @@
+HRworksOrdner; "https://inopiae.sharepoint.com/sites/PowerBISpielplatz/Shared%20Documents/Austausch%20Laptops/wsb/\; "https://inopiae.sharepoint.de/sites/\
+SharepointSite; "https://inopiae.sharepoint.com/sites/PowerBISpielplatz/\; "https://inopiae.sharepoint.de/sites/PowerBISpielplatz/\
+SharepointFolder; "Shared Documents/Austausch Laptops/wsb/\; "Shared Documents1/Austausch Laptops/wsbtest/\
+ParameterDateiE2; "https://inopiae.sharepoint.com/sites/PowerBISpielplatz/Shared%20Documents/Austausch%20Laptops/wsb/ParameterDatei.xlsx\; "https://inopiae.sharepoint.de/sites/PowerBISpielplatz/Shared%20Documents/Austausch%20Laptops/wsbtest/ParameterDatei.xlsx\

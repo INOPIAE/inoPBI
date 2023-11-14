@@ -1,0 +1,159 @@
+      {
+        "name": "HRworksOrdner",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://inopiae.sharepoint.de/sites/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "6ef94236-b104-4521-a5b9-332c4683ba8f",
+        "queryGroup": "Parameter"
+      },
+      {
+        "name": "SharepointSite",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://inopiae.sharepoint.com/sites/PowerBISpielplatz/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "e61b7e9f-66f0-4e3e-b4e9-78cb60481f2a",
+        "queryGroup": "Parameter"
+      },
+      {
+        "name": "SharepointFolder",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"Shared Documents/Austausch Laptops/wsb/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "de1680a1-9dbc-46e5-a6a6-85e6ad016f7e",
+        "queryGroup": "Parameter"
+      },
+      {
+        "name": "ParameterDatei",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://inopiae.sharepoint.com/sites/PowerBISpielplatz/Shared%20Documents/Austausch%20Laptops/wsb/ParameterDatei.xlsx\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "ae29e37c-43b9-482e-a5a0-8175d18d1bc6",
+        "queryGroup": "Parameter"
+      }
+    ],
+      {
+        "name": "HRworksOrdner",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://inopiae.sharepoint.de/sites/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "6ef94236-b104-4521-a5b9-332c4683ba8f",
+        "queryGroup": "Parameter"
+      },
+      {
+        "name": "SharepointSite",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://inopiae.sharepoint.com/sites/PowerBISpielplatz/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "e61b7e9f-66f0-4e3e-b4e9-78cb60481f2a",
+        "queryGroup": "Parameter"
+      },
+      {
+        "name": "SharepointFolder",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"Shared Documents/Austausch Laptops/wsb/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "de1680a1-9dbc-46e5-a6a6-85e6ad016f7e",
+        "queryGroup": "Parameter"
+      },
+      {
+        "name": "ParameterDatei",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://inopiae.sharepoint.com/sites/PowerBISpielplatz/Shared%20Documents/Austausch%20Laptops/wsb/ParameterDatei.xlsx\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "ae29e37c-43b9-482e-a5a0-8175d18d1bc6",
+        "queryGroup": "Parameter"
+      }
+    ],
+      {
+        "name": "HRworksOrdner",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://inopiae.sharepoint.de/sites/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "6ef94236-b104-4521-a5b9-332c4683ba8f",
+        "queryGroup": "Parameter"
+      },
+      {
+        "name": "SharepointSite",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://inopiae.sharepoint.com/sites/PowerBISpielplatz/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "e61b7e9f-66f0-4e3e-b4e9-78cb60481f2a",
+        "queryGroup": "Parameter"
+      },
+      {
+        "name": "SharepointFolder",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"Shared Documents/Austausch Laptops/wsb/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "de1680a1-9dbc-46e5-a6a6-85e6ad016f7e",
+        "queryGroup": "Parameter"
+      },
+      {
+        "name": "ParameterDatei",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://inopiae.sharepoint.com/sites/PowerBISpielplatz/Shared%20Documents/Austausch%20Laptops/wsb/ParameterDatei.xlsx\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "ae29e37c-43b9-482e-a5a0-8175d18d1bc6",
+        "queryGroup": "Parameter"
+      }
+    ],
