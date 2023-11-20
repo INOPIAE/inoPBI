@@ -39,6 +39,13 @@ Public Class FrmReplacement
         Dim fileName As String = TxtTargetFolder.Text & "\" & Path.GetFileName(TxtOrginal.Text) & ".org"
         Dim fileNameReplace As String = TxtTargetFolder.Text & "\" & Path.GetFileName(TxtOrginal.Text) & "." & TxtCustomer.Text
 
+        LblInfo.Text = "Replacing started"
+        Application.DoEvents()
+
+        If File.Exists(fileName) Then
+            File.Delete(fileName)
+        End If
+
         File.Copy(TxtOrginal.Text, fileName)
         Dim clsR As New ClsReplacement
         If clsR.ReplaceReferences(fileName, TxtReplace.Text, fileNameReplace) = False Then
@@ -52,6 +59,8 @@ Public Class FrmReplacement
         My.Settings.LastFolder = TxtTargetFolder.Text
         My.Settings.LastCustomer = TxtCustomer.Text
         My.Settings.Save()
+
+        LblInfo.Text = "Replacing finished"
     End Sub
 
     Private Sub FrmReplacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -60,6 +69,8 @@ Public Class FrmReplacement
         TxtReplace.Text = My.Settings.LastReplacement
         TxtTargetFolder.Text = My.Settings.LastFolder
         TxtCustomer.Text = My.Settings.LastCustomer
+
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdInfo_Click(sender As Object, e As EventArgs) Handles CmdInfo.Click
