@@ -67,4 +67,63 @@ Public Class ClsReplacement
 
         Return rc
     End Function
+
+    Public Function ExtractMeasures(strFile As String, strFileOut As String) As Boolean
+        Dim blnReplace As Boolean = False
+        Dim strOutput As String = "# Measures" & vbCrLf & vbCrLf
+        strOutput &= "Stand: " & Format(Now, "dd.MM.yyyy") & vbCrLf & vbCrLf
+        Dim measures As New Dictionary(Of String, String)
+        Dim m As String = ""
+        Dim f As String = ""
+        Dim fo As String = ""
+        Using sr As New StreamReader(strFile)
+            While sr.Peek() >= 0
+                Dim strLine As String = sr.ReadLine
+
+                If strLine.Contains("""measures"": [") Then
+                    blnReplace = True
+                End If
+                If strLine.Contains("""partitions"": [") Then
+                    blnReplace = False
+                End If
+
+                If blnReplace = True Then
+                    If strLine.Contains("name") Then
+                        fo = ""
+                        m = GetContent(strLine, "name")
+                        strLine = sr.ReadLine
+                        If strLine.Contains("displayFolder") Then
+                            fo = " (" & GetContent(strLine, "displayFolder") & ")"
+                            strLine = sr.ReadLine
+                        End If
+                        f = GetContent(strLine, "expression")
+                        If f = " [" Then
+                            strLine = sr.ReadLine
+                            f = GetContent(strLine, "expression")
+                        End If
+                        f = f.Replace("'", """")
+                        f = f.Replace(",", ", ")
+                        measures.Add(m & fo, f)
+                    End If
+                End If
+            End While
+        End Using
+
+        Dim sorted = From pair In measures
+                     Order By pair.Key
+        Dim sortedDictionary = sorted.ToDictionary(Function(p) p.Key, Function(p) p.Value)
+
+        For Each pair In sortedDictionary
+            strOutput &= pair.Key & ":  " & vbCrLf & "   " & pair.Value & vbCrLf & vbCrLf
+        Next
+        Using sw As New StreamWriter(strFileOut, False, System.Text.Encoding.Default)
+            sw.Write(strOutput)
+        End Using
+
+        Return True
+    End Function
+
+    Private Shared Function GetContent(strLine As String, strTopic As String) As String
+        Return strLine.Trim.Replace(""",", "").Replace("\", "'").Replace("""", "").Replace(":", "").Replace(strTopic, "")
+    End Function
 End Class

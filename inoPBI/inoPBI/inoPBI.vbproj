@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Markdown2Pdf" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\inoPBIDLL\inoPBIDLL.vbproj" />
   </ItemGroup>
 

@@ -78,5 +78,15 @@ Namespace TestInoPBI
             Assert.False(cRep.ReplaceReferences(strFile, strReplacement, strFileOut))
 
         End Sub
+
+        <Test>
+        Public Sub TestExtractMeasures()
+            Dim strFile As String = testPath & "\TestData\test.bim"
+            Dim strFileOut As String = testFolder & "\testmeasures.md"
+
+            Assert.True(cRep.ExtractMeasures(strFile, strFileOut))
+
+
+        End Sub
     End Class
 End Namespace

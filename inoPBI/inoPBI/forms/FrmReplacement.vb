@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports inoPBIDLL
+Imports Markdown2Pdf
 
 Public Class FrmReplacement
     Private Sub CmdClose_Click(sender As Object, e As EventArgs) Handles CmdClose.Click
@@ -69,11 +70,46 @@ Public Class FrmReplacement
         TxtReplace.Text = My.Settings.LastReplacement
         TxtTargetFolder.Text = My.Settings.LastFolder
         TxtCustomer.Text = My.Settings.LastCustomer
+        TxtFileDocu.Text = My.Settings.LastDocumentation
 
         LblInfo.Text = ""
     End Sub
 
     Private Sub CmdInfo_Click(sender As Object, e As EventArgs) Handles CmdInfo.Click
         FrmInfo.ShowDialog()
+    End Sub
+
+    Private Sub CmdFileDocu_Click(sender As Object, e As EventArgs) Handles CmdFileDocu.Click
+        Dim sfd As New SaveFileDialog
+        With sfd
+            .Filter = "*.md|*.md"
+            If .ShowDialog Then
+                TxtFileDocu.Text = .FileName
+            End If
+        End With
+    End Sub
+
+    Private Async Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
+        LblInfo.Text = "Documentation started"
+        Application.DoEvents()
+
+
+        Dim clsR As New ClsReplacement
+        If clsR.ExtractMeasures(TxtOrginal.Text, TxtFileDocu.Text) = False Then
+            MessageBox.Show("Something went wrong")
+            Exit Sub
+        End If
+
+        LblInfo.Text = "Documentation export to pdf"
+        Application.DoEvents()
+
+        Dim mdconvert As New Markdown2PdfConverter
+
+        Dim strPDF = Await mdconvert.Convert(TxtFileDocu.Text)
+
+        My.Settings.LastDocumentation = TxtFileDocu.Text
+        My.Settings.Save()
+
+        LblInfo.Text = "Documentation finished"
     End Sub
 End Class

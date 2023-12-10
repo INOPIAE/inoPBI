@@ -31,7 +31,7 @@ Partial Class FrmInfo
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(FrmInfo))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmInfo))
         TableLayoutPanel = New TableLayoutPanel()
         LogoPictureBox = New PictureBox()
         LabelProductName = New Label()

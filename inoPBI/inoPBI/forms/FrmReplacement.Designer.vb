@@ -37,6 +37,10 @@ Partial Class FrmReplacement
         TxtCustomer = New TextBox()
         CmdInfo = New Button()
         LblInfo = New Label()
+        LblFileDocu = New Label()
+        TxtFileDocu = New TextBox()
+        CmdFileDocu = New Button()
+        CmdDocumentation = New Button()
         SuspendLayout()
         ' 
         ' LblOriginal
@@ -61,7 +65,7 @@ Partial Class FrmReplacement
         CmdFileOriginal.Location = New Point(593, 28)
         CmdFileOriginal.Margin = New Padding(3, 2, 3, 2)
         CmdFileOriginal.Name = "CmdFileOriginal"
-        CmdFileOriginal.Size = New Size(23, 20)
+        CmdFileOriginal.Size = New Size(26, 20)
         CmdFileOriginal.TabIndex = 2
         CmdFileOriginal.Text = "..."
         CmdFileOriginal.UseVisualStyleBackColor = True
@@ -88,7 +92,7 @@ Partial Class FrmReplacement
         CmdFileReplacement.Location = New Point(593, 52)
         CmdFileReplacement.Margin = New Padding(3, 2, 3, 2)
         CmdFileReplacement.Name = "CmdFileReplacement"
-        CmdFileReplacement.Size = New Size(23, 20)
+        CmdFileReplacement.Size = New Size(26, 20)
         CmdFileReplacement.TabIndex = 2
         CmdFileReplacement.Text = "..."
         CmdFileReplacement.UseVisualStyleBackColor = True
@@ -115,27 +119,27 @@ Partial Class FrmReplacement
         CmdFolderTarget.Location = New Point(593, 77)
         CmdFolderTarget.Margin = New Padding(3, 2, 3, 2)
         CmdFolderTarget.Name = "CmdFolderTarget"
-        CmdFolderTarget.Size = New Size(23, 20)
+        CmdFolderTarget.Size = New Size(26, 20)
         CmdFolderTarget.TabIndex = 2
         CmdFolderTarget.Text = "..."
         CmdFolderTarget.UseVisualStyleBackColor = True
         ' 
         ' CmdReplace
         ' 
-        CmdReplace.Location = New Point(326, 257)
+        CmdReplace.Location = New Point(329, 258)
         CmdReplace.Margin = New Padding(3, 2, 3, 2)
         CmdReplace.Name = "CmdReplace"
-        CmdReplace.Size = New Size(82, 22)
+        CmdReplace.Size = New Size(102, 40)
         CmdReplace.TabIndex = 3
         CmdReplace.Text = "Replace"
         CmdReplace.UseVisualStyleBackColor = True
         ' 
         ' CmdClose
         ' 
-        CmdClose.Location = New Point(472, 257)
+        CmdClose.Location = New Point(451, 257)
         CmdClose.Margin = New Padding(3, 2, 3, 2)
         CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(82, 22)
+        CmdClose.Size = New Size(102, 40)
         CmdClose.TabIndex = 3
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
@@ -159,7 +163,7 @@ Partial Class FrmReplacement
         ' 
         ' CmdInfo
         ' 
-        CmdInfo.Location = New Point(189, 257)
+        CmdInfo.Location = New Point(79, 258)
         CmdInfo.Margin = New Padding(3, 2, 3, 2)
         CmdInfo.Name = "CmdInfo"
         CmdInfo.Size = New Size(40, 20)
@@ -170,11 +174,48 @@ Partial Class FrmReplacement
         ' LblInfo
         ' 
         LblInfo.AutoSize = True
-        LblInfo.Location = New Point(119, 167)
+        LblInfo.Location = New Point(69, 226)
         LblInfo.Name = "LblInfo"
         LblInfo.Size = New Size(28, 15)
         LblInfo.TabIndex = 0
         LblInfo.Text = "Info"
+        ' 
+        ' LblFileDocu
+        ' 
+        LblFileDocu.AutoSize = True
+        LblFileDocu.Location = New Point(24, 172)
+        LblFileDocu.Name = "LblFileDocu"
+        LblFileDocu.Size = New Size(109, 15)
+        LblFileDocu.TabIndex = 0
+        LblFileDocu.Text = "Dokumentation file"
+        ' 
+        ' TxtFileDocu
+        ' 
+        TxtFileDocu.Location = New Point(144, 170)
+        TxtFileDocu.Margin = New Padding(3, 2, 3, 2)
+        TxtFileDocu.Name = "TxtFileDocu"
+        TxtFileDocu.Size = New Size(444, 23)
+        TxtFileDocu.TabIndex = 1
+        ' 
+        ' CmdFileDocu
+        ' 
+        CmdFileDocu.Location = New Point(593, 170)
+        CmdFileDocu.Margin = New Padding(3, 2, 3, 2)
+        CmdFileDocu.Name = "CmdFileDocu"
+        CmdFileDocu.Size = New Size(26, 20)
+        CmdFileDocu.TabIndex = 2
+        CmdFileDocu.Text = "..."
+        CmdFileDocu.UseVisualStyleBackColor = True
+        ' 
+        ' CmdDocumentation
+        ' 
+        CmdDocumentation.Location = New Point(207, 258)
+        CmdDocumentation.Margin = New Padding(3, 2, 3, 2)
+        CmdDocumentation.Name = "CmdDocumentation"
+        CmdDocumentation.Size = New Size(102, 40)
+        CmdDocumentation.TabIndex = 3
+        CmdDocumentation.Text = "Create Documentation"
+        CmdDocumentation.UseVisualStyleBackColor = True
         ' 
         ' FrmReplacement
         ' 
@@ -183,14 +224,18 @@ Partial Class FrmReplacement
         ClientSize = New Size(700, 338)
         Controls.Add(CmdInfo)
         Controls.Add(CmdClose)
+        Controls.Add(CmdDocumentation)
         Controls.Add(CmdReplace)
         Controls.Add(CmdFolderTarget)
+        Controls.Add(CmdFileDocu)
         Controls.Add(CmdFileReplacement)
         Controls.Add(CmdFileOriginal)
         Controls.Add(TxtCustomer)
         Controls.Add(LblCustomer)
         Controls.Add(TxtTargetFolder)
         Controls.Add(LblTargetFolder)
+        Controls.Add(TxtFileDocu)
+        Controls.Add(LblFileDocu)
         Controls.Add(TxtReplace)
         Controls.Add(LblRepacement)
         Controls.Add(TxtOrginal)
@@ -218,4 +263,8 @@ Partial Class FrmReplacement
     Friend WithEvents TxtCustomer As TextBox
     Friend WithEvents CmdInfo As Button
     Friend WithEvents LblInfo As Label
+    Friend WithEvents LblFileDocu As Label
+    Friend WithEvents TxtFileDocu As TextBox
+    Friend WithEvents CmdFileDocu As Button
+    Friend WithEvents CmdDocumentation As Button
 End Class
