@@ -76,8 +76,11 @@ Public Class ClsReplacement
         Dim m As String = ""
         Dim f As String = ""
         Dim fo As String = ""
+        Dim intLine As Int16 = 0
+
         Using sr As New StreamReader(strFile)
             While sr.Peek() >= 0
+                intLine += 1
                 Dim strLine As String = sr.ReadLine
 
                 If strLine.Contains("""measures"": [") Then
@@ -94,6 +97,12 @@ Public Class ClsReplacement
                         strLine = sr.ReadLine
                         If strLine.Contains("displayFolder") Then
                             fo = " (" & GetContent(strLine, "displayFolder") & ")"
+                            strLine = sr.ReadLine
+                        End If
+                        If strLine.Contains("annotations") Then
+                            Do Until strLine.Contains("]")
+                                strLine = sr.ReadLine
+                            Loop
                             strLine = sr.ReadLine
                         End If
                         f = GetContent(strLine, "expression")

@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports inoPBIDLL
-Imports Markdown2Pdf
 
 Public Class FrmReplacement
     Private Sub CmdClose_Click(sender As Object, e As EventArgs) Handles CmdClose.Click
@@ -89,7 +88,7 @@ Public Class FrmReplacement
         End With
     End Sub
 
-    Private Async Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
+    Private Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
         LblInfo.Text = "Documentation started"
         Application.DoEvents()
 
@@ -100,12 +99,7 @@ Public Class FrmReplacement
             Exit Sub
         End If
 
-        LblInfo.Text = "Documentation export to pdf"
-        Application.DoEvents()
 
-        Dim mdconvert As New Markdown2PdfConverter
-
-        Dim strPDF = Await mdconvert.Convert(TxtFileDocu.Text)
 
         My.Settings.LastDocumentation = TxtFileDocu.Text
         My.Settings.Save()
