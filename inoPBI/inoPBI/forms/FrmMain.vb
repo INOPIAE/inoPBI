@@ -1,6 +1,13 @@
-﻿Imports System.Windows.Forms
+﻿Imports System.ComponentModel
+Imports System.IO
+Imports System.Windows.Forms
+Imports inoPBIDLL
 
 Public Class FrmMain
+
+    Public AppDataPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\INOPIAE\inoPBI"
+    Public ProjectIniData As New ClsIniFileHandling.IniData
+    Private cProjectIni As New ClsIniFileHandling
 
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs) Handles NewToolStripMenuItem.Click, NewToolStripButton.Click, NewWindowToolStripMenuItem.Click
         ' Neue Instanz des untergeordneten Formulars erstellen.
@@ -91,5 +98,47 @@ Public Class FrmMain
 
     Private Sub DocumentationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentationToolStripMenuItem.Click
         FrmPDF.Show()
+    End Sub
+
+    Private Sub SelectProjectToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectProjectToolStripMenuItem.Click
+        FrmProjects.Show()
+    End Sub
+
+    Public Sub FillProjectIni()
+        With ProjectIniData
+            .LastCustomer = My.Settings.LastCustomer
+            .LastDocTitle = My.Settings.LastDocTitle
+            .LastDocumentation = My.Settings.LastDocumentation
+            .LastFolder = My.Settings.LastFolder
+            .LastFooter = My.Settings.LastFooter
+            .LastHeader = My.Settings.LastHeader
+            .LastOriginal = My.Settings.LastOriginal
+            .LastReplacement = My.Settings.LastReplacement
+        End With
+    End Sub
+
+    Public Sub SaveProjectIni()
+        With ProjectIniData
+            My.Settings.LastCustomer = .LastCustomer
+            My.Settings.LastDocTitle = .LastDocTitle
+            My.Settings.LastDocumentation = .LastDocumentation
+            My.Settings.LastFolder = .LastFolder
+            My.Settings.LastFooter = .LastFooter
+            My.Settings.LastHeader = .LastHeader
+            My.Settings.LastOriginal = .LastOriginal
+            My.Settings.LastReplacement = .LastReplacement
+        End With
+        My.Settings.Save()
+    End Sub
+
+    Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TslCurrentProject.Text = My.Settings.CurrentProject
+    End Sub
+
+    Private Sub FrmMain_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+
+        FillProjectIni()
+        Dim pi As ClsIniFileHandling.IniData = ProjectIniData
+        cProjectIni.WriteProjectIniFile(Path.Combine(AppDataPath, My.Settings.CurrentProject & ".inoini"), pi)
     End Sub
 End Class

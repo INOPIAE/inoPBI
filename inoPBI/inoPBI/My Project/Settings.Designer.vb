@@ -149,6 +149,18 @@ Namespace My
                 Me("LastDocTitle") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property CurrentProject() As String
+            Get
+                Return CType(Me("CurrentProject"),String)
+            End Get
+            Set
+                Me("CurrentProject") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
