@@ -13,11 +13,25 @@ Public Class FrmPDF
         TxtFooter.Text = My.Settings.LastFooter
         '  TxtTargetFolder.Text = My.Settings.LastFolder
         TxtDocTitle.Text = My.Settings.LastDocTitle
+        CbShowPDF.Checked = My.Settings.ShowPDF
 
         LblInfo.Text = ""
     End Sub
 
     Private Async Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
+
+        If TxtFileDocu.Text = vbNullString Then
+            MessageBox.Show("No file given.")
+            TxtFileDocu.Select()
+            Exit Sub
+        End If
+        Dim PdFOutput As String = TxtFileDocu.Text.Replace(".md", ".pdf")
+
+        If FileInUse(PdFOutput) = True Then
+            MessageBox.Show("PDF file in use.")
+            Exit Sub
+        End If
+
         LblInfo.Text = "Documentation export to pdf"
         Application.DoEvents()
 
@@ -38,7 +52,7 @@ Public Class FrmPDF
             mdOptions.FooterHtml = File.ReadAllText(TxtFooter.Text)
         End If
 
-        '   KeepHtml = True,
+        ' mdOptions.KeepHtml = True
         '   IsLandscape = True,
         '};
 
@@ -54,7 +68,15 @@ Public Class FrmPDF
 
         ' My.Settings.LastFolder = TxtTargetFolder.Text
         My.Settings.LastDocTitle = TxtDocTitle.Text
+        My.Settings.ShowPDF = CbShowPDF.Checked
         My.Settings.Save()
+
+        If CbShowPDF.Checked Then
+            Dim p = New Process()
+            p.StartInfo = New ProcessStartInfo(PdFOutput)
+            p.StartInfo.UseShellExecute = True
+            p.Start()
+        End If
     End Sub
 
     Private Sub CmdHeaderFile_Click(sender As Object, e As EventArgs) Handles CmdHeaderFile.Click
@@ -85,5 +107,9 @@ Public Class FrmPDF
                 TxtFileDocu.Text = .FileName
             End If
         End With
+    End Sub
+
+    Private Sub CmdFolderTarget_Click(sender As Object, e As EventArgs) Handles CmdFolderTarget.Click
+
     End Sub
 End Class

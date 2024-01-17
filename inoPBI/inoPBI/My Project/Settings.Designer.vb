@@ -161,6 +161,18 @@ Namespace My
                 Me("CurrentProject") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ShowPDF() As Boolean
+            Get
+                Return CType(Me("ShowPDF"),Boolean)
+            End Get
+            Set
+                Me("ShowPDF") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
