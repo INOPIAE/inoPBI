@@ -39,6 +39,7 @@ Public Class FrmReplacement
         Dim fileName As String = TxtTargetFolder.Text & "\" & Path.GetFileName(TxtOrginal.Text) & ".org"
         Dim fileNameReplace As String = TxtTargetFolder.Text & "\" & Path.GetFileName(TxtOrginal.Text) & "." & TxtCustomer.Text
 
+
         LblInfo.Text = "Replacing started"
         Application.DoEvents()
 
@@ -48,11 +49,17 @@ Public Class FrmReplacement
 
         File.Copy(TxtOrginal.Text, fileName)
         Dim clsR As New ClsReplacement
+
         If clsR.ReplaceReferences(fileName, TxtReplace.Text, fileNameReplace) = False Then
             MessageBox.Show("Something went wrong")
+            LblInfo.Text = "Canceled with error"
             Exit Sub
         End If
 
+        LblInfo.Text = "Copy files"
+        Application.DoEvents()
+
+        clsR.CopyPBIP(TxtOrginal.Text, fileNameReplace)
 
         My.Settings.LastOriginal = TxtOrginal.Text
         My.Settings.LastReplacement = TxtReplace.Text

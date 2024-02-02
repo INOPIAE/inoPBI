@@ -1,5 +1,6 @@
 ﻿Imports System.Collections.ObjectModel
 Imports System.IO
+Imports System.IO.Compression
 
 Public Class ClsReplacement
 
@@ -96,7 +97,7 @@ Public Class ClsReplacement
                         m = GetContent(strLine, "name")
                         strLine = sr.ReadLine
                         If strLine.Contains("displayFolder") Then
-                            fo = " (" & GetContent(strLine, "displayFolder") & ")"
+                            fo = " (" & GetContent(strLine, "displayFolder").Trim & ")"
                             strLine = sr.ReadLine
                         End If
                         If strLine.Contains("annotations") Then
@@ -135,4 +136,50 @@ Public Class ClsReplacement
     Private Shared Function GetContent(strLine As String, strTopic As String) As String
         Return strLine.Trim.Replace(""",", "").Replace("\", "'").Replace("""", "").Replace(":", "").Replace(strTopic, "")
     End Function
+
+    Public Function CopyPBIP(strFile As String, strFileOut As String) As Boolean
+        Dim strSourceFolder As String = Directory.GetParent(Directory.GetParent(strFile).FullName).FullName
+        Dim strSourceParent As String = Directory.GetParent(Directory.GetParent(strFile).FullName).Name
+
+        Dim strDestinationFolder As String = Path.Combine(Directory.GetParent(strFileOut).FullName, strSourceParent)
+        Dim strCopyFolder As String = Directory.GetParent(strFile).Name
+
+        CopyDirectory(strSourceFolder, strDestinationFolder, True)
+
+        IO.File.Copy(strFileOut, Path.Combine(strDestinationFolder, strCopyFolder, "model.bim"), True)
+
+        Dim strZip As String = String.Format("{0}.{1}", strDestinationFolder, "zip")
+
+        If File.Exists(strZip) = True Then
+            File.Delete(strZip)
+        End If
+
+        ZipFile.CreateFromDirectory(strDestinationFolder, strZip, CompressionLevel.Fastest, True)
+
+        Return True
+    End Function
+
+    Private Shared Sub CopyDirectory(ByVal sourceDir As String, ByVal destinationDir As String, ByVal recursive As Boolean)
+        Dim dir = New DirectoryInfo(sourceDir)
+        If Not dir.Exists Then Throw New DirectoryNotFoundException($"Source directory not found: {dir.FullName}")
+
+        If sourceDir.Contains(".git") Then Exit Sub
+
+        Dim dirs As DirectoryInfo() = dir.GetDirectories()
+        Directory.CreateDirectory(destinationDir)
+
+        For Each file As FileInfo In dir.GetFiles()
+            If file.Name = ".gitignore" Then Continue For
+            Dim targetFilePath As String = Path.Combine(destinationDir, file.Name)
+            IO.File.Copy(file.FullName, targetFilePath, True)
+        Next
+
+        If recursive Then
+
+            For Each subDir As DirectoryInfo In dirs
+                Dim newDestinationDir As String = Path.Combine(destinationDir, subDir.Name)
+                CopyDirectory(subDir.FullName, newDestinationDir, True)
+            Next
+        End If
+    End Sub
 End Class
