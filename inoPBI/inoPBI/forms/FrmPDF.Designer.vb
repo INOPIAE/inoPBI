@@ -41,6 +41,8 @@ Partial Class FrmPDF
         LblInfo = New Label()
         LblHeader = New Label()
         CbShowPDF = New CheckBox()
+        CmdEditHeader = New Button()
+        CmdEditFooter = New Button()
         SuspendLayout()
         ' 
         ' CmdClose
@@ -206,11 +208,31 @@ Partial Class FrmPDF
         CbShowPDF.Text = "Show PDF File"
         CbShowPDF.UseVisualStyleBackColor = True
         ' 
+        ' CmdEditHeader
+        ' 
+        CmdEditHeader.Location = New Point(745, 79)
+        CmdEditHeader.Name = "CmdEditHeader"
+        CmdEditHeader.Size = New Size(69, 29)
+        CmdEditHeader.TabIndex = 19
+        CmdEditHeader.Text = "Edit"
+        CmdEditHeader.UseVisualStyleBackColor = True
+        ' 
+        ' CmdEditFooter
+        ' 
+        CmdEditFooter.Location = New Point(745, 111)
+        CmdEditFooter.Name = "CmdEditFooter"
+        CmdEditFooter.Size = New Size(69, 29)
+        CmdEditFooter.TabIndex = 19
+        CmdEditFooter.Text = "Edit"
+        CmdEditFooter.UseVisualStyleBackColor = True
+        ' 
         ' FrmPDF
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(824, 450)
+        Controls.Add(CmdEditFooter)
+        Controls.Add(CmdEditHeader)
         Controls.Add(CbShowPDF)
         Controls.Add(CmdClose)
         Controls.Add(CmdDocumentation)
@@ -254,4 +276,6 @@ Partial Class FrmPDF
     Friend WithEvents LblInfo As Label
     Friend WithEvents LblHeader As Label
     Friend WithEvents CbShowPDF As CheckBox
+    Friend WithEvents CmdEditHeader As Button
+    Friend WithEvents CmdEditFooter As Button
 End Class

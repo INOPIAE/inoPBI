@@ -84,6 +84,7 @@ Public Class FrmPDF
         With ofd
             .Filter = "*.html|*.html"
             .Multiselect = False
+            .Title = "Select Header file"
             If .ShowDialog = DialogResult.OK Then
                 TxtHeader.Text = .FileName
             End If
@@ -95,6 +96,7 @@ Public Class FrmPDF
         With ofd
             .Filter = "*.html|*.html"
             .Multiselect = False
+            .Title = "Select Footer File"
             If .ShowDialog = DialogResult.OK Then
                 TxtFooter.Text = .FileName
             End If
@@ -113,5 +115,25 @@ Public Class FrmPDF
 
     Private Sub CmdFolderTarget_Click(sender As Object, e As EventArgs) Handles CmdFolderTarget.Click
 
+    End Sub
+
+    Private Sub CmdEditHeader_Click(sender As Object, e As EventArgs) Handles CmdEditHeader.Click
+        If File.Exists(TxtHeader.Text) Then
+            With FrmHtml
+                .OpenFile(TxtHeader.Text, FrmHtml.FileType.Header)
+                .ShowDialog()
+                TxtHeader.Text = My.Settings.LastHeader
+            End With
+        End If
+    End Sub
+
+    Private Sub CmdEditFooter_Click(sender As Object, e As EventArgs) Handles CmdEditFooter.Click
+        If File.Exists(TxtFooter.Text) Then
+            With FrmHtml
+                .OpenFile(TxtFooter.Text, FrmHtml.FileType.Footer)
+                .ShowDialog()
+                TxtFooter.Text = My.Settings.LastFooter
+            End With
+        End If
     End Sub
 End Class
