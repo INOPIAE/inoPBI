@@ -83,7 +83,8 @@ Public Class FrmPDF
         Dim ofd As New OpenFileDialog
         With ofd
             .Filter = "*.html|*.html"
-            If .ShowDialog Then
+            .Multiselect = False
+            If .ShowDialog = DialogResult.OK Then
                 TxtHeader.Text = .FileName
             End If
         End With
@@ -93,7 +94,8 @@ Public Class FrmPDF
         Dim ofd As New OpenFileDialog
         With ofd
             .Filter = "*.html|*.html"
-            If .ShowDialog Then
+            .Multiselect = False
+            If .ShowDialog = DialogResult.OK Then
                 TxtFooter.Text = .FileName
             End If
         End With
@@ -103,7 +105,7 @@ Public Class FrmPDF
         Dim sfd As New SaveFileDialog
         With sfd
             .Filter = "*.md|*.md"
-            If .ShowDialog Then
+            If .ShowDialog = DialogResult.OK Then
                 TxtFileDocu.Text = .FileName
             End If
         End With

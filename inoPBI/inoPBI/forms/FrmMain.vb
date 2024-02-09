@@ -135,10 +135,14 @@ Public Class FrmMain
         TslCurrentProject.Text = My.Settings.CurrentProject
     End Sub
 
-    Private Sub FrmMain_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    Private Sub FrmMain_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
 
         FillProjectIni()
-        Dim pi As ClsIniFileHandling.IniData = ProjectIniData
+        Dim pi = ProjectIniData
         cProjectIni.WriteProjectIniFile(Path.Combine(AppDataPath, My.Settings.CurrentProject & ".inoini"), pi)
+    End Sub
+
+    Private Sub EditFooterHeaderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditFooterHeaderToolStripMenuItem.Click
+        FrmHtml.Show()
     End Sub
 End Class

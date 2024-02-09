@@ -80,8 +80,9 @@ Partial Class FrmMain
         HelpToolStripButton = New ToolStripButton()
         StatusStrip = New StatusStrip()
         ToolStripStatusLabel = New ToolStripStatusLabel()
-        ToolTip = New ToolTip(components)
         TslCurrentProject = New ToolStripStatusLabel()
+        ToolTip = New ToolTip(components)
+        EditFooterHeaderToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip.SuspendLayout()
         ToolStrip.SuspendLayout()
         StatusStrip.SuspendLayout()
@@ -377,7 +378,7 @@ Partial Class FrmMain
         ' 
         ' PowerBIToolsToolStripMenuItem
         ' 
-        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ReplacementToolStripMenuItem, DocumentationToolStripMenuItem, SelectProjectToolStripMenuItem})
+        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ReplacementToolStripMenuItem, DocumentationToolStripMenuItem, SelectProjectToolStripMenuItem, EditFooterHeaderToolStripMenuItem})
         PowerBIToolsToolStripMenuItem.Name = "PowerBIToolsToolStripMenuItem"
         PowerBIToolsToolStripMenuItem.Size = New Size(119, 24)
         PowerBIToolsToolStripMenuItem.Text = "Power BI Tools"
@@ -385,19 +386,19 @@ Partial Class FrmMain
         ' ReplacementToolStripMenuItem
         ' 
         ReplacementToolStripMenuItem.Name = "ReplacementToolStripMenuItem"
-        ReplacementToolStripMenuItem.Size = New Size(195, 26)
+        ReplacementToolStripMenuItem.Size = New Size(224, 26)
         ReplacementToolStripMenuItem.Text = "Replacement"
         ' 
         ' DocumentationToolStripMenuItem
         ' 
         DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
-        DocumentationToolStripMenuItem.Size = New Size(195, 26)
+        DocumentationToolStripMenuItem.Size = New Size(224, 26)
         DocumentationToolStripMenuItem.Text = "Documentation"
         ' 
         ' SelectProjectToolStripMenuItem
         ' 
         SelectProjectToolStripMenuItem.Name = "SelectProjectToolStripMenuItem"
-        SelectProjectToolStripMenuItem.Size = New Size(195, 26)
+        SelectProjectToolStripMenuItem.Size = New Size(224, 26)
         SelectProjectToolStripMenuItem.Text = "Select Project"
         ' 
         ' ToolStrip
@@ -497,6 +498,12 @@ Partial Class FrmMain
         TslCurrentProject.Size = New Size(153, 20)
         TslCurrentProject.Text = "ToolStripStatusLabel1"
         ' 
+        ' EditFooterHeaderToolStripMenuItem
+        ' 
+        EditFooterHeaderToolStripMenuItem.Name = "EditFooterHeaderToolStripMenuItem"
+        EditFooterHeaderToolStripMenuItem.Size = New Size(224, 26)
+        EditFooterHeaderToolStripMenuItem.Text = "Edit Footer/Header"
+        ' 
         ' FrmMain
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -577,5 +584,6 @@ Partial Class FrmMain
     Friend WithEvents DocumentationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SelectProjectToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TslCurrentProject As ToolStripStatusLabel
+    Friend WithEvents EditFooterHeaderToolStripMenuItem As ToolStripMenuItem
 
 End Class
