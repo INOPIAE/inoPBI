@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Text
 Imports inoPBIDLL
 
 Public Class FrmReplacement
@@ -113,4 +114,15 @@ Public Class FrmReplacement
 
         LblInfo.Text = "Documentation finished"
     End Sub
+
+    Private Sub CmdEditReplacement_Click(sender As Object, e As EventArgs) Handles CmdEditReplacement.Click
+        If File.Exists(TxtReplace.Text) Then
+            With FrmReplacementFile
+                .ReadFile(TxtReplace.Text)
+                .ShowDialog()
+                TxtReplace.Text = My.Settings.LastReplacement
+            End With
+        End If
+    End Sub
+
 End Class

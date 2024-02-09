@@ -50,7 +50,7 @@ Partial Class FrmPDF
         CmdClose.Location = New Point(548, 352)
         CmdClose.Name = "CmdClose"
         CmdClose.Size = New Size(117, 53)
-        CmdClose.TabIndex = 17
+        CmdClose.TabIndex = 19
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
         ' 
@@ -59,7 +59,7 @@ Partial Class FrmPDF
         CmdDocumentation.Location = New Point(270, 353)
         CmdDocumentation.Name = "CmdDocumentation"
         CmdDocumentation.Size = New Size(117, 53)
-        CmdDocumentation.TabIndex = 15
+        CmdDocumentation.TabIndex = 17
         CmdDocumentation.Text = "Create PDF"
         CmdDocumentation.UseVisualStyleBackColor = True
         ' 
@@ -68,7 +68,7 @@ Partial Class FrmPDF
         CmdReplace.Location = New Point(409, 353)
         CmdReplace.Name = "CmdReplace"
         CmdReplace.Size = New Size(117, 53)
-        CmdReplace.TabIndex = 16
+        CmdReplace.TabIndex = 18
         CmdReplace.Text = "Replace"
         CmdReplace.UseVisualStyleBackColor = True
         ' 
@@ -77,7 +77,7 @@ Partial Class FrmPDF
         CmdFolderTarget.Location = New Point(709, 145)
         CmdFolderTarget.Name = "CmdFolderTarget"
         CmdFolderTarget.Size = New Size(30, 27)
-        CmdFolderTarget.TabIndex = 11
+        CmdFolderTarget.TabIndex = 13
         CmdFolderTarget.Text = "..."
         CmdFolderTarget.UseVisualStyleBackColor = True
         ' 
@@ -95,7 +95,7 @@ Partial Class FrmPDF
         CmdFooterFile.Location = New Point(709, 111)
         CmdFooterFile.Name = "CmdFooterFile"
         CmdFooterFile.Size = New Size(30, 27)
-        CmdFooterFile.TabIndex = 8
+        CmdFooterFile.TabIndex = 9
         CmdFooterFile.Text = "..."
         CmdFooterFile.UseVisualStyleBackColor = True
         ' 
@@ -113,7 +113,7 @@ Partial Class FrmPDF
         TxtDocTitle.Location = New Point(196, 177)
         TxtDocTitle.Name = "TxtDocTitle"
         TxtDocTitle.Size = New Size(507, 27)
-        TxtDocTitle.TabIndex = 13
+        TxtDocTitle.TabIndex = 15
         ' 
         ' LblDocTitle
         ' 
@@ -121,7 +121,7 @@ Partial Class FrmPDF
         LblDocTitle.Location = New Point(58, 181)
         LblDocTitle.Name = "LblDocTitle"
         LblDocTitle.Size = New Size(108, 20)
-        LblDocTitle.TabIndex = 12
+        LblDocTitle.TabIndex = 14
         LblDocTitle.Text = "Document title"
         ' 
         ' TxtTargetFolder
@@ -129,7 +129,7 @@ Partial Class FrmPDF
         TxtTargetFolder.Location = New Point(196, 143)
         TxtTargetFolder.Name = "TxtTargetFolder"
         TxtTargetFolder.Size = New Size(507, 27)
-        TxtTargetFolder.TabIndex = 10
+        TxtTargetFolder.TabIndex = 12
         ' 
         ' LblTargetFolder
         ' 
@@ -137,7 +137,7 @@ Partial Class FrmPDF
         LblTargetFolder.Location = New Point(58, 147)
         LblTargetFolder.Name = "LblTargetFolder"
         LblTargetFolder.Size = New Size(94, 20)
-        LblTargetFolder.TabIndex = 9
+        LblTargetFolder.TabIndex = 11
         LblTargetFolder.Text = "Target folder"
         ' 
         ' TxtFileDocu
@@ -161,7 +161,7 @@ Partial Class FrmPDF
         TxtFooter.Location = New Point(196, 111)
         TxtFooter.Name = "TxtFooter"
         TxtFooter.Size = New Size(507, 27)
-        TxtFooter.TabIndex = 7
+        TxtFooter.TabIndex = 8
         ' 
         ' LblFooter
         ' 
@@ -169,7 +169,7 @@ Partial Class FrmPDF
         LblFooter.Location = New Point(58, 114)
         LblFooter.Name = "LblFooter"
         LblFooter.Size = New Size(122, 20)
-        LblFooter.TabIndex = 6
+        LblFooter.TabIndex = 7
         LblFooter.Text = "Footer HTML File"
         ' 
         ' TxtHeader
@@ -185,7 +185,7 @@ Partial Class FrmPDF
         LblInfo.Location = New Point(112, 310)
         LblInfo.Name = "LblInfo"
         LblInfo.Size = New Size(35, 20)
-        LblInfo.TabIndex = 18
+        LblInfo.TabIndex = 20
         LblInfo.Text = "Info"
         ' 
         ' LblHeader
@@ -204,7 +204,7 @@ Partial Class FrmPDF
         CbShowPDF.Location = New Point(92, 219)
         CbShowPDF.Name = "CbShowPDF"
         CbShowPDF.Size = New Size(124, 24)
-        CbShowPDF.TabIndex = 14
+        CbShowPDF.TabIndex = 16
         CbShowPDF.Text = "Show PDF File"
         CbShowPDF.UseVisualStyleBackColor = True
         ' 
@@ -213,7 +213,7 @@ Partial Class FrmPDF
         CmdEditHeader.Location = New Point(745, 79)
         CmdEditHeader.Name = "CmdEditHeader"
         CmdEditHeader.Size = New Size(69, 29)
-        CmdEditHeader.TabIndex = 19
+        CmdEditHeader.TabIndex = 6
         CmdEditHeader.Text = "Edit"
         CmdEditHeader.UseVisualStyleBackColor = True
         ' 
@@ -222,7 +222,7 @@ Partial Class FrmPDF
         CmdEditFooter.Location = New Point(745, 111)
         CmdEditFooter.Name = "CmdEditFooter"
         CmdEditFooter.Size = New Size(69, 29)
-        CmdEditFooter.TabIndex = 19
+        CmdEditFooter.TabIndex = 10
         CmdEditFooter.Text = "Edit"
         CmdEditFooter.UseVisualStyleBackColor = True
         ' 

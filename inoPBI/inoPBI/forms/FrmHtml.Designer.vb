@@ -23,11 +23,11 @@ Partial Class FrmHtml
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         SpText = New SplitContainer()
-        CmdOpen = New Button()
-        CmdSave = New Button()
-        CmdSaveAs = New Button()
-        TxtText = New TextBox()
         CmdClose = New Button()
+        CmdSaveAs = New Button()
+        CmdSave = New Button()
+        CmdOpen = New Button()
+        TxtText = New TextBox()
         CType(SpText, ComponentModel.ISupportInitialize).BeginInit()
         SpText.Panel1.SuspendLayout()
         SpText.Panel2.SuspendLayout()
@@ -54,6 +54,33 @@ Partial Class FrmHtml
         SpText.SplitterDistance = 149
         SpText.TabIndex = 0
         ' 
+        ' CmdClose
+        ' 
+        CmdClose.Location = New Point(25, 135)
+        CmdClose.Name = "CmdClose"
+        CmdClose.Size = New Size(94, 29)
+        CmdClose.TabIndex = 3
+        CmdClose.Text = "Close"
+        CmdClose.UseVisualStyleBackColor = True
+        ' 
+        ' CmdSaveAs
+        ' 
+        CmdSaveAs.Location = New Point(25, 100)
+        CmdSaveAs.Name = "CmdSaveAs"
+        CmdSaveAs.Size = New Size(94, 29)
+        CmdSaveAs.TabIndex = 2
+        CmdSaveAs.Text = "Save As"
+        CmdSaveAs.UseVisualStyleBackColor = True
+        ' 
+        ' CmdSave
+        ' 
+        CmdSave.Location = New Point(25, 65)
+        CmdSave.Name = "CmdSave"
+        CmdSave.Size = New Size(94, 29)
+        CmdSave.TabIndex = 1
+        CmdSave.Text = "Save"
+        CmdSave.UseVisualStyleBackColor = True
+        ' 
         ' CmdOpen
         ' 
         CmdOpen.Location = New Point(25, 30)
@@ -63,24 +90,6 @@ Partial Class FrmHtml
         CmdOpen.Text = "Open"
         CmdOpen.UseVisualStyleBackColor = True
         ' 
-        ' CmdSave
-        ' 
-        CmdSave.Location = New Point(25, 65)
-        CmdSave.Name = "CmdSave"
-        CmdSave.Size = New Size(94, 29)
-        CmdSave.TabIndex = 0
-        CmdSave.Text = "Save"
-        CmdSave.UseVisualStyleBackColor = True
-        ' 
-        ' CmdSaveAs
-        ' 
-        CmdSaveAs.Location = New Point(25, 100)
-        CmdSaveAs.Name = "CmdSaveAs"
-        CmdSaveAs.Size = New Size(94, 29)
-        CmdSaveAs.TabIndex = 0
-        CmdSaveAs.Text = "Save As"
-        CmdSaveAs.UseVisualStyleBackColor = True
-        ' 
         ' TxtText
         ' 
         TxtText.Dock = DockStyle.Fill
@@ -89,15 +98,6 @@ Partial Class FrmHtml
         TxtText.Name = "TxtText"
         TxtText.Size = New Size(647, 450)
         TxtText.TabIndex = 0
-        ' 
-        ' CmdClose
-        ' 
-        CmdClose.Location = New Point(25, 135)
-        CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(94, 29)
-        CmdClose.TabIndex = 0
-        CmdClose.Text = "Close"
-        CmdClose.UseVisualStyleBackColor = True
         ' 
         ' FrmHtml
         ' 
