@@ -101,8 +101,8 @@ Public Class FrmReplacement
         Application.DoEvents()
 
 
-        Dim clsR As New ClsReplacement
-        If clsR.ExtractMeasures(TxtOrginal.Text, TxtFileDocu.Text) = False Then
+        Dim clsJSON As New ClsJSONHandling
+        If clsJSON.ExtractMeasures(TxtOrginal.Text, TxtFileDocu.Text) = False Then
             MessageBox.Show("Something went wrong")
             Exit Sub
         End If

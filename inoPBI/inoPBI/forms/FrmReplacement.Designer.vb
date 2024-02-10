@@ -123,16 +123,16 @@ Partial Class FrmReplacement
         ' 
         CmdReplace.Location = New Point(376, 344)
         CmdReplace.Name = "CmdReplace"
-        CmdReplace.Size = New Size(117, 53)
+        CmdReplace.Size = New Size(126, 53)
         CmdReplace.TabIndex = 17
         CmdReplace.Text = "Replace"
         CmdReplace.UseVisualStyleBackColor = True
         ' 
         ' CmdClose
         ' 
-        CmdClose.Location = New Point(515, 343)
+        CmdClose.Location = New Point(515, 344)
         CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(117, 53)
+        CmdClose.Size = New Size(126, 53)
         CmdClose.TabIndex = 18
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
@@ -200,7 +200,7 @@ Partial Class FrmReplacement
         ' 
         CmdDocumentation.Location = New Point(237, 344)
         CmdDocumentation.Name = "CmdDocumentation"
-        CmdDocumentation.Size = New Size(117, 53)
+        CmdDocumentation.Size = New Size(126, 53)
         CmdDocumentation.TabIndex = 16
         CmdDocumentation.Text = "Create Documentation"
         CmdDocumentation.UseVisualStyleBackColor = True
