@@ -157,10 +157,6 @@ Public Class ClsJSONHandling
                 Case "_Measures"
                     'Skip
                 Case Else
-                    If i.Name = "UmsatzC1" Then
-                        Debug.Print(i.Value)
-
-                    End If
                     Select Case i.Type
                         Case ElementType.Measure
                             measures.Add("## " & i.Name & IIf(i.Displayfolder = "", "", " (" & i.Displayfolder & ")"), ReplaceMeasure(i.Value))
@@ -172,6 +168,8 @@ Public Class ClsJSONHandling
         Next
 
         Dim strOutput As String = "Stand: " & Format(Now, "dd.MM.yyyy") & vbCrLf & vbCrLf
+        strOutput &= "Inhaltsverzeichnis" & vbCrLf & vbCrLf
+        strOutput &= "<!--TOC-->" & vbCrLf & vbCrLf
         strOutput &= "# Measures" & vbCrLf & vbCrLf
 
         Dim sorted = From pair In measures Order By pair.Key
@@ -189,7 +187,7 @@ Public Class ClsJSONHandling
             strOutput &= pair.Key & ":  " & vbCrLf & "   " & pair.Value & vbCrLf & vbCrLf
         Next
 
-        Using sw As New StreamWriter(strFileOut, False, System.Text.Encoding.Default)
+        Using sw As New StreamWriter(strFileOut, False, System.Text.Encoding.UTF8)
             sw.Write(strOutput)
         End Using
 

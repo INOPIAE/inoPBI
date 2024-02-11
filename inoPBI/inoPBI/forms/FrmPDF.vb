@@ -52,6 +52,9 @@ Public Class FrmPDF
             mdOptions.FooterHtml = File.ReadAllText(TxtFooter.Text)
         End If
 
+        mdOptions.CustomHeadContent = "<style>h1 { page-break-before: always; }</style>"
+
+        mdOptions.TableOfContents = New TableOfContents(True, 2)
         ' mdOptions.KeepHtml = True
         '   IsLandscape = True,
         '};
