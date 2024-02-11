@@ -175,7 +175,15 @@ Public Class ClsJSONHandling
         Dim sorted = From pair In measures Order By pair.Key
         Dim sortedDictionary = sorted.ToDictionary(Function(p) p.Key, Function(p) p.Value)
 
+        Dim lngRows As Long = 4
+        Dim lngLines As Long
         For Each pair In sortedDictionary
+            lngLines = pair.Value.Length - pair.Value.Replace(Environment.NewLine, String.Empty).Length
+            lngRows += 4 + lngLines
+            If lngRows > 50 Then
+                strOutput &= "<div style = ""page-break-after: always""></div>" & vbCrLf & vbCrLf
+                lngRows = 4 + lngLines
+            End If
             strOutput &= pair.Key & ":  " & vbCrLf & pair.Value & vbCrLf & vbCrLf
         Next
 
@@ -183,8 +191,17 @@ Public Class ClsJSONHandling
         sortedDictionary = sorted.ToDictionary(Function(p) p.Key, Function(p) p.Value)
 
         strOutput &= vbCrLf & vbCrLf & "# Tabellen über PowerQuery" & vbCrLf & vbCrLf
+        lngRows = 4
+        Dim blnPage2 As Boolean = False
         For Each pair In sortedDictionary
+            lngLines = pair.Value.Length - pair.Value.Replace(Environment.NewLine, String.Empty).Length
+            lngRows += 4 + lngLines
+            If lngRows > 60 And blnPage2 = True Then
+                strOutput &= "<div style = ""page-break-after: always""></div>" & vbCrLf & vbCrLf
+                lngRows = 4 + lngLines
+            End If
             strOutput &= pair.Key & ":  " & vbCrLf & "   " & pair.Value & vbCrLf & vbCrLf
+            blnPage2 = True
         Next
 
         Using sw As New StreamWriter(strFileOut, False, System.Text.Encoding.UTF8)
