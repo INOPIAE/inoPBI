@@ -49,7 +49,9 @@ Public Class FrmProjects
             intCount += 1
         Next
 
-        LbProjects.SelectedIndex = ListIndex
+        If LbProjects.Items.Count > 0 Then
+            LbProjects.SelectedIndex = ListIndex
+        End If
     End Sub
 
     Private Sub CmdRenameProject_Click(sender As Object, e As EventArgs) Handles CmdRenameProject.Click

@@ -217,6 +217,7 @@ Public Class ClsJSONHandling
         strReturn = strReturn.Replace("\""", "\?")
         strReturn = strReturn.Replace("""", "")
         strReturn = strReturn.Replace("\?", """")
+        strReturn = strReturn.Replace("\\", "\")
         strReturn = strReturn.Replace(", ", ",")
         strReturn = strReturn.Replace(",", ", ")
         strReturn = strReturn.Replace(", , ", ",")
