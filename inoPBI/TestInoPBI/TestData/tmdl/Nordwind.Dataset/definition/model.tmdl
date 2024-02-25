@@ -1,0 +1,29 @@
+model Model
+	culture: de-DE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: de-DE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBIDesktopVersion = 2.126.927.0 (24.02)
+
+annotation PBI_QueryOrder = ["Nordwind","Datumstabelle","Startdatum","Regionen","_Measures"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Nordwind
+ref table DateTableTemplate_5a851e0b-1f46-478d-a3d7-9c9f70cff70b
+ref table Datumstabelle
+ref table Regionen
+ref table _Measures
+ref table Neukunden
+ref table LocalDateTable_1c12f4d4-65d3-4ade-8a37-a54b988f158f
+
+ref role Amerika
+ref role Europa
+ref role Nordeuropa
+ref role Alles
+

@@ -1,0 +1,7 @@
+role Europa
+	modelPermission: read
+
+	tablePermission Regionen = [Region] = "Europa"
+
+	annotation PBI_Id = 2fdac97844b745f1b24acf19ac91c9b9
+

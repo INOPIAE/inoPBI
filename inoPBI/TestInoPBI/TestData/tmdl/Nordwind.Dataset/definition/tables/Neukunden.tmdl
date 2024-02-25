@@ -1,0 +1,62 @@
+table Neukunden
+	lineageTag: 9207b512-8cf7-4643-bdf6-8061b3ee6fdd
+
+	column Firma
+		dataType: string
+		lineageTag: d059c2a1-5477-4cb2-a00f-98026dde15f4
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Nordwind[Firma]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Erster Umsatz'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 863d215c-7775-415d-bd7c-fcb51803a729
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Erster Umsatz]
+
+		variation Variation
+			isDefault
+			relationship: 2a82a801-d289-4fac-ab86-82682efe8504
+			defaultHierarchy: LocalDateTable_1c12f4d4-65d3-4ade-8a37-a54b988f158f.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Erstes Jahr'
+		dataType: double
+		formatString: 0
+		lineageTag: dca6350c-e637-4817-8965-707d8183c2b3
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Erstes Jahr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Erstes Jahr alle'
+		dataType: string
+		lineageTag: 45467804-b11b-4c84-a5ed-b8fe8ebc4612
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Erstes Jahr alle]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Neukunden = calculated
+		mode: import
+		source =
+				SUMMARIZE(
+				    Nordwind,
+				    Nordwind[Firma],
+				    "Erster Umsatz", MIN(Nordwind[Bestelldatum]),
+				    "Erstes Jahr",IF(VALUE(FORMAT(MIN(Nordwind[Bestelldatum]),"YYYY"))<=2020,2020,Value(FORMAT(MIN(Nordwind[Bestelldatum]),"YYYY"))),
+				    "Erstes Jahr alle",FORMAT(MIN(Nordwind[Bestelldatum]),"YYYY"))
+
+	annotation PBI_Id = e97dff81816e4eac9bfbe9c1c15ab251
+

@@ -1,0 +1,17 @@
+relationship 3a9f896c-bda8-4b00-bb09-607352e3071a
+	fromColumn: Nordwind.Bestelldatum
+	toColumn: Datumstabelle.Datum
+
+relationship 16cb3ca2-07e4-454d-aac3-d2f218d5b8d1
+	fromColumn: Nordwind.Land
+	toColumn: Regionen.Land
+
+relationship 2a82a801-d289-4fac-ab86-82682efe8504
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Neukunden.'Erster Umsatz'
+	toColumn: LocalDateTable_1c12f4d4-65d3-4ade-8a37-a54b988f158f.Date
+
+relationship c7d115bc-9eca-4fa9-86fd-2942a2bffaed
+	fromColumn: Nordwind.Firma
+	toColumn: Neukunden.Firma
+

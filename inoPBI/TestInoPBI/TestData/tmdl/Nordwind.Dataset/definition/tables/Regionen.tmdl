@@ -1,0 +1,49 @@
+table Regionen
+	lineageTag: b57dba71-77e2-44c4-9b25-2f9990aea6c2
+
+	column Land
+		dataType: string
+		lineageTag: 248e956a-d869-4861-9f2e-1ad39d8bcd73
+		summarizeBy: none
+		sourceColumn: Land
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: ec44f0e7-7844-4c17-92c9-f4408a56306a
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Kurz'
+		dataType: string
+		lineageTag: 9d61a149-1ee5-4a2f-8f9f-ed4f841e2320
+		summarizeBy: none
+		sourceColumn: Region Kurz
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region English'
+		dataType: string
+		lineageTag: 9378a014-0864-41ec-b0ff-d59c883064bd
+		summarizeBy: none
+		sourceColumn: Region English
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Regionen-ddae86e9-e7a4-402a-b9a2-2dca27ee52a5 = m
+		mode: import
+		source =
+				let
+				    Quelle = Excel.Workbook(File.Contents("C:\Users\Marcus\OneDrive - inopiae\Dokumente\Austausch Laptops\powerbi\Nordwind-RegionenText.xlsx"), null, true),
+				    Regionen_Table = Quelle{[Item="Regionen",Kind="Table"]}[Data],
+				    #"Geänderter Typ" = Table.TransformColumnTypes(Regionen_Table,{{"Land", type text}, {"Region", type text}})
+				in
+				    #"Geänderter Typ"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

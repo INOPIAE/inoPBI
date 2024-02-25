@@ -1,0 +1,49 @@
+table _Measures
+	lineageTag: 98c1d25e-56f5-4d43-b9d7-c1309d48a81d
+
+	measure Umsatz = sum(Nordwind[Endpreis])
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		displayFolder: Umsatz
+		lineageTag: 513ef081-f4dc-4da5-ad40-73a07c3a2a21
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Umsatz Vorjahr' = CALCULATE(_Measures[Umsatz],SAMEPERIODLASTYEAR(Datumstabelle[Datum]))
+		displayFolder: Umsatz
+		lineageTag: a10743ad-849e-4700-9b75-7cde82365fca
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Menge = SUM(Nordwind[Anzahl])
+		formatString: 0
+		lineageTag: e4ad3a1e-befb-4c06-8b42-f5bc70f8dd84
+
+	measure Tacho_Max = IF(_Measures[Umsatz Vorjahr]>_Measures[Umsatz],_Measures[Umsatz Vorjahr]*1.2,_Measures[Umsatz]*1.2)
+		lineageTag: a0bf950f-5cde-425d-b25f-9d24934b140b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Tacho_Min = IF(_Measures[Umsatz Vorjahr]<_Measures[Umsatz],_Measures[Umsatz Vorjahr]*0.8,_Measures[Umsatz]*0.8)
+		lineageTag: 3eb46194-876e-4d0e-abf5-21e0437afc75
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Anzahl der eindeutigen Kunden
+	measure Kunden = DISTINCTCOUNT(Nordwind[Firma])
+		formatString: 0
+		lineageTag: 57dd8079-df63-444d-b6f7-c7ad60ad444f
+
+	partition _Measures-abee16bd-4406-47fe-a745-2df0ba6b26f3 = m
+		mode: import
+		source =
+				let
+				    Quelle = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Spalte ""1""" = _t]),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(Quelle,{{"Spalte ""1""", type text}}),
+				    #"Entfernte Spalten" = Table.RemoveColumns(#"Geänderter Typ",{"Spalte ""1"""})
+				in
+				    #"Entfernte Spalten"
+
+	annotation PBI_ResultType = Table
+

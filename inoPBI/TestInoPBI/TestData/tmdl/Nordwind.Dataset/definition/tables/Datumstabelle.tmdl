@@ -1,0 +1,179 @@
+table Datumstabelle
+	lineageTag: d83939be-7ef0-48f6-acf2-aa5f258927f4
+	dataCategory: Time
+
+	column Datum
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 1cc0b34b-9ef4-4eb3-a82c-8c082e14b6bf
+		summarizeBy: none
+		sourceColumn: Datum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Jahr
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f1ae99a-87ee-45e3-8a49-82372ac34e6a
+		summarizeBy: sum
+		sourceColumn: Jahr
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monat
+		dataType: int64
+		formatString: 0
+		lineageTag: f53ba705-3f33-44c4-bcd3-38a806bb84b5
+		summarizeBy: sum
+		sourceColumn: Monat
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monatsname
+		dataType: string
+		lineageTag: 498f69da-0ab1-4eee-b314-6a6923f63b7e
+		summarizeBy: none
+		sourceColumn: Monatsname
+		sortByColumn: Monat
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quartal
+		dataType: int64
+		formatString: 0
+		lineageTag: f90b9385-5bf9-46cc-994f-9e29505ece1f
+		summarizeBy: sum
+		sourceColumn: Quartal
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuartalT
+		dataType: string
+		lineageTag: 65c94715-fcc7-430a-a570-737d230246d6
+		summarizeBy: none
+		sourceColumn: QuartalT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PeriodenID
+		dataType: int64
+		formatString: 0
+		lineageTag: 69bffa1b-d6d2-461a-aa22-f930f3e3b90a
+		summarizeBy: count
+		sourceColumn: PeriodenID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monat Jahr'
+		dataType: string
+		lineageTag: a78568c5-e083-4747-9edd-24836438425d
+		summarizeBy: none
+		sourceColumn: Monat Jahr
+		sortByColumn: PeriodenID
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Woche des Jahres'
+		dataType: int64
+		formatString: 0
+		lineageTag: fcff7d4e-e791-4040-badd-c5c12488d36d
+		summarizeBy: none
+		sourceColumn: Woche des Jahres
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tag der Woche'
+		dataType: int64
+		formatString: 0
+		lineageTag: 103098c9-3e67-40d2-b031-6295e88972d9
+		summarizeBy: none
+		sourceColumn: Tag der Woche
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name des Tags'
+		dataType: string
+		lineageTag: b9ecc9b1-e966-4eaa-9fe7-9cd4923c7bc1
+		summarizeBy: none
+		sourceColumn: Name des Tags
+		sortByColumn: 'Tag der Woche'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISO_Jahr
+		dataType: double
+		lineageTag: b7980f6d-c8e6-4c0e-ab17-1efc8b9a2c34
+		summarizeBy: none
+		sourceColumn: ISO_Jahr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ISO_KW
+		dataType: double
+		lineageTag: 4f2faa19-d1c5-4edd-89d1-729006321c5e
+		summarizeBy: none
+		sourceColumn: ISO_KW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ISO_Jahr_KW
+		dataType: string
+		lineageTag: bda4fed5-d2ca-45bb-a111-0616f1f185b1
+		summarizeBy: none
+		sourceColumn: ISO_Jahr_KW
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISO_Quartal
+		dataType: string
+		lineageTag: ac1989a7-55cb-4597-960e-469c2f0bd3d6
+		summarizeBy: none
+		sourceColumn: ISO_Quartal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Datumstabelle-ce14b6a5-2208-47d8-bea3-9bebda0f95dc = m
+		mode: import
+		source = ```
+				let 
+				    Quelle = List.Dates, 
+				    ListeErstellen = Quelle(Startdatum, Duration.Days(#date(Date.Year(DateTime.FixedLocalNow()),12,31)-Startdatum)+1, #duration(1, 0, 0, 0)),
+				    InTabelleKonvertiert = Table.FromList(ListeErstellen, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    Datumsformat = Table.TransformColumnTypes(InTabelleKonvertiert,{{"Column1", type date}}),
+				    Datumsspalte = Table.RenameColumns(Datumsformat,{{"Column1", "Datum"}}),
+				    JahrEingefügt = Table.AddColumn(Datumsspalte, "Jahr", each Date.Year([Datum]), Int64.Type),
+				    MonatEingefügt = Table.AddColumn(JahrEingefügt, "Monat", each Date.Month([Datum]), Int64.Type),
+				    Monatsname = Table.AddColumn(MonatEingefügt, "Monatsname", each Date.MonthName([Datum]), type text),
+				    QuartalEingefügt = Table.AddColumn(Monatsname, "Quartal", each Date.QuarterOfYear([Datum]), Int64.Type),
+				    QuartalText = Table.AddColumn(QuartalEingefügt, "QuartalT", each "Q" & Number.ToText([Quartal])),
+				    QuartalTextÜberschrift = Table.TransformColumnTypes(QuartalText,{{"QuartalT", type text}}),
+				    MonatJahr = Table.AddColumn(QuartalTextÜberschrift, "Monat Jahr", each [Monatsname]& " " &Number.ToText([Jahr])),
+				    PeriodenID = Table.AddColumn(MonatJahr, "PeriodenID", each [Monat]+12*([Jahr]-2000)-12),
+				    PeriodenIDTyp = Table.TransformColumnTypes(PeriodenID,{{"PeriodenID", Int64.Type}}),
+				    KW = Table.AddColumn(PeriodenIDTyp, "Woche des Jahres", each Date.WeekOfYear([Datum]), Int64.Type),
+				    Wochentag_Zahl = Table.AddColumn(KW, "Tag der Woche", each Date.DayOfWeek([Datum]), Int64.Type),
+				    Wochentag = Table.AddColumn(Wochentag_Zahl, "Name des Tags", each Date.DayOfWeekName([Datum]), type text),
+				    ISO_Jahr =Table.AddColumn(Wochentag,"ISO_Jahr", each Date.Year(Date.AddDays([Datum],3-Date.DayOfWeek([Datum],1))), type number),Hilfsdatum = Table.AddColumn(ISO_Jahr , "Hilfsdatum", each #date([ISO_Jahr],1,3)),
+				    ISO_KW = Table.AddColumn(Hilfsdatum ,"ISO_KW", each Number.IntegerDivide(Duration.Days( [Datum]-[Hilfsdatum])+Date.DayOfWeek([Hilfsdatum],0)+6,7), type number ),
+				    ISO_Jahr_KW = Table.AddColumn(ISO_KW, "ISO_Jahr_KW", each Text.Combine({Text.From([ISO_Jahr], "de-DE"), Text.From(Number.ToText([ISO_KW], "00"), "de-DE")}, "/"), type text),
+				    HilfsdatumEntfernen = Table.RemoveColumns(ISO_Jahr_KW,{"Hilfsdatum"}),
+				    ISO_Quartal = Table.AddColumn(HilfsdatumEntfernen, "ISO_Quartal", each if [ISO_KW]>39 then 4 else Number.RoundUp([ISO_KW]/13,0))
+				in
+				    ISO_Quartal
+				```
+
+	annotation PBI_ResultType = Table
+

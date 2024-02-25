@@ -1,0 +1,378 @@
+{
+  "config": "{\"version\":\"5.37\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY21SU11\",\"version\":\"5.29\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"isPersistentUserStateDisabled\":false,\"hideVisualContainerHeader\":false,\"useStylableVisualContainerHeader\":true,\"exportDataMode\":1,\"useNewFilterPaneExperience\":true,\"optOutNewFilterPaneExperience\":false,\"defaultFilterActionIsDataFilter\":false,\"useCrossReportDrillthrough\":false,\"allowChangeFilterTypes\":true,\"allowInlineExploration\":true,\"disableFilterPaneSearch\":false,\"enableDeveloperMode\":false,\"useEnhancedTooltips\":false,\"filterPaneHiddenInEditMode\":false},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "filters": "[{\"name\":\"Filter219496a918fb09f1b3b3\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Datumstabelle\"}},\"Property\":\"Jahr\"}},\"type\":\"Advanced\",\"howCreated\":1}]",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSection4c4ad800a1c8ccff40f8",
+      "config": "{}",
+      "name": "Pod",
+      "parameters": "[{\"name\":\"Param_Filteradae02b80a3b250886c8\",\"boundFilter\":\"Filteradae02b80a3b250886c8\",\"fieldExpr\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Nordwind\"}},\"Hierarchy\":\"Region Hierarchie\"}},\"Level\":\"Region\"}}}]",
+      "type": 1
+    },
+    {
+      "boundSection": "ReportSectionb53dcbce9334fcfd5e32",
+      "config": "{}",
+      "name": "Pod1",
+      "parameters": "[{\"name\":\"Param_Filter397ee188d95366930ad7\",\"boundFilter\":\"Filter397ee188d95366930ad7\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Nordwind\"}},\"Property\":\"Land\"}}}]",
+      "type": 1
+    },
+    {
+      "boundSection": "ReportSectionc27d1d2724290b002ef3",
+      "config": "{}",
+      "name": "Pod2",
+      "parameters": "[{\"name\":\"Param_Filter20d6ac26b1be03d1d160\",\"boundFilter\":\"Filter20d6ac26b1be03d1d160\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Nordwind\"}},\"Property\":\"Firma\"}}}]",
+      "type": 1
+    }
+  ],
+  "publicCustomVisuals": [],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY21SU11",
+            "path": "BaseThemes/CY21SU11.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Übersicht",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1217d4316619c3036675\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.72644376899696,\"y\":410.4559270516717,\"z\":5000,\"width\":695.4407294832827,\"height\":267.47720364741645}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Datumstabelle.Monat Jahr\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Umsatz Vorjahr\"},{\"queryRef\":\"_Measures.Umsatz\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Monat Jahr\"},\"Name\":\"Datumstabelle.Monat Jahr\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz Vorjahr\"},\"Name\":\"_Measures.Umsatz Vorjahr\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"lineStyles\":[{\"properties\":{\"showSeries\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}},\"selector\":{\"metadata\":\"_Measures.Umsatz\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}}},\"selector\":{\"metadata\":\"_Measures.Umsatz Vorjahr\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Umsatz  und Umsatz Vorjahr pro Monat'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 267.48,
+          "width": 695.44,
+          "x": 9.73,
+          "y": 410.46,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"13db42f89f1dfca8f4d9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.72644376899696,\"y\":0,\"z\":0,\"width\":321.9452887537994,\"height\":110.88145896656536}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Umsatz\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 110.88,
+          "width": 321.95,
+          "x": 9.73,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"655428549cad9b9b843d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":765.4711246200608,\"y\":410.4559270516717,\"z\":6000,\"width\":491.1854103343465,\"height\":294.7112462006079}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"Nordwind2021.Land\",\"active\":true}],\"Size\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Series\":[{\"queryRef\":\"Nordwind2021.Kategoriename\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Land\"},\"Name\":\"Nordwind2021.Land\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Kategoriename\"},\"Name\":\"Nordwind2021.Kategoriename\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 294.71,
+          "width": 491.19,
+          "x": 765.47,
+          "y": 410.46,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"906e86af202c4d1b2616\",\"layouts\":[{\"id\":0,\"position\":{\"x\":331.6717325227964,\"y\":0,\"z\":7000,\"width\":446.4437689969605,\"height\":125.47112462006079}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"MinValue\":[{\"queryRef\":\"_Measures.Tacho_Min\"}],\"MaxValue\":[{\"queryRef\":\"_Measures.Tacho_Max\"}],\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"TargetValue\":[{\"queryRef\":\"_Measures.Umsatz Vorjahr\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Tacho_Min\"},\"Name\":\"_Measures.Tacho_Min\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Tacho_Max\"},\"Name\":\"_Measures.Tacho_Max\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz Vorjahr\"},\"Name\":\"_Measures.Umsatz Vorjahr\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Umsatzvergleich zu Vorjahr (Linie)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 125.47,
+          "width": 446.44,
+          "x": 331.67,
+          "y": 0.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"9d61fbb5e113135de589\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.72644376899696,\"y\":132.27963525835867,\"z\":1000,\"width\":280.1215805471125,\"height\":268.4498480243161}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Category\":[{\"queryRef\":\"Nordwind.Region Hierarchie.Region\",\"active\":true},{\"queryRef\":\"Nordwind.Region Hierarchie.Land\"},{\"queryRef\":\"Nordwind.Region Hierarchie.Firma\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Hierarchy\":\"Region Hierarchie\"}},\"Level\":\"Region\"},\"Name\":\"Nordwind.Region Hierarchie.Region\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Hierarchy\":\"Region Hierarchie\"}},\"Level\":\"Land\"},\"Name\":\"Nordwind.Region Hierarchie.Land\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Hierarchy\":\"Region Hierarchie\"}},\"Level\":\"Firma\"},\"Name\":\"Nordwind.Region Hierarchie.Firma\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 268.45,
+          "width": 280.12,
+          "x": 9.73,
+          "y": 132.28,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"b1d174dbd125a957ca03\",\"layouts\":[{\"id\":0,\"position\":{\"x\":369.6048632218845,\"y\":132.27963525835867,\"z\":2000,\"width\":280.1215805471125,\"height\":268.4498480243161}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Nordwind.Kategoriename\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Kategoriename\"},\"Name\":\"Nordwind.Kategoriename\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 268.45,
+          "width": 280.12,
+          "x": 369.60,
+          "y": 132.28,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"d0162bc331084c177ad3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":778.1155015197569,\"y\":0,\"z\":4000,\"width\":501.88449848024317,\"height\":76.83890577507599}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Datumstabelle.Jahr\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Jahr\"},\"Name\":\"Datumstabelle.Jahr\"}]},\"syncGroup\":{\"groupName\":\"Jahr\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Jahr\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2023L\"}}]]}}}]}}}}]}}}",
+          "filters": "[{\"name\":\"Filter779fa495284218198378\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Datumstabelle\"}},\"Property\":\"Jahr\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Jahr\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 76.84,
+          "width": 501.88,
+          "x": 778.12,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"de7599804b4942b9c0d7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":765.4711246200608,\"y\":132.27963525835867,\"z\":3000,\"width\":296.65653495440733,\"height\":267.47720364741645}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Category\":[{\"queryRef\":\"Nordwind.Verkäufer\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Verkäufer\"},\"Name\":\"Nordwind.Verkäufer\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 267.48,
+          "width": 296.66,
+          "x": 765.47,
+          "y": 132.28,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"type\":0}",
+      "displayName": "Region",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filteradae02b80a3b250886c8\",\"expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Nordwind\"}},\"Hierarchy\":\"Region Hierarchie\"}},\"Level\":\"Region\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Region\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Amerika'\"}}]]}}}]},\"type\":\"Categorical\",\"cachedDisplayNames\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Nordwind\"}},\"Property\":\"Region\"}},\"Right\":{\"Literal\":{\"Value\":\"'Amerika'\"}}}}},\"displayName\":\"Amerika\"}],\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "ReportSection4c4ad800a1c8ccff40f8",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"11f24e7b913854b747a4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":65.16717325227964,\"z\":0,\"width\":795.6231003039514,\"height\":251.91489361702128}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Category\":[{\"queryRef\":\"Nordwind2021.Land\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Land\"},\"Name\":\"Nordwind2021.Land\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 251.91,
+          "width": 795.62,
+          "x": 0.00,
+          "y": 65.17,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"386a2d6917ef9e969f7e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":403.64741641337315,\"y\":324.86322188449844,\"z\":3000,\"width\":296.65653495440733,\"height\":267.47720364741645}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Category\":[{\"queryRef\":\"Nordwind2021.Nachname\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Verkäufer\"},\"Name\":\"Nordwind2021.Nachname\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 267.48,
+          "width": 296.66,
+          "x": 403.65,
+          "y": 324.86,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"4068bdc233519abb92e8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":43.76899696048633,\"y\":0,\"z\":5000,\"width\":50.577507598784194,\"height\":39.87841945288754}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'reset'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'ReportSection'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 39.88,
+          "width": 50.58,
+          "x": 43.77,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"91fe4294165d51128fa0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":7.781155015197539,\"y\":324.86322188449844,\"z\":2000,\"width\":280.1215805471125,\"height\":268.4498480243161}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Category\":[{\"queryRef\":\"Nordwind2021.Kategoriename\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Kategoriename\"},\"Name\":\"Nordwind2021.Kategoriename\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 268.45,
+          "width": 280.12,
+          "x": 7.78,
+          "y": 324.86,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"af0bc00ab08716906218\",\"layouts\":[{\"id\":0,\"position\":{\"x\":100.1823708206687,\"y\":0,\"z\":4000,\"width\":177.0212765957447,\"height\":56.413373860182375}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Regionen.Region\"},{\"queryRef\":\"Sum(Datumstabelle.Jahr)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Regionen\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Region\"},\"Name\":\"Regionen.Region\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Jahr\"},\"Name\":\"Sum(Datumstabelle.Jahr)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Region\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 56.41,
+          "width": 177.02,
+          "x": 100.18,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"c3eb66a9157a9fc45bf0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":1000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Neukundengeschäft",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectiona456c0be4d3140eec403",
+      "ordinal": 5,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"16527f1085ee983eeb81\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":242.5,\"width\":816,\"height\":205,\"z\":1000,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Datumstabelle.Jahr\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Series\":[{\"queryRef\":\"Neukunden.Erstes Jahr\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Neukunden\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Jahr\"},\"Name\":\"Datumstabelle.Jahr\",\"NativeReferenceName\":\"Jahr\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\",\"NativeReferenceName\":\"Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Erstes Jahr\"},\"Name\":\"Neukunden.Erstes Jahr\",\"NativeReferenceName\":\"Erstes Jahr\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 205.00,
+          "width": 816.00,
+          "x": 10.00,
+          "y": 242.50,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"3964e6f9b78a0ddbb404\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.955555555555556,\"y\":0,\"z\":0,\"width\":1022.5777777777778,\"height\":204.8,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Datumstabelle.Jahr\",\"active\":true}],\"Values\":[{\"queryRef\":\"_Measures.Umsatz\"},{\"queryRef\":\"_Measures.Kunden\"}],\"Columns\":[{\"queryRef\":\"Neukunden.Erstes Jahr\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Neukunden\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Jahr\"},\"Name\":\"Datumstabelle.Jahr\",\"NativeReferenceName\":\"Geschäftsjahr\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\",\"NativeReferenceName\":\"Umsatz\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Kunden\"},\"Name\":\"_Measures.Kunden\",\"NativeReferenceName\":\"Kunden\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Erstes Jahr\"},\"Name\":\"Neukunden.Erstes Jahr\",\"NativeReferenceName\":\"Neukundenjahr\"}]},\"columnProperties\":{\"Datumstabelle.Jahr\":{\"displayName\":\"Geschäftsjahr\"},\"Neukunden.Erstes Jahr\":{\"displayName\":\"Neukundenjahr\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"grid\":[{\"properties\":{\"gridVertical\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridVerticalColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 204.80,
+          "width": 1022.58,
+          "x": 9.96,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"type\":0}",
+      "displayName": "Land",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter397ee188d95366930ad7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Nordwind\"}},\"Property\":\"Land\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Land\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Frankreich'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "ReportSectionb53dcbce9334fcfd5e32",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"18c04ca84224aaeba195\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":1000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"2a42893623ac28515269\",\"layouts\":[{\"id\":0,\"position\":{\"x\":43.76899696048633,\"y\":0,\"z\":5000,\"width\":50.577507598784194,\"height\":39.87841945288754}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'reset'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'ReportSection'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 39.88,
+          "width": 50.58,
+          "x": 43.77,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"44af9d331b4da3fe482d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":72.94832826747721,\"z\":0,\"width\":795.6231003039514,\"height\":244.13373860182372}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Category\":[{\"queryRef\":\"Nordwind2021.Firma\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Firma\"},\"Name\":\"Nordwind2021.Firma\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 244.13,
+          "width": 795.62,
+          "x": 0.00,
+          "y": 72.95,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"5bb0a499e60e95421d5a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":100.1823708206687,\"y\":0,\"z\":4000,\"width\":296.65653495440733,\"height\":55.44072948328268}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Nordwind2021.Land\"},{\"queryRef\":\"Sum(Datumstabelle.Jahr)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Land\"},\"Name\":\"Nordwind2021.Land\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Jahr\"},\"Name\":\"Sum(Datumstabelle.Jahr)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Land\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 55.44,
+          "width": 296.66,
+          "x": 100.18,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"5dca87f4541e2cc12bc4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":403.64741641337315,\"y\":324.86322188449844,\"z\":3000,\"width\":296.65653495440733,\"height\":267.47720364741645}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Category\":[{\"queryRef\":\"Nordwind2021.Nachname\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Verkäufer\"},\"Name\":\"Nordwind2021.Nachname\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 267.48,
+          "width": 296.66,
+          "x": 403.65,
+          "y": 324.86,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"acac0c31da21cd2225fe\",\"layouts\":[{\"id\":0,\"position\":{\"x\":7.781155015197539,\"y\":324.86322188449844,\"z\":2000,\"width\":280.1215805471125,\"height\":268.4498480243161}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Category\":[{\"queryRef\":\"Nordwind2021.Kategoriename\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Kategoriename\"},\"Name\":\"Nordwind2021.Kategoriename\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 268.45,
+          "width": 280.12,
+          "x": 7.78,
+          "y": 324.86,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Q & A",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectionc1177024a36b67231538",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"b5381c0e71fbbf719897\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.72644376899696,\"y\":0,\"z\":0,\"width\":871.4893617021277,\"height\":621.5197568389058}}],\"singleVisual\":{\"visualType\":\"qnaVisual\",\"drillFilterOtherVisuals\":true}}",
+          "height": 621.52,
+          "width": 871.49,
+          "x": 9.73,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"type\":0}",
+      "displayName": "Kunde",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter20d6ac26b1be03d1d160\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Nordwind\"}},\"Property\":\"Firma\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Firma\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Blondel père et fils'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "ReportSectionc27d1d2724290b002ef3",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"032b16a821491eca7415\",\"layouts\":[{\"id\":0,\"position\":{\"x\":43.76899696048633,\"y\":0,\"z\":5000,\"width\":50.577507598784194,\"height\":39.87841945288754}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'reset'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'ReportSection'\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Zurück zur Startseite'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 39.88,
+          "width": 50.58,
+          "x": 43.77,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"074885c3daeeea058745\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":57.38601823708207,\"z\":0,\"width\":497.0212765957447,\"height\":280.1215805471125}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Datumstabelle.Monat Jahr\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Umsatz Vorjahr\"},{\"queryRef\":\"_Measures.Umsatz\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Monat Jahr\"},\"Name\":\"Datumstabelle.Monat Jahr\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz Vorjahr\"},\"Name\":\"_Measures.Umsatz Vorjahr\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Umsatz  und Umsatz Vorjahr pro Monat'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 280.12,
+          "width": 497.02,
+          "x": 0.00,
+          "y": 57.39,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"15dd1d6e2cf39fd97583\",\"layouts\":[{\"id\":0,\"position\":{\"x\":94.34650455927051,\"y\":0,\"z\":3000,\"width\":177.9939209726444,\"height\":57.38601823708207}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Nordwind2021.Firma\"},{\"queryRef\":\"Sum(Datumstabelle.Jahr)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Datumstabelle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Firma\"},\"Name\":\"Nordwind2021.Firma\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Jahr\"},\"Name\":\"Sum(Datumstabelle.Jahr)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Firma\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 57.39,
+          "width": 177.99,
+          "x": 94.35,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"3df20762840a4b6acfed\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":337,\"width\":497,\"height\":264,\"z\":4000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_Measures.Umsatz\"}],\"Category\":[{\"queryRef\":\"Nordwind2021.Kategoriename\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Kategoriename\"},\"Name\":\"Nordwind2021.Kategoriename\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 264.00,
+          "width": 497.00,
+          "x": 0.00,
+          "y": 337.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"4deacf106bc8be9680bb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":544.6808510638298,\"y\":57.38601823708207,\"z\":2000,\"width\":542.7355623100304,\"height\":543.7082066869301}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Nordwind2021.Artikelname\"},{\"queryRef\":\"Nordwind2021.Kategoriename\"},{\"queryRef\":\"_Measures.Umsatz\"},{\"queryRef\":\"_Measures.Menge\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"Nordwind\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Kategoriename\"},\"Name\":\"Nordwind2021.Kategoriename\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"Artikelname\"},\"Name\":\"Nordwind2021.Artikelname\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"},\"Name\":\"_Measures.Umsatz\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Menge\"},\"Name\":\"_Measures.Menge\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Umsatz\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 543.71,
+          "width": 542.74,
+          "x": 544.68,
+          "y": 57.39,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"c0a51bdb4f0d426c081c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":43.76899696048633,\"height\":39.87841945288754}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 39.88,
+          "width": 43.77,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+table Nordwind
+	lineageTag: 6f9bbb63-d3dd-4018-8252-822b37003c2a
+
+	column Artikel-Nr
+		dataType: int64
+		formatString: 0
+		lineageTag: c52a9e8f-1e26-4978-8162-fab91e31fe50
+		summarizeBy: sum
+		sourceColumn: Artikel-Nr
+
+		annotation SummarizationSetBy = Automatic
+
+	column Artikelname
+		dataType: string
+		lineageTag: 971fce56-29f6-4120-8435-7aebc254e1ff
+		summarizeBy: none
+		sourceColumn: Artikelname
+
+		annotation SummarizationSetBy = Automatic
+
+	column Einzelpreis
+		dataType: double
+		lineageTag: 61b35ac1-487d-41f7-af7e-f8f72b365a69
+		summarizeBy: sum
+		sourceColumn: Einzelpreis
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Anzahl
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b702376-02cd-4991-9406-3303d16d84e3
+		summarizeBy: sum
+		sourceColumn: Anzahl
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rabatt
+		dataType: double
+		lineageTag: 0301f248-482d-4780-b6b6-a2116ef06c1a
+		summarizeBy: sum
+		sourceColumn: Rabatt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Bestelldatum
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 76e9d7a1-c269-4926-98c7-93427597f033
+		summarizeBy: none
+		sourceColumn: Bestelldatum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Kategoriename
+		dataType: string
+		lineageTag: f085512d-95c4-4537-bf1f-3e90b066177f
+		summarizeBy: none
+		sourceColumn: Kategoriename
+
+		annotation SummarizationSetBy = Automatic
+
+	column Firma
+		dataType: string
+		lineageTag: 67c46ec8-c637-4945-96be-52343d1d439a
+		summarizeBy: none
+		sourceColumn: Firma
+
+		annotation SummarizationSetBy = Automatic
+
+	column Land
+		dataType: string
+		lineageTag: 62a909ad-f08a-4204-a20c-eaaa1c15ec66
+		summarizeBy: none
+		sourceColumn: Land
+
+		annotation SummarizationSetBy = Automatic
+
+	column Verkäufer
+		dataType: string
+		lineageTag: e130744a-cba1-460f-9767-9b38b841002e
+		summarizeBy: none
+		sourceColumn: Verkäufer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Endpreis
+		dataType: double
+		lineageTag: c11f01b9-ae50-4153-a34d-7c8957f4d605
+		summarizeBy: sum
+		sourceColumn: Endpreis
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Region = RELATED(Regionen[Region])
+		dataType: string
+		lineageTag: 71be4ec8-54fa-43f6-9d3f-f389794c256a
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Region Hierarchie'
+		lineageTag: 273bf799-2a49-43d8-9dd8-7aef5745a85b
+
+		level Region
+			lineageTag: 9934f3df-f84a-4885-83f4-d0eed2399e9a
+			column: Region
+
+		level Land
+			lineageTag: b8ecb890-9914-40f5-baa9-97d52206c0ad
+			column: Land
+
+		level Firma
+			lineageTag: acb5cd9e-b339-42a8-8a08-3b2a0cf1acc2
+			column: Firma
+
+	partition Nordwind-6a8f37ee-bcb5-4c0e-a5ef-9d0c942fbf93 = m
+		mode: import
+		source =
+				let
+				    Quelle = Csv.Document(File.Contents("C:\Users\Marcus\OneDrive - inopiae\Dokumente\Austausch Laptops\powerbi\Nordwind2024.txt"),[Delimiter="#(tab)", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Höher gestufte Header" = Table.PromoteHeaders(Quelle, [PromoteAllScalars=true]),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Höher gestufte Header",{{"Artikel-Nr", Int64.Type}, {"Artikelname", type text}, {"Einzelpreis", type number}, {"Anzahl", Int64.Type}, {"Rabatt", Percentage.Type}, {"Bestelldatum", type date}, {"Kategoriename", type text}, {"Firma", type text}, {"Land", type text}, {"Nachname", type text}}),
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"Geänderter Typ",{{"Nachname", "Verkäufer"}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(#"Umbenannte Spalten", "Endpreis", each Number.Round([Einzelpreis]*[Anzahl]*(1-[Rabatt]),2)),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte",{{"Endpreis", type number}})
+				in
+				    #"Geänderter Typ1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
