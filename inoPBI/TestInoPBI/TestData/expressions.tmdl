@@ -1,0 +1,22 @@
+expression Startdatum = #date(2022, 1, 1) meta [IsParameterQuery=true, Type="Date", IsParameterQueryRequired=true]
+	lineageTag: 4b8700c1-2979-4d62-b96c-2b03f5d8cf65
+	queryGroup: Parameter
+
+	annotation PBI_ResultType = Date
+
+expression Diff = 1 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+	lineageTag: 2cbd7490-579e-46a5-bb48-82bba3f2129d
+
+	annotation PBI_ResultType = Number
+
+expression SharepointOrdner = "https://mydomain.com/sites/site/Austausch%20Laptops/project/Daten/" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 051855e8-11b7-4995-a6ed-017672249887
+	queryGroup: Parameter
+
+	annotation PBI_ResultType = Text
+
+expression SharepointSite = "https://mydomain.com/sites/site/" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 6004138a-407e-41b0-af99-d1ab27425763
+	queryGroup: Parameter
+
+	annotation PBI_ResultType = Text

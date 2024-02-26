@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Runtime
 Imports inoPBIDLL
+Imports inoPBIDLL.ClsReplacement
 Imports NUnit.Framework
 Imports NUnit.Framework.Internal
 
@@ -86,6 +87,32 @@ Namespace TestInoPBI
 
             'Assert.True(cRep.ExtractMeasures(strFile, strFileOut))
 
+
+        End Sub
+
+
+        <Test>
+        Public Sub TestReplaceReferenceTMDL()
+            Dim strFile As String = testPath & "\TestData\expressions.tmdl"
+            Dim strFileOut As String = testFolder & "\testoutExpressions.tmdl"
+            Dim strReplacement As String = testPath & "\TestData\testDataReplacementTDML.txt"
+
+            Dim cr As Collection(Of ClsReplacement.Replacement) = cRep.GetReplacements(strReplacement)
+
+
+            Assert.That(cRep.ReplaceReferenceTMDL(strFile, strReplacement, strFileOut), NUnit.Framework.Is.EqualTo(True))
+
+            Dim strTest As String
+            Using sr As New StreamReader(strFileOut)
+                strTest = sr.ReadToEnd
+            End Using
+
+            For Each c As ClsReplacement.Replacement In cr
+                Dim strFrom As String = c.Title & " = " & c.StrFrom
+                Dim strTo As String = c.Title & " = " & c.StrTo
+                Assert.That(strTest, Does.Contain(strTo))
+                Assert.That(strTest, Does.Not.Contain(strFrom))
+            Next
 
         End Sub
     End Class

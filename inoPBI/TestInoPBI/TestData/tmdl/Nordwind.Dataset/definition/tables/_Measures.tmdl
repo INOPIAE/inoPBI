@@ -35,6 +35,16 @@ table _Measures
 		formatString: 0
 		lineageTag: 57dd8079-df63-444d-b6f7-c7ad60ad444f
 
+	measure 'Deckungsbeitrag Vorjahr gesamt' = ```
+			
+			    VAR Jahr = Year(TODAY())-1
+			    RETURN
+			    CALCULATE([Umsatz],Datumstabelle[Jahr]=Jahr)
+			```
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		displayFolder: Lfd Jahr
+		lineageTag: b97cc694-22a8-4e84-a29e-3c959e218fec
+
 	partition _Measures-abee16bd-4406-47fe-a745-2df0ba6b26f3 = m
 		mode: import
 		source =

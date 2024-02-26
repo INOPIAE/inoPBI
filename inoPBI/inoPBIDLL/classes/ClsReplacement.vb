@@ -148,6 +148,12 @@ Public Class ClsReplacement
 
         IO.File.Copy(strFileOut, Path.Combine(strDestinationFolder, strCopyFolder, "model.bim"), True)
 
+        CreateZipFile(strDestinationFolder)
+
+        Return True
+    End Function
+
+    Private Shared Sub CreateZipFile(strDestinationFolder As String)
         Dim strZip As String = String.Format("{0}.{1}", strDestinationFolder, "zip")
 
         If File.Exists(strZip) = True Then
@@ -155,9 +161,7 @@ Public Class ClsReplacement
         End If
 
         ZipFile.CreateFromDirectory(strDestinationFolder, strZip, CompressionLevel.Fastest, True)
-
-        Return True
-    End Function
+    End Sub
 
     Private Shared Sub CopyDirectory(ByVal sourceDir As String, ByVal destinationDir As String, ByVal recursive As Boolean)
         Dim dir = New DirectoryInfo(sourceDir)
@@ -182,4 +186,41 @@ Public Class ClsReplacement
             Next
         End If
     End Sub
+
+    Public Function ReplaceReferenceTMDL(strFile As String, strReplacement As String, strFileOut As String) As Boolean
+        Dim cr As Collection(Of ClsReplacement.Replacement) = GetReplacements(strReplacement)
+        Dim strText As String = vbNullString
+
+        Using sr As New StreamReader(strFile)
+            strText = sr.ReadToEnd
+        End Using
+
+        For Each c As Replacement In cr
+            Dim strFrom As String = c.Title & " = " & c.StrFrom
+            Dim strTo As String = c.Title & " = " & c.StrTo
+            strText = strText.Replace(c.StrFrom, c.StrTo)
+        Next
+
+        Using sw As New StreamWriter(strFileOut, False, System.Text.Encoding.Default)
+            sw.Write(strText)
+        End Using
+
+        Return True
+    End Function
+
+    Public Function CopyPBIPTMDL(strDatasetFolder As String, strFolderTarget As String, strFileOut As String) As Boolean
+        Dim strSourceFolder As String = Directory.GetParent(strDatasetFolder).FullName
+        Dim strSourceParent As String = Directory.GetParent(strDatasetFolder).Name
+
+        Dim strDestinationFolder As String = Path.Combine(strFolderTarget, strSourceParent)
+        Dim strCopyFolder As String = strDatasetFolder.Substring(InStrRev(strDatasetFolder, "\"))
+
+        CopyDirectory(strSourceFolder, strDestinationFolder, True)
+
+        IO.File.Copy(strFileOut, Path.Combine(strDestinationFolder, strCopyFolder, "definition", "expressions.tmdl"), True)
+
+        CreateZipFile(strDestinationFolder)
+
+        Return True
+    End Function
 End Class

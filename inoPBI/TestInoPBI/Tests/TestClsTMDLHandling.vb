@@ -22,7 +22,7 @@ Namespace TestInoPBI
             cHelper.DeleteTestFolder(testFolder)
             'DBFileTest = testFolder & "\pfalzenCurrentDB.accdb"
             'File.Copy(DBFile, DBFileTest)
-            cTMDL = New ClsTMDLHandling
+            cTMDL = New ClsTMDLHandling(testPath & "\TestData\tmdl\Nordwind.Dataset")
         End Sub
 
         <TearDown>
@@ -32,14 +32,14 @@ Namespace TestInoPBI
 
         <Test>
         Public Sub TestReadMeasuresFile()
-            Dim strFile As String = testPath & "\TestData\tmdl\Nordwind.Dataset\definition\tables\_Measures.tmdl"
+            Dim strFile As String = Path.Combine(cTMDL.FolderPathTables, "_Measures.tmdl")
 
             cTMDL.Elements.Clear()
             cTMDL.ReadTable(strFile)
 
             Dim testElements As List(Of ClsTMDLHandling.Element) = cTMDL.Elements
 
-            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(7))
+            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(8))
 
 
             Dim table As String = "_Measures"
@@ -81,9 +81,18 @@ Namespace TestInoPBI
             TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos)
 
             pos = 6
+            mName = "Deckungsbeitrag Vorjahr gesamt"
+            value = "```" & vbCrLf & "    VAR Jahr = Year("
+            description = vbNullString
+            displayFolder = "Lfd Jahr"
+            eType = ClsTMDLHandling.ElementType.Measure
+            TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos, True)
+
+            pos = 7
             mName = "_Measures"
             value = "let" & vbCrLf & "    Quelle = Table.FromRows"
             description = vbNullString
+            displayFolder = Nothing
             eType = ClsTMDLHandling.ElementType.PowerQuery
             TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos, True)
         End Sub
@@ -103,7 +112,7 @@ Namespace TestInoPBI
 
         <Test>
         Public Sub TestReadNeukundenFile()
-            Dim strFile As String = testPath & "\TestData\tmdl\Nordwind.Dataset\definition\tables\Neukunden.tmdl"
+            Dim strFile As String = Path.Combine(cTMDL.FolderPathTables, "Neukunden.tmdl")
 
             cTMDL.Elements.Clear()
             cTMDL.ReadTable(strFile)
@@ -127,7 +136,7 @@ Namespace TestInoPBI
 
         <Test>
         Public Sub TestReadNordwindFile()
-            Dim strFile As String = testPath & "\TestData\tmdl\Nordwind.Dataset\definition\tables\Nordwind.tmdl"
+            Dim strFile As String = Path.Combine(cTMDL.FolderPathTables, "Nordwind.tmdl")
 
             cTMDL.Elements.Clear()
             cTMDL.ReadTable(strFile)
@@ -157,13 +166,12 @@ Namespace TestInoPBI
 
         <Test>
         Public Sub TestReadTables()
-            Dim strFile As String = testPath & "\TestData\tmdl\Nordwind.Dataset\definition\tables"
 
             Dim testElements As List(Of ClsTMDLHandling.Element) = cTMDL.Elements
 
             Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(0))
 
-            cTMDL.ReadTables(strFile)
+            cTMDL.ReadTables()
 
             testElements = cTMDL.Elements
 

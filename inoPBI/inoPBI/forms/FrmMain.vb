@@ -145,4 +145,8 @@ Public Class FrmMain
     Private Sub EditFooterHeaderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditFooterHeaderToolStripMenuItem.Click
         FrmHtml.Show()
     End Sub
+
+    Private Sub ReplacementTMDLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplacementTMDLToolStripMenuItem.Click
+        FrmTMDL.Show()
+    End Sub
 End Class
