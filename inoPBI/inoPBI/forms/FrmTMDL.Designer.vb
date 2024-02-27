@@ -208,7 +208,7 @@ Partial Class FrmTMDL
         ' LblInfo
         ' 
         LblInfo.AutoSize = True
-        LblInfo.Location = New Point(383, 213)
+        LblInfo.Location = New Point(22, 301)
         LblInfo.Name = "LblInfo"
         LblInfo.Size = New Size(35, 20)
         LblInfo.TabIndex = 39
