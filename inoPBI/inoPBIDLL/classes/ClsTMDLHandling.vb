@@ -153,7 +153,7 @@ Public Class ClsTMDLHandling
 
             Select Case i.Type
                 Case ElementType.Measure
-                    measures.Add("## " & i.Name & IIf(i.Displayfolder = "", "", " (" & i.Displayfolder & ")"), ReplaceMeasure(i.Value))
+                    measures.Add("## " & i.Name & IIf(i.Displayfolder = "", "", " (" & i.Displayfolder & ")"), IIf(i.Description = "", "", "_" & i.Description & "_" & vbCrLf) & ReplaceMeasure(i.Value))
                 Case ElementType.PowerQuery
                     queries.Add("## " & i.Name, ReplacePQ_MD(i.Value))
             End Select
