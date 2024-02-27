@@ -91,7 +91,7 @@ Public Class ClsTMDLHandling
                             blnSource = False
                             delimiter = vbNullString
                         End If
-                    Case "annotation", "formatString:", "lineageTag:"
+                    Case "annotation", "lineageTag:"
                         If blnNew = True Then
                             Elements.Add(myElement)
                             blnNew = False
