@@ -29,6 +29,7 @@ Public Class ClsTMDLHandling
 
 
     Public Elements As New List(Of Element)
+    Public measuresCheck As New Dictionary(Of String, String)
 
     Public Sub New(FolderPath As String)
         FolderPathDataset = FolderPath
@@ -279,5 +280,34 @@ Public Class ClsTMDLHandling
         Next
 
         Return "```" & vbCrLf & strReturn1 & vbCrLf & "```"
+    End Function
+
+    Public Function CheckMeasures() As Boolean
+        Elements.Clear()
+        measuresCheck.Clear()
+        ReadTables()
+
+
+
+        For Each i As Element In Elements
+
+            Select Case i.Type
+                Case ElementType.Measure
+                    Dim strMeasures As String = vbNullString
+                    Dim delimiter As String = vbNullString
+                    For Each t As Element In Elements
+
+                        Select Case t.Type
+                            Case ElementType.Measure
+                                If t.Value.Contains(String.Format("[{0}]", i.Name)) Then
+                                    strMeasures &= delimiter & t.Name
+                                    delimiter = ", "
+                                End If
+                        End Select
+                    Next
+                    measuresCheck.Add(i.Name, strMeasures)
+            End Select
+        Next
+        Return True
     End Function
 End Class

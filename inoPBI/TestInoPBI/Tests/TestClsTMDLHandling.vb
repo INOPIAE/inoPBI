@@ -2,6 +2,7 @@
 Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.IO
 Imports System.Runtime
+Imports System.Security.Cryptography.X509Certificates
 Imports inoPBIDLL
 Imports Newtonsoft.Json.Linq
 Imports NUnit.Framework
@@ -196,6 +197,36 @@ Namespace TestInoPBI
             Assert.That(tables, Has.No.Member("LocalDateTable_hash"))
 
 
+        End Sub
+
+        <Test>
+        Public Sub TestCheckMeasures()
+            cTMDL.CheckMeasures()
+
+
+
+            Assert.That(cTMDL.measuresCheck.Count, NUnit.Framework.Is.EqualTo(7))
+
+            Dim strM As String = "Umsatz"
+            Dim strTarget As String = "Umsatz Vorjahr, Tacho_Max, Tacho_Min, Deckungsbeitrag Vorjahr gesamt"
+            Dim pos As Int16 = 0
+
+            Assert.That(cTMDL.measuresCheck.ElementAt(pos).Key, NUnit.Framework.Is.EqualTo(strM))
+            Assert.That(cTMDL.measuresCheck.ElementAt(pos).Value, NUnit.Framework.Is.EqualTo(strTarget))
+
+            strM = "Umsatz Vorjahr"
+            strTarget = "Tacho_Max, Tacho_Min"
+            pos = 1
+
+            Assert.That(cTMDL.measuresCheck.ElementAt(pos).Key, NUnit.Framework.Is.EqualTo(strM))
+            Assert.That(cTMDL.measuresCheck.ElementAt(pos).Value, NUnit.Framework.Is.EqualTo(strTarget))
+
+            strM = "Menge"
+            strTarget = Nothing
+            pos = 2
+
+            Assert.That(cTMDL.measuresCheck.ElementAt(pos).Key, NUnit.Framework.Is.EqualTo(strM))
+            Assert.That(cTMDL.measuresCheck.ElementAt(pos).Value, NUnit.Framework.Is.EqualTo(strTarget))
         End Sub
     End Class
 End Namespace
