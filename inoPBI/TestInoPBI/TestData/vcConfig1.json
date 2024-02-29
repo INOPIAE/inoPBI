@@ -1,0 +1,111 @@
+{
+    "layouts": [
+        {
+            "id": 0,
+            "position": {
+                "height": 543.7082066869301,
+                "width": 542.7355623100304,
+                "x": 544.6808510638298,
+                "y": 57.38601823708207,
+                "z": 2000
+            }
+        }
+    ],
+    "name": "4deacf106bc8be9680bb",
+    "singleVisual": {
+        "drillFilterOtherVisuals": true,
+        "projections": {
+            "Values": [
+                {
+                    "queryRef": "Nordwind2021.Artikelname"
+                },
+                {
+                    "queryRef": "Nordwind2021.Kategoriename"
+                },
+                {
+                    "queryRef": "_Measures.Umsatz"
+                },
+                {
+                    "queryRef": "_Measures.Menge"
+                }
+            ]
+        },
+        "prototypeQuery": {
+            "From": [
+                {
+                    "Entity": "Nordwind",
+                    "Name": "n",
+                    "Type": 0
+                },
+                {
+                    "Entity": "_Measures",
+                    "Name": "_",
+                    "Type": 0
+                }
+            ],
+            "OrderBy": [
+                {
+                    "Direction": 2,
+                    "Expression": {
+                        "Measure": {
+                            "Expression": {
+                                "SourceRef": {
+                                    "Source": "_"
+                                }
+                            },
+                            "Property": "Umsatz"
+                        }
+                    }
+                }
+            ],
+            "Select": [
+                {
+                    "Column": {
+                        "Expression": {
+                            "SourceRef": {
+                                "Source": "n"
+                            }
+                        },
+                        "Property": "Kategoriename"
+                    },
+                    "Name": "Nordwind2021.Kategoriename"
+                },
+                {
+                    "Column": {
+                        "Expression": {
+                            "SourceRef": {
+                                "Source": "n"
+                            }
+                        },
+                        "Property": "Artikelname"
+                    },
+                    "Name": "Nordwind2021.Artikelname"
+                },
+                {
+                    "Measure": {
+                        "Expression": {
+                            "SourceRef": {
+                                "Source": "_"
+                            }
+                        },
+                        "Property": "Umsatz"
+                    },
+                    "Name": "_Measures.Umsatz"
+                },
+                {
+                    "Measure": {
+                        "Expression": {
+                            "SourceRef": {
+                                "Source": "_"
+                            }
+                        },
+                        "Property": "Menge"
+                    },
+                    "Name": "_Measures.Menge"
+                }
+            ],
+            "Version": 2
+        },
+        "visualType": "tableEx"
+    }
+}
