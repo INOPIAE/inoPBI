@@ -176,7 +176,7 @@ Namespace TestInoPBI
 
             testElements = cTMDL.Elements
 
-            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(12))
+            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(13))
 
             Dim tables As New List(Of String)()
             For Each el As ClsTMDLHandling.Element In testElements

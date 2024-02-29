@@ -44,7 +44,7 @@ Namespace TestInoPBI
 
             strLine = "      Quelle = Excel.Workbook(Web.Contents(SharepointOrdner & ""Definitionen.xlsx""), null, true), Quelle = Excel.Workbook(Web.Contents(SharepointOrdner & ""Definitionen.xlsx""), null, true),"
             strResult = "      Quelle = Excel.Workbook(Web.Contents(SharepointOrdner & ""Definitionen.xlsx""), null," & vbCrLf & "         true), Quelle = Excel.Workbook(Web.Contents(SharepointOrdner &" & vbCrLf & "         ""Definitionen.xlsx""), null, true),"
-
+            result = cJSON.splitLine(strLine)
             Console.WriteLine(result)
             Assert.That(result, NUnit.Framework.Is.EqualTo(strResult))
 
