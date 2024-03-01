@@ -70,6 +70,7 @@ Partial Class FrmMain
         DocumentationToolStripMenuItem = New ToolStripMenuItem()
         SelectProjectToolStripMenuItem = New ToolStripMenuItem()
         EditFooterHeaderToolStripMenuItem = New ToolStripMenuItem()
+        ReplacementTMDLToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip = New ToolStrip()
         NewToolStripButton = New ToolStripButton()
         OpenToolStripButton = New ToolStripButton()
@@ -83,7 +84,7 @@ Partial Class FrmMain
         ToolStripStatusLabel = New ToolStripStatusLabel()
         TslCurrentProject = New ToolStripStatusLabel()
         ToolTip = New ToolTip(components)
-        ReplacementTMDLToolStripMenuItem = New ToolStripMenuItem()
+        UsageToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip.SuspendLayout()
         ToolStrip.SuspendLayout()
         StatusStrip.SuspendLayout()
@@ -379,7 +380,7 @@ Partial Class FrmMain
         ' 
         ' PowerBIToolsToolStripMenuItem
         ' 
-        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ReplacementToolStripMenuItem, DocumentationToolStripMenuItem, SelectProjectToolStripMenuItem, EditFooterHeaderToolStripMenuItem, ReplacementTMDLToolStripMenuItem})
+        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ReplacementToolStripMenuItem, DocumentationToolStripMenuItem, SelectProjectToolStripMenuItem, EditFooterHeaderToolStripMenuItem, ReplacementTMDLToolStripMenuItem, UsageToolStripMenuItem})
         PowerBIToolsToolStripMenuItem.Name = "PowerBIToolsToolStripMenuItem"
         PowerBIToolsToolStripMenuItem.Size = New Size(119, 24)
         PowerBIToolsToolStripMenuItem.Text = "Power BI Tools"
@@ -407,6 +408,12 @@ Partial Class FrmMain
         EditFooterHeaderToolStripMenuItem.Name = "EditFooterHeaderToolStripMenuItem"
         EditFooterHeaderToolStripMenuItem.Size = New Size(224, 26)
         EditFooterHeaderToolStripMenuItem.Text = "Edit Footer/Header"
+        ' 
+        ' ReplacementTMDLToolStripMenuItem
+        ' 
+        ReplacementTMDLToolStripMenuItem.Name = "ReplacementTMDLToolStripMenuItem"
+        ReplacementTMDLToolStripMenuItem.Size = New Size(224, 26)
+        ReplacementTMDLToolStripMenuItem.Text = "Replacement TMDL"
         ' 
         ' ToolStrip
         ' 
@@ -505,11 +512,11 @@ Partial Class FrmMain
         TslCurrentProject.Size = New Size(153, 20)
         TslCurrentProject.Text = "ToolStripStatusLabel1"
         ' 
-        ' ReplacementTMDLToolStripMenuItem
+        ' UsageToolStripMenuItem
         ' 
-        ReplacementTMDLToolStripMenuItem.Name = "ReplacementTMDLToolStripMenuItem"
-        ReplacementTMDLToolStripMenuItem.Size = New Size(224, 26)
-        ReplacementTMDLToolStripMenuItem.Text = "Replacement TMDL"
+        UsageToolStripMenuItem.Name = "UsageToolStripMenuItem"
+        UsageToolStripMenuItem.Size = New Size(224, 26)
+        UsageToolStripMenuItem.Text = "Usage"
         ' 
         ' FrmMain
         ' 
@@ -593,5 +600,6 @@ Partial Class FrmMain
     Friend WithEvents TslCurrentProject As ToolStripStatusLabel
     Friend WithEvents EditFooterHeaderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReplacementTMDLToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UsageToolStripMenuItem As ToolStripMenuItem
 
 End Class

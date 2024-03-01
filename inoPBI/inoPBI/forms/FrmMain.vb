@@ -149,4 +149,8 @@ Public Class FrmMain
     Private Sub ReplacementTMDLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplacementTMDLToolStripMenuItem.Click
         FrmTMDL.Show()
     End Sub
+
+    Private Sub UsageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsageToolStripMenuItem.Click
+        FrmMeasuresUsage.Show()
+    End Sub
 End Class
