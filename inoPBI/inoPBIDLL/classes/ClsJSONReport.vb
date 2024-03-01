@@ -65,7 +65,7 @@ Public Class ClsJSONReport
                         ix += 1
                         '    Debug.Print("Array 1 " & token.Key.ToString)
                     Else
-                        Debug.Print("something")
+                        '  Debug.Print("something")
                     End If
                 Next
             Else
@@ -77,7 +77,7 @@ Public Class ClsJSONReport
                     ' Debug.Print("Token 2  " & token.Key.ToString)
                     If section = "sec" And token.Key.ToString = "displayName" Then
                         section = token.Value.ToString
-                        Debug.Print("Display  " & section)
+                        '  Debug.Print("Display  " & section)
                     End If
                     If vc = "vc" And token.Key.ToString = "config" Then
                         vc = token.Value.ToString
@@ -120,9 +120,9 @@ Public Class ClsJSONReport
                         Json2TreeVC(o, page)
                     ElseIf itm.Type.ToString() = "Array" Then
                         ix += 1
-                        Debug.Print("Array 1 " & token.Key.ToString)
+                        '  Debug.Print("Array 1 " & token.Key.ToString)
                     Else
-                        Debug.Print("something")
+                        '  Debug.Print("something")
                     End If
                 Next
             Else
@@ -134,7 +134,7 @@ Public Class ClsJSONReport
 
                     If token.Key.ToString = "queryRef" Then
 
-                        Debug.Print("queryRef  " & token.Value.ToString)
+                        'Debug.Print("queryRef  " & token.Value.ToString)
                         Dim m() As String = token.Value.ToString.Split(".")
                         Dim rm As New ReportMeasure With {
                             .Page = page,
