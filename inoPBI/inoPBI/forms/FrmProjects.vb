@@ -28,10 +28,14 @@ Public Class FrmProjects
             FrmMain.FillProjectIni()
             Dim pi As ClsIniFileHandling.IniData = FrmMain.ProjectIniData
             cProjectIni.WriteProjectIniFile(Path.Combine(FrmMain.AppDataPath, strProject & ".inoini"), pi)
+
+            My.Settings.CurrentProject = strProject
+            My.Settings.Save()
+
+            Me.LbProjects.Items.Add(strProject)
+            LbProjects.SelectedIndex = LbProjects.Items.Count - 1
+            FrmMain.TslCurrentProject.Text = strProject
         End If
-        My.Settings.CurrentProject = strProject
-        My.Settings.Save()
-        FrmMain.TslCurrentProject.Text = strProject
     End Sub
 
     Private Sub FrmProjects_Load(sender As Object, e As EventArgs) Handles MyBase.Load
