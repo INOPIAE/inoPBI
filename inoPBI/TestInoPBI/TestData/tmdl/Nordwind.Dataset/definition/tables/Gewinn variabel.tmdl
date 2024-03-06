@@ -1,0 +1,28 @@
+table 'Gewinn variabel'
+	lineageTag: 348ed9c3-2361-49e4-be4d-ed933c36be96
+
+	measure 'Gewinn variabel Wert' = SELECTEDVALUE('Gewinn variabel'[Gewinn variabel], 250000)
+		formatString: 0
+		lineageTag: 44ebac75-cb9a-4193-bab4-a51a34a2d8a3
+
+	column 'Gewinn variabel'
+		dataType: int64
+		formatString: "€"\ #,0;-"€"\ #,0;"€"\ #,0
+		lineageTag: 1d4484df-23d0-49d7-a1fc-561d55ab043c
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Gewinn variabel' = calculated
+		mode: import
+		source = GENERATESERIES(100000, 500000, 50000)
+
+	annotation PBI_Id = 2d401b1d4ebd41c4953311cd069f9588
+

@@ -45,6 +45,11 @@ table _Measures
 		displayFolder: Lfd Jahr
 		lineageTag: b97cc694-22a8-4e84-a29e-3c959e218fec
 
+	measure 'Rohertrag BWA' = CALCULATE([Ist],'BWA-Plan-Controlling'[Kostenart]="Rohertrag")
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		displayFolder: BWA
+		lineageTag: 98077da1-806e-4c76-b4d2-af16004cde9c
+
 	partition _Measures-abee16bd-4406-47fe-a745-2df0ba6b26f3 = m
 		mode: import
 		source =

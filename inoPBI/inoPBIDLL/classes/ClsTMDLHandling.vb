@@ -68,7 +68,7 @@ Public Class ClsTMDLHandling
                 Dim start() As String = line.Split(" ")
                 Select Case start(0)
                     Case "measure"
-                        Dim m() As String = line.Substring(7).Split("=")
+                        Dim m() As String = line.Substring(7).Split({"="c}, 2)
                         If blnNew = True Then
                             Elements.Add(myElement)
                         End If
@@ -112,7 +112,14 @@ Public Class ClsTMDLHandling
                         blnNew = True
                     Case "source"
                         blnSource = True
-                    Case "column"
+                        If line.Contains("=") Then
+                            Dim m() As String = line.Split("=")
+                            If m(1).Trim <> vbNullString Then
+                                myElement.Value &= delimiter & m(1).Trim
+                                delimiter = vbCrLf
+                            End If
+                        End If
+                            Case "column"
                         If line.Contains("=") Then
                             Dim m() As String = line.Substring(6).Split("=")
                             If blnNew = True Then
@@ -206,14 +213,14 @@ Public Class ClsTMDLHandling
     End Function
 
     Public Function ReplaceMeasure(strText As String) As String
-        Dim strReturn As String = strText.Replace("[" & vbCrLf, "").Replace(vbCrLf & "]", "")
-        strReturn = strReturn.Replace("  """"," & vbCrLf, "")
-        strReturn = strReturn.Replace("\""", "\?")
-        strReturn = strReturn.Replace("""", "")
-        strReturn = strReturn.Replace("\?", """")
+        Dim strReturn As String = strText '.Replace("[" & vbCrLf, "").Replace(vbCrLf & "]", "")
+        'strReturn = strReturn.Replace("  """"," & vbCrLf, "")
+        'strReturn = strReturn.Replace("\""", "\?")
+        ' strReturn = strReturn.Replace("""", "")
+        'strReturn = strReturn.Replace("\?", """")
         strReturn = strReturn.Replace(", ", ",")
         strReturn = strReturn.Replace(",", ", ")
-        strReturn = strReturn.Replace(", , ", ",")
+        ' strReturn = strReturn.Replace(", , ", ",")
         strReturn = strReturn.Replace("```", "")
 
         Dim strLine() As String = strReturn.Split(vbCrLf)
@@ -257,11 +264,12 @@ Public Class ClsTMDLHandling
     End Function
 
     Public Function ReplacePQ_MD(strText As String) As String
-        Dim strReturn As String = strText.Replace("[" & vbCrLf, "```" & vbCrLf).Replace(vbCrLf & "]", vbCrLf & "```")
-        strReturn = strReturn.Replace("\""", "\?")
-        strReturn = strReturn.Replace("""", "")
-        strReturn = strReturn.Replace("\?", """")
-        strReturn = strReturn.Replace("\\", "\")
+        Dim strReturn As String = strText '.Replace("[" & vbCrLf, "```" & vbCrLf).Replace(vbCrLf & "]", vbCrLf & "```")
+        'strReturn = strReturn.Replace("\""", "\?")
+        'strReturn = strReturn.Replace("""", "")
+        strReturn = strReturn.Replace("""""", "")
+        'strReturn = strReturn.Replace("\?", """")
+        'strReturn = strReturn.Replace("\\", "\")
         strReturn = strReturn.Replace(", ", ",")
         strReturn = strReturn.Replace(",", ", ")
         strReturn = strReturn.Replace(", , ", ",")

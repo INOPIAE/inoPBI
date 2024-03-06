@@ -40,7 +40,7 @@ Namespace TestInoPBI
 
             Dim testElements As List(Of ClsTMDLHandling.Element) = cTMDL.Elements
 
-            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(8))
+            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(9))
 
 
             Dim table As String = "_Measures"
@@ -90,6 +90,14 @@ Namespace TestInoPBI
             TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos, True)
 
             pos = 7
+            mName = "Rohertrag BWA"
+            value = "CALCULATE([Ist],'BWA-Plan-Controlling'[Kostenart]=""Rohertrag"")"
+            description = vbNullString
+            displayFolder = "BWA"
+            eType = ClsTMDLHandling.ElementType.Measure
+            TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos)
+
+            pos = 8
             mName = "_Measures"
             value = "let" & vbCrLf & "    Quelle = Table.FromRows"
             description = vbNullString
@@ -134,6 +142,37 @@ Namespace TestInoPBI
             TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos, True)
         End Sub
 
+        <Test>
+        Public Sub TestReadGewinnVariabel()
+            Dim strFile As String = Path.Combine(cTMDL.FolderPathTables, "Gewinn variabel.tmdl")
+
+            cTMDL.Elements.Clear()
+            cTMDL.ReadTable(strFile)
+
+            Dim testElements As List(Of ClsTMDLHandling.Element) = cTMDL.Elements
+
+            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(2))
+
+
+            Dim table As String = "Gewinn variabel"
+            Dim mName As String = "Gewinn variabel Wert"
+            Dim description As String = vbNullString
+            Dim value As String = "SELECTEDVALUE('Gewinn variabel'[Gewinn variabel], 250000)"
+            Dim displayFolder As String = Nothing
+            Dim eType As ClsTMDLHandling.ElementType = ClsTMDLHandling.ElementType.Measure
+            Dim pos As Long = 0
+
+            TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos, False)
+
+            pos = 1
+            mName = "Gewinn variabel"
+            value = "GENERATESERIES(100000, 500000, 50000)"
+            description = vbNullString
+            displayFolder = Nothing
+            eType = ClsTMDLHandling.ElementType.PowerQuery
+            TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos)
+
+        End Sub
 
         <Test>
         Public Sub TestReadNordwindFile()
@@ -176,7 +215,7 @@ Namespace TestInoPBI
 
             testElements = cTMDL.Elements
 
-            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(13))
+            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(16))
 
             Dim tables As New List(Of String)()
             For Each el As ClsTMDLHandling.Element In testElements
@@ -186,12 +225,13 @@ Namespace TestInoPBI
                 End If
             Next
 
-            Assert.That(tables.Count, NUnit.Framework.Is.EqualTo(5))
+            Assert.That(tables.Count, NUnit.Framework.Is.EqualTo(6))
             Assert.That(tables, Has.Member("_Measures"))
             Assert.That(tables, Has.Member("Datumstabelle"))
             Assert.That(tables, Has.Member("Neukunden"))
             Assert.That(tables, Has.Member("Nordwind"))
             Assert.That(tables, Has.Member("Regionen"))
+            Assert.That(tables, Has.Member("Gewinn variabel"))
 
             Assert.That(tables, Has.No.Member("DateTableTemplate_hash"))
             Assert.That(tables, Has.No.Member("LocalDateTable_hash"))
@@ -205,25 +245,25 @@ Namespace TestInoPBI
 
 
 
-            Assert.That(cTMDL.measuresCheck.Count, NUnit.Framework.Is.EqualTo(7))
+            Assert.That(cTMDL.measuresCheck.Count, NUnit.Framework.Is.EqualTo(9))
 
             Dim strM As String = "Umsatz"
             Dim strTarget As String = "Umsatz Vorjahr, Tacho_Max, Tacho_Min, Deckungsbeitrag Vorjahr gesamt"
-            Dim pos As Int16 = 0
+            Dim pos As Int16 = 1
 
             Assert.That(cTMDL.measuresCheck.ElementAt(pos).Key, NUnit.Framework.Is.EqualTo(strM))
             Assert.That(cTMDL.measuresCheck.ElementAt(pos).Value, NUnit.Framework.Is.EqualTo(strTarget))
 
             strM = "Umsatz Vorjahr"
             strTarget = "Tacho_Max, Tacho_Min"
-            pos = 1
+            pos = 2
 
             Assert.That(cTMDL.measuresCheck.ElementAt(pos).Key, NUnit.Framework.Is.EqualTo(strM))
             Assert.That(cTMDL.measuresCheck.ElementAt(pos).Value, NUnit.Framework.Is.EqualTo(strTarget))
 
             strM = "Menge"
             strTarget = Nothing
-            pos = 2
+            pos = 3
 
             Assert.That(cTMDL.measuresCheck.ElementAt(pos).Key, NUnit.Framework.Is.EqualTo(strM))
             Assert.That(cTMDL.measuresCheck.ElementAt(pos).Value, NUnit.Framework.Is.EqualTo(strTarget))
