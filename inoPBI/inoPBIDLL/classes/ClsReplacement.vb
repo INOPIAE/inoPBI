@@ -144,6 +144,8 @@ Public Class ClsReplacement
         Dim strDestinationFolder As String = Path.Combine(Directory.GetParent(strFileOut).FullName, strSourceParent)
         Dim strCopyFolder As String = Directory.GetParent(strFile).Name
 
+        Directory.Delete(strDestinationFolder, True)
+
         CopyDirectory(strSourceFolder, strDestinationFolder, True)
 
         IO.File.Copy(strFileOut, Path.Combine(strDestinationFolder, strCopyFolder, "model.bim"), True)
@@ -214,6 +216,8 @@ Public Class ClsReplacement
 
         Dim strDestinationFolder As String = Path.Combine(strFolderTarget, strSourceParent)
         Dim strCopyFolder As String = strDatasetFolder.Substring(InStrRev(strDatasetFolder, "\"))
+
+        Directory.Delete(strDestinationFolder, True)
 
         CopyDirectory(strSourceFolder, strDestinationFolder, True)
 
