@@ -133,6 +133,7 @@ Public Class FrmMain
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TslCurrentProject.Text = My.Settings.CurrentProject
+        Me.ToolStrip.Visible = False
     End Sub
 
     Private Sub FrmMain_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
