@@ -170,7 +170,7 @@ Public Class ClsTMDLHandling
 
         Dim strOutput As String = "Stand: " & Format(Now, "dd.MM.yyyy") & vbCrLf & vbCrLf
         strOutput &= "Inhaltsverzeichnis" & vbCrLf & vbCrLf
-        strOutput &= "<!--TOC-->" & vbCrLf & vbCrLf
+        strOutput &= "<!-- toc -->" & vbCrLf & vbCrLf
         strOutput &= "# Measures" & vbCrLf & vbCrLf
 
         Dim sorted = From pair In measures Order By pair.Key

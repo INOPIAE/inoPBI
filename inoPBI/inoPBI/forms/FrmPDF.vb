@@ -54,10 +54,13 @@ Public Class FrmPDF
 
         mdOptions.CustomHeadContent = "<style>h1 { page-break-before: always; }</style>"
 
-        mdOptions.TableOfContents = New TableOfContents(True, 2)
-        ' mdOptions.KeepHtml = True
-        '   IsLandscape = True,
-        '};
+
+        mdOptions.TableOfContents = New TableOfContentsOptions With {
+            .ListStyle = ListStyle.Decimal,
+            .PageNumberOptions = New PageNumberOptions With {
+                .TabLeader = Leader.Dots
+            }
+        }
 
         Dim mdconvert As New Markdown2PdfConverter(mdOptions)
 

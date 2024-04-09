@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Markdown2Pdf" Version="1.3.0" />
+    <PackageReference Include="Markdown2Pdf" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
