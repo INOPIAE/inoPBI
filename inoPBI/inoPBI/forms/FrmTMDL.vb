@@ -9,7 +9,7 @@ Public Class FrmTMDL
                 TxtOrginal.Text = .SelectedPath
             End If
         End With
-        If TxtOrginal.Text.Contains(".Dataset") = False Then
+        If TxtOrginal.Text.Contains(".Dataset") = False And TxtOrginal.Text.Contains(".SemanticModel") = False Then
             MessageBox.Show("No Dataset folder selcted")
         End If
     End Sub
