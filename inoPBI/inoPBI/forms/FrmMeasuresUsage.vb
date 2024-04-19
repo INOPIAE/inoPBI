@@ -22,7 +22,12 @@ Public Class FrmMeasuresUsage
             DgvMeasures.Rows.Add(New String() {iKey.ToString, cTMDL.measuresCheck(iKey)})
         Next
 
-        Dim strFile As String = My.Settings.LastTMDL.Replace(".Dataset", ".Report") & "\report.json"
+        Dim strFile As String
+        If My.Settings.LastTMDL.Contains(".Dataset") Then
+            strFile = My.Settings.LastTMDL.Replace(".Dataset", ".Report") & "\report.json"
+        Else
+            strFile = My.Settings.LastTMDL.Replace(".SemanticModel", ".Report") & "\report.json"
+        End If
 
         DgvReport.Rows.Clear()
 
