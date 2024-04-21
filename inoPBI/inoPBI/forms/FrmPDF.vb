@@ -11,11 +11,13 @@ Public Class FrmPDF
         TxtFileDocu.Text = My.Settings.LastDocumentation
         TxtHeader.Text = My.Settings.LastHeader
         TxtFooter.Text = My.Settings.LastFooter
-        '  TxtTargetFolder.Text = My.Settings.LastFolder
+        TxtTargetFile.Text = My.Settings.LastPDFFile
         TxtDocTitle.Text = My.Settings.LastDocTitle
         CbShowPDF.Checked = My.Settings.ShowPDF
 
         LblInfo.Text = ""
+
+        Me.Text = "Create PDF file"
     End Sub
 
     Private Async Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
@@ -25,7 +27,13 @@ Public Class FrmPDF
             TxtFileDocu.Select()
             Exit Sub
         End If
-        Dim PdFOutput As String = TxtFileDocu.Text.Replace(".md", ".pdf")
+        Dim PdFOutput As String = vbNullString
+
+        If TxtTargetFile.Text.Trim = vbNullString Then
+            PdFOutput = TxtFileDocu.Text.Replace(".md", ".pdf")
+        Else
+            PdFOutput = TxtTargetFile.Text.Trim
+        End If
 
         If FileInUse(PdFOutput) = True Then
             MessageBox.Show("PDF file in use.")
@@ -41,19 +49,21 @@ Public Class FrmPDF
              .Left = "50px",
              .Right = "50px"
            }
+
         Dim mdOptions As New Markdown2PdfOptions With {
             .DocumentTitle = TxtDocTitle.Text,
             .MarginOptions = mdMarginOptions
            }
+
         If TxtHeader.Text.Trim <> vbNullString Then
             mdOptions.HeaderHtml = File.ReadAllText(TxtHeader.Text)
         End If
+
         If TxtFooter.Text.Trim <> vbNullString Then
             mdOptions.FooterHtml = File.ReadAllText(TxtFooter.Text)
         End If
 
         mdOptions.CustomHeadContent = "<style>h1 { page-break-before: always; }</style>"
-
 
         mdOptions.TableOfContents = New TableOfContentsOptions With {
             .ListStyle = ListStyle.Decimal,
@@ -64,22 +74,25 @@ Public Class FrmPDF
 
         Dim mdconvert As New Markdown2PdfConverter(mdOptions)
 
-        Dim strPDF = Await mdconvert.Convert(TxtFileDocu.Text)
+        Await mdconvert.Convert(TxtFileDocu.Text, PdFOutput)
 
         LblInfo.Text = "Documentation export finished"
 
+        If TxtTargetFile.Text.Trim = vbNullString Then
+            TxtTargetFile.Text = PdFOutput
+        End If
 
         My.Settings.LastHeader = TxtHeader.Text
         My.Settings.LastFooter = TxtFooter.Text
-
-        ' My.Settings.LastFolder = TxtTargetFolder.Text
+        My.Settings.LastPDFFile = TxtTargetFile.Text
         My.Settings.LastDocTitle = TxtDocTitle.Text
         My.Settings.ShowPDF = CbShowPDF.Checked
         My.Settings.Save()
 
         If CbShowPDF.Checked Then
-            Dim p = New Process()
-            p.StartInfo = New ProcessStartInfo(PdFOutput)
+            Dim p = New Process With {
+                .StartInfo = New ProcessStartInfo(PdFOutput)
+            }
             p.StartInfo.UseShellExecute = True
             p.Start()
         End If
@@ -88,7 +101,7 @@ Public Class FrmPDF
     Private Sub CmdHeaderFile_Click(sender As Object, e As EventArgs) Handles CmdHeaderFile.Click
         Dim ofd As New OpenFileDialog
         With ofd
-            .Filter = "*.html|*.html"
+            .Filter = "HTML (*.html)|*.html"
             .Multiselect = False
             .Title = "Select Header file"
             If .ShowDialog = DialogResult.OK Then
@@ -100,7 +113,7 @@ Public Class FrmPDF
     Private Sub CmdFooterFile_Click(sender As Object, e As EventArgs) Handles CmdFooterFile.Click
         Dim ofd As New OpenFileDialog
         With ofd
-            .Filter = "*.html|*.html"
+            .Filter = "HTML (*.html)|*.html"
             .Multiselect = False
             .Title = "Select Footer File"
             If .ShowDialog = DialogResult.OK Then
@@ -112,15 +125,11 @@ Public Class FrmPDF
     Private Sub CmdFileDocu_Click(sender As Object, e As EventArgs) Handles CmdFileDocu.Click
         Dim sfd As New SaveFileDialog
         With sfd
-            .Filter = "*.md|*.md"
+            .Filter = "Markdown (*.md)|*.md"
             If .ShowDialog = DialogResult.OK Then
                 TxtFileDocu.Text = .FileName
             End If
         End With
-    End Sub
-
-    Private Sub CmdFolderTarget_Click(sender As Object, e As EventArgs) Handles CmdFolderTarget.Click
-
     End Sub
 
     Private Sub CmdEditHeader_Click(sender As Object, e As EventArgs) Handles CmdEditHeader.Click
@@ -141,5 +150,15 @@ Public Class FrmPDF
                 TxtFooter.Text = My.Settings.LastFooter
             End With
         End If
+    End Sub
+
+    Private Sub CmdTargetFile_Click(sender As Object, e As EventArgs) Handles CmdTargetFile.Click
+        Dim sfd As New SaveFileDialog
+        With sfd
+            .Filter = "PDF (*.pdf)|*.pdf"
+            If .ShowDialog = DialogResult.OK Then
+                TxtFileDocu.Text = .FileName
+            End If
+        End With
     End Sub
 End Class

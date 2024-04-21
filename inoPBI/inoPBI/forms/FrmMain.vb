@@ -114,6 +114,7 @@ Public Class FrmMain
             .LastHeader = My.Settings.LastHeader
             .LastOriginal = My.Settings.LastOriginal
             .LastReplacement = My.Settings.LastReplacement
+            .LastPDFFile = My.Settings.LastPDFFile
         End With
     End Sub
 

@@ -185,6 +185,18 @@ Namespace My
                 Me("LastTMDL") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LastPDFFile() As String
+            Get
+                Return CType(Me("LastPDFFile"),String)
+            End Get
+            Set
+                Me("LastPDFFile") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

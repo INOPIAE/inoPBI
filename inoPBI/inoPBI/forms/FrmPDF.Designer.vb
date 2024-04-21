@@ -24,15 +24,14 @@ Partial Class FrmPDF
     Private Sub InitializeComponent()
         CmdClose = New Button()
         CmdDocumentation = New Button()
-        CmdReplace = New Button()
-        CmdFolderTarget = New Button()
+        CmdTargetFile = New Button()
         CmdFileDocu = New Button()
         CmdFooterFile = New Button()
         CmdHeaderFile = New Button()
         TxtDocTitle = New TextBox()
         LblDocTitle = New Label()
-        TxtTargetFolder = New TextBox()
-        LblTargetFolder = New Label()
+        TxtTargetFile = New TextBox()
+        LblTargetFile = New Label()
         TxtFileDocu = New TextBox()
         LblFileDocu = New Label()
         TxtFooter = New TextBox()
@@ -63,23 +62,14 @@ Partial Class FrmPDF
         CmdDocumentation.Text = "Create PDF"
         CmdDocumentation.UseVisualStyleBackColor = True
         ' 
-        ' CmdReplace
+        ' CmdTargetFile
         ' 
-        CmdReplace.Location = New Point(409, 353)
-        CmdReplace.Name = "CmdReplace"
-        CmdReplace.Size = New Size(117, 53)
-        CmdReplace.TabIndex = 18
-        CmdReplace.Text = "Replace"
-        CmdReplace.UseVisualStyleBackColor = True
-        ' 
-        ' CmdFolderTarget
-        ' 
-        CmdFolderTarget.Location = New Point(709, 145)
-        CmdFolderTarget.Name = "CmdFolderTarget"
-        CmdFolderTarget.Size = New Size(30, 27)
-        CmdFolderTarget.TabIndex = 13
-        CmdFolderTarget.Text = "..."
-        CmdFolderTarget.UseVisualStyleBackColor = True
+        CmdTargetFile.Location = New Point(709, 145)
+        CmdTargetFile.Name = "CmdTargetFile"
+        CmdTargetFile.Size = New Size(30, 27)
+        CmdTargetFile.TabIndex = 13
+        CmdTargetFile.Text = "..."
+        CmdTargetFile.UseVisualStyleBackColor = True
         ' 
         ' CmdFileDocu
         ' 
@@ -124,21 +114,21 @@ Partial Class FrmPDF
         LblDocTitle.TabIndex = 14
         LblDocTitle.Text = "Document title"
         ' 
-        ' TxtTargetFolder
+        ' TxtTargetFile
         ' 
-        TxtTargetFolder.Location = New Point(196, 143)
-        TxtTargetFolder.Name = "TxtTargetFolder"
-        TxtTargetFolder.Size = New Size(507, 27)
-        TxtTargetFolder.TabIndex = 12
+        TxtTargetFile.Location = New Point(196, 143)
+        TxtTargetFile.Name = "TxtTargetFile"
+        TxtTargetFile.Size = New Size(507, 27)
+        TxtTargetFile.TabIndex = 12
         ' 
-        ' LblTargetFolder
+        ' LblTargetFile
         ' 
-        LblTargetFolder.AutoSize = True
-        LblTargetFolder.Location = New Point(58, 147)
-        LblTargetFolder.Name = "LblTargetFolder"
-        LblTargetFolder.Size = New Size(94, 20)
-        LblTargetFolder.TabIndex = 11
-        LblTargetFolder.Text = "Target folder"
+        LblTargetFile.AutoSize = True
+        LblTargetFile.Location = New Point(58, 147)
+        LblTargetFile.Name = "LblTargetFile"
+        LblTargetFile.Size = New Size(75, 20)
+        LblTargetFile.TabIndex = 11
+        LblTargetFile.Text = "Target file"
         ' 
         ' TxtFileDocu
         ' 
@@ -236,15 +226,14 @@ Partial Class FrmPDF
         Controls.Add(CbShowPDF)
         Controls.Add(CmdClose)
         Controls.Add(CmdDocumentation)
-        Controls.Add(CmdReplace)
-        Controls.Add(CmdFolderTarget)
+        Controls.Add(CmdTargetFile)
         Controls.Add(CmdFileDocu)
         Controls.Add(CmdFooterFile)
         Controls.Add(CmdHeaderFile)
         Controls.Add(TxtDocTitle)
         Controls.Add(LblDocTitle)
-        Controls.Add(TxtTargetFolder)
-        Controls.Add(LblTargetFolder)
+        Controls.Add(TxtTargetFile)
+        Controls.Add(LblTargetFile)
         Controls.Add(TxtFileDocu)
         Controls.Add(LblFileDocu)
         Controls.Add(TxtFooter)
@@ -259,15 +248,14 @@ Partial Class FrmPDF
     End Sub
     Friend WithEvents CmdClose As Button
     Friend WithEvents CmdDocumentation As Button
-    Friend WithEvents CmdReplace As Button
-    Friend WithEvents CmdFolderTarget As Button
+    Friend WithEvents CmdTargetFile As Button
     Friend WithEvents CmdFileDocu As Button
     Friend WithEvents CmdFooterFile As Button
     Friend WithEvents CmdHeaderFile As Button
     Friend WithEvents TxtDocTitle As TextBox
     Friend WithEvents LblDocTitle As Label
-    Friend WithEvents TxtTargetFolder As TextBox
-    Friend WithEvents LblTargetFolder As Label
+    Friend WithEvents TxtTargetFile As TextBox
+    Friend WithEvents LblTargetFile As Label
     Friend WithEvents TxtFileDocu As TextBox
     Friend WithEvents LblFileDocu As Label
     Friend WithEvents TxtFooter As TextBox

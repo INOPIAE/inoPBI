@@ -11,6 +11,7 @@ Public Class ClsIniFileHandling
         Public LastFooter As String
         Public LastHeader As String
         Public LastDocTitle As String
+        Public LastPDFFile As String
 
     End Structure
     Public Function WriteProjectIniFile(FilePath As String, Data As IniData) As Boolean
@@ -28,6 +29,7 @@ Public Class ClsIniFileHandling
             sw.WriteLine("LastFooter:" & Data.LastFooter)
             sw.WriteLine("LastHeader:" & Data.LastHeader)
             sw.WriteLine("LastDocTitle:" & Data.LastDocTitle)
+            sw.WriteLine("LastPDFFile:" & Data.LastPDFFile)
             sw.Close()
         Catch ex As Exception
             MsgBox(ex.Message,, "Error Project Ini File")
@@ -69,6 +71,8 @@ Public Class ClsIniFileHandling
                         data.LastHeader = lSplit(1)
                     Case "LastDocTitle"
                         data.LastDocTitle = lSplit(1)
+                    Case "LastPDFFile"
+                        data.LastPDFFile = lSplit(1)
                 End Select
             End If
         End While
