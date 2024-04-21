@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
+Imports System.Threading
 Imports System.Windows.Forms
 Imports inoPBIDLL
 
@@ -135,6 +136,11 @@ Public Class FrmMain
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TslCurrentProject.Text = My.Settings.CurrentProject
         Me.ToolStrip.Visible = False
+
+        If My.Settings.Language <> vbNullString Then
+            Thread.CurrentThread.CurrentCulture = New Globalization.CultureInfo(My.Settings.Language)
+            Thread.CurrentThread.CurrentUICulture = New Globalization.CultureInfo(My.Settings.Language)
+        End If
     End Sub
 
     Private Sub FrmMain_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
@@ -154,5 +160,13 @@ Public Class FrmMain
 
     Private Sub UsageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsageToolStripMenuItem.Click
         FrmMeasuresUsage.Show()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        FrmInfo.Show()
+    End Sub
+
+    Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OptionsToolStripMenuItem.Click
+        FrmSettings.Show()
     End Sub
 End Class
