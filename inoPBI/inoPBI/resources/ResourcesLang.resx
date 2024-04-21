@@ -225,4 +225,25 @@
   <data name="HtmlEditTitle" xml:space="preserve">
     <value>Edit file {0}</value>
   </data>
+  <data name="BtnRefresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="MUTitle" xml:space="preserve">
+    <value>Measure usage</value>
+  </data>
+  <data name="MUMeasure" xml:space="preserve">
+    <value>Measure</value>
+  </data>
+  <data name="MUUsage" xml:space="preserve">
+    <value>Usage</value>
+  </data>
+  <data name="MUPage" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="MUTable" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="MUName" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>

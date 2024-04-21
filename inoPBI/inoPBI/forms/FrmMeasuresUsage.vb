@@ -1,9 +1,4 @@
-﻿Imports System.IO
-Imports System.Windows.Forms.ImageList
-Imports inoPBIDLL
-Imports Markdig.Renderers
-Imports Newtonsoft.Json.Linq
-Imports PuppeteerSharp.Input
+﻿Imports inoPBIDLL
 
 Public Class FrmMeasuresUsage
     Private cTMDL As ClsTMDLHandling
@@ -39,6 +34,24 @@ Public Class FrmMeasuresUsage
     End Sub
     Private Sub FrmMeasuresUsage_Load(sender As Object, e As EventArgs) Handles Me.Load
         LblInfo.Text = My.Settings.LastTMDL
+        TranslateForm()
+    End Sub
 
+    Private Sub TranslateForm()
+        Me.Text = My.Resources.ResourcesLang.MUTitle
+
+        CmdClose.Text = My.Resources.ResourcesLang.BtnClose
+        CmdRefresh.Text = My.Resources.ResourcesLang.BtnRefresh
+
+        With DgvMeasures
+            .Columns(0).HeaderText = My.Resources.ResourcesLang.MUMeasure
+            .Columns(1).HeaderText = My.Resources.ResourcesLang.MUUsage
+        End With
+
+        With DgvReport
+            .Columns(0).HeaderText = My.Resources.ResourcesLang.MUPage
+            .Columns(1).HeaderText = My.Resources.ResourcesLang.MUTable
+            .Columns(2).HeaderText = My.Resources.ResourcesLang.MUName
+        End With
     End Sub
 End Class

@@ -128,6 +128,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Refresh ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnRefresh() As String
+            Get
+                Return ResourceManager.GetString("BtnRefresh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Rename project ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnRenameProject() As String
@@ -223,6 +232,60 @@ Namespace My.Resources
         Friend Shared ReadOnly Property MsgPdfFileInUse() As String
             Get
                 Return ResourceManager.GetString("MsgPdfFileInUse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Measure ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MUMeasure() As String
+            Get
+                Return ResourceManager.GetString("MUMeasure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Name ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MUName() As String
+            Get
+                Return ResourceManager.GetString("MUName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Page ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MUPage() As String
+            Get
+                Return ResourceManager.GetString("MUPage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Table ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MUTable() As String
+            Get
+                Return ResourceManager.GetString("MUTable", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Measure usage ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MUTitle() As String
+            Get
+                Return ResourceManager.GetString("MUTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Usage ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MUUsage() As String
+            Get
+                Return ResourceManager.GetString("MUUsage", resourceCulture)
             End Get
         End Property
         

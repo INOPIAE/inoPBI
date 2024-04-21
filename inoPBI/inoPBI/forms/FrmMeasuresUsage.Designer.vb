@@ -28,9 +28,9 @@ Partial Class FrmMeasuresUsage
         CmdRefresh = New Button()
         SpMeausres = New SplitContainer()
         DgvMeasures = New DataGridView()
-        DgvReport = New DataGridView()
         Measure = New DataGridViewTextBoxColumn()
         Usage = New DataGridViewTextBoxColumn()
+        DgvReport = New DataGridView()
         Page = New DataGridViewTextBoxColumn()
         Table = New DataGridViewTextBoxColumn()
         Valuename = New DataGridViewTextBoxColumn()
@@ -70,7 +70,7 @@ Partial Class FrmMeasuresUsage
         ' LblInfo
         ' 
         LblInfo.AutoSize = True
-        LblInfo.Location = New Point(23, 9)
+        LblInfo.Location = New Point(12, 9)
         LblInfo.Name = "LblInfo"
         LblInfo.Size = New Size(53, 20)
         LblInfo.TabIndex = 1
@@ -80,7 +80,7 @@ Partial Class FrmMeasuresUsage
         ' 
         CmdClose.Location = New Point(767, 44)
         CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(94, 29)
+        CmdClose.Size = New Size(105, 29)
         CmdClose.TabIndex = 0
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
@@ -89,7 +89,7 @@ Partial Class FrmMeasuresUsage
         ' 
         CmdRefresh.Location = New Point(767, 9)
         CmdRefresh.Name = "CmdRefresh"
-        CmdRefresh.Size = New Size(94, 29)
+        CmdRefresh.Size = New Size(105, 29)
         CmdRefresh.TabIndex = 0
         CmdRefresh.Text = "Refresh"
         CmdRefresh.UseVisualStyleBackColor = True
@@ -123,18 +123,6 @@ Partial Class FrmMeasuresUsage
         DgvMeasures.Size = New Size(430, 370)
         DgvMeasures.TabIndex = 0
         ' 
-        ' DgvReport
-        ' 
-        DgvReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvReport.Columns.AddRange(New DataGridViewColumn() {Page, Table, Valuename})
-        DgvReport.Dock = DockStyle.Fill
-        DgvReport.Location = New Point(0, 0)
-        DgvReport.Name = "DgvReport"
-        DgvReport.RowHeadersWidth = 51
-        DgvReport.RowTemplate.Height = 29
-        DgvReport.Size = New Size(450, 370)
-        DgvReport.TabIndex = 0
-        ' 
         ' Measure
         ' 
         Measure.HeaderText = "Measure"
@@ -148,6 +136,18 @@ Partial Class FrmMeasuresUsage
         Usage.MinimumWidth = 6
         Usage.Name = "Usage"
         Usage.Width = 125
+        ' 
+        ' DgvReport
+        ' 
+        DgvReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DgvReport.Columns.AddRange(New DataGridViewColumn() {Page, Table, Valuename})
+        DgvReport.Dock = DockStyle.Fill
+        DgvReport.Location = New Point(0, 0)
+        DgvReport.Name = "DgvReport"
+        DgvReport.RowHeadersWidth = 51
+        DgvReport.RowTemplate.Height = 29
+        DgvReport.Size = New Size(450, 370)
+        DgvReport.TabIndex = 0
         ' 
         ' Page
         ' 

@@ -225,4 +225,25 @@
   <data name="HtmlTitle" xml:space="preserve">
     <value>HTML Datei bearbeiten</value>
   </data>
+  <data name="BtnRefresh" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="MUTitle" xml:space="preserve">
+    <value>Verwendung der Measure</value>
+  </data>
+  <data name="MUMeasure" xml:space="preserve">
+    <value>Measure</value>
+  </data>
+  <data name="MUUsage" xml:space="preserve">
+    <value>Verwendung</value>
+  </data>
+  <data name="MUPage" xml:space="preserve">
+    <value>Seite</value>
+  </data>
+  <data name="MUTable" xml:space="preserve">
+    <value>Tabelle</value>
+  </data>
+  <data name="MUName" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>
