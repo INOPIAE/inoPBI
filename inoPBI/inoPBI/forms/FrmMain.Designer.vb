@@ -38,6 +38,13 @@ Partial Class FrmMain
         PrintSetupToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator5 = New ToolStripSeparator()
         ExitToolStripMenuItem = New ToolStripMenuItem()
+        PowerBIToolsToolStripMenuItem = New ToolStripMenuItem()
+        ReplacementToolStripMenuItem = New ToolStripMenuItem()
+        DocumentationToolStripMenuItem = New ToolStripMenuItem()
+        SelectProjectToolStripMenuItem = New ToolStripMenuItem()
+        EditFooterHeaderToolStripMenuItem = New ToolStripMenuItem()
+        ReplacementTMDLToolStripMenuItem = New ToolStripMenuItem()
+        UsageToolStripMenuItem = New ToolStripMenuItem()
         EditMenu = New ToolStripMenuItem()
         UndoToolStripMenuItem = New ToolStripMenuItem()
         RedoToolStripMenuItem = New ToolStripMenuItem()
@@ -65,13 +72,6 @@ Partial Class FrmMain
         SearchToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator8 = New ToolStripSeparator()
         AboutToolStripMenuItem = New ToolStripMenuItem()
-        PowerBIToolsToolStripMenuItem = New ToolStripMenuItem()
-        ReplacementToolStripMenuItem = New ToolStripMenuItem()
-        DocumentationToolStripMenuItem = New ToolStripMenuItem()
-        SelectProjectToolStripMenuItem = New ToolStripMenuItem()
-        EditFooterHeaderToolStripMenuItem = New ToolStripMenuItem()
-        ReplacementTMDLToolStripMenuItem = New ToolStripMenuItem()
-        UsageToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip = New ToolStrip()
         NewToolStripButton = New ToolStripButton()
         OpenToolStripButton = New ToolStripButton()
@@ -93,7 +93,7 @@ Partial Class FrmMain
         ' MenuStrip
         ' 
         MenuStrip.ImageScalingSize = New Size(20, 20)
-        MenuStrip.Items.AddRange(New ToolStripItem() {FileMenu, EditMenu, ViewMenu, ToolsMenu, WindowsMenu, HelpMenu, PowerBIToolsToolStripMenuItem})
+        MenuStrip.Items.AddRange(New ToolStripItem() {FileMenu, PowerBIToolsToolStripMenuItem, EditMenu, ViewMenu, ToolsMenu, WindowsMenu, HelpMenu})
         MenuStrip.Location = New Point(0, 0)
         MenuStrip.MdiWindowListItem = WindowsMenu
         MenuStrip.Name = "MenuStrip"
@@ -116,8 +116,9 @@ Partial Class FrmMain
         NewToolStripMenuItem.ImageTransparentColor = Color.Black
         NewToolStripMenuItem.Name = "NewToolStripMenuItem"
         NewToolStripMenuItem.ShortcutKeys = Keys.Control Or Keys.N
-        NewToolStripMenuItem.Size = New Size(224, 26)
+        NewToolStripMenuItem.Size = New Size(211, 26)
         NewToolStripMenuItem.Text = "&Neu"
+        NewToolStripMenuItem.Visible = False
         ' 
         ' OpenToolStripMenuItem
         ' 
@@ -125,13 +126,15 @@ Partial Class FrmMain
         OpenToolStripMenuItem.ImageTransparentColor = Color.Black
         OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         OpenToolStripMenuItem.ShortcutKeys = Keys.Control Or Keys.O
-        OpenToolStripMenuItem.Size = New Size(224, 26)
+        OpenToolStripMenuItem.Size = New Size(211, 26)
         OpenToolStripMenuItem.Text = "&Öffnen"
+        OpenToolStripMenuItem.Visible = False
         ' 
         ' ToolStripSeparator3
         ' 
         ToolStripSeparator3.Name = "ToolStripSeparator3"
-        ToolStripSeparator3.Size = New Size(221, 6)
+        ToolStripSeparator3.Size = New Size(208, 6)
+        ToolStripSeparator3.Visible = False
         ' 
         ' SaveToolStripMenuItem
         ' 
@@ -139,19 +142,22 @@ Partial Class FrmMain
         SaveToolStripMenuItem.ImageTransparentColor = Color.Black
         SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         SaveToolStripMenuItem.ShortcutKeys = Keys.Control Or Keys.S
-        SaveToolStripMenuItem.Size = New Size(224, 26)
+        SaveToolStripMenuItem.Size = New Size(211, 26)
         SaveToolStripMenuItem.Text = "&Speichern"
+        SaveToolStripMenuItem.Visible = False
         ' 
         ' SaveAsToolStripMenuItem
         ' 
         SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        SaveAsToolStripMenuItem.Size = New Size(224, 26)
+        SaveAsToolStripMenuItem.Size = New Size(211, 26)
         SaveAsToolStripMenuItem.Text = "Speichern &unter"
+        SaveAsToolStripMenuItem.Visible = False
         ' 
         ' ToolStripSeparator4
         ' 
         ToolStripSeparator4.Name = "ToolStripSeparator4"
-        ToolStripSeparator4.Size = New Size(221, 6)
+        ToolStripSeparator4.Size = New Size(208, 6)
+        ToolStripSeparator4.Visible = False
         ' 
         ' PrintToolStripMenuItem
         ' 
@@ -159,33 +165,80 @@ Partial Class FrmMain
         PrintToolStripMenuItem.ImageTransparentColor = Color.Black
         PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         PrintToolStripMenuItem.ShortcutKeys = Keys.Control Or Keys.P
-        PrintToolStripMenuItem.Size = New Size(224, 26)
+        PrintToolStripMenuItem.Size = New Size(211, 26)
         PrintToolStripMenuItem.Text = "&Drucken"
+        PrintToolStripMenuItem.Visible = False
         ' 
         ' PrintPreviewToolStripMenuItem
         ' 
         PrintPreviewToolStripMenuItem.Image = CType(resources.GetObject("PrintPreviewToolStripMenuItem.Image"), Image)
         PrintPreviewToolStripMenuItem.ImageTransparentColor = Color.Black
         PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
-        PrintPreviewToolStripMenuItem.Size = New Size(224, 26)
+        PrintPreviewToolStripMenuItem.Size = New Size(211, 26)
         PrintPreviewToolStripMenuItem.Text = "&Seitenansicht"
+        PrintPreviewToolStripMenuItem.Visible = False
         ' 
         ' PrintSetupToolStripMenuItem
         ' 
         PrintSetupToolStripMenuItem.Name = "PrintSetupToolStripMenuItem"
-        PrintSetupToolStripMenuItem.Size = New Size(224, 26)
+        PrintSetupToolStripMenuItem.Size = New Size(211, 26)
         PrintSetupToolStripMenuItem.Text = "Druckeinrichtung"
+        PrintSetupToolStripMenuItem.Visible = False
         ' 
         ' ToolStripSeparator5
         ' 
         ToolStripSeparator5.Name = "ToolStripSeparator5"
-        ToolStripSeparator5.Size = New Size(221, 6)
+        ToolStripSeparator5.Size = New Size(208, 6)
+        ToolStripSeparator5.Visible = False
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(224, 26)
+        ExitToolStripMenuItem.Size = New Size(211, 26)
         ExitToolStripMenuItem.Text = "&Beenden"
+        ' 
+        ' PowerBIToolsToolStripMenuItem
+        ' 
+        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ReplacementTMDLToolStripMenuItem, ReplacementToolStripMenuItem, DocumentationToolStripMenuItem, EditFooterHeaderToolStripMenuItem, UsageToolStripMenuItem, SelectProjectToolStripMenuItem})
+        PowerBIToolsToolStripMenuItem.Name = "PowerBIToolsToolStripMenuItem"
+        PowerBIToolsToolStripMenuItem.Size = New Size(119, 24)
+        PowerBIToolsToolStripMenuItem.Text = "Power BI Tools"
+        ' 
+        ' ReplacementToolStripMenuItem
+        ' 
+        ReplacementToolStripMenuItem.Name = "ReplacementToolStripMenuItem"
+        ReplacementToolStripMenuItem.Size = New Size(222, 26)
+        ReplacementToolStripMenuItem.Text = "Replacement BIM"
+        ' 
+        ' DocumentationToolStripMenuItem
+        ' 
+        DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
+        DocumentationToolStripMenuItem.Size = New Size(224, 26)
+        DocumentationToolStripMenuItem.Text = "Documentation"
+        ' 
+        ' SelectProjectToolStripMenuItem
+        ' 
+        SelectProjectToolStripMenuItem.Name = "SelectProjectToolStripMenuItem"
+        SelectProjectToolStripMenuItem.Size = New Size(224, 26)
+        SelectProjectToolStripMenuItem.Text = "Select Project"
+        ' 
+        ' EditFooterHeaderToolStripMenuItem
+        ' 
+        EditFooterHeaderToolStripMenuItem.Name = "EditFooterHeaderToolStripMenuItem"
+        EditFooterHeaderToolStripMenuItem.Size = New Size(224, 26)
+        EditFooterHeaderToolStripMenuItem.Text = "Edit Footer/Header"
+        ' 
+        ' ReplacementTMDLToolStripMenuItem
+        ' 
+        ReplacementTMDLToolStripMenuItem.Name = "ReplacementTMDLToolStripMenuItem"
+        ReplacementTMDLToolStripMenuItem.Size = New Size(224, 26)
+        ReplacementTMDLToolStripMenuItem.Text = "Replacement TMDL"
+        ' 
+        ' UsageToolStripMenuItem
+        ' 
+        UsageToolStripMenuItem.Name = "UsageToolStripMenuItem"
+        UsageToolStripMenuItem.Size = New Size(224, 26)
+        UsageToolStripMenuItem.Text = "Usage"
         ' 
         ' EditMenu
         ' 
@@ -271,7 +324,7 @@ Partial Class FrmMain
         ToolBarToolStripMenuItem.CheckOnClick = True
         ToolBarToolStripMenuItem.CheckState = CheckState.Checked
         ToolBarToolStripMenuItem.Name = "ToolBarToolStripMenuItem"
-        ToolBarToolStripMenuItem.Size = New Size(224, 26)
+        ToolBarToolStripMenuItem.Size = New Size(177, 26)
         ToolBarToolStripMenuItem.Text = "&Symbolleiste"
         ' 
         ' StatusBarToolStripMenuItem
@@ -280,7 +333,7 @@ Partial Class FrmMain
         StatusBarToolStripMenuItem.CheckOnClick = True
         StatusBarToolStripMenuItem.CheckState = CheckState.Checked
         StatusBarToolStripMenuItem.Name = "StatusBarToolStripMenuItem"
-        StatusBarToolStripMenuItem.Size = New Size(224, 26)
+        StatusBarToolStripMenuItem.Size = New Size(177, 26)
         StatusBarToolStripMenuItem.Text = "Status&leiste"
         ' 
         ' ToolsMenu
@@ -293,7 +346,7 @@ Partial Class FrmMain
         ' OptionsToolStripMenuItem
         ' 
         OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        OptionsToolStripMenuItem.Size = New Size(224, 26)
+        OptionsToolStripMenuItem.Size = New Size(154, 26)
         OptionsToolStripMenuItem.Text = "&Optionen"
         ' 
         ' WindowsMenu
@@ -306,37 +359,37 @@ Partial Class FrmMain
         ' NewWindowToolStripMenuItem
         ' 
         NewWindowToolStripMenuItem.Name = "NewWindowToolStripMenuItem"
-        NewWindowToolStripMenuItem.Size = New Size(224, 26)
+        NewWindowToolStripMenuItem.Size = New Size(217, 26)
         NewWindowToolStripMenuItem.Text = "&Neues Fenster"
         ' 
         ' CascadeToolStripMenuItem
         ' 
         CascadeToolStripMenuItem.Name = "CascadeToolStripMenuItem"
-        CascadeToolStripMenuItem.Size = New Size(224, 26)
+        CascadeToolStripMenuItem.Size = New Size(217, 26)
         CascadeToolStripMenuItem.Text = "Ü&berlappend"
         ' 
         ' TileVerticalToolStripMenuItem
         ' 
         TileVerticalToolStripMenuItem.Name = "TileVerticalToolStripMenuItem"
-        TileVerticalToolStripMenuItem.Size = New Size(224, 26)
+        TileVerticalToolStripMenuItem.Size = New Size(217, 26)
         TileVerticalToolStripMenuItem.Text = "&Nebeneinander"
         ' 
         ' TileHorizontalToolStripMenuItem
         ' 
         TileHorizontalToolStripMenuItem.Name = "TileHorizontalToolStripMenuItem"
-        TileHorizontalToolStripMenuItem.Size = New Size(224, 26)
+        TileHorizontalToolStripMenuItem.Size = New Size(217, 26)
         TileHorizontalToolStripMenuItem.Text = "&Untereinander"
         ' 
         ' CloseAllToolStripMenuItem
         ' 
         CloseAllToolStripMenuItem.Name = "CloseAllToolStripMenuItem"
-        CloseAllToolStripMenuItem.Size = New Size(224, 26)
+        CloseAllToolStripMenuItem.Size = New Size(217, 26)
         CloseAllToolStripMenuItem.Text = "&Alle schließen"
         ' 
         ' ArrangeIconsToolStripMenuItem
         ' 
         ArrangeIconsToolStripMenuItem.Name = "ArrangeIconsToolStripMenuItem"
-        ArrangeIconsToolStripMenuItem.Size = New Size(224, 26)
+        ArrangeIconsToolStripMenuItem.Size = New Size(217, 26)
         ArrangeIconsToolStripMenuItem.Text = "Symbole &anordnen"
         ' 
         ' HelpMenu
@@ -350,7 +403,7 @@ Partial Class FrmMain
         ' 
         ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem"
         ContentsToolStripMenuItem.ShortcutKeys = Keys.Control Or Keys.F1
-        ContentsToolStripMenuItem.Size = New Size(224, 26)
+        ContentsToolStripMenuItem.Size = New Size(190, 26)
         ContentsToolStripMenuItem.Text = "&Inhalt"
         ContentsToolStripMenuItem.Visible = False
         ' 
@@ -359,7 +412,7 @@ Partial Class FrmMain
         IndexToolStripMenuItem.Image = CType(resources.GetObject("IndexToolStripMenuItem.Image"), Image)
         IndexToolStripMenuItem.ImageTransparentColor = Color.Black
         IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
-        IndexToolStripMenuItem.Size = New Size(224, 26)
+        IndexToolStripMenuItem.Size = New Size(190, 26)
         IndexToolStripMenuItem.Text = "&Index"
         IndexToolStripMenuItem.Visible = False
         ' 
@@ -368,64 +421,21 @@ Partial Class FrmMain
         SearchToolStripMenuItem.Image = CType(resources.GetObject("SearchToolStripMenuItem.Image"), Image)
         SearchToolStripMenuItem.ImageTransparentColor = Color.Black
         SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        SearchToolStripMenuItem.Size = New Size(224, 26)
+        SearchToolStripMenuItem.Size = New Size(190, 26)
         SearchToolStripMenuItem.Text = "&Suchen"
         SearchToolStripMenuItem.Visible = False
         ' 
         ' ToolStripSeparator8
         ' 
         ToolStripSeparator8.Name = "ToolStripSeparator8"
-        ToolStripSeparator8.Size = New Size(221, 6)
+        ToolStripSeparator8.Size = New Size(187, 6)
         ToolStripSeparator8.Visible = False
         ' 
         ' AboutToolStripMenuItem
         ' 
         AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        AboutToolStripMenuItem.Size = New Size(224, 26)
+        AboutToolStripMenuItem.Size = New Size(190, 26)
         AboutToolStripMenuItem.Text = "&Info..."
-        ' 
-        ' PowerBIToolsToolStripMenuItem
-        ' 
-        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ReplacementToolStripMenuItem, DocumentationToolStripMenuItem, SelectProjectToolStripMenuItem, EditFooterHeaderToolStripMenuItem, ReplacementTMDLToolStripMenuItem, UsageToolStripMenuItem})
-        PowerBIToolsToolStripMenuItem.Name = "PowerBIToolsToolStripMenuItem"
-        PowerBIToolsToolStripMenuItem.Size = New Size(119, 24)
-        PowerBIToolsToolStripMenuItem.Text = "Power BI Tools"
-        ' 
-        ' ReplacementToolStripMenuItem
-        ' 
-        ReplacementToolStripMenuItem.Name = "ReplacementToolStripMenuItem"
-        ReplacementToolStripMenuItem.Size = New Size(222, 26)
-        ReplacementToolStripMenuItem.Text = "Replacement"
-        ' 
-        ' DocumentationToolStripMenuItem
-        ' 
-        DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
-        DocumentationToolStripMenuItem.Size = New Size(222, 26)
-        DocumentationToolStripMenuItem.Text = "Documentation"
-        ' 
-        ' SelectProjectToolStripMenuItem
-        ' 
-        SelectProjectToolStripMenuItem.Name = "SelectProjectToolStripMenuItem"
-        SelectProjectToolStripMenuItem.Size = New Size(222, 26)
-        SelectProjectToolStripMenuItem.Text = "Select Project"
-        ' 
-        ' EditFooterHeaderToolStripMenuItem
-        ' 
-        EditFooterHeaderToolStripMenuItem.Name = "EditFooterHeaderToolStripMenuItem"
-        EditFooterHeaderToolStripMenuItem.Size = New Size(222, 26)
-        EditFooterHeaderToolStripMenuItem.Text = "Edit Footer/Header"
-        ' 
-        ' ReplacementTMDLToolStripMenuItem
-        ' 
-        ReplacementTMDLToolStripMenuItem.Name = "ReplacementTMDLToolStripMenuItem"
-        ReplacementTMDLToolStripMenuItem.Size = New Size(222, 26)
-        ReplacementTMDLToolStripMenuItem.Text = "Replacement TMDL"
-        ' 
-        ' UsageToolStripMenuItem
-        ' 
-        UsageToolStripMenuItem.Name = "UsageToolStripMenuItem"
-        UsageToolStripMenuItem.Size = New Size(222, 26)
-        UsageToolStripMenuItem.Text = "Usage"
         ' 
         ' ToolStrip
         ' 
@@ -537,7 +547,7 @@ Partial Class FrmMain
         MainMenuStrip = MenuStrip
         Margin = New Padding(4, 5, 4, 5)
         Name = "FrmMain"
-        Text = "FrmMain"
+        Text = "inoPBI"
         MenuStrip.ResumeLayout(False)
         MenuStrip.PerformLayout()
         ToolStrip.ResumeLayout(False)
