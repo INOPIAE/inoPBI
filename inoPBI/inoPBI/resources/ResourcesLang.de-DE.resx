@@ -315,4 +315,13 @@
   <data name="RFTo" xml:space="preserve">
     <value>Nach</value>
   </data>
+  <data name="InfoTitle" xml:space="preserve">
+    <value>Info {0}</value>
+  </data>
+  <data name="InfoVersion" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="InfoCopyright" xml:space="preserve">
+    <value>Copyright </value>
+  </data>
 </root>

@@ -236,6 +236,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Copyright  ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property InfoCopyright() As String
+            Get
+                Return ResourceManager.GetString("InfoCopyright", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Info {0} ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property InfoTitle() As String
+            Get
+                Return ResourceManager.GetString("InfoTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Version {0} ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property InfoVersion() As String
+            Get
+                Return ResourceManager.GetString("InfoVersion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Current project: {0} ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property MainTslCurrentProject() As String
