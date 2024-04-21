@@ -41,7 +41,7 @@ Public Class FrmReplacement
         Dim fileNameReplace As String = TxtTargetFolder.Text & "\" & Path.GetFileName(TxtOrginal.Text) & "." & TxtCustomer.Text
 
 
-        LblInfo.Text = "Replacing started"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingStarted
         Application.DoEvents()
 
         If File.Exists(fileName) Then
@@ -52,12 +52,12 @@ Public Class FrmReplacement
         Dim clsR As New ClsReplacement
 
         If clsR.ReplaceReferences(fileName, TxtReplace.Text, fileNameReplace) = False Then
-            MessageBox.Show("Something went wrong")
-            LblInfo.Text = "Canceled with error"
+            MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
+            LblInfo.Text = My.Resources.ResourcesLang.ReplacementCanceledWithError
             Exit Sub
         End If
 
-        LblInfo.Text = "Copy files"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementCopyFiles
         Application.DoEvents()
 
         clsR.CopyPBIP(TxtOrginal.Text, fileNameReplace)
@@ -68,7 +68,7 @@ Public Class FrmReplacement
         My.Settings.LastCustomer = TxtCustomer.Text
         My.Settings.Save()
 
-        LblInfo.Text = "Replacing finished"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingFinished
     End Sub
 
     Private Sub FrmReplacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -80,10 +80,8 @@ Public Class FrmReplacement
         TxtFileDocu.Text = My.Settings.LastDocumentation
 
         LblInfo.Text = ""
-    End Sub
 
-    Private Sub CmdInfo_Click(sender As Object, e As EventArgs) Handles CmdInfo.Click
-        FrmInfo.ShowDialog()
+        TranslateForm()
     End Sub
 
     Private Sub CmdFileDocu_Click(sender As Object, e As EventArgs) Handles CmdFileDocu.Click
@@ -97,13 +95,13 @@ Public Class FrmReplacement
     End Sub
 
     Private Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
-        LblInfo.Text = "Documentation started"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationStarted
         Application.DoEvents()
 
 
         Dim clsJSON As New ClsJSONHandling
         If clsJSON.ExtractMeasures(TxtOrginal.Text, TxtFileDocu.Text) = False Then
-            MessageBox.Show("Something went wrong")
+            MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
             Exit Sub
         End If
 
@@ -112,7 +110,7 @@ Public Class FrmReplacement
         My.Settings.LastDocumentation = TxtFileDocu.Text
         My.Settings.Save()
 
-        LblInfo.Text = "Documentation finished"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
     End Sub
 
     Private Sub CmdEditReplacement_Click(sender As Object, e As EventArgs) Handles CmdEditReplacement.Click
@@ -125,4 +123,20 @@ Public Class FrmReplacement
         End If
     End Sub
 
+    Private Sub TranslateForm()
+        Me.Text = My.Resources.ResourcesLang.ReplacementTitle
+
+        LblOriginal.Text = My.Resources.ResourcesLang.ReplacementOriginal
+        LblRepacement.Text = My.Resources.ResourcesLang.ReplacementReplacementFile
+        LblTargetFolder.Text = My.Resources.ResourcesLang.ReplacementTargetFolder
+        LblCustomer.Text = My.Resources.ResourcesLang.ReplacementCustomerExtension
+        LblFileDocu.Text = My.Resources.ResourcesLang.PdfDocumentationFile
+
+        CmdClose.Text = My.Resources.ResourcesLang.BtnClose
+        CmdEditReplacement.Text = My.Resources.ResourcesLang.BtnEdit
+        CmdDocumentation.Text = My.Resources.ResourcesLang.BtnCreateDokumentation
+
+        CmdReplace.Text = My.Resources.ResourcesLang.BtnReplace
+
+    End Sub
 End Class

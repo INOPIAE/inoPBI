@@ -291,4 +291,7 @@
   <data name="TDMLTitle" xml:space="preserve">
     <value>Replacement of PBIP TDML stucture</value>
   </data>
+  <data name="ReplacementTitle" xml:space="preserve">
+    <value>Replacement of PBIP BIM stucture</value>
+  </data>
 </root>

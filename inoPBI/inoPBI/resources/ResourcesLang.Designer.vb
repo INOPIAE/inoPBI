@@ -551,6 +551,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement of PBIP BIM stucture ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementTitle() As String
+            Get
+                Return ResourceManager.GetString("ReplacementTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Language ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property SettingsLanguage() As String
