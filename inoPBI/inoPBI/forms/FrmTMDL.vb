@@ -10,7 +10,7 @@ Public Class FrmTMDL
             End If
         End With
         If TxtOrginal.Text.Contains(".Dataset") = False And TxtOrginal.Text.Contains(".SemanticModel") = False Then
-            MessageBox.Show("No Dataset folder selcted")
+            MessageBox.Show(My.Resources.ResourcesLang.ReplacementNoDatasetFolderSelcted)
         End If
     End Sub
 
@@ -60,7 +60,7 @@ Public Class FrmTMDL
         Dim fileNameReplace As String = TxtTargetFolder.Text & "\" & Path.GetFileName(fileNameSource) & "." & TxtCustomer.Text
 
 
-        LblInfo.Text = "Replacing started"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingStarted
         Application.DoEvents()
 
         If File.Exists(fileName) Then
@@ -71,12 +71,12 @@ Public Class FrmTMDL
         Dim clsR As New ClsReplacement
 
         If clsR.ReplaceReferenceTMDL(fileName, TxtReplace.Text, fileNameReplace) = False Then
-            MessageBox.Show("Something went wrong")
-            LblInfo.Text = "Canceled with error"
+            MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
+            LblInfo.Text = My.Resources.ResourcesLang.ReplacementCanceledWithError
             Exit Sub
         End If
 
-        LblInfo.Text = "Copy files"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementCopyFiles
         Application.DoEvents()
 
         clsR.CopyPBIPTMDL(TxtOrginal.Text, TxtTargetFolder.Text, fileNameReplace)
@@ -87,16 +87,16 @@ Public Class FrmTMDL
         My.Settings.LastCustomer = TxtCustomer.Text
         My.Settings.Save()
 
-        LblInfo.Text = "Replacing finished"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingFinished
     End Sub
 
     Private Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
-        LblInfo.Text = "Documentation started"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationStarted
         Application.DoEvents()
 
         Dim clsTMDL As New ClsTMDLHandling(TxtOrginal.Text)
         If clsTMDL.ExtractMeasures(TxtFileDocu.Text) = False Then
-            MessageBox.Show("Something went wrong")
+            MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
             Exit Sub
         End If
 
@@ -105,7 +105,7 @@ Public Class FrmTMDL
         My.Settings.LastDocumentation = TxtFileDocu.Text
         My.Settings.Save()
 
-        LblInfo.Text = "Documentation finished"
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
     End Sub
 
     Private Sub CmdClose_Click(sender As Object, e As EventArgs) Handles CmdClose.Click
@@ -124,5 +124,24 @@ Public Class FrmTMDL
         TxtFileDocu.Text = My.Settings.LastDocumentation
 
         LblInfo.Text = ""
+
+        TranslateForm()
+    End Sub
+
+    Private Sub TranslateForm()
+        Me.Text = My.Resources.ResourcesLang.TDMLTitle
+
+        LblOriginal.Text = My.Resources.ResourcesLang.ReplacementOriginal
+        LblRepacement.Text = My.Resources.ResourcesLang.ReplacementReplacementFile
+        LblTargetFolder.Text = My.Resources.ResourcesLang.ReplacementTargetFolder
+        LblCustomer.Text = My.Resources.ResourcesLang.ReplacementCustomerExtension
+        LblFileDocu.Text = My.Resources.ResourcesLang.PdfDocumentationFile
+
+        CmdClose.Text = My.Resources.ResourcesLang.BtnClose
+        CmdEditReplacement.Text = My.Resources.ResourcesLang.BtnEdit
+        CmdDocumentation.Text = My.Resources.ResourcesLang.BtnCreateDokumentation
+        CmdPDF.Text = My.Resources.ResourcesLang.BtnCreatePDF
+        CmdReplace.Text = My.Resources.ResourcesLang.BtnReplace
+
     End Sub
 End Class

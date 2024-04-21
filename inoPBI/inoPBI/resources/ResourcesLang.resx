@@ -246,4 +246,49 @@
   <data name="MUName" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="BtnReplace" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="BtnCreateDokumentation" xml:space="preserve">
+    <value>Create Documentation</value>
+  </data>
+  <data name="ReplacementOriginal" xml:space="preserve">
+    <value>Orginal</value>
+  </data>
+  <data name="ReplacementReplacementFile" xml:space="preserve">
+    <value>File with replacements</value>
+  </data>
+  <data name="ReplacementTargetFolder" xml:space="preserve">
+    <value>Target folder</value>
+  </data>
+  <data name="ReplacementCustomerExtension" xml:space="preserve">
+    <value>Customer extension</value>
+  </data>
+  <data name="ReplacementNoDatasetFolderSelcted" xml:space="preserve">
+    <value>No dataset folder selected</value>
+  </data>
+  <data name="ReplacementReplacingStarted" xml:space="preserve">
+    <value>Replacing started</value>
+  </data>
+  <data name="MsgSomethingWentWrong" xml:space="preserve">
+    <value>Something went wrong</value>
+  </data>
+  <data name="ReplacementCanceledWithError" xml:space="preserve">
+    <value>Canceled with error</value>
+  </data>
+  <data name="ReplacementCopyFiles" xml:space="preserve">
+    <value>Copy files</value>
+  </data>
+  <data name="ReplacementReplacingFinished" xml:space="preserve">
+    <value>Replacing finished</value>
+  </data>
+  <data name="ReplacementDocumentationStarted" xml:space="preserve">
+    <value>Documentation started</value>
+  </data>
+  <data name="ReplacementDocumentationFinished" xml:space="preserve">
+    <value>Documentation finished</value>
+  </data>
+  <data name="TDMLTitle" xml:space="preserve">
+    <value>Replacement of PBIP TDML stucture</value>
+  </data>
 </root>

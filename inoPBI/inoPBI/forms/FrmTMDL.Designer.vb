@@ -46,9 +46,9 @@ Partial Class FrmTMDL
         ' 
         ' CmdEditReplacement
         ' 
-        CmdEditReplacement.Location = New Point(709, 78)
+        CmdEditReplacement.Location = New Point(727, 78)
         CmdEditReplacement.Name = "CmdEditReplacement"
-        CmdEditReplacement.Size = New Size(69, 29)
+        CmdEditReplacement.Size = New Size(108, 29)
         CmdEditReplacement.TabIndex = 26
         CmdEditReplacement.Text = "Edit"
         CmdEditReplacement.UseVisualStyleBackColor = True
@@ -82,7 +82,7 @@ Partial Class FrmTMDL
         ' 
         ' CmdFolderTarget
         ' 
-        CmdFolderTarget.Location = New Point(673, 112)
+        CmdFolderTarget.Location = New Point(691, 112)
         CmdFolderTarget.Name = "CmdFolderTarget"
         CmdFolderTarget.Size = New Size(30, 27)
         CmdFolderTarget.TabIndex = 29
@@ -91,7 +91,7 @@ Partial Class FrmTMDL
         ' 
         ' CmdFileDocu
         ' 
-        CmdFileDocu.Location = New Point(673, 236)
+        CmdFileDocu.Location = New Point(691, 236)
         CmdFileDocu.Name = "CmdFileDocu"
         CmdFileDocu.Size = New Size(30, 27)
         CmdFileDocu.TabIndex = 34
@@ -100,7 +100,7 @@ Partial Class FrmTMDL
         ' 
         ' CmdFileReplacement
         ' 
-        CmdFileReplacement.Location = New Point(673, 78)
+        CmdFileReplacement.Location = New Point(691, 78)
         CmdFileReplacement.Name = "CmdFileReplacement"
         CmdFileReplacement.Size = New Size(30, 27)
         CmdFileReplacement.TabIndex = 25
@@ -109,7 +109,7 @@ Partial Class FrmTMDL
         ' 
         ' CmdFileOriginal
         ' 
-        CmdFileOriginal.Location = New Point(673, 46)
+        CmdFileOriginal.Location = New Point(691, 46)
         CmdFileOriginal.Name = "CmdFileOriginal"
         CmdFileOriginal.Size = New Size(30, 27)
         CmdFileOriginal.TabIndex = 22
@@ -118,7 +118,7 @@ Partial Class FrmTMDL
         ' 
         ' TxtCustomer
         ' 
-        TxtCustomer.Location = New Point(160, 144)
+        TxtCustomer.Location = New Point(178, 144)
         TxtCustomer.Name = "TxtCustomer"
         TxtCustomer.Size = New Size(172, 27)
         TxtCustomer.TabIndex = 31
@@ -126,7 +126,7 @@ Partial Class FrmTMDL
         ' LblCustomer
         ' 
         LblCustomer.AutoSize = True
-        LblCustomer.Location = New Point(22, 148)
+        LblCustomer.Location = New Point(12, 146)
         LblCustomer.Name = "LblCustomer"
         LblCustomer.Size = New Size(139, 20)
         LblCustomer.TabIndex = 30
@@ -134,7 +134,7 @@ Partial Class FrmTMDL
         ' 
         ' TxtTargetFolder
         ' 
-        TxtTargetFolder.Location = New Point(160, 110)
+        TxtTargetFolder.Location = New Point(178, 110)
         TxtTargetFolder.Name = "TxtTargetFolder"
         TxtTargetFolder.Size = New Size(507, 27)
         TxtTargetFolder.TabIndex = 28
@@ -142,7 +142,7 @@ Partial Class FrmTMDL
         ' LblTargetFolder
         ' 
         LblTargetFolder.AutoSize = True
-        LblTargetFolder.Location = New Point(22, 114)
+        LblTargetFolder.Location = New Point(12, 112)
         LblTargetFolder.Name = "LblTargetFolder"
         LblTargetFolder.Size = New Size(94, 20)
         LblTargetFolder.TabIndex = 27
@@ -150,7 +150,7 @@ Partial Class FrmTMDL
         ' 
         ' TxtFileDocu
         ' 
-        TxtFileDocu.Location = New Point(160, 236)
+        TxtFileDocu.Location = New Point(178, 236)
         TxtFileDocu.Name = "TxtFileDocu"
         TxtFileDocu.Size = New Size(507, 27)
         TxtFileDocu.TabIndex = 33
@@ -158,7 +158,7 @@ Partial Class FrmTMDL
         ' LblFileDocu
         ' 
         LblFileDocu.AutoSize = True
-        LblFileDocu.Location = New Point(22, 238)
+        LblFileDocu.Location = New Point(12, 236)
         LblFileDocu.Name = "LblFileDocu"
         LblFileDocu.Size = New Size(137, 20)
         LblFileDocu.TabIndex = 32
@@ -166,7 +166,7 @@ Partial Class FrmTMDL
         ' 
         ' TxtReplace
         ' 
-        TxtReplace.Location = New Point(160, 78)
+        TxtReplace.Location = New Point(178, 78)
         TxtReplace.Name = "TxtReplace"
         TxtReplace.Size = New Size(507, 27)
         TxtReplace.TabIndex = 24
@@ -174,7 +174,7 @@ Partial Class FrmTMDL
         ' LblRepacement
         ' 
         LblRepacement.AutoSize = True
-        LblRepacement.Location = New Point(22, 81)
+        LblRepacement.Location = New Point(12, 79)
         LblRepacement.Name = "LblRepacement"
         LblRepacement.Size = New Size(121, 20)
         LblRepacement.TabIndex = 23
@@ -182,7 +182,7 @@ Partial Class FrmTMDL
         ' 
         ' TxtOrginal
         ' 
-        TxtOrginal.Location = New Point(160, 45)
+        TxtOrginal.Location = New Point(178, 45)
         TxtOrginal.Name = "TxtOrginal"
         TxtOrginal.Size = New Size(507, 27)
         TxtOrginal.TabIndex = 21
@@ -190,7 +190,7 @@ Partial Class FrmTMDL
         ' LblOriginal
         ' 
         LblOriginal.AutoSize = True
-        LblOriginal.Location = New Point(22, 48)
+        LblOriginal.Location = New Point(12, 46)
         LblOriginal.Name = "LblOriginal"
         LblOriginal.Size = New Size(62, 20)
         LblOriginal.TabIndex = 20
@@ -208,7 +208,7 @@ Partial Class FrmTMDL
         ' LblInfo
         ' 
         LblInfo.AutoSize = True
-        LblInfo.Location = New Point(22, 301)
+        LblInfo.Location = New Point(12, 299)
         LblInfo.Name = "LblInfo"
         LblInfo.Size = New Size(35, 20)
         LblInfo.TabIndex = 39
@@ -218,7 +218,7 @@ Partial Class FrmTMDL
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(842, 450)
         Controls.Add(LblInfo)
         Controls.Add(CmdEditReplacement)
         Controls.Add(CmdClose)

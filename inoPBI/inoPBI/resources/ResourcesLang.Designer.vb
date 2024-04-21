@@ -83,6 +83,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Create Documentation ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnCreateDokumentation() As String
+            Get
+                Return ResourceManager.GetString("BtnCreateDokumentation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Create PDF ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnCreatePDF() As String
@@ -142,6 +151,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property BtnRenameProject() As String
             Get
                 Return ResourceManager.GetString("BtnRenameProject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replace ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnReplace() As String
+            Get
+                Return ResourceManager.GetString("BtnReplace", resourceCulture)
             End Get
         End Property
         
@@ -232,6 +250,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property MsgPdfFileInUse() As String
             Get
                 Return ResourceManager.GetString("MsgPdfFileInUse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Something went wrong ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MsgSomethingWentWrong() As String
+            Get
+                Return ResourceManager.GetString("MsgSomethingWentWrong", resourceCulture)
             End Get
         End Property
         
@@ -425,6 +452,105 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Canceled with error ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementCanceledWithError() As String
+            Get
+                Return ResourceManager.GetString("ReplacementCanceledWithError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Copy files ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementCopyFiles() As String
+            Get
+                Return ResourceManager.GetString("ReplacementCopyFiles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Customer extension ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementCustomerExtension() As String
+            Get
+                Return ResourceManager.GetString("ReplacementCustomerExtension", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Documentation finished ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementDocumentationFinished() As String
+            Get
+                Return ResourceManager.GetString("ReplacementDocumentationFinished", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Documentation started ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementDocumentationStarted() As String
+            Get
+                Return ResourceManager.GetString("ReplacementDocumentationStarted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die No dataset folder selected ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementNoDatasetFolderSelcted() As String
+            Get
+                Return ResourceManager.GetString("ReplacementNoDatasetFolderSelcted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Orginal ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementOriginal() As String
+            Get
+                Return ResourceManager.GetString("ReplacementOriginal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die File with replacements ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReplacementFile() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReplacementFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacing finished ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReplacingFinished() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReplacingFinished", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacing started ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReplacingStarted() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReplacingStarted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Target folder ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementTargetFolder() As String
+            Get
+                Return ResourceManager.GetString("ReplacementTargetFolder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Language ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property SettingsLanguage() As String
@@ -448,6 +574,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property SettingsTitle() As String
             Get
                 Return ResourceManager.GetString("SettingsTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement of PBIP TDML stucture ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property TDMLTitle() As String
+            Get
+                Return ResourceManager.GetString("TDMLTitle", resourceCulture)
             End Get
         End Property
     End Class
