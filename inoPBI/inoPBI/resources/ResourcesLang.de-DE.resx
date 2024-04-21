@@ -324,4 +324,67 @@
   <data name="InfoCopyright" xml:space="preserve">
     <value>Copyright </value>
   </data>
+  <data name="MainFile" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="MainQuit" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="MainPowerBITools" xml:space="preserve">
+    <value>Power BI Tools</value>
+  </data>
+  <data name="MainReplaceTDML" xml:space="preserve">
+    <value>Ersetzen TDML</value>
+  </data>
+  <data name="MainReplaceBIM" xml:space="preserve">
+    <value>Ersetzen BIM</value>
+  </data>
+  <data name="MainDocumentation" xml:space="preserve">
+    <value>Dokumentation</value>
+  </data>
+  <data name="MainEditFooterHeader" xml:space="preserve">
+    <value>Kopf- und Fußzeile bearbeiten</value>
+  </data>
+  <data name="MainUsage" xml:space="preserve">
+    <value>Nutzung der Measure</value>
+  </data>
+  <data name="MainSelectProject" xml:space="preserve">
+    <value>Projekt auswählen</value>
+  </data>
+  <data name="MainTools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="MainSettings" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="MainWindows" xml:space="preserve">
+    <value>Fenster</value>
+  </data>
+  <data name="MainNewWindow" xml:space="preserve">
+    <value>Neues Fenster</value>
+  </data>
+  <data name="MainCascade" xml:space="preserve">
+    <value>Überlappend</value>
+  </data>
+  <data name="MainTileVertical" xml:space="preserve">
+    <value>Nebeneinander</value>
+  </data>
+  <data name="MainTileHorizontal" xml:space="preserve">
+    <value>Untereinander</value>
+  </data>
+  <data name="MainCloseAll" xml:space="preserve">
+    <value>Alle schließen</value>
+  </data>
+  <data name="MainArrangeIcons" xml:space="preserve">
+    <value>Symbole anordnen</value>
+  </data>
+  <data name="MainHelp" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="MainInfo" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MainStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
 </root>

@@ -263,11 +263,200 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Arrange icons ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainArrangeIcons() As String
+            Get
+                Return ResourceManager.GetString("MainArrangeIcons", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Cascade ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainCascade() As String
+            Get
+                Return ResourceManager.GetString("MainCascade", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Close all ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainCloseAll() As String
+            Get
+                Return ResourceManager.GetString("MainCloseAll", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Documentation ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainDocumentation() As String
+            Get
+                Return ResourceManager.GetString("MainDocumentation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Edit Footer/Header ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainEditFooterHeader() As String
+            Get
+                Return ResourceManager.GetString("MainEditFooterHeader", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die File ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainFile() As String
+            Get
+                Return ResourceManager.GetString("MainFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Help ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainHelp() As String
+            Get
+                Return ResourceManager.GetString("MainHelp", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Info ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainInfo() As String
+            Get
+                Return ResourceManager.GetString("MainInfo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die New Window ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainNewWindow() As String
+            Get
+                Return ResourceManager.GetString("MainNewWindow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Power BI Tools ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainPowerBITools() As String
+            Get
+                Return ResourceManager.GetString("MainPowerBITools", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Quit ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainQuit() As String
+            Get
+                Return ResourceManager.GetString("MainQuit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement BIM ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainReplaceBIM() As String
+            Get
+                Return ResourceManager.GetString("MainReplaceBIM", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement TMDL ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainReplaceTDML() As String
+            Get
+                Return ResourceManager.GetString("MainReplaceTDML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Select Project ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainSelectProject() As String
+            Get
+                Return ResourceManager.GetString("MainSelectProject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Settings ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainSettings() As String
+            Get
+                Return ResourceManager.GetString("MainSettings", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Status ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainStatus() As String
+            Get
+                Return ResourceManager.GetString("MainStatus", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Tile horizontal ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainTileHorizontal() As String
+            Get
+                Return ResourceManager.GetString("MainTileHorizontal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Tile vertical ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainTileVertical() As String
+            Get
+                Return ResourceManager.GetString("MainTileVertical", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Tools ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainTools() As String
+            Get
+                Return ResourceManager.GetString("MainTools", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Current project: {0} ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property MainTslCurrentProject() As String
             Get
                 Return ResourceManager.GetString("MainTslCurrentProject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Usage of measure ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainUsage() As String
+            Get
+                Return ResourceManager.GetString("MainUsage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Windows ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainWindows() As String
+            Get
+                Return ResourceManager.GetString("MainWindows", resourceCulture)
             End Get
         End Property
         

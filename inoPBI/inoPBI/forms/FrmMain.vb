@@ -143,6 +143,9 @@ Public Class FrmMain
         End If
 
         TslCurrentProject.Text = String.Format(My.Resources.ResourcesLang.MainTslCurrentProject, My.Settings.CurrentProject)
+
+        TranslateForm()
+
     End Sub
 
     Private Sub FrmMain_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
@@ -165,10 +168,41 @@ Public Class FrmMain
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        FrmInfo.Show()
+        FrmInfo.ShowDialog()
     End Sub
 
     Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OptionsToolStripMenuItem.Click
         FrmSettings.Show()
+    End Sub
+
+    Private Sub TranslateForm()
+        FileMenu.Text = My.Resources.ResourcesLang.MainFile
+        ExitToolStripMenuItem.Text = My.Resources.ResourcesLang.MainQuit
+
+        PowerBIToolsToolStripMenuItem.Text = My.Resources.ResourcesLang.MainPowerBITools
+        ReplacementTMDLToolStripMenuItem.Text = My.Resources.ResourcesLang.MainReplaceTDML
+        ReplacementToolStripMenuItem.Text = My.Resources.ResourcesLang.MainReplaceBIM
+        DocumentationToolStripMenuItem.Text = My.Resources.ResourcesLang.MainDocumentation
+        EditFooterHeaderToolStripMenuItem.Text = My.Resources.ResourcesLang.MainEditFooterHeader
+        UsageToolStripMenuItem.Text = My.Resources.ResourcesLang.MainUsage
+        SelectProjectToolStripMenuItem.Text = My.Resources.ResourcesLang.MainSelectProject
+
+        ToolsMenu.Text = My.Resources.ResourcesLang.MainTools
+        OptionsToolStripMenuItem.Text = My.Resources.ResourcesLang.MainSettings
+
+        WindowsMenu.Text = My.Resources.ResourcesLang.MainWindows
+        NewWindowToolStripMenuItem.Text = My.Resources.ResourcesLang.MainNewWindow
+        CascadeToolStripMenuItem.Text = My.Resources.ResourcesLang.MainCascade
+        TileVerticalToolStripMenuItem.Text = My.Resources.ResourcesLang.MainTileVertical
+        TileHorizontalToolStripMenuItem.Text = My.Resources.ResourcesLang.MainTileHorizontal
+        CloseAllToolStripMenuItem.Text = My.Resources.ResourcesLang.MainCloseAll
+        ArrangeIconsToolStripMenuItem.Text = My.Resources.ResourcesLang.MainArrangeIcons
+
+        HelpMenu.Text = My.Resources.ResourcesLang.MainHelp
+        AboutToolStripMenuItem.Text = My.Resources.ResourcesLang.MainInfo
+
+
+        ToolStripStatusLabel.Text = My.Resources.ResourcesLang.MainStatus
+
     End Sub
 End Class

@@ -93,7 +93,7 @@ Partial Class FrmMain
         ' MenuStrip
         ' 
         MenuStrip.ImageScalingSize = New Size(20, 20)
-        MenuStrip.Items.AddRange(New ToolStripItem() {FileMenu, PowerBIToolsToolStripMenuItem, EditMenu, ViewMenu, ToolsMenu, WindowsMenu, HelpMenu})
+        MenuStrip.Items.AddRange(New ToolStripItem() {FileMenu, PowerBIToolsToolStripMenuItem, EditMenu, HelpMenu, ViewMenu, ToolsMenu, WindowsMenu})
         MenuStrip.Location = New Point(0, 0)
         MenuStrip.MdiWindowListItem = WindowsMenu
         MenuStrip.Name = "MenuStrip"
