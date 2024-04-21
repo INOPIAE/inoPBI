@@ -107,4 +107,24 @@ Public Class FrmReplacementFile
             End If
         End If
     End Sub
+
+    Private Sub FrmReplacementFile_Load(sender As Object, e As EventArgs) Handles Me.Load
+        TranslateForm()
+    End Sub
+
+    Private Sub TranslateForm()
+        Me.Text = My.Resources.ResourcesLang.RFTitle
+        CmdClose.Text = My.Resources.ResourcesLang.BtnClose
+        CmdSave.Text = My.Resources.ResourcesLang.BtnSave
+        CmdSaveAs.Text = My.Resources.ResourcesLang.BtnSaveAs
+        CmdDeleteEntry.Text = My.Resources.ResourcesLang.BtnDeleteEntry
+        CmdDown.Text = My.Resources.ResourcesLang.BtnDown
+        CmdUp.Text = My.Resources.ResourcesLang.BtnUp
+
+        With DgvReplacement
+            .Columns(0).HeaderText = My.Resources.ResourcesLang.RFName
+            .Columns(1).HeaderText = My.Resources.ResourcesLang.RFFrom
+            .Columns(2).HeaderText = My.Resources.ResourcesLang.RFTo
+        End With
+    End Sub
 End Class

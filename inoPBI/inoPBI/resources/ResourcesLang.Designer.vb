@@ -101,6 +101,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Delete entry ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnDeleteEntry() As String
+            Get
+                Return ResourceManager.GetString("BtnDeleteEntry", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Down ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnDown() As String
+            Get
+                Return ResourceManager.GetString("BtnDown", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Edit ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnEdit() As String
@@ -187,6 +205,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property BtnSelectProject() As String
             Get
                 Return ResourceManager.GetString("BtnSelectProject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Up ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnUp() As String
+            Get
+                Return ResourceManager.GetString("BtnUp", resourceCulture)
             End Get
         End Property
         
@@ -556,6 +583,42 @@ Namespace My.Resources
         Friend Shared ReadOnly Property ReplacementTitle() As String
             Get
                 Return ResourceManager.GetString("ReplacementTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die From ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property RFFrom() As String
+            Get
+                Return ResourceManager.GetString("RFFrom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Name ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property RFName() As String
+            Get
+                Return ResourceManager.GetString("RFName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Edit replacement file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property RFTitle() As String
+            Get
+                Return ResourceManager.GetString("RFTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die To ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property RFTo() As String
+            Get
+                Return ResourceManager.GetString("RFTo", resourceCulture)
             End Get
         End Property
         

@@ -294,4 +294,25 @@
   <data name="ReplacementTitle" xml:space="preserve">
     <value>Replacement of PBIP BIM stucture</value>
   </data>
+  <data name="BtnDeleteEntry" xml:space="preserve">
+    <value>Delete entry</value>
+  </data>
+  <data name="BtnUp" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="BtnDown" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="RFTitle" xml:space="preserve">
+    <value>Edit replacement file</value>
+  </data>
+  <data name="RFName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RFFrom" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="RFTo" xml:space="preserve">
+    <value>To</value>
+  </data>
 </root>

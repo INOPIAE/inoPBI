@@ -60,13 +60,13 @@ Partial Class FrmReplacementFile
         ' SpReplacement.Panel2
         ' 
         SpReplacement.Panel2.Controls.Add(DgvReplacement)
-        SpReplacement.Size = New Size(800, 450)
+        SpReplacement.Size = New Size(870, 450)
         SpReplacement.SplitterDistance = 63
         SpReplacement.TabIndex = 0
         ' 
         ' CmdDown
         ' 
-        CmdDown.Location = New Point(652, 12)
+        CmdDown.Location = New Point(710, 12)
         CmdDown.Name = "CmdDown"
         CmdDown.Size = New Size(131, 36)
         CmdDown.TabIndex = 5
@@ -75,7 +75,7 @@ Partial Class FrmReplacementFile
         ' 
         ' CmdUp
         ' 
-        CmdUp.Location = New Point(515, 12)
+        CmdUp.Location = New Point(573, 12)
         CmdUp.Name = "CmdUp"
         CmdUp.Size = New Size(131, 36)
         CmdUp.TabIndex = 4
@@ -84,7 +84,7 @@ Partial Class FrmReplacementFile
         ' 
         ' CmdDeleteEntry
         ' 
-        CmdDeleteEntry.Location = New Point(378, 12)
+        CmdDeleteEntry.Location = New Point(436, 12)
         CmdDeleteEntry.Name = "CmdDeleteEntry"
         CmdDeleteEntry.Size = New Size(131, 36)
         CmdDeleteEntry.TabIndex = 3
@@ -93,27 +93,27 @@ Partial Class FrmReplacementFile
         ' 
         ' CmdClose
         ' 
-        CmdClose.Location = New Point(207, 12)
+        CmdClose.Location = New Point(286, 12)
         CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(70, 36)
+        CmdClose.Size = New Size(131, 36)
         CmdClose.TabIndex = 2
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
         ' 
         ' CmdSaveAs
         ' 
-        CmdSaveAs.Location = New Point(114, 12)
+        CmdSaveAs.Location = New Point(149, 12)
         CmdSaveAs.Name = "CmdSaveAs"
-        CmdSaveAs.Size = New Size(70, 36)
+        CmdSaveAs.Size = New Size(131, 36)
         CmdSaveAs.TabIndex = 1
         CmdSaveAs.Text = "Save as"
         CmdSaveAs.UseVisualStyleBackColor = True
         ' 
         ' CmdSave
         ' 
-        CmdSave.Location = New Point(24, 12)
+        CmdSave.Location = New Point(12, 12)
         CmdSave.Name = "CmdSave"
-        CmdSave.Size = New Size(70, 36)
+        CmdSave.Size = New Size(131, 36)
         CmdSave.TabIndex = 0
         CmdSave.Text = "Save"
         CmdSave.UseVisualStyleBackColor = True
@@ -127,7 +127,7 @@ Partial Class FrmReplacementFile
         DgvReplacement.Name = "DgvReplacement"
         DgvReplacement.RowHeadersWidth = 51
         DgvReplacement.RowTemplate.Height = 29
-        DgvReplacement.Size = New Size(800, 383)
+        DgvReplacement.Size = New Size(870, 383)
         DgvReplacement.TabIndex = 0
         ' 
         ' NameDef
@@ -153,9 +153,9 @@ Partial Class FrmReplacementFile
         ' 
         ' FrmReplacementFile
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(870, 450)
         Controls.Add(SpReplacement)
         Name = "FrmReplacementFile"
         Text = "FrmReplacementFile"
