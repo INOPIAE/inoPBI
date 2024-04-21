@@ -34,7 +34,7 @@ Public Class FrmHtml
             If .ShowDialog = DialogResult.OK Then
                 strFile = .FileName
                 WriteFile(strFile)
-                Me.Text = String.Format("Edit {0}", Path.GetFileName(strFile))
+                Me.Text = String.Format(My.Resources.ResourcesLang.HtmlEditTitle, Path.GetFileName(strFile))
                 Select Case myFileType
                     Case FileType.Header
                         My.Settings.LastHeader = strFile
@@ -55,7 +55,7 @@ Public Class FrmHtml
         Dim fileReader As String
         fileReader = My.Computer.FileSystem.ReadAllText(strFile, System.Text.Encoding.UTF32)
         TxtText.Text = fileReader
-        Me.Text = String.Format("Edit {0}", Path.GetFileName(strFile))
+        Me.Text = String.Format(My.Resources.ResourcesLang.HtmlEditTitle, Path.GetFileName(strFile))
     End Sub
 
     Private Sub WriteFile(filename)
@@ -66,5 +66,17 @@ Public Class FrmHtml
         strFile = filename
         myFileType = filetype
         ReadFile()
+    End Sub
+
+    Private Sub FrmHtml_Load(sender As Object, e As EventArgs) Handles Me.Load
+        TranslateForm()
+    End Sub
+
+    Private Sub TranslateForm()
+        Me.Text = My.Resources.ResourcesLang.HtmlTitle
+        CmdClose.Text = My.Resources.ResourcesLang.BtnClose
+        CmdOpen.Text = My.Resources.ResourcesLang.BtnOpen
+        CmdSave.Text = My.Resources.ResourcesLang.BtnSave
+        CmdSaveAs.Text = My.Resources.ResourcesLang.BtnSaveAs
     End Sub
 End Class

@@ -213,4 +213,16 @@
   <data name="MainTslCurrentProject" xml:space="preserve">
     <value>Aktuelles Projekt: {0}</value>
   </data>
+  <data name="BtnSaveAs" xml:space="preserve">
+    <value>Speichern unter</value>
+  </data>
+  <data name="BtnOpen" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="HtmlEditTitle" xml:space="preserve">
+    <value>Bearbeite Datei {0}</value>
+  </data>
+  <data name="HtmlTitle" xml:space="preserve">
+    <value>HTML Datei bearbeiten</value>
+  </data>
 </root>

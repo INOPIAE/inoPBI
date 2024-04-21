@@ -56,36 +56,36 @@ Partial Class FrmHtml
         ' 
         ' CmdClose
         ' 
-        CmdClose.Location = New Point(25, 135)
+        CmdClose.Location = New Point(12, 135)
         CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(94, 29)
+        CmdClose.Size = New Size(125, 29)
         CmdClose.TabIndex = 3
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
         ' 
         ' CmdSaveAs
         ' 
-        CmdSaveAs.Location = New Point(25, 100)
+        CmdSaveAs.Location = New Point(12, 100)
         CmdSaveAs.Name = "CmdSaveAs"
-        CmdSaveAs.Size = New Size(94, 29)
+        CmdSaveAs.Size = New Size(125, 29)
         CmdSaveAs.TabIndex = 2
         CmdSaveAs.Text = "Save As"
         CmdSaveAs.UseVisualStyleBackColor = True
         ' 
         ' CmdSave
         ' 
-        CmdSave.Location = New Point(25, 65)
+        CmdSave.Location = New Point(12, 65)
         CmdSave.Name = "CmdSave"
-        CmdSave.Size = New Size(94, 29)
+        CmdSave.Size = New Size(125, 29)
         CmdSave.TabIndex = 1
         CmdSave.Text = "Save"
         CmdSave.UseVisualStyleBackColor = True
         ' 
         ' CmdOpen
         ' 
-        CmdOpen.Location = New Point(25, 30)
+        CmdOpen.Location = New Point(12, 30)
         CmdOpen.Name = "CmdOpen"
-        CmdOpen.Size = New Size(94, 29)
+        CmdOpen.Size = New Size(125, 29)
         CmdOpen.TabIndex = 0
         CmdOpen.Text = "Open"
         CmdOpen.UseVisualStyleBackColor = True

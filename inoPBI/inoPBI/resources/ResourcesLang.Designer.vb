@@ -119,6 +119,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Open ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnOpen() As String
+            Get
+                Return ResourceManager.GetString("BtnOpen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Rename project ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnRenameProject() As String
@@ -137,11 +146,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Save as ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnSaveAs() As String
+            Get
+                Return ResourceManager.GetString("BtnSaveAs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Select project ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnSelectProject() As String
             Get
                 Return ResourceManager.GetString("BtnSelectProject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Edit file {0} ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property HtmlEditTitle() As String
+            Get
+                Return ResourceManager.GetString("HtmlEditTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Edit HTML file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property HtmlTitle() As String
+            Get
+                Return ResourceManager.GetString("HtmlTitle", resourceCulture)
             End Get
         End Property
         
