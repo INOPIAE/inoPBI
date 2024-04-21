@@ -50,36 +50,36 @@ Partial Class FrmProjects
         ' 
         ' CmdSelect
         ' 
-        CmdSelect.Location = New Point(596, 77)
+        CmdSelect.Location = New Point(596, 71)
         CmdSelect.Name = "CmdSelect"
-        CmdSelect.Size = New Size(132, 28)
+        CmdSelect.Size = New Size(157, 34)
         CmdSelect.TabIndex = 2
         CmdSelect.Text = "Select Project"
         CmdSelect.UseVisualStyleBackColor = True
         ' 
         ' CmdNewProject
         ' 
-        CmdNewProject.Location = New Point(596, 111)
+        CmdNewProject.Location = New Point(596, 105)
         CmdNewProject.Name = "CmdNewProject"
-        CmdNewProject.Size = New Size(132, 28)
+        CmdNewProject.Size = New Size(157, 34)
         CmdNewProject.TabIndex = 2
         CmdNewProject.Text = "New Project"
         CmdNewProject.UseVisualStyleBackColor = True
         ' 
         ' CmdClose
         ' 
-        CmdClose.Location = New Point(596, 348)
+        CmdClose.Location = New Point(596, 342)
         CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(132, 28)
+        CmdClose.Size = New Size(157, 34)
         CmdClose.TabIndex = 2
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
         ' 
         ' CmdRenameProject
         ' 
-        CmdRenameProject.Location = New Point(596, 145)
+        CmdRenameProject.Location = New Point(596, 139)
         CmdRenameProject.Name = "CmdRenameProject"
-        CmdRenameProject.Size = New Size(132, 28)
+        CmdRenameProject.Size = New Size(157, 34)
         CmdRenameProject.TabIndex = 2
         CmdRenameProject.Text = "Rename Project"
         CmdRenameProject.UseVisualStyleBackColor = True

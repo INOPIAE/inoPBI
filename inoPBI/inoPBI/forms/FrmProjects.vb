@@ -10,7 +10,7 @@ Public Class FrmProjects
 
     Private Sub CmdSelect_Click(sender As Object, e As EventArgs) Handles CmdSelect.Click
         If LbProjects.SelectedItems.Count = 0 Then
-            MessageBox.Show("Nothing selected")
+            MessageBox.Show(My.Resources.ResourcesLang.MsgNothingSelected)
             Exit Sub
         End If
         Dim strCurProject As String = LbProjects.SelectedItem.ToString
@@ -19,11 +19,11 @@ Public Class FrmProjects
         FrmMain.ProjectIniData = cProjectIni.GetProjectIniFromFile(File)
         My.Settings.CurrentProject = strCurProject
         FrmMain.SaveProjectIni()
-        FrmMain.TslCurrentProject.Text = strCurProject
+        FrmMain.TslCurrentProject.Text = String.Format(My.Resources.ResourcesLang.MainTslCurrentProject, strCurProject)
     End Sub
 
     Private Sub CmdNewProject_Click(sender As Object, e As EventArgs) Handles CmdNewProject.Click
-        Dim strProject As String = InputBox("Enter Project name")
+        Dim strProject As String = InputBox(My.Resources.ResourcesLang.ProjectsEnterProjectName)
         If strProject <> vbNullString Then
             FrmMain.FillProjectIni()
             Dim pi As ClsIniFileHandling.IniData = FrmMain.ProjectIniData
@@ -34,7 +34,7 @@ Public Class FrmProjects
 
             Me.LbProjects.Items.Add(strProject)
             LbProjects.SelectedIndex = LbProjects.Items.Count - 1
-            FrmMain.TslCurrentProject.Text = strProject
+            FrmMain.TslCurrentProject.Text = String.Format(My.Resources.ResourcesLang.MainTslCurrentProject, strProject)
         End If
     End Sub
 
@@ -56,16 +56,18 @@ Public Class FrmProjects
         If LbProjects.Items.Count > 0 Then
             LbProjects.SelectedIndex = ListIndex
         End If
+
+        TranslateForm()
     End Sub
 
     Private Sub CmdRenameProject_Click(sender As Object, e As EventArgs) Handles CmdRenameProject.Click
         If LbProjects.SelectedItems.Count = 0 Then
-            MessageBox.Show("Nothing selected")
+            MessageBox.Show(My.Resources.ResourcesLang.MsgNothingSelected)
             Exit Sub
         End If
         Dim strCurProject As String = LbProjects.SelectedItem.ToString
         Dim ListIndex As Integer = LbProjects.SelectedIndex
-        Dim strProject As String = InputBox("Enter Project Name", "Rename Project Name", strCurProject)
+        Dim strProject As String = InputBox(My.Resources.ResourcesLang.ProjectsEnterProjectName, My.Resources.ResourcesLang.ProjectsRenameProjectName, strCurProject)
         If strProject <> vbNullString Then
             Dim OldFile As String = Path.Combine(FrmMain.AppDataPath, strCurProject & ".inoini")
             My.Computer.FileSystem.RenameFile(OldFile, strProject & ".inoini")
@@ -74,10 +76,18 @@ Public Class FrmProjects
             If strCurProject = My.Settings.CurrentProject Then
                 My.Settings.CurrentProject = strProject
                 My.Settings.Save()
-                FrmMain.TslCurrentProject.Text = strProject
+                FrmMain.TslCurrentProject.Text = String.Format(My.Resources.ResourcesLang.MainTslCurrentProject, strProject)
             End If
         End If
     End Sub
 
+    Private Sub TranslateForm()
+        Me.Text = My.Resources.ResourcesLang.ProjectsTitle
+        LblProjects.Text = My.Resources.ResourcesLang.ProjectsProject
 
+        CmdClose.Text = My.Resources.ResourcesLang.BtnClose
+        CmdNewProject.Text = My.Resources.ResourcesLang.BtnNewProject
+        CmdSelect.Text = My.Resources.ResourcesLang.BtnSelectProject
+        CmdRenameProject.Text = My.Resources.ResourcesLang.BtnRenameProject
+    End Sub
 End Class

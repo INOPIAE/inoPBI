@@ -101,6 +101,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die New project ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnNewProject() As String
+            Get
+                Return ResourceManager.GetString("BtnNewProject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die OK ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnOK() As String
@@ -110,11 +119,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Rename project ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnRenameProject() As String
+            Get
+                Return ResourceManager.GetString("BtnRenameProject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Save ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnSave() As String
             Get
                 Return ResourceManager.GetString("BtnSave", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Select project ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnSelectProject() As String
+            Get
+                Return ResourceManager.GetString("BtnSelectProject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Current project: {0} ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainTslCurrentProject() As String
+            Get
+                Return ResourceManager.GetString("MainTslCurrentProject", resourceCulture)
             End Get
         End Property
         
@@ -133,6 +169,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property MsgNoFileGiven() As String
             Get
                 Return ResourceManager.GetString("MsgNoFileGiven", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Nothing selected ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MsgNothingSelected() As String
+            Get
+                Return ResourceManager.GetString("MsgNothingSelected", resourceCulture)
             End Get
         End Property
         
@@ -241,6 +286,42 @@ Namespace My.Resources
         Friend Shared ReadOnly Property PdfTitle() As String
             Get
                 Return ResourceManager.GetString("PdfTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Enter project name ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ProjectsEnterProjectName() As String
+            Get
+                Return ResourceManager.GetString("ProjectsEnterProjectName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Projects ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ProjectsProject() As String
+            Get
+                Return ResourceManager.GetString("ProjectsProject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Rename project name ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ProjectsRenameProjectName() As String
+            Get
+                Return ResourceManager.GetString("ProjectsRenameProjectName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Project adminstration ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ProjectsTitle() As String
+            Get
+                Return ResourceManager.GetString("ProjectsTitle", resourceCulture)
             End Get
         End Property
         

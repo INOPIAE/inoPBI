@@ -134,13 +134,15 @@ Public Class FrmMain
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TslCurrentProject.Text = My.Settings.CurrentProject
+
         Me.ToolStrip.Visible = False
 
         If My.Settings.Language <> vbNullString Then
             Thread.CurrentThread.CurrentCulture = New Globalization.CultureInfo(My.Settings.Language)
             Thread.CurrentThread.CurrentUICulture = New Globalization.CultureInfo(My.Settings.Language)
         End If
+
+        TslCurrentProject.Text = String.Format(My.Resources.ResourcesLang.MainTslCurrentProject, My.Settings.CurrentProject)
     End Sub
 
     Private Sub FrmMain_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing

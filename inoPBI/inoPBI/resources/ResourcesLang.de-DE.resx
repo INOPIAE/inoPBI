@@ -186,4 +186,31 @@
   <data name="PdfSelectFooterFile" xml:space="preserve">
     <value>Datei für Fußzeile auswählen</value>
   </data>
+  <data name="BtnSelectProject" xml:space="preserve">
+    <value>Wähle Projekt</value>
+  </data>
+  <data name="BtnNewProject" xml:space="preserve">
+    <value>Neues Projekt</value>
+  </data>
+  <data name="BtnRenameProject" xml:space="preserve">
+    <value>Projekt umbenennen</value>
+  </data>
+  <data name="ProjectsTitle" xml:space="preserve">
+    <value>Projektverwaltung</value>
+  </data>
+  <data name="ProjectsProject" xml:space="preserve">
+    <value>Projekte</value>
+  </data>
+  <data name="MsgNothingSelected" xml:space="preserve">
+    <value>Keine Auswahl getroffen</value>
+  </data>
+  <data name="ProjectsEnterProjectName" xml:space="preserve">
+    <value>Projektnamen eingeben</value>
+  </data>
+  <data name="ProjectsRenameProjectName" xml:space="preserve">
+    <value>Projektname umbenennen</value>
+  </data>
+  <data name="MainTslCurrentProject" xml:space="preserve">
+    <value>Aktuelles Projekt: {0}</value>
+  </data>
 </root>

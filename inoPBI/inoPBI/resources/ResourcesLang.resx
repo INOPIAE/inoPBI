@@ -186,4 +186,31 @@
   <data name="PdfSelectFooterFile" xml:space="preserve">
     <value>Select Footer File</value>
   </data>
+  <data name="BtnSelectProject" xml:space="preserve">
+    <value>Select project</value>
+  </data>
+  <data name="BtnNewProject" xml:space="preserve">
+    <value>New project</value>
+  </data>
+  <data name="BtnRenameProject" xml:space="preserve">
+    <value>Rename project</value>
+  </data>
+  <data name="ProjectsTitle" xml:space="preserve">
+    <value>Project adminstration</value>
+  </data>
+  <data name="ProjectsProject" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="MsgNothingSelected" xml:space="preserve">
+    <value>Nothing selected</value>
+  </data>
+  <data name="ProjectsEnterProjectName" xml:space="preserve">
+    <value>Enter project name</value>
+  </data>
+  <data name="ProjectsRenameProjectName" xml:space="preserve">
+    <value>Rename project name</value>
+  </data>
+  <data name="MainTslCurrentProject" xml:space="preserve">
+    <value>Current project: {0}</value>
+  </data>
 </root>
