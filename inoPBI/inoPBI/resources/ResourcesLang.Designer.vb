@@ -74,6 +74,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Close ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnClose() As String
+            Get
+                Return ResourceManager.GetString("BtnClose", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Create PDF ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnCreatePDF() As String
+            Get
+                Return ResourceManager.GetString("BtnCreatePDF", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Edit ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnEdit() As String
+            Get
+                Return ResourceManager.GetString("BtnEdit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die OK ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnOK() As String
@@ -97,6 +124,123 @@ Namespace My.Resources
         Friend Shared ReadOnly Property MsgHint() As String
             Get
                 Return ResourceManager.GetString("MsgHint", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die No file given. ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MsgNoFileGiven() As String
+            Get
+                Return ResourceManager.GetString("MsgNoFileGiven", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die PDF file in use. ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MsgPdfFileInUse() As String
+            Get
+                Return ResourceManager.GetString("MsgPdfFileInUse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Documentation export finished ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfDocumentationExportFinished() As String
+            Get
+                Return ResourceManager.GetString("PdfDocumentationExportFinished", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Documentation export to pdf ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfDocumentationExportToPdf() As String
+            Get
+                Return ResourceManager.GetString("PdfDocumentationExportToPdf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Documentation file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfDocumentationFile() As String
+            Get
+                Return ResourceManager.GetString("PdfDocumentationFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Document title ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfDocumentTitle() As String
+            Get
+                Return ResourceManager.GetString("PdfDocumentTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Footer HTML file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfFooterFile() As String
+            Get
+                Return ResourceManager.GetString("PdfFooterFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Header HTML file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfHeaderFile() As String
+            Get
+                Return ResourceManager.GetString("PdfHeaderFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Select Footer File ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfSelectFooterFile() As String
+            Get
+                Return ResourceManager.GetString("PdfSelectFooterFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Select Header file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfSelectHeaderFile() As String
+            Get
+                Return ResourceManager.GetString("PdfSelectHeaderFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Show PDF file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfShowPDF() As String
+            Get
+                Return ResourceManager.GetString("PdfShowPDF", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Target file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfTargetFile() As String
+            Get
+                Return ResourceManager.GetString("PdfTargetFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Generate PDF file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfTitle() As String
+            Get
+                Return ResourceManager.GetString("PdfTitle", resourceCulture)
             End Get
         End Property
         

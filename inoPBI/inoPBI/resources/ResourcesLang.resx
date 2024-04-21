@@ -138,4 +138,52 @@
   <data name="MsgHint" xml:space="preserve">
     <value>Hint</value>
   </data>
+  <data name="PdfDocumentationFile" xml:space="preserve">
+    <value>Documentation file</value>
+  </data>
+  <data name="PdfHeaderFile" xml:space="preserve">
+    <value>Header HTML file</value>
+  </data>
+  <data name="PdfFooterFile" xml:space="preserve">
+    <value>Footer HTML file</value>
+  </data>
+  <data name="PdfTargetFile" xml:space="preserve">
+    <value>Target file</value>
+  </data>
+  <data name="PdfDocumentTitle" xml:space="preserve">
+    <value>Document title</value>
+  </data>
+  <data name="PdfShowPDF" xml:space="preserve">
+    <value>Show PDF file</value>
+  </data>
+  <data name="BtnCreatePDF" xml:space="preserve">
+    <value>Create PDF</value>
+  </data>
+  <data name="BtnClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="BtnEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="PdfTitle" xml:space="preserve">
+    <value>Generate PDF file</value>
+  </data>
+  <data name="MsgNoFileGiven" xml:space="preserve">
+    <value>No file given.</value>
+  </data>
+  <data name="MsgPdfFileInUse" xml:space="preserve">
+    <value>PDF file in use.</value>
+  </data>
+  <data name="PdfDocumentationExportToPdf" xml:space="preserve">
+    <value>Documentation export to pdf</value>
+  </data>
+  <data name="PdfDocumentationExportFinished" xml:space="preserve">
+    <value>Documentation export finished</value>
+  </data>
+  <data name="PdfSelectHeaderFile" xml:space="preserve">
+    <value>Select Header file</value>
+  </data>
+  <data name="PdfSelectFooterFile" xml:space="preserve">
+    <value>Select Footer File</value>
+  </data>
 </root>

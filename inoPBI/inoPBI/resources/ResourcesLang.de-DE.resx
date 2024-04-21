@@ -138,4 +138,52 @@
   <data name="SettingsRestart" xml:space="preserve">
     <value>Die Anwendung muss neu gestartet werden, um die Spracheinstellung zu übernehmen. Neu starten?</value>
   </data>
+  <data name="PdfDocumentationFile" xml:space="preserve">
+    <value>Dokumentationsdatei</value>
+  </data>
+  <data name="PdfHeaderFile" xml:space="preserve">
+    <value>HTML-Datei für Kopfzeile</value>
+  </data>
+  <data name="PdfFooterFile" xml:space="preserve">
+    <value>HTML-Datei für Fußzeile</value>
+  </data>
+  <data name="PdfTargetFile" xml:space="preserve">
+    <value>Zieldatei</value>
+  </data>
+  <data name="PdfDocumentTitle" xml:space="preserve">
+    <value>Titel der Dokumentation</value>
+  </data>
+  <data name="PdfShowPDF" xml:space="preserve">
+    <value>PDF-Datei anzeigen</value>
+  </data>
+  <data name="BtnCreatePDF" xml:space="preserve">
+    <value>PDF erstellen</value>
+  </data>
+  <data name="BtnClose" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="BtnEdit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="PdfTitle" xml:space="preserve">
+    <value>Erstellung der PDF-Datei</value>
+  </data>
+  <data name="MsgNoFileGiven" xml:space="preserve">
+    <value>Keine Datei angegeben.</value>
+  </data>
+  <data name="MsgPdfFileInUse" xml:space="preserve">
+    <value>PDF-Datei wird genutzt.</value>
+  </data>
+  <data name="PdfDocumentationExportToPdf" xml:space="preserve">
+    <value>Export der Dokumentation zu PDF</value>
+  </data>
+  <data name="PdfDocumentationExportFinished" xml:space="preserve">
+    <value>Export der Dokumentation abgeschlossen</value>
+  </data>
+  <data name="PdfSelectHeaderFile" xml:space="preserve">
+    <value>Datei für Kopfzeile auswählen</value>
+  </data>
+  <data name="PdfSelectFooterFile" xml:space="preserve">
+    <value>Datei für Fußzeile auswählen</value>
+  </data>
 </root>

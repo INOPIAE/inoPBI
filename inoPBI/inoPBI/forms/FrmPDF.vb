@@ -17,13 +17,13 @@ Public Class FrmPDF
 
         LblInfo.Text = ""
 
-        Me.Text = "Create PDF file"
+        TranslateForm()
     End Sub
 
     Private Async Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
 
         If TxtFileDocu.Text = vbNullString Then
-            MessageBox.Show("No file given.")
+            MessageBox.Show(My.Resources.ResourcesLang.MsgNoFileGiven)
             TxtFileDocu.Select()
             Exit Sub
         End If
@@ -36,11 +36,11 @@ Public Class FrmPDF
         End If
 
         If FileInUse(PdFOutput) = True Then
-            MessageBox.Show("PDF file in use.")
+            MessageBox.Show(My.Resources.ResourcesLang.MsgPdfFileInUse)
             Exit Sub
         End If
 
-        LblInfo.Text = "Documentation export to pdf"
+        LblInfo.Text = My.Resources.ResourcesLang.PdfDocumentationExportToPdf
         Application.DoEvents()
 
         Dim mdMarginOptions As New MarginOptions With {
@@ -76,7 +76,7 @@ Public Class FrmPDF
 
         Await mdconvert.Convert(TxtFileDocu.Text, PdFOutput)
 
-        LblInfo.Text = "Documentation export finished"
+        LblInfo.Text = My.Resources.ResourcesLang.PdfDocumentationExportFinished
 
         If TxtTargetFile.Text.Trim = vbNullString Then
             TxtTargetFile.Text = PdFOutput
@@ -103,7 +103,7 @@ Public Class FrmPDF
         With ofd
             .Filter = "HTML (*.html)|*.html"
             .Multiselect = False
-            .Title = "Select Header file"
+            .Title = My.Resources.ResourcesLang.PdfSelectHeaderFile
             If .ShowDialog = DialogResult.OK Then
                 TxtHeader.Text = .FileName
             End If
@@ -115,7 +115,7 @@ Public Class FrmPDF
         With ofd
             .Filter = "HTML (*.html)|*.html"
             .Multiselect = False
-            .Title = "Select Footer File"
+            .Title = My.Resources.ResourcesLang.PdfSelectFooterFile
             If .ShowDialog = DialogResult.OK Then
                 TxtFooter.Text = .FileName
             End If
@@ -160,5 +160,21 @@ Public Class FrmPDF
                 TxtFileDocu.Text = .FileName
             End If
         End With
+    End Sub
+
+    Private Sub TranslateForm()
+        Me.Text = My.Resources.ResourcesLang.PdfTitle
+        LblDocTitle.Text = My.Resources.ResourcesLang.PdfDocumentTitle
+        LblFileDocu.Text = My.Resources.ResourcesLang.PdfDocumentationFile
+        LblHeader.Text = My.Resources.ResourcesLang.PdfHeaderFile
+        LblFooter.Text = My.Resources.ResourcesLang.PdfFooterFile
+        LblTargetFile.Text = My.Resources.ResourcesLang.PdfTargetFile
+
+        CbShowPDF.Text = My.Resources.ResourcesLang.PdfShowPDF
+
+        CmdClose.Text = My.Resources.ResourcesLang.BtnClose
+        CmdEditFooter.Text = My.Resources.ResourcesLang.BtnEdit
+        CmdEditHeader.Text = My.Resources.ResourcesLang.BtnEdit
+        CmdDocumentation.Text = My.Resources.ResourcesLang.BtnCreatePDF
     End Sub
 End Class

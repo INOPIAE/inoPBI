@@ -108,7 +108,7 @@ Partial Class FrmPDF
         ' LblDocTitle
         ' 
         LblDocTitle.AutoSize = True
-        LblDocTitle.Location = New Point(58, 181)
+        LblDocTitle.Location = New Point(23, 182)
         LblDocTitle.Name = "LblDocTitle"
         LblDocTitle.Size = New Size(108, 20)
         LblDocTitle.TabIndex = 14
@@ -124,7 +124,7 @@ Partial Class FrmPDF
         ' LblTargetFile
         ' 
         LblTargetFile.AutoSize = True
-        LblTargetFile.Location = New Point(58, 147)
+        LblTargetFile.Location = New Point(23, 148)
         LblTargetFile.Name = "LblTargetFile"
         LblTargetFile.Size = New Size(75, 20)
         LblTargetFile.TabIndex = 11
@@ -140,7 +140,7 @@ Partial Class FrmPDF
         ' LblFileDocu
         ' 
         LblFileDocu.AutoSize = True
-        LblFileDocu.Location = New Point(58, 47)
+        LblFileDocu.Location = New Point(23, 48)
         LblFileDocu.Name = "LblFileDocu"
         LblFileDocu.Size = New Size(137, 20)
         LblFileDocu.TabIndex = 0
@@ -156,7 +156,7 @@ Partial Class FrmPDF
         ' LblFooter
         ' 
         LblFooter.AutoSize = True
-        LblFooter.Location = New Point(58, 114)
+        LblFooter.Location = New Point(23, 115)
         LblFooter.Name = "LblFooter"
         LblFooter.Size = New Size(122, 20)
         LblFooter.TabIndex = 7
@@ -181,7 +181,7 @@ Partial Class FrmPDF
         ' LblHeader
         ' 
         LblHeader.AutoSize = True
-        LblHeader.Location = New Point(58, 81)
+        LblHeader.Location = New Point(23, 82)
         LblHeader.Name = "LblHeader"
         LblHeader.Size = New Size(126, 20)
         LblHeader.TabIndex = 3
@@ -191,7 +191,7 @@ Partial Class FrmPDF
         ' 
         CbShowPDF.AutoSize = True
         CbShowPDF.CheckAlign = ContentAlignment.MiddleRight
-        CbShowPDF.Location = New Point(92, 219)
+        CbShowPDF.Location = New Point(57, 220)
         CbShowPDF.Name = "CbShowPDF"
         CbShowPDF.Size = New Size(124, 24)
         CbShowPDF.TabIndex = 16
@@ -202,7 +202,7 @@ Partial Class FrmPDF
         ' 
         CmdEditHeader.Location = New Point(745, 79)
         CmdEditHeader.Name = "CmdEditHeader"
-        CmdEditHeader.Size = New Size(69, 29)
+        CmdEditHeader.Size = New Size(116, 29)
         CmdEditHeader.TabIndex = 6
         CmdEditHeader.Text = "Edit"
         CmdEditHeader.UseVisualStyleBackColor = True
@@ -211,7 +211,7 @@ Partial Class FrmPDF
         ' 
         CmdEditFooter.Location = New Point(745, 111)
         CmdEditFooter.Name = "CmdEditFooter"
-        CmdEditFooter.Size = New Size(69, 29)
+        CmdEditFooter.Size = New Size(116, 29)
         CmdEditFooter.TabIndex = 10
         CmdEditFooter.Text = "Edit"
         CmdEditFooter.UseVisualStyleBackColor = True
@@ -220,7 +220,7 @@ Partial Class FrmPDF
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(824, 450)
+        ClientSize = New Size(915, 450)
         Controls.Add(CmdEditFooter)
         Controls.Add(CmdEditHeader)
         Controls.Add(CbShowPDF)
