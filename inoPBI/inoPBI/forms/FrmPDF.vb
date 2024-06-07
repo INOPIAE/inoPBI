@@ -157,7 +157,7 @@ Public Class FrmPDF
         With sfd
             .Filter = "PDF (*.pdf)|*.pdf"
             If .ShowDialog = DialogResult.OK Then
-                TxtFileDocu.Text = .FileName
+                TxtTargetFile.Text = .FileName
             End If
         End With
     End Sub
