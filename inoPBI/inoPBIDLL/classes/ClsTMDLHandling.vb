@@ -253,7 +253,22 @@ Public Class ClsTMDLHandling
 
         Do While strLine.Count > 92
             PosWhitespace = strLine.LastIndexOf(" ", 92)
-            strReturn &= strCrLf & strLine.Substring(0, PosWhitespace)
+            If PosWhitespace > 10 Then
+                strReturn &= strCrLf & strLine.Substring(0, PosWhitespace)
+            Else
+                PosWhitespace = strLine.LastIndexOf("/", 92)
+                If PosWhitespace > 10 Then
+                    strReturn &= strCrLf & strLine.Substring(0, PosWhitespace)
+                Else
+                    PosWhitespace = strLine.LastIndexOf("\", 92)
+                    If PosWhitespace > 10 Then
+                        strReturn &= strCrLf & strLine.Substring(0, PosWhitespace)
+                    Else
+                        PosWhitespace = 92
+                        strReturn &= strCrLf & strLine.Substring(0, PosWhitespace)
+                    End If
+                End If
+            End If
             strLine = StrDup(CountWhiteSpaces + 3, " ") & strLine.Substring(PosWhitespace).Trim
             strCrLf = vbCrLf
         Loop

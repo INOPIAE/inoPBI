@@ -4,6 +4,7 @@ Imports System.IO
 Imports System.Runtime
 Imports System.Security.Cryptography.X509Certificates
 Imports inoPBIDLL
+Imports inoPBIDLL.ClsReportJson
 Imports Newtonsoft.Json.Linq
 Imports NUnit.Framework
 Imports NUnit.Framework.Internal
@@ -268,5 +269,38 @@ Namespace TestInoPBI
             Assert.That(cTMDL.measuresCheck.ElementAt(pos).Key, NUnit.Framework.Is.EqualTo(strM))
             Assert.That(cTMDL.measuresCheck.ElementAt(pos).Value, NUnit.Framework.Is.EqualTo(strTarget))
         End Sub
+
+        <Test>
+        Public Sub TestSplitLine()
+
+            Dim strInput As String = "				    SharepointDatei = NavigationSharepoint{[Name=""dietestdatei.xlsx"",#""Folder Path""=""https://mydomain.sharepoint.com/sites/0113400001/Datentransfer/powerbi/Daten/Bestandsliste/""]}[Content],"
+            Dim strResult As String = cTMDL.splitLine(strInput)
+            Dim strTarget As String = "				    SharepointDatei = NavigationSharepoint{[Name=""dietestdatei.xlsx"",#""Folder" & vbCrLf &
+                "           Path""=""https://mydomain.sharepoint.com/sites/0113400001/Datentransfer/powerbi" & vbCrLf &
+                "           /Daten/Bestandsliste/""]}[Content],"
+
+            Assert.That(strResult, NUnit.Framework.Is.EqualTo(strTarget))
+
+            strInput = "				    #Geänderter Typ = Table.TransformColumnTypes(#Höher gestufte Header,{{WE Nr., type text}, {Asset, type text}, {Plz Ort, type text}, {Mandant, type text}, {Standort, type text}, {Altersklasse, type text}, {Verwaltung, type text}, {Baujahr, Int64.Type}, {Anz. Gebäude, Int64.Type}, {Kauf, Int64.Type}, {Verkauf, type any}, {Aktiv ab, Int64.Type}, {Aktiv bis, type any}, { Wohnungseinheiten, Int64.Type}, {Gewerbeeinheiten, Int64.Type}, {Garagen/Stellplätze, Int64.Type}, {Anzahl Sonstiges, Int64.Type}, {Wohnfläche, type number}, {Gewerbefläche, type number}, {VMF, type number}, {GF, Int64.Type}}),"
+            strTarget = "				    #Geänderter Typ = Table.TransformColumnTypes(#Höher gestufte Header,{{WE Nr., type" & vbCrLf &
+                "           text}, {Asset, type text}, {Plz Ort, type text}, {Mandant, type text}, {Standort," & vbCrLf &
+                "           type text}, {Altersklasse, type text}, {Verwaltung, type text}, {Baujahr," & vbCrLf &
+                "           Int64.Type}, {Anz. Gebäude, Int64.Type}, {Kauf, Int64.Type}, {Verkauf, type any}," & vbCrLf &
+                "           {Aktiv ab, Int64.Type}, {Aktiv bis, type any}, { Wohnungseinheiten, Int64.Type}," & vbCrLf &
+                "           {Gewerbeeinheiten, Int64.Type}, {Garagen/Stellplätze, Int64.Type}, {Anzahl" & vbCrLf &
+                "           Sonstiges, Int64.Type}, {Wohnfläche, type number}, {Gewerbefläche, type number}," & vbCrLf &
+                "           {VMF, type number}, {GF, Int64.Type}}),"
+            strResult = cTMDL.splitLine(strInput)
+            Assert.That(strResult, NUnit.Framework.Is.EqualTo(strTarget))
+
+            strInput = "				    SharepointDatei = NavigationSharepoint{[Name=""dietestdatei.xlsx"",#""Folder Path""=""C:\mydomain.sharepoint.com\sites\0113400001\Datentransfer\powerbi\Daten\Bestandsliste\""]}[Content],"
+            strResult = cTMDL.splitLine(strInput)
+            strTarget = "				    SharepointDatei = NavigationSharepoint{[Name=""dietestdatei.xlsx"",#""Folder" & vbCrLf &
+                "           Path""=""C:\mydomain.sharepoint.com\sites\0113400001\Datentransfer\powerbi\Daten" & vbCrLf &
+                "           \Bestandsliste\""]}[Content],"
+
+            Assert.That(strResult, NUnit.Framework.Is.EqualTo(strTarget))
+        End Sub
+
     End Class
 End Namespace
