@@ -25,10 +25,10 @@ Public Class FrmProjects
     Private Sub CmdNewProject_Click(sender As Object, e As EventArgs) Handles CmdNewProject.Click
         Dim strProject As String = InputBox(My.Resources.ResourcesLang.ProjectsEnterProjectName)
         If strProject <> vbNullString Then
-            FrmMain.FillProjectIni()
-            Dim pi As ClsIniFileHandling.IniData = FrmMain.ProjectIniData
-            cProjectIni.WriteProjectIniFile(Path.Combine(FrmMain.AppDataPath, strProject & ".inoini"), pi)
 
+            Dim pi As New ClsIniFileHandling.IniData
+            cProjectIni.WriteProjectIniFile(Path.Combine(FrmMain.AppDataPath, strProject & ".inoini"), pi)
+            FrmMain.SaveProjectIni()
             My.Settings.CurrentProject = strProject
             My.Settings.Save()
 
