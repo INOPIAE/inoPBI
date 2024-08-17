@@ -10,7 +10,7 @@ Public Class FrmTMDL
             End If
         End With
         If TxtOrginal.Text.Contains(".Dataset") = False And TxtOrginal.Text.Contains(".SemanticModel") = False Then
-            MessageBox.Show(My.Resources.ResourcesLang.ReplacementNoDatasetFolderSelcted)
+            MessageBox.Show(My.Resources.ResourcesLang.ReplacementNoDatasetFolderSelected)
         End If
     End Sub
 
@@ -70,6 +70,12 @@ Public Class FrmTMDL
         File.Copy(fileNameSource, fileName)
         Dim clsR As New ClsReplacement
 
+        My.Settings.LastTMDL = TxtOrginal.Text
+        My.Settings.LastReplacement = TxtReplace.Text
+        My.Settings.LastFolder = TxtTargetFolder.Text
+        My.Settings.LastCustomer = TxtCustomer.Text
+        My.Settings.Save()
+
         If clsR.ReplaceReferenceTMDL(fileName, TxtReplace.Text, fileNameReplace) = False Then
             MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
             LblInfo.Text = My.Resources.ResourcesLang.ReplacementCanceledWithError
@@ -81,11 +87,7 @@ Public Class FrmTMDL
 
         clsR.CopyPBIPTMDL(TxtOrginal.Text, TxtTargetFolder.Text, fileNameReplace)
 
-        My.Settings.LastTMDL = TxtOrginal.Text
-        My.Settings.LastReplacement = TxtReplace.Text
-        My.Settings.LastFolder = TxtTargetFolder.Text
-        My.Settings.LastCustomer = TxtCustomer.Text
-        My.Settings.Save()
+
 
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingFinished
     End Sub
@@ -142,6 +144,8 @@ Public Class FrmTMDL
         CmdDocumentation.Text = My.Resources.ResourcesLang.BtnCreateDokumentation
         CmdPDF.Text = My.Resources.ResourcesLang.BtnCreatePDF
         CmdReplace.Text = My.Resources.ResourcesLang.BtnReplace
+
+        TT.SetToolTip(CmdFileOriginal, My.Resources.ResourcesLang.ReplacementChooseFolderOfSemanticModel)
 
     End Sub
 End Class

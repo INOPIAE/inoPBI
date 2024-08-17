@@ -264,7 +264,7 @@
   <data name="ReplacementCustomerExtension" xml:space="preserve">
     <value>Customer extension</value>
   </data>
-  <data name="ReplacementNoDatasetFolderSelcted" xml:space="preserve">
+  <data name="ReplacementNoDatasetFolderSelected" xml:space="preserve">
     <value>No dataset folder selected</value>
   </data>
   <data name="ReplacementReplacingStarted" xml:space="preserve">
@@ -386,5 +386,8 @@
   </data>
   <data name="MainStatus" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="ReplacementChooseFolderOfSemanticModel" xml:space="preserve">
+    <value>Choose folder of Semantic Model</value>
   </data>
 </root>

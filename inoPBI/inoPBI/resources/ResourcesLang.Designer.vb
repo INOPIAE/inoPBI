@@ -704,6 +704,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Choose folder of Semantic Model ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementChooseFolderOfSemanticModel() As String
+            Get
+                Return ResourceManager.GetString("ReplacementChooseFolderOfSemanticModel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Copy files ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property ReplacementCopyFiles() As String
@@ -742,9 +751,9 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die No dataset folder selected ähnelt.
         '''</summary>
-        Friend Shared ReadOnly Property ReplacementNoDatasetFolderSelcted() As String
+        Friend Shared ReadOnly Property ReplacementNoDatasetFolderSelected() As String
             Get
-                Return ResourceManager.GetString("ReplacementNoDatasetFolderSelcted", resourceCulture)
+                Return ResourceManager.GetString("ReplacementNoDatasetFolderSelected", resourceCulture)
             End Get
         End Property
         

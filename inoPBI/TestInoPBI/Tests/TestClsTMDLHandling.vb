@@ -296,8 +296,8 @@ Namespace TestInoPBI
             strInput = "				    SharepointDatei = NavigationSharepoint{[Name=""dietestdatei.xlsx"",#""Folder Path""=""C:\mydomain.sharepoint.com\sites\0113400001\Datentransfer\powerbi\Daten\Bestandsliste\""]}[Content],"
             strResult = cTMDL.splitLine(strInput)
             strTarget = "				    SharepointDatei = NavigationSharepoint{[Name=""dietestdatei.xlsx"",#""Folder" & vbCrLf &
-                "           Path""=""C:\mydomain.sharepoint.com\sites\0113400001\Datentransfer\powerbi\Daten" & vbCrLf &
-                "           \Bestandsliste\""]}[Content],"
+                "           Path""=""C:\mydomain.sharepoint.com\sites\0113400001\Datentransfer\powerbi" & vbCrLf &
+                "           \Daten\Bestandsliste\""]}[Content],"
 
             Assert.That(strResult, NUnit.Framework.Is.EqualTo(strTarget))
         End Sub

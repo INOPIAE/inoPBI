@@ -22,6 +22,7 @@ Partial Class FrmTMDL
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         CmdEditReplacement = New Button()
         CmdClose = New Button()
         CmdDocumentation = New Button()
@@ -42,6 +43,7 @@ Partial Class FrmTMDL
         LblOriginal = New Label()
         CmdPDF = New Button()
         LblInfo = New Label()
+        TT = New ToolTip(components)
         SuspendLayout()
         ' 
         ' CmdEditReplacement
@@ -265,4 +267,5 @@ Partial Class FrmTMDL
     Friend WithEvents LblOriginal As Label
     Friend WithEvents CmdPDF As Button
     Friend WithEvents LblInfo As Label
+    Friend WithEvents TT As ToolTip
 End Class
