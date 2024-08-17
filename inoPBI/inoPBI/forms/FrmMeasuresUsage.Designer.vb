@@ -23,7 +23,7 @@ Partial Class FrmMeasuresUsage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         SpMain = New SplitContainer()
-        LblInfo = New Label()
+        TxtInfo = New TextBox()
         CmdClose = New Button()
         CmdRefresh = New Button()
         SpMeausres = New SplitContainer()
@@ -51,45 +51,50 @@ Partial Class FrmMeasuresUsage
         SpMain.Dock = DockStyle.Fill
         SpMain.FixedPanel = FixedPanel.Panel1
         SpMain.Location = New Point(0, 0)
+        SpMain.Margin = New Padding(3, 2, 3, 2)
         SpMain.Name = "SpMain"
         SpMain.Orientation = Orientation.Horizontal
         ' 
         ' SpMain.Panel1
         ' 
-        SpMain.Panel1.Controls.Add(LblInfo)
+        SpMain.Panel1.Controls.Add(TxtInfo)
         SpMain.Panel1.Controls.Add(CmdClose)
         SpMain.Panel1.Controls.Add(CmdRefresh)
         ' 
         ' SpMain.Panel2
         ' 
         SpMain.Panel2.Controls.Add(SpMeausres)
-        SpMain.Size = New Size(884, 450)
+        SpMain.Size = New Size(774, 338)
         SpMain.SplitterDistance = 76
+        SpMain.SplitterWidth = 3
         SpMain.TabIndex = 0
         ' 
-        ' LblInfo
+        ' TxtInfo
         ' 
-        LblInfo.AutoSize = True
-        LblInfo.Location = New Point(12, 9)
-        LblInfo.Name = "LblInfo"
-        LblInfo.Size = New Size(53, 20)
-        LblInfo.TabIndex = 1
-        LblInfo.Text = "Label1"
+        TxtInfo.BackColor = SystemColors.Control
+        TxtInfo.Enabled = False
+        TxtInfo.Location = New Point(12, 7)
+        TxtInfo.Multiline = True
+        TxtInfo.Name = "TxtInfo"
+        TxtInfo.Size = New Size(653, 66)
+        TxtInfo.TabIndex = 1
         ' 
         ' CmdClose
         ' 
-        CmdClose.Location = New Point(767, 44)
+        CmdClose.Location = New Point(671, 33)
+        CmdClose.Margin = New Padding(3, 2, 3, 2)
         CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(105, 29)
+        CmdClose.Size = New Size(92, 22)
         CmdClose.TabIndex = 0
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
         ' 
         ' CmdRefresh
         ' 
-        CmdRefresh.Location = New Point(767, 9)
+        CmdRefresh.Location = New Point(671, 7)
+        CmdRefresh.Margin = New Padding(3, 2, 3, 2)
         CmdRefresh.Name = "CmdRefresh"
-        CmdRefresh.Size = New Size(105, 29)
+        CmdRefresh.Size = New Size(92, 22)
         CmdRefresh.TabIndex = 0
         CmdRefresh.Text = "Refresh"
         CmdRefresh.UseVisualStyleBackColor = True
@@ -98,6 +103,7 @@ Partial Class FrmMeasuresUsage
         ' 
         SpMeausres.Dock = DockStyle.Fill
         SpMeausres.Location = New Point(0, 0)
+        SpMeausres.Margin = New Padding(3, 2, 3, 2)
         SpMeausres.Name = "SpMeausres"
         ' 
         ' SpMeausres.Panel1
@@ -107,8 +113,8 @@ Partial Class FrmMeasuresUsage
         ' SpMeausres.Panel2
         ' 
         SpMeausres.Panel2.Controls.Add(DgvReport)
-        SpMeausres.Size = New Size(884, 370)
-        SpMeausres.SplitterDistance = 430
+        SpMeausres.Size = New Size(774, 259)
+        SpMeausres.SplitterDistance = 376
         SpMeausres.TabIndex = 0
         ' 
         ' DgvMeasures
@@ -117,10 +123,11 @@ Partial Class FrmMeasuresUsage
         DgvMeasures.Columns.AddRange(New DataGridViewColumn() {Measure, Usage})
         DgvMeasures.Dock = DockStyle.Fill
         DgvMeasures.Location = New Point(0, 0)
+        DgvMeasures.Margin = New Padding(3, 2, 3, 2)
         DgvMeasures.Name = "DgvMeasures"
         DgvMeasures.RowHeadersWidth = 51
         DgvMeasures.RowTemplate.Height = 29
-        DgvMeasures.Size = New Size(430, 370)
+        DgvMeasures.Size = New Size(376, 259)
         DgvMeasures.TabIndex = 0
         ' 
         ' Measure
@@ -143,10 +150,11 @@ Partial Class FrmMeasuresUsage
         DgvReport.Columns.AddRange(New DataGridViewColumn() {Page, Table, Valuename})
         DgvReport.Dock = DockStyle.Fill
         DgvReport.Location = New Point(0, 0)
+        DgvReport.Margin = New Padding(3, 2, 3, 2)
         DgvReport.Name = "DgvReport"
         DgvReport.RowHeadersWidth = 51
         DgvReport.RowTemplate.Height = 29
-        DgvReport.Size = New Size(450, 370)
+        DgvReport.Size = New Size(394, 259)
         DgvReport.TabIndex = 0
         ' 
         ' Page
@@ -172,10 +180,11 @@ Partial Class FrmMeasuresUsage
         ' 
         ' FrmMeasuresUsage
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(884, 450)
+        ClientSize = New Size(774, 338)
         Controls.Add(SpMain)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "FrmMeasuresUsage"
         Text = "FrmMeasuresUsage"
         SpMain.Panel1.ResumeLayout(False)
@@ -193,7 +202,6 @@ Partial Class FrmMeasuresUsage
     End Sub
 
     Friend WithEvents SpMain As SplitContainer
-    Friend WithEvents LblInfo As Label
     Friend WithEvents CmdClose As Button
     Friend WithEvents CmdRefresh As Button
     Friend WithEvents SpMeausres As SplitContainer
@@ -204,4 +212,5 @@ Partial Class FrmMeasuresUsage
     Friend WithEvents Page As DataGridViewTextBoxColumn
     Friend WithEvents Table As DataGridViewTextBoxColumn
     Friend WithEvents Valuename As DataGridViewTextBoxColumn
+    Friend WithEvents TxtInfo As TextBox
 End Class

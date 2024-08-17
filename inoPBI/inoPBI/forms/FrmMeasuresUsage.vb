@@ -33,7 +33,7 @@ Public Class FrmMeasuresUsage
         Next
     End Sub
     Private Sub FrmMeasuresUsage_Load(sender As Object, e As EventArgs) Handles Me.Load
-        LblInfo.Text = My.Settings.LastTMDL
+        TxtInfo.Text = My.Settings.LastTMDL
         TranslateForm()
     End Sub
 
@@ -53,5 +53,15 @@ Public Class FrmMeasuresUsage
             .Columns(1).HeaderText = My.Resources.ResourcesLang.MUTable
             .Columns(2).HeaderText = My.Resources.ResourcesLang.MUName
         End With
+    End Sub
+
+    Private Sub FrmMeasuresUsage_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        If Me.Width < 800 Then
+            Me.Width = 800
+        End If
+        Dim rightDistance As Int16 = 25
+        CmdClose.Left = Me.Width - rightDistance - CmdClose.Width
+        CmdRefresh.Left = Me.Width - rightDistance - CmdRefresh.Width
+        TxtInfo.Width = Me.Width - 120 - rightDistance
     End Sub
 End Class
