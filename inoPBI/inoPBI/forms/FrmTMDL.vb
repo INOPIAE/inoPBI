@@ -120,10 +120,14 @@ Public Class FrmTMDL
 
     Private Sub FrmTMDL_Load(sender As Object, e As EventArgs) Handles Me.Load
         TxtOrginal.Text = My.Settings.LastTMDL
+        TxtOrginal.Select(TxtOrginal.Text.Length, 0)
         TxtReplace.Text = My.Settings.LastReplacement
+        TxtReplace.Select(TxtReplace.Text.Length, 0)
         TxtTargetFolder.Text = My.Settings.LastFolder
+        TxtTargetFolder.Select(TxtTargetFolder.Text.Length, 0)
         TxtCustomer.Text = My.Settings.LastCustomer
         TxtFileDocu.Text = My.Settings.LastDocumentation
+        TxtFileDocu.Select(TxtFileDocu.Text.Length, 0)
 
         LblInfo.Text = ""
 

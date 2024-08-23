@@ -9,10 +9,15 @@ Public Class FrmPDF
 
     Private Sub FrmPDF_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtFileDocu.Text = My.Settings.LastDocumentation
+        TxtFileDocu.Select(TxtFileDocu.Text.Length, 0)
         TxtHeader.Text = My.Settings.LastHeader
+        TxtHeader.Select(TxtHeader.Text.Length, 0)
         TxtFooter.Text = My.Settings.LastFooter
+        TxtFooter.Select(TxtFooter.Text.Length, 0)
         TxtTargetFile.Text = My.Settings.LastPDFFile
+        TxtTargetFile.Select(TxtTargetFile.Text.Length, 0)
         TxtDocTitle.Text = My.Settings.LastDocTitle
+        TxtDocTitle.Select(TxtDocTitle.Text.Length, 0)
         CbShowPDF.Checked = My.Settings.ShowPDF
 
         LblInfo.Text = ""
