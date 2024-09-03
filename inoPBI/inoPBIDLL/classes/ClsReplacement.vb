@@ -217,7 +217,9 @@ Public Class ClsReplacement
         Dim strDestinationFolder As String = Path.Combine(strFolderTarget, strSourceParent)
         Dim strCopyFolder As String = strDatasetFolder.Substring(InStrRev(strDatasetFolder, "\"))
 
-        Directory.Delete(strDestinationFolder, True)
+        If Directory.Exists(strDestinationFolder) Then
+            Directory.Delete(strDestinationFolder, True)
+        End If
 
         CopyDirectory(strSourceFolder, strDestinationFolder, True)
 
