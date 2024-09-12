@@ -116,6 +116,7 @@ Public Class FrmMain
             .LastOriginal = My.Settings.LastOriginal
             .LastReplacement = My.Settings.LastReplacement
             .LastPDFFile = My.Settings.LastPDFFile
+            .LastTMDLFile = My.Settings.LastTMDL
         End With
     End Sub
 
@@ -129,6 +130,8 @@ Public Class FrmMain
             My.Settings.LastHeader = .LastHeader
             My.Settings.LastOriginal = .LastOriginal
             My.Settings.LastReplacement = .LastReplacement
+            My.Settings.LastPDFFile = .LastPDFFile
+            My.Settings.LastTMDL = .LastTMDLFile
         End With
         My.Settings.Save()
     End Sub
@@ -149,7 +152,10 @@ Public Class FrmMain
     End Sub
 
     Private Sub FrmMain_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
+        SaveProjectIniToFile()
+    End Sub
 
+    Public Sub SaveProjectIniToFile()
         FillProjectIni()
         Dim pi = ProjectIniData
         cProjectIni.WriteProjectIniFile(Path.Combine(AppDataPath, My.Settings.CurrentProject & ".inoini"), pi)

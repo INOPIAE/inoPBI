@@ -54,18 +54,24 @@ Public Class ClsReplacement
 
     Public Function GetReplacements(strFile As String) As Collection(Of Replacement)
         Dim rc As New Collection(Of Replacement)
-
+        Dim intError As Int16 = 0
         Using sr As New StreamReader(strFile)
             While sr.Peek() >= 0
                 Dim strData() As String = sr.ReadLine.Split(";")
-                Dim r As Replacement
-                r.Title = strData(0).Trim
-                r.StrFrom = strData(1).Trim
-                r.StrTo = strData(2).Trim
-                rc.Add(r)
+                If strData.Length = 3 Then
+                    Dim r As Replacement
+                    r.Title = strData(0).Trim
+                    r.StrFrom = strData(1).Trim
+                    r.StrTo = strData(2).Trim
+                    rc.Add(r)
+                Else
+                    intError += 1
+                End If
             End While
         End Using
-
+        If intError > 0 Then
+            MsgBox(String.Format("{0} replacements could not be resolved", intError))
+        End If
         Return rc
     End Function
 

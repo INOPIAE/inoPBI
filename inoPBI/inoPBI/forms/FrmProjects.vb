@@ -13,8 +13,14 @@ Public Class FrmProjects
             MessageBox.Show(My.Resources.ResourcesLang.MsgNothingSelected)
             Exit Sub
         End If
+        'save current setting
+
+        FrmMain.SaveProjectIniToFile()
+
+        'switch to selected settings
         Dim strCurProject As String = LbProjects.SelectedItem.ToString
         Dim File As String
+
         File = Path.Combine(FrmMain.AppDataPath, strCurProject & ".inoini")
         FrmMain.ProjectIniData = cProjectIni.GetProjectIniFromFile(File)
         My.Settings.CurrentProject = strCurProject
