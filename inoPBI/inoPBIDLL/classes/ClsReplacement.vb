@@ -206,7 +206,7 @@ Public Class ClsReplacement
         For Each c As Replacement In cr
             Dim strFrom As String = c.Title & " = " & c.StrFrom
             Dim strTo As String = c.Title & " = " & c.StrTo
-            strText = strText.Replace(c.StrFrom, c.StrTo)
+            strText = strText.Replace(strFrom, strTo)
         Next
 
         Using sw As New StreamWriter(strFileOut, False, System.Text.Encoding.Default)
