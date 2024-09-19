@@ -69,6 +69,7 @@ Public Class FrmTMDL
 
         File.Copy(fileNameSource, fileName)
         Dim clsR As New ClsReplacement
+        clsR.ReplacementError = My.Resources.ResourcesLang.ReplacementReplacementError
 
         My.Settings.LastTMDL = TxtOrginal.Text
         My.Settings.LastReplacement = TxtReplace.Text
@@ -76,12 +77,18 @@ Public Class FrmTMDL
         My.Settings.LastCustomer = TxtCustomer.Text
         My.Settings.Save()
 
-        If clsR.ReplaceReferenceTMDL(fileName, TxtReplace.Text, fileNameReplace) = False Then
-            MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
+
+        Try
+            If clsR.ReplaceReferenceTMDL(fileName, TxtReplace.Text, fileNameReplace) = False Then
+                MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong, My.Resources.ResourcesLang.MsgHint)
+                LblInfo.Text = My.Resources.ResourcesLang.ReplacementCanceledWithError
+                Exit Sub
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, My.Resources.ResourcesLang.MsgHint)
             LblInfo.Text = My.Resources.ResourcesLang.ReplacementCanceledWithError
             Exit Sub
-        End If
-
+        End Try
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementCopyFiles
         Application.DoEvents()
 

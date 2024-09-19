@@ -116,5 +116,17 @@ Namespace TestInoPBI
             Next
 
         End Sub
+
+        <Test>
+        Public Sub TestReplaceReferenceTMDLError()
+            Dim strFile As String = testPath & "\TestData\expressions.tmdl"
+            Dim strFileOut As String = testFolder & "\testoutExpressions.tmdl"
+            Dim strReplacement As String = testPath & "\TestData\testDataReplacementTDMLError.txt"
+
+            Dim ex = Assert.Throws(Of System.Exception)(Function() cRep.GetReplacements(strReplacement))
+
+            Assert.That(ex.Message, [Is].EqualTo("1 replacement(s) could not be resolved"))
+
+        End Sub
     End Class
 End Namespace

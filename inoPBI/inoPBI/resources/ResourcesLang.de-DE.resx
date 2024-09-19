@@ -393,4 +393,7 @@
   <data name="ReplacementMDColumnHeader" xml:space="preserve">
     <value>{0} Spalten in {1}:</value>
   </data>
+  <data name="ReplacementReplacementError" xml:space="preserve">
+    <value>{0} Ersetzung(en) konnte(n) nicht aufgelöst werden.</value>
+  </data>
 </root>

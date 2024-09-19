@@ -1,6 +1,7 @@
 ﻿Imports System.Collections.ObjectModel
 Imports System.IO
 Imports System.IO.Compression
+Imports System.Reflection.Metadata
 
 Public Class ClsReplacement
 
@@ -9,6 +10,8 @@ Public Class ClsReplacement
         Dim StrFrom As String
         Dim StrTo As String
     End Structure
+
+    Public ReplacementError As String = "{0} replacement(s) could not be resolved"
 
     Public Function ReplaceReferences(strFile As String, strReplacement As String, strFileOut As String) As Boolean
         Dim cr As Collection(Of ClsReplacement.Replacement) = GetReplacements(strReplacement)
@@ -70,7 +73,7 @@ Public Class ClsReplacement
             End While
         End Using
         If intError > 0 Then
-            MsgBox(String.Format("{0} replacements could not be resolved", intError))
+            Throw New Exception(String.Format(ReplacementError, intError))
         End If
         Return rc
     End Function

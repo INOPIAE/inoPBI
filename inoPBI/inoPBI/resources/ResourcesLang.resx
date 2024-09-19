@@ -393,4 +393,7 @@
   <data name="ReplacementMDColumnHeader" xml:space="preserve">
     <value>{0} Columns to {1}:</value>
   </data>
+  <data name="ReplacementReplacementError" xml:space="preserve">
+    <value>{0} replacement(s) could not be resolved.</value>
+  </data>
 </root>

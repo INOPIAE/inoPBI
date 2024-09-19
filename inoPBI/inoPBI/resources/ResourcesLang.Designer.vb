@@ -776,6 +776,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die {0} replacement(s) could not be resolved. ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReplacementError() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReplacementError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die File with replacements ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property ReplacementReplacementFile() As String
