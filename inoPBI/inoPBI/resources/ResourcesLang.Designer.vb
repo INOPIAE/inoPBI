@@ -749,6 +749,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die {0} Columns to {1}: ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementMDColumnHeader() As String
+            Get
+                Return ResourceManager.GetString("ReplacementMDColumnHeader", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die No dataset folder selected ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property ReplacementNoDatasetFolderSelected() As String

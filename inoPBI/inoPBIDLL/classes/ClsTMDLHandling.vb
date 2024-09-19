@@ -31,6 +31,8 @@ Public Class ClsTMDLHandling
     Public Elements As New List(Of Element)
     Public measuresCheck As New Dictionary(Of String, String)
 
+    Public columnHeader As String = "{0} Columns to {1}:"
+
     Public Sub New(FolderPath As String)
         FolderPathDataset = FolderPath
         ExpressionFile = Path.Combine(FolderPath, "definition", "expressions.tmdl")
@@ -119,7 +121,7 @@ Public Class ClsTMDLHandling
                                 delimiter = vbCrLf
                             End If
                         End If
-                            Case "column"
+                    Case "column"
                         If line.Contains("=") Then
                             Dim m() As String = line.Substring(6).Split("=")
                             If blnNew = True Then
@@ -156,6 +158,7 @@ Public Class ClsTMDLHandling
 
         Dim measures As New Dictionary(Of String, String)
         Dim queries As New Dictionary(Of String, String)
+        Dim columns As New Dictionary(Of String, String)
 
         For Each i As Element In Elements
 
@@ -164,6 +167,8 @@ Public Class ClsTMDLHandling
                     measures.Add("## " & i.Name & IIf(i.Displayfolder = "", "", " (" & i.Displayfolder & ")"), IIf(i.Description = "", "", "_" & i.Description & "_" & vbCrLf) & ReplaceMeasure(i.Value))
                 Case ElementType.PowerQuery
                     queries.Add("## " & i.Name, ReplacePQ_MD(i.Value))
+                Case ElementType.Column
+                    columns.Add("## " & i.TableName & "| " & i.Name, i.Value)
             End Select
 
         Next
@@ -191,16 +196,36 @@ Public Class ClsTMDLHandling
         sorted = From pair In queries Order By pair.Key
         sortedDictionary = sorted.ToDictionary(Function(p) p.Key, Function(p) p.Value)
 
+        sorted = From pair In columns Order By pair.Key
+        Dim sortedDictionaryColumns = sorted.ToDictionary(Function(p) p.Key, Function(p) p.Value)
+
         strOutput &= vbCrLf & vbCrLf & "# Tabellen über PowerQuery" & vbCrLf & vbCrLf
         lngRows = 4
         Dim blnPage2 As Boolean = False
+        Dim pairCurrent As String = ""
+        Dim blnColumnHead As Boolean = False
         For Each pair In sortedDictionary
-            lngLines = pair.Value.Length - pair.Value.Replace(Environment.NewLine, String.Empty).Length
-            lngRows += 4 + lngLines
-            If lngRows > 60 And blnPage2 = True Then
-                strOutput &= "<div style = ""page-break-after: always""></div>" & vbCrLf & vbCrLf
-                lngRows = 4 + lngLines
+            If pairCurrent <> pair.Key Then
+                If pairCurrent <> "" Then
+                    For Each pairColumn In sortedDictionaryColumns
+                        If pairColumn.Key.Split("|")(0) = pairCurrent Then
+                            If blnColumnHead = False Then
+                                strOutput &= String.Format(columnHeader, "###", pairCurrent.Substring(3) & vbCrLf & "```")
+                                blnColumnHead = True
+                            End If
+                            strOutput &= vbCrLf & pairColumn.Key.Split("|")(1).Trim & ":  " & pairColumn.Value & vbCrLf
+                            lngRows = AddPageBreak(strOutput, lngRows, lngLines, blnPage2, pairColumn)
+                        End If
+                    Next
+                    If blnColumnHead = True Then
+                        strOutput &= "```" & vbCrLf & vbCrLf
+                        blnColumnHead = False
+                    End If
+                End If
+                pairCurrent = pair.Key
             End If
+
+            lngRows = AddPageBreak(strOutput, lngRows, lngLines, blnPage2, pair)
             strOutput &= pair.Key & ":  " & vbCrLf & "   " & pair.Value & vbCrLf & vbCrLf
             blnPage2 = True
         Next
@@ -210,6 +235,16 @@ Public Class ClsTMDLHandling
         End Using
 
         Return True
+    End Function
+
+    Private Shared Function AddPageBreak(ByRef strOutput As String, ByRef lngRows As Long, ByRef lngLines As Long, blnPage2 As Boolean, pair As KeyValuePair(Of String, String)) As Int16
+        lngLines = pair.Value.Length - pair.Value.Replace(Environment.NewLine, String.Empty).Length
+        lngRows += 4 + lngLines
+        If lngRows > 60 And blnPage2 = True Then
+            strOutput &= "<div style = ""page-break-after: always""></div>" & vbCrLf & vbCrLf
+            lngRows = 4 + lngLines
+        End If
+        Return lngRows
     End Function
 
     Public Function ReplaceMeasure(strText As String) As String

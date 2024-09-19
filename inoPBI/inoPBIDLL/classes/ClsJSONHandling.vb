@@ -18,6 +18,7 @@ Public Class ClsJSONHandling
         NotDefined
         Measure
         PowerQuery
+        Columns
     End Enum
 
     Public Sub JsonLoop(obj As JObject, intLevel As Int16, Optional strName As String = "", Optional blnMeasure As Boolean = False, Optional strFolder As String = "")
@@ -151,6 +152,7 @@ Public Class ClsJSONHandling
 
         Dim measures As New Dictionary(Of String, String)
         Dim queries As New Dictionary(Of String, String)
+        Dim columns As New Dictionary(Of String, String)
 
         For Each i As Element In Elements
             Select Case i.Name
@@ -161,8 +163,9 @@ Public Class ClsJSONHandling
                         Case ElementType.Measure
                             measures.Add("## " & i.Name & IIf(i.Displayfolder = "", "", " (" & i.Displayfolder & ")"), ReplaceMeasure(i.Value))
                         Case ElementType.PowerQuery
-
                             queries.Add("## " & i.Name, ReplacePQ_MD(i.Value))
+                        Case ElementType.Columns
+                            columns.Add("## " & i.Name, ReplacePQ_MD(i.Value))
                     End Select
             End Select
         Next
@@ -193,7 +196,19 @@ Public Class ClsJSONHandling
         strOutput &= vbCrLf & vbCrLf & "# Tabellen über PowerQuery" & vbCrLf & vbCrLf
         lngRows = 4
         Dim blnPage2 As Boolean = False
+        Dim pairCurrent As String = ""
         For Each pair In sortedDictionary
+            If pairCurrent <> pair.Key Then
+                If pairCurrent <> "" Then
+                    For Each pairColumn In columns
+                        If pairColumn.Key = pairCurrent Then
+                            strOutput &= pairColumn.Key & ":  " & vbCrLf & "   " & pairColumn.Value & vbCrLf & vbCrLf
+                            lngLines = pair.Value.Length - pair.Value.Replace(Environment.NewLine, String.Empty).Length
+                        End If
+                    Next
+                End If
+                pairCurrent = pair.Key
+            End If
             lngLines = pair.Value.Length - pair.Value.Replace(Environment.NewLine, String.Empty).Length
             lngRows += 4 + lngLines
             If lngRows > 60 And blnPage2 = True Then

@@ -97,6 +97,7 @@ Public Class FrmTMDL
         Application.DoEvents()
 
         Dim clsTMDL As New ClsTMDLHandling(TxtOrginal.Text)
+        clsTMDL.columnHeader = My.Resources.ResourcesLang.ReplacementMDColumnHeader
         If clsTMDL.ExtractMeasures(TxtFileDocu.Text) = False Then
             MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
             Exit Sub

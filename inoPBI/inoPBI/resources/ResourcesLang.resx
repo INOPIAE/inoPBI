@@ -390,4 +390,7 @@
   <data name="ReplacementChooseFolderOfSemanticModel" xml:space="preserve">
     <value>Choose folder of Semantic Model</value>
   </data>
+  <data name="ReplacementMDColumnHeader" xml:space="preserve">
+    <value>{0} Columns to {1}:</value>
+  </data>
 </root>
