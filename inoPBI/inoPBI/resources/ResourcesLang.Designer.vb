@@ -74,6 +74,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Clear filter ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnClearFilter() As String
+            Get
+                Return ResourceManager.GetString("BtnClearFilter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Close ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnClose() As String
@@ -506,11 +515,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Filter Measure ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MUFilterMeasure() As String
+            Get
+                Return ResourceManager.GetString("MUFilterMeasure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die  (hidden) ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property MUHidden() As String
             Get
                 Return ResourceManager.GetString("MUHidden", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die hidden only ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MUHiddenOnly() As String
+            Get
+                Return ResourceManager.GetString("MUHiddenOnly", resourceCulture)
             End Get
         End Property
         

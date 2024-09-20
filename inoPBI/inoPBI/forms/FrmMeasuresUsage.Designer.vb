@@ -22,6 +22,7 @@ Partial Class FrmMeasuresUsage
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         SpMain = New SplitContainer()
         TxtInfo = New TextBox()
         CmdClose = New Button()
@@ -30,10 +31,13 @@ Partial Class FrmMeasuresUsage
         DgvMeasures = New DataGridView()
         Measure = New DataGridViewTextBoxColumn()
         Usage = New DataGridViewTextBoxColumn()
+        SplitContainer1 = New SplitContainer()
+        CmdClearFilterReport = New Button()
+        TxtFilterMeasure = New TextBox()
+        LblFilterMeasure = New Label()
+        CkbHidden = New CheckBox()
         DgvReport = New DataGridView()
-        Page = New DataGridViewTextBoxColumn()
-        Table = New DataGridViewTextBoxColumn()
-        Valuename = New DataGridViewTextBoxColumn()
+        BcReport = New BindingSource(components)
         CType(SpMain, ComponentModel.ISupportInitialize).BeginInit()
         SpMain.Panel1.SuspendLayout()
         SpMain.Panel2.SuspendLayout()
@@ -43,7 +47,12 @@ Partial Class FrmMeasuresUsage
         SpMeausres.Panel2.SuspendLayout()
         SpMeausres.SuspendLayout()
         CType(DgvMeasures, ComponentModel.ISupportInitialize).BeginInit()
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer1.Panel1.SuspendLayout()
+        SplitContainer1.Panel2.SuspendLayout()
+        SplitContainer1.SuspendLayout()
         CType(DgvReport, ComponentModel.ISupportInitialize).BeginInit()
+        CType(BcReport, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' SpMain
@@ -64,7 +73,7 @@ Partial Class FrmMeasuresUsage
         ' SpMain.Panel2
         ' 
         SpMain.Panel2.Controls.Add(SpMeausres)
-        SpMain.Size = New Size(774, 338)
+        SpMain.Size = New Size(774, 481)
         SpMain.SplitterDistance = 76
         SpMain.SplitterWidth = 3
         SpMain.TabIndex = 0
@@ -112,8 +121,8 @@ Partial Class FrmMeasuresUsage
         ' 
         ' SpMeausres.Panel2
         ' 
-        SpMeausres.Panel2.Controls.Add(DgvReport)
-        SpMeausres.Size = New Size(774, 259)
+        SpMeausres.Panel2.Controls.Add(SplitContainer1)
+        SpMeausres.Size = New Size(774, 402)
         SpMeausres.SplitterDistance = 376
         SpMeausres.TabIndex = 0
         ' 
@@ -127,7 +136,7 @@ Partial Class FrmMeasuresUsage
         DgvMeasures.Name = "DgvMeasures"
         DgvMeasures.RowHeadersWidth = 51
         DgvMeasures.RowTemplate.Height = 29
-        DgvMeasures.Size = New Size(376, 259)
+        DgvMeasures.Size = New Size(376, 402)
         DgvMeasures.TabIndex = 0
         ' 
         ' Measure
@@ -144,45 +153,80 @@ Partial Class FrmMeasuresUsage
         Usage.Name = "Usage"
         Usage.Width = 125
         ' 
+        ' SplitContainer1
+        ' 
+        SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.FixedPanel = FixedPanel.Panel1
+        SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.Name = "SplitContainer1"
+        SplitContainer1.Orientation = Orientation.Horizontal
+        ' 
+        ' SplitContainer1.Panel1
+        ' 
+        SplitContainer1.Panel1.Controls.Add(CmdClearFilterReport)
+        SplitContainer1.Panel1.Controls.Add(TxtFilterMeasure)
+        SplitContainer1.Panel1.Controls.Add(LblFilterMeasure)
+        SplitContainer1.Panel1.Controls.Add(CkbHidden)
+        ' 
+        ' SplitContainer1.Panel2
+        ' 
+        SplitContainer1.Panel2.Controls.Add(DgvReport)
+        SplitContainer1.Size = New Size(394, 402)
+        SplitContainer1.SplitterDistance = 70
+        SplitContainer1.TabIndex = 0
+        ' 
+        ' CmdClearFilterReport
+        ' 
+        CmdClearFilterReport.Location = New Point(291, 7)
+        CmdClearFilterReport.Name = "CmdClearFilterReport"
+        CmdClearFilterReport.Size = New Size(91, 23)
+        CmdClearFilterReport.TabIndex = 3
+        CmdClearFilterReport.Text = "Clear filter"
+        CmdClearFilterReport.UseVisualStyleBackColor = True
+        ' 
+        ' TxtFilterMeasure
+        ' 
+        TxtFilterMeasure.Location = New Point(112, 37)
+        TxtFilterMeasure.Name = "TxtFilterMeasure"
+        TxtFilterMeasure.Size = New Size(173, 23)
+        TxtFilterMeasure.TabIndex = 2
+        ' 
+        ' LblFilterMeasure
+        ' 
+        LblFilterMeasure.AutoSize = True
+        LblFilterMeasure.Location = New Point(10, 40)
+        LblFilterMeasure.Name = "LblFilterMeasure"
+        LblFilterMeasure.Size = New Size(41, 15)
+        LblFilterMeasure.TabIndex = 1
+        LblFilterMeasure.Text = "Label1"
+        ' 
+        ' CkbHidden
+        ' 
+        CkbHidden.AutoSize = True
+        CkbHidden.Location = New Point(10, 10)
+        CkbHidden.Name = "CkbHidden"
+        CkbHidden.Size = New Size(89, 19)
+        CkbHidden.TabIndex = 0
+        CkbHidden.Text = "hidden only"
+        CkbHidden.UseVisualStyleBackColor = True
+        ' 
         ' DgvReport
         ' 
         DgvReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvReport.Columns.AddRange(New DataGridViewColumn() {Page, Table, Valuename})
         DgvReport.Dock = DockStyle.Fill
         DgvReport.Location = New Point(0, 0)
         DgvReport.Margin = New Padding(3, 2, 3, 2)
         DgvReport.Name = "DgvReport"
         DgvReport.RowHeadersWidth = 51
         DgvReport.RowTemplate.Height = 29
-        DgvReport.Size = New Size(394, 259)
-        DgvReport.TabIndex = 0
-        ' 
-        ' Page
-        ' 
-        Page.HeaderText = "Page"
-        Page.MinimumWidth = 6
-        Page.Name = "Page"
-        Page.Width = 125
-        ' 
-        ' Table
-        ' 
-        Table.HeaderText = "Table"
-        Table.MinimumWidth = 6
-        Table.Name = "Table"
-        Table.Width = 125
-        ' 
-        ' Valuename
-        ' 
-        Valuename.HeaderText = "Name"
-        Valuename.MinimumWidth = 6
-        Valuename.Name = "Valuename"
-        Valuename.Width = 125
+        DgvReport.Size = New Size(394, 328)
+        DgvReport.TabIndex = 1
         ' 
         ' FrmMeasuresUsage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(774, 338)
+        ClientSize = New Size(774, 481)
         Controls.Add(SpMain)
         Margin = New Padding(3, 2, 3, 2)
         Name = "FrmMeasuresUsage"
@@ -197,7 +241,13 @@ Partial Class FrmMeasuresUsage
         CType(SpMeausres, ComponentModel.ISupportInitialize).EndInit()
         SpMeausres.ResumeLayout(False)
         CType(DgvMeasures, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel1.PerformLayout()
+        SplitContainer1.Panel2.ResumeLayout(False)
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer1.ResumeLayout(False)
         CType(DgvReport, ComponentModel.ISupportInitialize).EndInit()
+        CType(BcReport, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -206,11 +256,14 @@ Partial Class FrmMeasuresUsage
     Friend WithEvents CmdRefresh As Button
     Friend WithEvents SpMeausres As SplitContainer
     Friend WithEvents DgvMeasures As DataGridView
-    Friend WithEvents DgvReport As DataGridView
     Friend WithEvents Measure As DataGridViewTextBoxColumn
     Friend WithEvents Usage As DataGridViewTextBoxColumn
-    Friend WithEvents Page As DataGridViewTextBoxColumn
-    Friend WithEvents Table As DataGridViewTextBoxColumn
-    Friend WithEvents Valuename As DataGridViewTextBoxColumn
     Friend WithEvents TxtInfo As TextBox
+    Friend WithEvents BcReport As BindingSource
+    Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents CkbHidden As CheckBox
+    Friend WithEvents DgvReport As DataGridView
+    Friend WithEvents CmdClearFilterReport As Button
+    Friend WithEvents TxtFilterMeasure As TextBox
+    Friend WithEvents LblFilterMeasure As Label
 End Class

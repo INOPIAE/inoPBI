@@ -399,4 +399,13 @@
   <data name="MUHidden" xml:space="preserve">
     <value> (ausgeblendet)</value>
   </data>
+  <data name="BtnClearFilter" xml:space="preserve">
+    <value>Filter leeren</value>
+  </data>
+  <data name="MUFilterMeasure" xml:space="preserve">
+    <value>Filter Measure</value>
+  </data>
+  <data name="MUHiddenOnly" xml:space="preserve">
+    <value>nur ausgeblendete</value>
+  </data>
 </root>
