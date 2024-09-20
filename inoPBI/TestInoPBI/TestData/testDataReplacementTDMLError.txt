@@ -1,0 +1,2 @@
+SharepointOrdner; "https://mydomain.com/sites/site/Austausch%20Laptops/project/Daten/; "https://yourdomain.com/sites/site/Austausch%20Laptops/project/Daten/
+SharepointSite, "https://mydomain.com/sites/site/; "https://yourdomain.com/sites/site/
