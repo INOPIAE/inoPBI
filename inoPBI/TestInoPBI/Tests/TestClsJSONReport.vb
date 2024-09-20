@@ -94,5 +94,31 @@ Namespace TestInoPBI
             Assert.That(testMeasures(pos).Table, NUnit.Framework.Is.EqualTo(table))
             Assert.That(testMeasures(pos).Valuename, NUnit.Framework.Is.EqualTo(valuename))
         End Sub
+
+
+
+        <Test>
+        Public Sub TestReadReportHidden()
+
+            Dim strFile As String = testPath & "\TestData\TestProgrammierungReport.json"
+            cJR.ReadReport(strFile)
+            Dim testMeasures As List(Of ClsJSONReport.ReportMeasure) = cJR.ReportMeasures
+            Assert.That(testMeasures.Count, NUnit.Framework.Is.EqualTo(4))
+
+            Dim pos As Int16 = 0
+            Dim page As String = "Seite 2 (hidden)"
+            Dim table As String = "Budgetziel"
+            Dim valuename As String = "Referenzdatum"
+
+            testSingleReportMeasure(testMeasures, pos, page, table, valuename)
+
+            pos = 2
+            page = "Seite 1"
+            table = "Budgetziel"
+            valuename = "Referenzdatum"
+
+            testSingleReportMeasure(testMeasures, pos, page, table, valuename)
+
+        End Sub
     End Class
 End Namespace

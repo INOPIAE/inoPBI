@@ -26,6 +26,7 @@ Public Class FrmMeasuresUsage
 
         DgvReport.Rows.Clear()
 
+        cJR.strHiddenPublic = My.Resources.ResourcesLang.MUHidden
         cJR.ReadReport(strFile)
         Dim rMeasures As List(Of ClsJSONReport.ReportMeasure) = cJR.ReportMeasures
         For Each rm As ClsJSONReport.ReportMeasure In rMeasures

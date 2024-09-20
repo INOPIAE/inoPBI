@@ -11,7 +11,8 @@ Public Class ClsJSONReport
         Public Valuename As String
     End Structure
 
-
+    Private strHidden As String = vbNullString
+    Public strHiddenPublic As String = " (hidden)"
 
     Public ReportMeasures As New List(Of ReportMeasure)
 
@@ -74,11 +75,21 @@ Public Class ClsJSONReport
                 If token.Value.ToString() = "" Then
                     'child.Nodes.Add("N/A")
                 Else
-                    ' Debug.Print("Token 2  " & token.Key.ToString)
+                    'Debug.Print("Token 2  " & token.Key.ToString)
+
+                    If section = "sec" And token.Key.ToString = "config" Then
+                        ' Debug.Print("config  " & token.Value.ToString)
+                        If token.Value.ToString.Contains("""visibility"":1") Then
+                            strHidden = strHiddenPublic
+                        Else
+                            strHidden = vbNullString
+                        End If
+                    End If
                     If section = "sec" And token.Key.ToString = "displayName" Then
-                        section = token.Value.ToString
+                        section = token.Value.ToString & strHidden
                         '  Debug.Print("Display  " & section)
                     End If
+
                     If vc = "vc" And token.Key.ToString = "config" Then
                         vc = token.Value.ToString
                         '     Debug.Print(section & " Config  " & vc)

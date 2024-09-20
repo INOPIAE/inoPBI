@@ -506,6 +506,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die  (hidden) ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MUHidden() As String
+            Get
+                Return ResourceManager.GetString("MUHidden", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Measure ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property MUMeasure() As String

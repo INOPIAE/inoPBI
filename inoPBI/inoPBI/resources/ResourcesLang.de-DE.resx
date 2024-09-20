@@ -396,4 +396,7 @@
   <data name="ReplacementReplacementError" xml:space="preserve">
     <value>{0} Ersetzung(en) konnte(n) nicht aufgelöst werden.</value>
   </data>
+  <data name="MUHidden" xml:space="preserve">
+    <value> (ausgeblendet)</value>
+  </data>
 </root>
