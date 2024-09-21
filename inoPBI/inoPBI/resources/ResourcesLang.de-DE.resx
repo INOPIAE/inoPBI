@@ -432,4 +432,22 @@
   <data name="MainReplaceReport" xml:space="preserve">
     <value>Ersetzen Report</value>
   </data>
+  <data name="CleanupNothingToDo" xml:space="preserve">
+    <value>Nicht zu tuen</value>
+  </data>
+  <data name="CleanupDleteFilesQuestion" xml:space="preserve">
+    <value>Sollen {0} ausgewählte Datei(en) gelöscht werden?</value>
+  </data>
+  <data name="CleanupFilesDeleted" xml:space="preserve">
+    <value>{0} Datei(en) gelöscht.</value>
+  </data>
+  <data name="CleanupTitle" xml:space="preserve">
+    <value>Aufräumen</value>
+  </data>
+  <data name="BtnDeleteSelectedFiles" xml:space="preserve">
+    <value>Ausgewählte Dateien löschen</value>
+  </data>
+  <data name="CleanupBackupFiles" xml:space="preserve">
+    <value>Backup-Dateien für {0}</value>
+  </data>
 </root>

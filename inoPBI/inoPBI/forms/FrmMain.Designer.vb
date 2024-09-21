@@ -45,6 +45,7 @@ Partial Class FrmMain
         EditFooterHeaderToolStripMenuItem = New ToolStripMenuItem()
         UsageToolStripMenuItem = New ToolStripMenuItem()
         SelectProjectToolStripMenuItem = New ToolStripMenuItem()
+        ReplacementReportToolStripMenuItem = New ToolStripMenuItem()
         EditMenu = New ToolStripMenuItem()
         UndoToolStripMenuItem = New ToolStripMenuItem()
         RedoToolStripMenuItem = New ToolStripMenuItem()
@@ -85,7 +86,7 @@ Partial Class FrmMain
         ToolStripStatusLabel = New ToolStripStatusLabel()
         TslCurrentProject = New ToolStripStatusLabel()
         ToolTip = New ToolTip(components)
-        ReplacementReportToolStripMenuItem = New ToolStripMenuItem()
+        CleanupToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip.SuspendLayout()
         ToolStrip.SuspendLayout()
         StatusStrip.SuspendLayout()
@@ -241,6 +242,12 @@ Partial Class FrmMain
         SelectProjectToolStripMenuItem.Size = New Size(181, 22)
         SelectProjectToolStripMenuItem.Text = "Select Project"
         ' 
+        ' ReplacementReportToolStripMenuItem
+        ' 
+        ReplacementReportToolStripMenuItem.Name = "ReplacementReportToolStripMenuItem"
+        ReplacementReportToolStripMenuItem.Size = New Size(181, 22)
+        ReplacementReportToolStripMenuItem.Text = "Replacement Report"
+        ' 
         ' EditMenu
         ' 
         EditMenu.DropDownItems.AddRange(New ToolStripItem() {UndoToolStripMenuItem, RedoToolStripMenuItem, ToolStripSeparator6, CutToolStripMenuItem, CopyToolStripMenuItem, PasteToolStripMenuItem, ToolStripSeparator7, SelectAllToolStripMenuItem})
@@ -384,7 +391,7 @@ Partial Class FrmMain
         ' 
         ' ToolsMenu
         ' 
-        ToolsMenu.DropDownItems.AddRange(New ToolStripItem() {OptionsToolStripMenuItem})
+        ToolsMenu.DropDownItems.AddRange(New ToolStripItem() {OptionsToolStripMenuItem, CleanupToolStripMenuItem})
         ToolsMenu.Name = "ToolsMenu"
         ToolsMenu.Size = New Size(46, 20)
         ToolsMenu.Text = "&Tools"
@@ -392,7 +399,7 @@ Partial Class FrmMain
         ' OptionsToolStripMenuItem
         ' 
         OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        OptionsToolStripMenuItem.Size = New Size(124, 22)
+        OptionsToolStripMenuItem.Size = New Size(180, 22)
         OptionsToolStripMenuItem.Text = "&Optionen"
         ' 
         ' WindowsMenu
@@ -535,11 +542,11 @@ Partial Class FrmMain
         TslCurrentProject.Size = New Size(119, 17)
         TslCurrentProject.Text = "ToolStripStatusLabel1"
         ' 
-        ' ReplacementReportToolStripMenuItem
+        ' CleanupToolStripMenuItem
         ' 
-        ReplacementReportToolStripMenuItem.Name = "ReplacementReportToolStripMenuItem"
-        ReplacementReportToolStripMenuItem.Size = New Size(181, 22)
-        ReplacementReportToolStripMenuItem.Text = "Replacement Report"
+        CleanupToolStripMenuItem.Name = "CleanupToolStripMenuItem"
+        CleanupToolStripMenuItem.Size = New Size(180, 22)
+        CleanupToolStripMenuItem.Text = "Cleanup"
         ' 
         ' FrmMain
         ' 
@@ -552,7 +559,7 @@ Partial Class FrmMain
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         IsMdiContainer = True
         MainMenuStrip = MenuStrip
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         Name = "FrmMain"
         Text = "inoPBI"
         MenuStrip.ResumeLayout(False)
@@ -626,5 +633,6 @@ Partial Class FrmMain
     Friend WithEvents ReplacementTMDLToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsageToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReplacementReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CleanupToolStripMenuItem As ToolStripMenuItem
 
 End Class

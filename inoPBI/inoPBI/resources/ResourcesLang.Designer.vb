@@ -119,6 +119,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Delete selected files ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnDeleteSelectedFiles() As String
+            Get
+                Return ResourceManager.GetString("BtnDeleteSelectedFiles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Down ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnDown() As String
@@ -223,6 +232,51 @@ Namespace My.Resources
         Friend Shared ReadOnly Property BtnUp() As String
             Get
                 Return ResourceManager.GetString("BtnUp", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Backup files for {0} ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property CleanupBackupFiles() As String
+            Get
+                Return ResourceManager.GetString("CleanupBackupFiles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Do you want to delete {0} selected file(s)? ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property CleanupDleteFilesQuestion() As String
+            Get
+                Return ResourceManager.GetString("CleanupDleteFilesQuestion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die {0} file(s) deleted. ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property CleanupFilesDeleted() As String
+            Get
+                Return ResourceManager.GetString("CleanupFilesDeleted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Nothing to do ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property CleanupNothingToDo() As String
+            Get
+                Return ResourceManager.GetString("CleanupNothingToDo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Cleanup ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property CleanupTitle() As String
+            Get
+                Return ResourceManager.GetString("CleanupTitle", resourceCulture)
             End Get
         End Property
         

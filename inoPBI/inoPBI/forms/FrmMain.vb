@@ -196,6 +196,7 @@ Public Class FrmMain
 
         ToolsMenu.Text = My.Resources.ResourcesLang.MainTools
         OptionsToolStripMenuItem.Text = My.Resources.ResourcesLang.MainSettings
+        CleanupToolStripMenuItem.Text = My.Resources.ResourcesLang.CleanupTitle
 
         WindowsMenu.Text = My.Resources.ResourcesLang.MainWindows
         NewWindowToolStripMenuItem.Text = My.Resources.ResourcesLang.MainNewWindow
@@ -215,5 +216,9 @@ Public Class FrmMain
 
     Private Sub ReplacementReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplacementReportToolStripMenuItem.Click
         frmReplacementReport.Show()
+    End Sub
+
+    Private Sub CleanupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CleanupToolStripMenuItem.Click
+        frmCleanupBackup.Show()
     End Sub
 End Class
