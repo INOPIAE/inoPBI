@@ -1,4 +1,5 @@
-﻿Imports inoPBIDLL
+﻿Imports System.IO
+Imports inoPBIDLL
 Public Class frmReplacementReport
     Private Sub CmdClose_Click(sender As Object, e As EventArgs) Handles CmdClose.Click
         Me.Close()
@@ -42,6 +43,11 @@ Public Class frmReplacementReport
             Replacements(1).StrTo = TxtReplacementTo2.Text
         End If
         SaveSettings()
+
+        Dim strReplace As String = TxtOrginal.Text.Replace(".json", String.Format("_{0}_{1}.json", Now.ToString("yyyyMMdd_HHmm"), My.Settings.CurrentProject))
+
+        Dim strRPF As String = Path.Combine(FrmMain.AppDataPath, "Backup", Path.GetFileName(strReplace))
+        My.Computer.FileSystem.CopyFile(TxtOrginal.Text, strRPF, overwrite:=True)
 
         My.Computer.FileSystem.CopyFile(TxtOrginal.Text, TxtReplace.Text, overwrite:=True)
 
