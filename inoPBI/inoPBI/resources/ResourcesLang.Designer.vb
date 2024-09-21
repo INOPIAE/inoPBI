@@ -380,6 +380,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement Report ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MainReplaceReport() As String
+            Get
+                Return ResourceManager.GetString("MainReplaceReport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Replacement TMDL ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property MainReplaceTDML() As String
@@ -844,6 +853,69 @@ Namespace My.Resources
         Friend Shared ReadOnly Property ReplacementReplacingStarted() As String
             Get
                 Return ResourceManager.GetString("ReplacementReplacingStarted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Backup file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReportBackup() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReportBackup", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Report file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReportOriginal() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReportOriginal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Page name part ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReportPage() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReportPage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement 1 ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReportReplace1() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReportReplace1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement 2 ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReportReplace2() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReportReplace2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replace of filter ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReportTitle() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReportTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Visual type name ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementReportVisual() As String
+            Get
+                Return ResourceManager.GetString("ReplacementReportVisual", resourceCulture)
             End Get
         End Property
         

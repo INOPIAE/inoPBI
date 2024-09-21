@@ -35,9 +35,6 @@ Public Class FrmMeasuresUsage
         cJR.strHiddenPublic = My.Resources.ResourcesLang.MUHidden
         cJR.ReadReport(strFile)
         Dim rMeasures As List(Of ClsJSONReport.ReportMeasure) = cJR.ReportMeasures
-        'For Each rm As ClsJSONReport.ReportMeasure In rMeasures
-        '    DgvReport.Rows.Add(New String() {rm.Page, rm.Table, rm.Valuename})
-        'Next
 
         dtReport = New DataTable
         dtReport.Columns.Add("Page", GetType(String))

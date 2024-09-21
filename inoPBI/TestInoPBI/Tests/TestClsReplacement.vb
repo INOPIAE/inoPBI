@@ -1,5 +1,6 @@
 ﻿Imports System.Collections.ObjectModel
 Imports System.IO
+Imports System.Net.WebRequestMethods
 Imports System.Runtime
 Imports inoPBIDLL
 Imports inoPBIDLL.ClsReplacement
@@ -126,6 +127,37 @@ Namespace TestInoPBI
             Dim ex = Assert.Throws(Of System.Exception)(Function() cRep.GetReplacements(strReplacement))
 
             Assert.That(ex.Message, [Is].EqualTo("1 replacement(s) could not be resolved"))
+
+        End Sub
+
+        <Test>
+        Public Sub TestReplaceReportFilter()
+
+            Dim strFile As String = testPath & "\TestData\reportFilter.json"
+            Dim strFileT As String = testFolder & "\reportFilter.json"
+            IO.File.Copy(strFile, strFileT)
+
+            Dim strPage As String = "Tacho"
+            Dim strVisual As String = "gauge"
+            Dim Replacements() As ClsReplacement.Replacement
+            ReDim Replacements(0)
+
+            Replacements(0).StrFrom = "Budgetziel1"
+            Replacements(0).StrTo = "Testing"
+
+            cRep.ReplaceReportFilter(strFileT, strPage, strVisual, Replacements)
+
+
+            Dim strTest As String
+            Using sr As New StreamReader(strFileT)
+                strTest = sr.ReadToEnd
+            End Using
+
+            Dim strTestFrom As String = String.Format("\""Entity\"":\""{0}\""", Replacements(0).StrFrom)
+            Dim strTestTo As String = String.Format("\""Entity\"":\""{0}\""", Replacements(0).StrTo)
+
+            Assert.That(strTest, Does.Contain(strTestTo))
+            Assert.That(strTest, Does.Not.Contain(strTestFrom))
 
         End Sub
     End Class

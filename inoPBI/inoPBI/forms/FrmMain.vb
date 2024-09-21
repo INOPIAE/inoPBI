@@ -192,6 +192,7 @@ Public Class FrmMain
         EditFooterHeaderToolStripMenuItem.Text = My.Resources.ResourcesLang.MainEditFooterHeader
         UsageToolStripMenuItem.Text = My.Resources.ResourcesLang.MainUsage
         SelectProjectToolStripMenuItem.Text = My.Resources.ResourcesLang.MainSelectProject
+        ReplacementReportToolStripMenuItem.Text = My.Resources.ResourcesLang.MainReplaceReport
 
         ToolsMenu.Text = My.Resources.ResourcesLang.MainTools
         OptionsToolStripMenuItem.Text = My.Resources.ResourcesLang.MainSettings
@@ -210,5 +211,9 @@ Public Class FrmMain
 
         ToolStripStatusLabel.Text = My.Resources.ResourcesLang.MainStatus
 
+    End Sub
+
+    Private Sub ReplacementReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplacementReportToolStripMenuItem.Click
+        frmReplacementReport.Show()
     End Sub
 End Class

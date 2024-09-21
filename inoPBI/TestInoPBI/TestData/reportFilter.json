@@ -1,0 +1,84 @@
+{
+  "config": "{\"version\":\"5.57\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU08\",\"version\":\"5.57\",\"type\":2}},\"activeSectionIndex\":2,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU08",
+            "path": "BaseThemes/CY24SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Seite 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "8e58e3d689f4cb06c569",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"6b64fe9cf49780bf998c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Budgetziel.Referenzdatum.Variation.Datumshierarchie.Jahr\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Ziele\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"Budgetziel\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Name\":\"Variation\",\"Property\":\"Referenzdatum\"}},\"Hierarchy\":\"Datumshierarchie\"}},\"Level\":\"Jahr\"},\"Name\":\"Budgetziel.Referenzdatum.Variation.Datumshierarchie.Jahr\",\"NativeReferenceName\":\"Referenzdatum Jahr\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Ziele\"},\"Name\":\"_Measures.Ziele\",\"NativeReferenceName\":\"Ziele\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Name\":\"Variation\",\"Property\":\"Referenzdatum\"}},\"Hierarchy\":\"Datumshierarchie\"}},\"Level\":\"Jahr\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Tacho",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "98f2e2ce77a1d9efddea",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"7868a53eda5da9b3cfb2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Budgetziel.Ziel)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"Budgetziel\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Ziel\"}},\"Function\":0},\"Name\":\"Sum(Budgetziel.Ziel)\",\"NativeReferenceName\":\"Summe von Ziel\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Ziel\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[{\"name\":\"a8cbea24171a292adcd8\",\"expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Budgetziel1\"}},\"Name\":\"Variation\",\"Property\":\"Referenzdatum\"}},\"Hierarchy\":\"Datumshierarchie\"}},\"Level\":\"Jahr\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LocalDateTable_e68a5e29-33a3-4c8b-b81b-0e71aa909081\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Jahr\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2024L\"}}]]}}}]},\"type\":\"Categorical\",\"cachedDisplayNames\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"LocalDateTable_e68a5e29-33a3-4c8b-b81b-0e71aa909081\"}},\"Property\":\"Jahr\"}},\"Right\":{\"Literal\":{\"Value\":\"2024L\"}}}}},\"displayName\":\"2024\"}],\"howCreated\":1,\"objects\":{}}]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Seite 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "aea47c3dca848de5a78a",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"dbcd97dc49cd8672de41\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Budgetziel.Referenzdatum.Variation.Datumshierarchie.Jahr\"},{\"queryRef\":\"_Measures.Ziele\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"Budgetziel\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Name\":\"Variation\",\"Property\":\"Referenzdatum\"}},\"Hierarchy\":\"Datumshierarchie\"}},\"Level\":\"Jahr\"},\"Name\":\"Budgetziel.Referenzdatum.Variation.Datumshierarchie.Jahr\",\"NativeReferenceName\":\"Referenzdatum Jahr\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Ziele\"},\"Name\":\"_Measures.Ziele\",\"NativeReferenceName\":\"Ziele\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

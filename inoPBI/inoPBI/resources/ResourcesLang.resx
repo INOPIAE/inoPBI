@@ -408,4 +408,28 @@
   <data name="MUHiddenOnly" xml:space="preserve">
     <value>hidden only</value>
   </data>
+  <data name="ReplacementReportOriginal" xml:space="preserve">
+    <value>Report file</value>
+  </data>
+  <data name="ReplacementReportBackup" xml:space="preserve">
+    <value>Backup file</value>
+  </data>
+  <data name="ReplacementReportPage" xml:space="preserve">
+    <value>Page name part</value>
+  </data>
+  <data name="ReplacementReportVisual" xml:space="preserve">
+    <value>Visual type name</value>
+  </data>
+  <data name="ReplacementReportReplace1" xml:space="preserve">
+    <value>Replacement 1</value>
+  </data>
+  <data name="ReplacementReportReplace2" xml:space="preserve">
+    <value>Replacement 2</value>
+  </data>
+  <data name="ReplacementReportTitle" xml:space="preserve">
+    <value>Replace of filter</value>
+  </data>
+  <data name="MainReplaceReport" xml:space="preserve">
+    <value>Replacement Report</value>
+  </data>
 </root>

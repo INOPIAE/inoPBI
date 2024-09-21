@@ -238,4 +238,47 @@ Public Class ClsReplacement
 
         Return True
     End Function
+
+    Public Function ReplaceReportFilter(strFile As String, strPage As String, strVisual As String, Replacements() As Replacement) As Boolean
+        Dim blnReplacePage As Boolean = False
+        Dim blnReplaceVisual As Boolean = False
+        Dim strOutput As String = vbNullString
+        Dim strOutputLinebreak As String = vbNullString
+        Dim intI As Int32
+
+        Using sr As New StreamReader(strFile)
+            While sr.Peek() >= 0
+                Dim strLine As String = sr.ReadLine
+                intI += 1
+                If strLine.Contains("""displayName"":") Then
+                    If strLine.Contains(strPage) Then
+                        blnReplacePage = True
+                    Else
+                        blnReplacePage = False
+                    End If
+                End If
+
+                If strLine.Contains("""config"":") And blnReplacePage = True Then
+                    Dim search As String = String.Format("\""singleVisual\"":{0}\""visualType\"":\""{1}\""", "{", strVisual)
+                    If strLine.Contains(search) Then
+                        blnReplaceVisual = True
+                    Else
+                        blnReplaceVisual = False
+                    End If
+                End If
+
+                If strLine.Contains("""filters"":") And blnReplaceVisual = True Then
+                    For Each r As Replacement In Replacements
+                        strLine = strLine.Replace(String.Format("\""Entity\"":\""{0}\""", r.StrFrom), String.Format("\""Entity\"":\""{0}\""", r.StrTo))
+                        ' Debug.Print(intI & " " & strLine)
+                    Next
+                End If
+
+                strOutput &= strOutputLinebreak & strLine
+                strOutputLinebreak = vbCrLf
+            End While
+        End Using
+        File.WriteAllText(strFile, strOutput)
+        Return True
+    End Function
 End Class
