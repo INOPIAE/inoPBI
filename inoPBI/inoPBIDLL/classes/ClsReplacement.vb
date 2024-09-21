@@ -245,6 +245,7 @@ Public Class ClsReplacement
         Dim strOutput As String = vbNullString
         Dim strOutputLinebreak As String = vbNullString
         Dim intI As Int32
+        Dim page As String = vbNullString
 
         Using sr As New StreamReader(strFile)
             While sr.Peek() >= 0
@@ -256,6 +257,7 @@ Public Class ClsReplacement
                     Else
                         blnReplacePage = False
                     End If
+                    page = strLine
                 End If
 
                 If strLine.Contains("""config"":") And blnReplacePage = True Then
@@ -268,10 +270,25 @@ Public Class ClsReplacement
                 End If
 
                 If strLine.Contains("""filters"":") And blnReplaceVisual = True Then
+                    Debug.Print(intI & " " & page & " " & strLine)
                     For Each r As Replacement In Replacements
                         strLine = strLine.Replace(String.Format("\""Entity\"":\""{0}\""", r.StrFrom), String.Format("\""Entity\"":\""{0}\""", r.StrTo))
-                        ' Debug.Print(intI & " " & strLine)
                     Next
+                    'Dim strRF1 As String = String.Format("\""Bereich\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Sach")
+                    'Dim strRF2 As String = String.Format("\""Bereich\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "TV")
+                    'Dim strRF3 As String = String.Format("\""Bereich\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Haftpflicht")
+                    'Dim strRF4 As String = String.Format("\""Bereich\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Heilwesen Haftpflicht")
+                    'Dim strRF5 As String = String.Format("\""Bereich\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Kfz")
+                    'Dim strRF6 As String = String.Format("\""Bereich\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Financial Lines")
+                    'Dim strRF7 As String = String.Format("\""Bereich\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Transport/Verkehrshaftung")
+                    'Dim strRT As String = String.Format("\""Bereich\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Industrie/Spezial")
+                    'strLine = strLine.Replace(strRF1, strRT)
+                    'strLine = strLine.Replace(strRF2, strRT)
+                    'strLine = strLine.Replace(strRF3, strRT)
+                    'strLine = strLine.Replace(strRF4, strRT)
+                    'strLine = strLine.Replace(strRF5, strRT)
+                    'strLine = strLine.Replace(strRF6, strRT)
+                    'strLine = strLine.Replace(strRF7, strRT)
                 End If
 
                 strOutput &= strOutputLinebreak & strLine
