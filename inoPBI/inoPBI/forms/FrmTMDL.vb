@@ -12,6 +12,7 @@ Public Class FrmTMDL
         If TxtOrginal.Text.Contains(".Dataset") = False And TxtOrginal.Text.Contains(".SemanticModel") = False Then
             MessageBox.Show(My.Resources.ResourcesLang.ReplacementNoDatasetFolderSelected)
         End If
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdFileReplacement_Click(sender As Object, e As EventArgs) Handles CmdFileReplacement.Click
@@ -22,6 +23,7 @@ Public Class FrmTMDL
                 TxtReplace.Text = .FileName
             End If
         End With
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdEditReplacement_Click(sender As Object, e As EventArgs) Handles CmdEditReplacement.Click
@@ -32,6 +34,7 @@ Public Class FrmTMDL
                 TxtReplace.Text = My.Settings.LastReplacement
             End With
         End If
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdFolderTarget_Click(sender As Object, e As EventArgs) Handles CmdFolderTarget.Click
@@ -41,6 +44,7 @@ Public Class FrmTMDL
                 TxtTargetFolder.Text = .SelectedPath
             End If
         End With
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdFileDocu_Click(sender As Object, e As EventArgs) Handles CmdFileDocu.Click
@@ -51,6 +55,7 @@ Public Class FrmTMDL
                 TxtFileDocu.Text = .FileName
             End If
         End With
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdReplace_Click(sender As Object, e As EventArgs) Handles CmdReplace.Click
@@ -124,6 +129,7 @@ Public Class FrmTMDL
 
     Private Sub CmdPDF_Click(sender As Object, e As EventArgs) Handles CmdPDF.Click
         FrmPDF.Show()
+        LblInfo.Text = ""
     End Sub
 
     Private Sub FrmTMDL_Load(sender As Object, e As EventArgs) Handles Me.Load

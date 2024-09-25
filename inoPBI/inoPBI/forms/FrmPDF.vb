@@ -113,6 +113,7 @@ Public Class FrmPDF
                 TxtHeader.Text = .FileName
             End If
         End With
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdFooterFile_Click(sender As Object, e As EventArgs) Handles CmdFooterFile.Click
@@ -125,6 +126,7 @@ Public Class FrmPDF
                 TxtFooter.Text = .FileName
             End If
         End With
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdFileDocu_Click(sender As Object, e As EventArgs) Handles CmdFileDocu.Click
@@ -135,6 +137,7 @@ Public Class FrmPDF
                 TxtFileDocu.Text = .FileName
             End If
         End With
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdEditHeader_Click(sender As Object, e As EventArgs) Handles CmdEditHeader.Click
@@ -145,6 +148,7 @@ Public Class FrmPDF
                 TxtHeader.Text = My.Settings.LastHeader
             End With
         End If
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdEditFooter_Click(sender As Object, e As EventArgs) Handles CmdEditFooter.Click
@@ -155,6 +159,7 @@ Public Class FrmPDF
                 TxtFooter.Text = My.Settings.LastFooter
             End With
         End If
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdTargetFile_Click(sender As Object, e As EventArgs) Handles CmdTargetFile.Click
@@ -165,6 +170,7 @@ Public Class FrmPDF
                 TxtTargetFile.Text = .FileName
             End If
         End With
+        LblInfo.Text = ""
     End Sub
 
     Private Sub TranslateForm()

@@ -177,6 +177,7 @@ Public Class FrmReplacementGauge
                 TxtOrginal.Text = .FileName
             End If
         End With
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdFileReplacement_Click(sender As Object, e As EventArgs) Handles CmdFileReplacement.Click
@@ -187,6 +188,7 @@ Public Class FrmReplacementGauge
                 TxtReplace.Text = .FileName
             End If
         End With
+        LblInfo.Text = ""
     End Sub
 
     Private Sub TranslateForm()
@@ -217,6 +219,7 @@ Public Class FrmReplacementGauge
 
     Private Sub CmdNew_Click(sender As Object, e As EventArgs) Handles CmdNew.Click
         FrmReplaceElement.Show()
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdEdit_Click(sender As Object, e As EventArgs) Handles CmdEdit.Click
@@ -232,6 +235,7 @@ Public Class FrmReplacementGauge
                 .TxtRangeTo.Text = dgvReplace.SelectedRows(0).Cells(5).Value
             End With
         End If
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CmdDelete_Click(sender As Object, e As EventArgs) Handles CmdDelete.Click
@@ -241,6 +245,7 @@ Public Class FrmReplacementGauge
                 dgvReplace.Rows.RemoveAt(i)
             End If
         End If
+        LblInfo.Text = ""
     End Sub
 
     Private Sub CkbSwitchData_CheckedChanged(sender As Object, e As EventArgs) Handles CkbSwitchData.CheckedChanged
