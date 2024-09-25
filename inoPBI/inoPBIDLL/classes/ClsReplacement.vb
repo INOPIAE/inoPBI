@@ -1,6 +1,7 @@
 ﻿Imports System.Collections.ObjectModel
 Imports System.IO
 Imports System.IO.Compression
+Imports System.Net.Http
 Imports System.Reflection.Metadata
 
 Public Class ClsReplacement
@@ -264,9 +265,24 @@ Public Class ClsReplacement
                     Dim search As String = String.Format("\""singleVisual\"":{0}\""visualType\"":\""{1}\""", "{", strVisual)
                     If strLine.Contains(search) Then
                         blnReplaceVisual = True
+                        'Debug.Print(intI & " " & page & " " & strLine)
+                        'Dim strRF1 As String = String.Format("AvgScore")
+                        'Dim strRF2 As String = String.Format("MinScore")
+                        'Dim strRF3 As String = String.Format("MaxScore")
+
+                        'Dim strRT1 As String = String.Format("AVG Frage")
+                        'Dim strRT2 As String = String.Format("Min Frage")
+                        'Dim strRT3 As String = String.Format("Max Frage")
+
+                        'strLine = strLine.Replace(strRF1, strRT1)
+                        'strLine = strLine.Replace(strRF2, strRT2)
+                        'strLine = strLine.Replace(strRF3, strRT3)
                     Else
                         blnReplaceVisual = False
                     End If
+
+
+
                 End If
 
                 If strLine.Contains("""filters"":") And blnReplaceVisual = True Then
@@ -289,8 +305,101 @@ Public Class ClsReplacement
                     'strLine = strLine.Replace(strRF5, strRT)
                     'strLine = strLine.Replace(strRF6, strRT)
                     'strLine = strLine.Replace(strRF7, strRT)
+                    Dim strRF1 As String = String.Format("\""Sparte\""")
+                    'Dim strRF1 As String = String.Format("\""Sparte\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Sach/TV")
+                    '   Dim strRF2 As String = String.Format("\""Bereich\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "TV")
+                    'Dim strRF3 As String = String.Format("\""Sparte\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Haftpflicht")
+                    'Dim strRF4 As String = String.Format("\""Sparte\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Heilwesen Haftpflicht")
+                    'Dim strRF5 As String = String.Format("\""Sparte\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Kfz")
+                    'Dim strRF6 As String = String.Format("\""Sparte\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Financial Lines")
+                    'Dim strRF7 As String = String.Format("\""Sparte\""{1}{1}],\""Values\"":[[{0}\""Literal\"":{0}\""Value\"":\""'{2}'\""", "{", "}", "Transport/Verkehrshaftung")
+                    Dim strRT As String = String.Format("\""Bereich\""") 'Industrie/Spezial Logistik Tradition
+                    strLine = strLine.Replace(strRF1, strRT)
+                    'strLine = strLine.Replace(strRF2, strRT)
+                    'strLine = strLine.Replace(strRF3, strRT)
+                    'strLine = strLine.Replace(strRF4, strRT)
+                    'strLine = strLine.Replace(strRF5, strRT)
+                    'strLine = strLine.Replace(strRF6, strRT)
+                    'strLine = strLine.Replace(strRF7, strRT)
                 End If
 
+                strOutput &= strOutputLinebreak & strLine
+                strOutputLinebreak = vbCrLf
+            End While
+        End Using
+        File.WriteAllText(strFile, strOutput)
+        Return True
+    End Function
+
+    Public Function ReplaceReportResize(strFile As String, strPage As String, strVisual As String, Replacements() As Replacement) As Boolean
+        Dim blnReplacePage As Boolean = False
+        Dim blnReplaceVisual As Boolean = False
+        Dim strOutput As String = vbNullString
+        Dim strOutputLinebreak As String = vbNullString
+        Dim intI As Int32
+        Dim page As String = vbNullString
+
+        Using sr As New StreamReader(strFile)
+            While sr.Peek() >= 0
+                Dim strLine As String = sr.ReadLine
+                intI += 1
+                If strLine.Contains("""displayName"":") Then
+                    If strLine.Contains(strPage) Then
+                        blnReplacePage = True
+                    Else
+                        blnReplacePage = False
+                    End If
+                    page = strLine
+                End If
+
+                If strLine.Contains("""config"":") And blnReplacePage = True Then
+                    Dim search As String = String.Format("\""singleVisual\"":{0}\""visualType\"":\""{1}\""", "{", strVisual)
+                    If strLine.Contains(search) Then
+                        blnReplaceVisual = True
+                    Else
+                        blnReplaceVisual = False
+                    End If
+                End If
+
+                '      "height" 120.72,
+                '"width": 320.25,
+                '"x": 575.04,
+                '"y": 404.00,
+                Dim pos As Int16
+                Dim strRep As String
+                If strLine.Contains("""height"":") And blnReplaceVisual = True Then
+                    Debug.Print(intI & " " & page & " " & strLine)
+                    pos = strLine.IndexOf(":")
+                    strRep = String.Format("{0}: {1},", strLine.Substring(0, pos), 120.72)
+                    strLine = strRep
+                End If
+                If strLine.Contains("""width"":") And blnReplaceVisual = True Then
+                    'Debug.Print(intI & " " & page & " " & strLine)
+                    pos = strLine.IndexOf(":")
+                    strRep = String.Format("{0}: {1},", strLine.Substring(0, pos), 320.25)
+                    strLine = strRep
+                End If
+                'If strLine.Contains("""x"":") And blnReplaceVisual = True Then
+                '    Debug.Print(intI & " " & page & " " & strLine)
+                '    pos = strLine.IndexOf(":")
+                '    strRep = String.Format("{0}: {1},", strLine.Substring(0, pos), 120)
+                '    strLine = strRep
+                'End If
+                If strLine.Contains("""y"":") And blnReplaceVisual = True Then
+                    Debug.Print(intI & " " & page & " " & strLine)
+                    Dim strT() As String = strLine.Split(": ")
+                    pos = strLine.IndexOf(":")
+                    Select Case strT(1).Substring(0, 1)
+                        Case 4
+                            strRep = String.Format("{0}: {1},", strLine.Substring(0, pos), 404.72)
+                        Case 2
+                            strRep = String.Format("{0}: {1},", strLine.Substring(0, pos), "212.00")
+                        Case Else
+                            Debug.Print(strT(1).Substring(0, 1))
+                            strRep = strLine
+                    End Select
+                    strLine = strRep
+                End If
                 strOutput &= strOutputLinebreak & strLine
                 strOutputLinebreak = vbCrLf
             End While

@@ -293,6 +293,102 @@ Namespace My
                 Me("LastRepSaveTo") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LastRepFrom3() As String
+            Get
+                Return CType(Me("LastRepFrom3"),String)
+            End Get
+            Set
+                Me("LastRepFrom3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LastRepFrom4() As String
+            Get
+                Return CType(Me("LastRepFrom4"),String)
+            End Get
+            Set
+                Me("LastRepFrom4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LastRepFrom5() As String
+            Get
+                Return CType(Me("LastRepFrom5"),String)
+            End Get
+            Set
+                Me("LastRepFrom5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LastRepFrom6() As String
+            Get
+                Return CType(Me("LastRepFrom6"),String)
+            End Get
+            Set
+                Me("LastRepFrom6") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LastRepTo3() As String
+            Get
+                Return CType(Me("LastRepTo3"),String)
+            End Get
+            Set
+                Me("LastRepTo3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LastRepTo4() As String
+            Get
+                Return CType(Me("LastRepTo4"),String)
+            End Get
+            Set
+                Me("LastRepTo4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LastRepTo5() As String
+            Get
+                Return CType(Me("LastRepTo5"),String)
+            End Get
+            Set
+                Me("LastRepTo5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LastRepTo6() As String
+            Get
+                Return CType(Me("LastRepTo6"),String)
+            End Get
+            Set
+                Me("LastRepTo6") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

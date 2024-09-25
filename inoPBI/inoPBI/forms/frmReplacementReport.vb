@@ -52,9 +52,13 @@ Public Class frmReplacementReport
         My.Computer.FileSystem.CopyFile(TxtOrginal.Text, TxtReplace.Text, overwrite:=True)
 
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingStarted
+        LblInfo.ForeColor = Color.Blue
         Application.DoEvents()
         clsR.ReplaceReportFilter(TxtOrginal.Text, TxtPage.Text, TxtVisual.Text, Replacements)
+        'clsR.ReplaceReportResize(TxtOrginal.Text, TxtPage.Text, TxtVisual.Text, Replacements)
+
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingFinished
+        LblInfo.ForeColor = Color.DarkGreen
     End Sub
 
     Private Sub SaveSettings()

@@ -215,7 +215,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub ReplacementReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplacementReportToolStripMenuItem.Click
-        frmReplacementReport.Show()
+        'frmReplacementReport.Show()
+        FrmReplacementGauge.Show()
     End Sub
 
     Private Sub CleanupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CleanupToolStripMenuItem.Click
