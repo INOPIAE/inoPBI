@@ -47,8 +47,15 @@ Public Class frmCleanupBackup
 
         CmdClose.Text = My.Resources.ResourcesLang.BtnClose
         CmdDelete.Text = My.Resources.ResourcesLang.BtnDeleteSelectedFiles
+        CmdSelectAll.Text = My.Resources.ResourcesLang.BtnSelectAll
 
         LblFiles.Text = String.Format(My.Resources.ResourcesLang.CleanupBackupFiles, My.Settings.CurrentProject)
 
+    End Sub
+
+    Private Sub CmdSelectAll_Click(sender As Object, e As EventArgs) Handles CmdSelectAll.Click
+        For i As Integer = 0 To ClbBackup.Items.Count - 1
+            ClbBackup.SetItemChecked(i, True)
+        Next
     End Sub
 End Class

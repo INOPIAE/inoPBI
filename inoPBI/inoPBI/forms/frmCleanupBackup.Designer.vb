@@ -27,6 +27,7 @@ Partial Class frmCleanupBackup
         CmdDelete = New Button()
         LblInfo = New Label()
         LblFiles = New Label()
+        CmdSelectAll = New Button()
         SuspendLayout()
         ' 
         ' ClbBackup
@@ -75,11 +76,22 @@ Partial Class frmCleanupBackup
         LblFiles.TabIndex = 21
         LblFiles.Text = "Info"
         ' 
+        ' CmdSelectAll
+        ' 
+        CmdSelectAll.Location = New Point(150, 306)
+        CmdSelectAll.Margin = New Padding(3, 2, 3, 2)
+        CmdSelectAll.Name = "CmdSelectAll"
+        CmdSelectAll.Size = New Size(110, 40)
+        CmdSelectAll.TabIndex = 22
+        CmdSelectAll.Text = "SelectAll"
+        CmdSelectAll.UseVisualStyleBackColor = True
+        ' 
         ' frmCleanupBackup
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(CmdSelectAll)
         Controls.Add(LblFiles)
         Controls.Add(LblInfo)
         Controls.Add(CmdClose)
@@ -96,4 +108,5 @@ Partial Class frmCleanupBackup
     Friend WithEvents CmdDelete As Button
     Friend WithEvents LblInfo As Label
     Friend WithEvents LblFiles As Label
+    Friend WithEvents CmdSelectAll As Button
 End Class

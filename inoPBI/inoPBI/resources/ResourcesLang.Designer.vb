@@ -227,6 +227,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Select all ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property BtnSelectAll() As String
+            Get
+                Return ResourceManager.GetString("BtnSelectAll", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Select project ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property BtnSelectProject() As String

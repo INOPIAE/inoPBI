@@ -489,4 +489,7 @@
   <data name="MsgToIsMissing" xml:space="preserve">
     <value>Nach fehlt.</value>
   </data>
+  <data name="BtnSelectAll" xml:space="preserve">
+    <value>Alle auswahlen</value>
+  </data>
 </root>

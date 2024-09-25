@@ -489,4 +489,7 @@
   <data name="MsgToIsMissing" xml:space="preserve">
     <value>To is missing.</value>
   </data>
+  <data name="BtnSelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
 </root>
