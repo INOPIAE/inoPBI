@@ -450,4 +450,43 @@
   <data name="CleanupBackupFiles" xml:space="preserve">
     <value>Backup files for {0}</value>
   </data>
+  <data name="REWidth" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="REHeight" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="REXHorizontal" xml:space="preserve">
+    <value>X (horizontal)</value>
+  </data>
+  <data name="REYVertical" xml:space="preserve">
+    <value>Y (vertical)</value>
+  </data>
+  <data name="RFAllowedDifference" xml:space="preserve">
+    <value>Allowed difference</value>
+  </data>
+  <data name="RFType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="REDefineElement" xml:space="preserve">
+    <value>Define element</value>
+  </data>
+  <data name="BtnNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="MsgDeleteSelectedEntry" xml:space="preserve">
+    <value>Delete selected entry?</value>
+  </data>
+  <data name="MsgEntryExists" xml:space="preserve">
+    <value>Entry exists.</value>
+  </data>
+  <data name="MsgActionIsCanceled" xml:space="preserve">
+    <value>Action is canceled.</value>
+  </data>
+  <data name="MsgFromIsMissing" xml:space="preserve">
+    <value>From is missing.</value>
+  </data>
+  <data name="MsgToIsMissing" xml:space="preserve">
+    <value>To is missing.</value>
+  </data>
 </root>

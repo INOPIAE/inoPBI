@@ -450,4 +450,43 @@
   <data name="CleanupBackupFiles" xml:space="preserve">
     <value>Backup-Dateien für {0}</value>
   </data>
+  <data name="REWidth" xml:space="preserve">
+    <value>Breite</value>
+  </data>
+  <data name="REHeight" xml:space="preserve">
+    <value>Höhe</value>
+  </data>
+  <data name="REXHorizontal" xml:space="preserve">
+    <value>X (horizontal)</value>
+  </data>
+  <data name="REYVertical" xml:space="preserve">
+    <value>Y (vertikal)</value>
+  </data>
+  <data name="RFAllowedDifference" xml:space="preserve">
+    <value>Erlaubte Abweichung</value>
+  </data>
+  <data name="RFType" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="REDefineElement" xml:space="preserve">
+    <value>Element definieren</value>
+  </data>
+  <data name="BtnNew" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="MsgDeleteSelectedEntry" xml:space="preserve">
+    <value>Soll der ausgewählte Eintrag gelöscht werden?</value>
+  </data>
+  <data name="MsgEntryExists" xml:space="preserve">
+    <value>Eintrag existiert.</value>
+  </data>
+  <data name="MsgActionIsCanceled" xml:space="preserve">
+    <value>Aktion wird abgebrochen.</value>
+  </data>
+  <data name="MsgFromIsMissing" xml:space="preserve">
+    <value>Von fehlt.</value>
+  </data>
+  <data name="MsgToIsMissing" xml:space="preserve">
+    <value>Nach fehlt.</value>
+  </data>
 </root>

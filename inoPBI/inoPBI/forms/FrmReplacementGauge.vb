@@ -1,5 +1,6 @@
 ﻿Imports inoPBIDLL
 Imports System.IO
+Imports System.Runtime.InteropServices
 
 Public Class FrmReplacementGauge
     Private Sub CmdClose_Click(sender As Object, e As EventArgs) Handles CmdClose.Click
@@ -19,18 +20,6 @@ Public Class FrmReplacementGauge
 
         TxtPage.Text = My.Settings.LastPage
         TxtVisual.Text = My.Settings.LastVisual
-        TxtReplacementFrom1.Text = My.Settings.LastRepFrom1
-        TxtReplacementTo1.Text = My.Settings.LastRepTo1
-        TxtReplacementFrom2.Text = My.Settings.LastRepFrom2
-        TxtReplacementTo2.Text = My.Settings.LastRepTo2
-        TxtReplacementFrom3.Text = My.Settings.LastRepFrom3
-        TxtReplacementTo3.Text = My.Settings.LastRepTo3
-        TxtReplacementFrom4.Text = My.Settings.LastRepFrom4
-        TxtReplacementTo4.Text = My.Settings.LastRepTo4
-        TxtReplacementFrom5.Text = My.Settings.LastRepFrom5
-        TxtReplacementTo5.Text = My.Settings.LastRepTo5
-        TxtReplacementFrom6.Text = My.Settings.LastRepFrom6
-        TxtReplacementTo6.Text = My.Settings.LastRepTo6
 
         If My.Settings.LastRepFrom1 <> vbNullString Then
             dgvReplace.Rows.Add("h", "Height", My.Settings.LastRepFrom1, My.Settings.LastRepTo1)
@@ -60,16 +49,7 @@ Public Class FrmReplacementGauge
         Dim clsR As New ClsReplacement
         Dim Replacements() As ClsReplacement.Replacement
         ReDim Replacements(0)
-        ' Replacements(0).Title = TxtVisual.Text
-        'Replacements(0).StrFrom = TxtReplacementFrom1.Text
-        'Replacements(0).StrTo = TxtReplacementTo1.Text
 
-        'If TxtReplacementFrom2.Text <> vbNullString Then
-        '    ReDim Replacements(1)
-        '    ' Replacements(1).Title = TxtVisual.Text
-        '    Replacements(1).StrFrom = TxtReplacementFrom2.Text
-        '    Replacements(1).StrTo = TxtReplacementTo2.Text
-        'End If
         SaveSettings()
 
         Dim strReplace As String = TxtOrginal.Text.Replace(".json", String.Format("_{0}_{1}.json", Now.ToString("yyyyMMdd_HHmm"), My.Settings.CurrentProject))
@@ -93,62 +73,26 @@ Public Class FrmReplacementGauge
         For Each dr As DataGridViewRow In dgvReplace.Rows
             Select Case dr.Cells(0).Value
                 Case "h"
-                    clsRG.height.FromV = dr.Cells(2).Value
-                    clsRG.height.ToV = dr.Cells(3).Value
+                    clsRG.height.FromV = IIf(CkbSwitchData.Checked, dr.Cells(3).Value, dr.Cells(2).Value)
+                    clsRG.height.ToV = IIf(CkbSwitchData.Checked, dr.Cells(2).Value, dr.Cells(3).Value)
                     clsRG.height.Range = IIf(dr.Cells(4).Value = vbNullString, 5, dr.Cells(4).Value)
                 Case "w"
-                    clsRG.width.FromV = dr.Cells(2).Value
-                    clsRG.width.ToV = dr.Cells(3).Value
+                    clsRG.width.FromV = IIf(CkbSwitchData.Checked, dr.Cells(3).Value, dr.Cells(2).Value)
+                    clsRG.width.ToV = IIf(CkbSwitchData.Checked, dr.Cells(2).Value, dr.Cells(3).Value)
                     clsRG.width.Range = IIf(dr.Cells(4).Value = vbNullString, 5, dr.Cells(4).Value)
                 Case "x"
-                    x.FromV = dr.Cells(2).Value
-                    x.ToV = dr.Cells(3).Value
+                    x.FromV = IIf(CkbSwitchData.Checked, dr.Cells(3).Value, dr.Cells(2).Value)
+                    x.ToV = IIf(CkbSwitchData.Checked, dr.Cells(2).Value, dr.Cells(3).Value)
                     x = IIf(dr.Cells(4).Value = vbNullString, 5, dr.Cells(4).Value)
                     clsRG.x.Add(x)
                 Case "y"
-                    y.FromV = dr.Cells(2).Value
-                    y.ToV = dr.Cells(3).Value
+                    y.FromV = IIf(CkbSwitchData.Checked, dr.Cells(3).Value, dr.Cells(2).Value)
+                    y.ToV = IIf(CkbSwitchData.Checked, dr.Cells(2).Value, dr.Cells(3).Value)
                     y = IIf(dr.Cells(4).Value = vbNullString, 5, dr.Cells(4).Value)
                     clsRG.y.Add(y)
             End Select
-
         Next
 
-        'clsRG.height.FromV = If(CkbSwitchData.Checked, TxtReplacementTo1.Text, TxtReplacementFrom1.Text)
-        'clsRG.height.ToV = If(CkbSwitchData.Checked, TxtReplacementFrom1.Text, TxtReplacementTo1.Text)
-        'clsRG.height.Range = 5
-        'clsRG.width.FromV = If(CkbSwitchData.Checked, TxtReplacementTo2.Text, TxtReplacementFrom2.Text)
-        'clsRG.width.ToV = If(CkbSwitchData.Checked, TxtReplacementFrom2.Text, TxtReplacementTo2.Text)
-        'clsRG.width.Range = 5
-
-
-        'x.FromV = If(CkbSwitchData.Checked, TxtReplacementTo3.Text, TxtReplacementFrom3.Text)
-        'x.ToV = If(CkbSwitchData.Checked, TxtReplacementFrom3.Text, TxtReplacementTo3.Text)
-        'x.Range = 5
-        'clsRG.x.Add(x)
-
-        'If TxtReplacementFrom3.Text <> vbNullString Then
-        '    x = New ClsReplacementNum
-
-        '    x.FromV = If(CkbSwitchData.Checked, TxtReplacementTo4.Text, TxtReplacementFrom4.Text)
-        '    x.ToV = If(CkbSwitchData.Checked, TxtReplacementFrom4.Text, TxtReplacementTo4.Text)
-        '    x.Range = 5
-        '    clsRG.x.Add(x)
-        'End If
-
-        'y.FromV = If(CkbSwitchData.Checked, TxtReplacementTo5.Text, TxtReplacementFrom5.Text)
-        'y.ToV = If(CkbSwitchData.Checked, TxtReplacementFrom5.Text, TxtReplacementTo5.Text)
-        'y.Range = 5
-        'clsRG.y.Add(y)
-
-        'If TxtReplacementFrom6.Text <> vbNullString Then
-        '    y = New ClsReplacementNum
-
-        '    y.FromV = If(CkbSwitchData.Checked, TxtReplacementTo6.Text, TxtReplacementFrom6.Text)
-        '    y.ToV = If(CkbSwitchData.Checked, TxtReplacementFrom6.Text, TxtReplacementTo6.Text)
-        '    y.Range = 5
-        '    clsRG.y.Add(y)
-        'End If
 
         clsRG.ReplaceGauge(TxtOrginal.Text, TxtPage.Text)
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingFinished
@@ -158,19 +102,55 @@ Public Class FrmReplacementGauge
     Private Sub SaveSettings()
         My.Settings.LastPage = TxtPage.Text
         My.Settings.LastVisual = TxtVisual.Text
-        My.Settings.LastRepFrom1 = TxtReplacementFrom1.Text
-        My.Settings.LastRepTo1 = TxtReplacementTo1.Text
-        My.Settings.LastRepFrom2 = TxtReplacementFrom2.Text
-        My.Settings.LastRepTo2 = TxtReplacementTo2.Text
-        My.Settings.LastRepFrom3 = TxtReplacementFrom3.Text
-        My.Settings.LastRepTo3 = TxtReplacementTo3.Text
-        My.Settings.LastRepFrom4 = TxtReplacementFrom4.Text
-        My.Settings.LastRepTo4 = TxtReplacementTo4.Text
-        My.Settings.LastRepFrom5 = TxtReplacementFrom5.Text
-        My.Settings.LastRepTo5 = TxtReplacementTo5.Text
-        My.Settings.LastRepFrom6 = TxtReplacementFrom6.Text
-        My.Settings.LastRepTo6 = TxtReplacementTo6.Text
         My.Settings.LastRepSaveTo = TxtReplace.Text
+
+        Dim x As Int16 = 0
+        Dim y As Int16 = 0
+
+        My.Settings.LastRepFrom1 = vbNullString
+        My.Settings.LastRepTo1 = vbNullString
+        My.Settings.LastRepFrom2 = vbNullString
+        My.Settings.LastRepTo2 = vbNullString
+        My.Settings.LastRepFrom3 = vbNullString
+        My.Settings.LastRepTo3 = vbNullString
+        My.Settings.LastRepFrom4 = vbNullString
+        My.Settings.LastRepTo4 = vbNullString
+        My.Settings.LastRepFrom5 = vbNullString
+        My.Settings.LastRepTo5 = vbNullString
+        My.Settings.LastRepFrom6 = vbNullString
+        My.Settings.LastRepTo6 = vbNullString
+
+        For Each dr As DataGridViewRow In dgvReplace.Rows
+            Select Case dr.Cells(0).Value
+                Case "h"
+                    My.Settings.LastRepFrom1 = dr.Cells(2).Value
+                    My.Settings.LastRepTo1 = dr.Cells(3).Value
+                Case "w"
+                    My.Settings.LastRepFrom2 = dr.Cells(2).Value
+                    My.Settings.LastRepTo2 = dr.Cells(3).Value
+                Case "x"
+                    Select Case x
+                        Case 0
+                            My.Settings.LastRepFrom3 = dr.Cells(2).Value
+                            My.Settings.LastRepTo3 = dr.Cells(3).Value
+                        Case 1
+                            My.Settings.LastRepFrom4 = dr.Cells(2).Value
+                            My.Settings.LastRepTo4 = dr.Cells(3).Value
+                    End Select
+                    x += 1
+                Case "y"
+                    Select Case y
+                        Case 0
+                            My.Settings.LastRepFrom5 = dr.Cells(2).Value
+                            My.Settings.LastRepTo5 = dr.Cells(3).Value
+                        Case 1
+                            My.Settings.LastRepFrom6 = dr.Cells(2).Value
+                            My.Settings.LastRepTo6 = dr.Cells(3).Value
+                    End Select
+                    y += 1
+            End Select
+
+        Next
         My.Settings.Save()
     End Sub
 
@@ -201,16 +181,48 @@ Public Class FrmReplacementGauge
         LblRepacementSave.Text = My.Resources.ResourcesLang.ReplacementReportBackup
         LblPage.Text = My.Resources.ResourcesLang.ReplacementReportPage
         LblVisual.Text = My.Resources.ResourcesLang.ReplacementReportVisual
-        LblReplace1.Text = My.Resources.ResourcesLang.ReplacementReportReplace1
-        LblReplace2.Text = My.Resources.ResourcesLang.ReplacementReportReplace2
-        LblFrom.Text = My.Resources.ResourcesLang.RFFrom
-        LblTo.Text = My.Resources.ResourcesLang.RFTo
+
+        With dgvReplace
+            .Columns(0).Visible = 0
+            .Columns(1).HeaderText = My.Resources.ResourcesLang.RFType
+            .Columns(2).HeaderText = My.Resources.ResourcesLang.RFFrom
+            .Columns(3).HeaderText = My.Resources.ResourcesLang.RFTo
+            .Columns(4).HeaderText = My.Resources.ResourcesLang.RFAllowedDifference
+
+            .Sort(.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+        End With
 
         CmdClose.Text = My.Resources.ResourcesLang.BtnClose
         CmdReplace.Text = My.Resources.ResourcesLang.BtnReplace
+        CmdNew.Text = My.Resources.ResourcesLang.BtnNew
+        CmdEdit.Text = My.Resources.ResourcesLang.BtnEdit
+        CmdDelete.Text = My.Resources.ResourcesLang.BtnDeleteEntry
     End Sub
 
     Private Sub CmdNew_Click(sender As Object, e As EventArgs) Handles CmdNew.Click
         FrmReplaceElement.Show()
+    End Sub
+
+    Private Sub CmdEdit_Click(sender As Object, e As EventArgs) Handles CmdEdit.Click
+        If dgvReplace.SelectedRows.Count = 1 Then
+
+            With FrmReplaceElement
+                .Show()
+                .intLine = dgvReplace.SelectedRows(0).Index
+                .CboType.SelectedValue = dgvReplace.SelectedRows(0).Cells(0).Value
+                .TxtFrom.Text = dgvReplace.SelectedRows(0).Cells(2).Value
+                .TxtTo.Text = dgvReplace.SelectedRows(0).Cells(3).Value
+                .TxtRange.Text = dgvReplace.SelectedRows(0).Cells(4).Value
+            End With
+        End If
+    End Sub
+
+    Private Sub CmdDelete_Click(sender As Object, e As EventArgs) Handles CmdDelete.Click
+        If dgvReplace.SelectedRows.Count = 1 Then
+            If MessageBox.Show(My.Resources.ResourcesLang.MsgDeleteSelectedEntry, My.Resources.ResourcesLang.MsgHint, MessageBoxButtons.YesNo) = DialogResult.Yes Then
+                Dim i As Integer = dgvReplace.SelectedRows(0).Index
+                dgvReplace.Rows.RemoveAt(i)
+            End If
+        End If
     End Sub
 End Class

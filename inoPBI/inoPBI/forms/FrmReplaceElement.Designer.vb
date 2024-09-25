@@ -36,19 +36,19 @@ Partial Class FrmReplaceElement
         ' 
         ' CmdCancel
         ' 
-        CmdCancel.Location = New Point(87, 183)
+        CmdCancel.Location = New Point(125, 179)
         CmdCancel.Name = "CmdCancel"
         CmdCancel.Size = New Size(75, 23)
-        CmdCancel.TabIndex = 0
+        CmdCancel.TabIndex = 9
         CmdCancel.Text = "Button1"
         CmdCancel.UseVisualStyleBackColor = True
         ' 
         ' CmdSave
         ' 
-        CmdSave.Location = New Point(252, 183)
+        CmdSave.Location = New Point(290, 179)
         CmdSave.Name = "CmdSave"
         CmdSave.Size = New Size(75, 23)
-        CmdSave.TabIndex = 0
+        CmdSave.TabIndex = 8
         CmdSave.Text = "Button1"
         CmdSave.UseVisualStyleBackColor = True
         ' 
@@ -58,16 +58,16 @@ Partial Class FrmReplaceElement
         LblType.Location = New Point(30, 35)
         LblType.Name = "LblType"
         LblType.Size = New Size(41, 15)
-        LblType.TabIndex = 1
+        LblType.TabIndex = 0
         LblType.Text = "Label1"
         ' 
         ' CboType
         ' 
         CboType.FormattingEnabled = True
-        CboType.Location = New Point(120, 32)
+        CboType.Location = New Point(154, 32)
         CboType.Name = "CboType"
         CboType.Size = New Size(182, 23)
-        CboType.TabIndex = 2
+        CboType.TabIndex = 1
         ' 
         ' LblFrom
         ' 
@@ -75,12 +75,12 @@ Partial Class FrmReplaceElement
         LblFrom.Location = New Point(30, 65)
         LblFrom.Name = "LblFrom"
         LblFrom.Size = New Size(41, 15)
-        LblFrom.TabIndex = 1
+        LblFrom.TabIndex = 2
         LblFrom.Text = "Label1"
         ' 
         ' TxtFrom
         ' 
-        TxtFrom.Location = New Point(120, 62)
+        TxtFrom.Location = New Point(154, 62)
         TxtFrom.Name = "TxtFrom"
         TxtFrom.Size = New Size(291, 23)
         TxtFrom.TabIndex = 3
@@ -91,15 +91,15 @@ Partial Class FrmReplaceElement
         LblTo.Location = New Point(30, 94)
         LblTo.Name = "LblTo"
         LblTo.Size = New Size(41, 15)
-        LblTo.TabIndex = 1
+        LblTo.TabIndex = 4
         LblTo.Text = "Label1"
         ' 
         ' TxtTo
         ' 
-        TxtTo.Location = New Point(120, 91)
+        TxtTo.Location = New Point(154, 91)
         TxtTo.Name = "TxtTo"
         TxtTo.Size = New Size(291, 23)
-        TxtTo.TabIndex = 3
+        TxtTo.TabIndex = 5
         ' 
         ' LblRange
         ' 
@@ -107,21 +107,21 @@ Partial Class FrmReplaceElement
         LblRange.Location = New Point(30, 123)
         LblRange.Name = "LblRange"
         LblRange.Size = New Size(41, 15)
-        LblRange.TabIndex = 1
+        LblRange.TabIndex = 6
         LblRange.Text = "Label1"
         ' 
         ' TxtRange
         ' 
-        TxtRange.Location = New Point(120, 120)
+        TxtRange.Location = New Point(154, 120)
         TxtRange.Name = "TxtRange"
         TxtRange.Size = New Size(291, 23)
-        TxtRange.TabIndex = 3
+        TxtRange.TabIndex = 7
         ' 
         ' FrmReplaceElement
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(495, 268)
+        ClientSize = New Size(501, 229)
         Controls.Add(TxtRange)
         Controls.Add(TxtTo)
         Controls.Add(LblRange)
