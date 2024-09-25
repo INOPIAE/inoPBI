@@ -560,6 +560,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Allowed difference/ current caption is missing. ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MsgAllowedDifferenceIsMissing() As String
+            Get
+                Return ResourceManager.GetString("MsgAllowedDifferenceIsMissing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Delete selected entry? ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property MsgDeleteSelectedEntry() As String
@@ -875,6 +884,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Maximum ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property REMaximum() As String
+            Get
+                Return ResourceManager.GetString("REMaximum", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Minimum ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property REMinimum() As String
+            Get
+                Return ResourceManager.GetString("REMinimum", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Canceled with error ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property ReplacementCanceledWithError() As String
@@ -1073,6 +1100,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Target value ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property RETargetValue() As String
+            Get
+                Return ResourceManager.GetString("RETargetValue", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Width ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property REWidth() As String
@@ -1123,6 +1159,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property RFName() As String
             Get
                 Return ResourceManager.GetString("RFName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die New caption ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property RFNewCaption() As String
+            Get
+                Return ResourceManager.GetString("RFNewCaption", resourceCulture)
             End Get
         End Property
         

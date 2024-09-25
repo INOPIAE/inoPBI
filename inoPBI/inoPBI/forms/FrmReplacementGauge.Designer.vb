@@ -37,14 +37,15 @@ Partial Class FrmReplacementGauge
         LblOriginal = New Label()
         CkbSwitchData = New CheckBox()
         dgvReplace = New DataGridView()
+        CmdNew = New Button()
+        CmdEdit = New Button()
+        CmdDelete = New Button()
         TypeInternal = New DataGridViewTextBoxColumn()
         Type = New DataGridViewTextBoxColumn()
         FromV = New DataGridViewTextBoxColumn()
         ToV = New DataGridViewTextBoxColumn()
         RangeV = New DataGridViewTextBoxColumn()
-        CmdNew = New Button()
-        CmdEdit = New Button()
-        CmdDelete = New Button()
+        RangeTo = New DataGridViewTextBoxColumn()
         CType(dgvReplace, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -180,7 +181,7 @@ Partial Class FrmReplacementGauge
         dgvReplace.AllowUserToAddRows = False
         dgvReplace.AllowUserToDeleteRows = False
         dgvReplace.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvReplace.Columns.AddRange(New DataGridViewColumn() {TypeInternal, Type, FromV, ToV, RangeV})
+        dgvReplace.Columns.AddRange(New DataGridViewColumn() {TypeInternal, Type, FromV, ToV, RangeV, RangeTo})
         dgvReplace.Location = New Point(27, 156)
         dgvReplace.MultiSelect = False
         dgvReplace.Name = "dgvReplace"
@@ -189,6 +190,33 @@ Partial Class FrmReplacementGauge
         dgvReplace.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgvReplace.Size = New Size(566, 256)
         dgvReplace.TabIndex = 15
+        ' 
+        ' CmdNew
+        ' 
+        CmdNew.Location = New Point(626, 154)
+        CmdNew.Name = "CmdNew"
+        CmdNew.Size = New Size(162, 35)
+        CmdNew.TabIndex = 10
+        CmdNew.Text = "Button1"
+        CmdNew.UseVisualStyleBackColor = True
+        ' 
+        ' CmdEdit
+        ' 
+        CmdEdit.Location = New Point(626, 195)
+        CmdEdit.Name = "CmdEdit"
+        CmdEdit.Size = New Size(162, 35)
+        CmdEdit.TabIndex = 11
+        CmdEdit.Text = "Button1"
+        CmdEdit.UseVisualStyleBackColor = True
+        ' 
+        ' CmdDelete
+        ' 
+        CmdDelete.Location = New Point(626, 236)
+        CmdDelete.Name = "CmdDelete"
+        CmdDelete.Size = New Size(162, 35)
+        CmdDelete.TabIndex = 12
+        CmdDelete.Text = "Button1"
+        CmdDelete.UseVisualStyleBackColor = True
         ' 
         ' TypeInternal
         ' 
@@ -220,32 +248,11 @@ Partial Class FrmReplacementGauge
         RangeV.Name = "RangeV"
         RangeV.ReadOnly = True
         ' 
-        ' CmdNew
+        ' RangeTo
         ' 
-        CmdNew.Location = New Point(626, 154)
-        CmdNew.Name = "CmdNew"
-        CmdNew.Size = New Size(162, 35)
-        CmdNew.TabIndex = 10
-        CmdNew.Text = "Button1"
-        CmdNew.UseVisualStyleBackColor = True
-        ' 
-        ' CmdEdit
-        ' 
-        CmdEdit.Location = New Point(626, 195)
-        CmdEdit.Name = "CmdEdit"
-        CmdEdit.Size = New Size(162, 35)
-        CmdEdit.TabIndex = 11
-        CmdEdit.Text = "Button1"
-        CmdEdit.UseVisualStyleBackColor = True
-        ' 
-        ' CmdDelete
-        ' 
-        CmdDelete.Location = New Point(626, 236)
-        CmdDelete.Name = "CmdDelete"
-        CmdDelete.Size = New Size(162, 35)
-        CmdDelete.TabIndex = 12
-        CmdDelete.Text = "Button1"
-        CmdDelete.UseVisualStyleBackColor = True
+        RangeTo.HeaderText = "RangeTo"
+        RangeTo.Name = "RangeTo"
+        RangeTo.ReadOnly = True
         ' 
         ' FrmReplacementGauge
         ' 
@@ -292,11 +299,12 @@ Partial Class FrmReplacementGauge
     Friend WithEvents CkbSwitchData As CheckBox
     Friend WithEvents dgvReplace As DataGridView
     Friend WithEvents CmdNew As Button
+    Friend WithEvents CmdEdit As Button
+    Friend WithEvents CmdDelete As Button
     Friend WithEvents TypeInternal As DataGridViewTextBoxColumn
     Friend WithEvents Type As DataGridViewTextBoxColumn
     Friend WithEvents FromV As DataGridViewTextBoxColumn
     Friend WithEvents ToV As DataGridViewTextBoxColumn
     Friend WithEvents RangeV As DataGridViewTextBoxColumn
-    Friend WithEvents CmdEdit As Button
-    Friend WithEvents CmdDelete As Button
+    Friend WithEvents RangeTo As DataGridViewTextBoxColumn
 End Class

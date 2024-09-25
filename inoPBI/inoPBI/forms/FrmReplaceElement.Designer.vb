@@ -32,6 +32,8 @@ Partial Class FrmReplaceElement
         TxtTo = New TextBox()
         LblRange = New Label()
         TxtRange = New TextBox()
+        LblRangeTo = New Label()
+        TxtRangeTo = New TextBox()
         SuspendLayout()
         ' 
         ' CmdCancel
@@ -117,12 +119,30 @@ Partial Class FrmReplaceElement
         TxtRange.Size = New Size(291, 23)
         TxtRange.TabIndex = 7
         ' 
+        ' LblRangeTo
+        ' 
+        LblRangeTo.AutoSize = True
+        LblRangeTo.Location = New Point(30, 152)
+        LblRangeTo.Name = "LblRangeTo"
+        LblRangeTo.Size = New Size(41, 15)
+        LblRangeTo.TabIndex = 6
+        LblRangeTo.Text = "Label1"
+        ' 
+        ' TxtRangeTo
+        ' 
+        TxtRangeTo.Location = New Point(154, 149)
+        TxtRangeTo.Name = "TxtRangeTo"
+        TxtRangeTo.Size = New Size(291, 23)
+        TxtRangeTo.TabIndex = 7
+        ' 
         ' FrmReplaceElement
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(501, 229)
+        Controls.Add(TxtRangeTo)
         Controls.Add(TxtRange)
+        Controls.Add(LblRangeTo)
         Controls.Add(TxtTo)
         Controls.Add(LblRange)
         Controls.Add(TxtFrom)
@@ -148,4 +168,6 @@ Partial Class FrmReplaceElement
     Friend WithEvents TxtTo As TextBox
     Friend WithEvents LblRange As Label
     Friend WithEvents TxtRange As TextBox
+    Friend WithEvents LblRangeTo As Label
+    Friend WithEvents TxtRangeTo As TextBox
 End Class

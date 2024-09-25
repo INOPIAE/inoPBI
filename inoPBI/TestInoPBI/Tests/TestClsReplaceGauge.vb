@@ -84,5 +84,37 @@ Namespace TestInoPBI
             Assert.That(strTest, Does.Contain("""height"": 400.00,"))
             Assert.That(strTest, Does.Not.Contain("""height"": 420.25,"))
         End Sub
+
+        <Test>
+        Public Sub TestReplaceStringValue()
+            Dim strLine As String = "\""Tooltips\"":[{\""queryRef\"":\""_Measures.Ziele\""}],\""MaxValue\"":[{\""queryRef\"":\""_Measures.Max\""}]}"
+            Dim strValue As String = "\""MaxValue\"":[{\""queryRef\"":\""XXX\""}]}"
+            Dim Rep As New ClSReplacementStr
+
+            Rep.FromStr = "_Measures.Max"
+            Rep.ToStr = "_Measures.Max2"
+            Rep.CaptionFrom = "Max"
+            Rep.CaptionTo = "Max2"
+
+            Dim strTest As String = cRepG.ReplaceStringValue(strLine, strValue, Rep)
+            Assert.That(strTest, Does.Not.Contain("_Measures.Max\"))
+            Assert.That(strTest, Does.Contain("_Measures.Max2\"))
+
+            strLine = "{\""Measure\"":{\""Expression\"":{\""SourceRef\"":{\""Source\"":\""_\""}},\""Property\"":\""Max\""},\""Name\"":\""_Measures.Max\"",\""NativeReferenceName\"":\""Max\""}],"
+            strValue = "\""YYY\""},\""Name\"":\""XXX\"",\""NativeReferenceName\"":\""YYY\""}"
+
+            strTest = cRepG.ReplaceStringValue2(strLine, strValue, Rep)
+            Assert.That(strTest, Does.Not.Contain("_Measures.Max\"))
+            Assert.That(strTest, Does.Contain("_Measures.Max2\"))
+            Assert.That(strTest, Does.Not.Contain("""Max\"))
+            Assert.That(strTest, Does.Contain("""Max2\"))
+
+            Rep.CaptionTo = "Max"
+            strTest = cRepG.ReplaceStringValue2(strLine, strValue, Rep)
+            Assert.That(strTest, Does.Not.Contain("_Measures.Max\"))
+            Assert.That(strTest, Does.Contain("_Measures.Max2\"))
+            Assert.That(strTest, Does.Not.Contain("""Max2\"))
+            Assert.That(strTest, Does.Contain("""Max\"))
+        End Sub
     End Class
 End Namespace

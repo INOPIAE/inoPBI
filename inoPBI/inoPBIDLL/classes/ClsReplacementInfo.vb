@@ -16,4 +16,5 @@ Public Class ClsReplacementInfo
         EndPos = _ReplaceLine.IndexOf(",", StartPos)
         Return _ReplaceLine.Substring(StartPos + _ReplaceValue.Length, EndPos - StartPos - _ReplaceValue.Length).Trim
     End Function
+
 End Class

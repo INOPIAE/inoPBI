@@ -83,13 +83,28 @@ Public Class FrmReplacementGauge
                 Case "x"
                     x.FromV = IIf(CkbSwitchData.Checked, dr.Cells(3).Value, dr.Cells(2).Value)
                     x.ToV = IIf(CkbSwitchData.Checked, dr.Cells(2).Value, dr.Cells(3).Value)
-                    x = IIf(dr.Cells(4).Value = vbNullString, 5, dr.Cells(4).Value)
+                    x.Range = IIf(dr.Cells(4).Value = vbNullString, 5, dr.Cells(4).Value)
                     clsRG.x.Add(x)
                 Case "y"
                     y.FromV = IIf(CkbSwitchData.Checked, dr.Cells(3).Value, dr.Cells(2).Value)
                     y.ToV = IIf(CkbSwitchData.Checked, dr.Cells(2).Value, dr.Cells(3).Value)
-                    y = IIf(dr.Cells(4).Value = vbNullString, 5, dr.Cells(4).Value)
+                    y.Range = IIf(dr.Cells(4).Value = vbNullString, 5, dr.Cells(4).Value)
                     clsRG.y.Add(y)
+                Case "max"
+                    clsRG.Max.FromStr = IIf(CkbSwitchData.Checked, dr.Cells(3).Value, dr.Cells(2).Value)
+                    clsRG.Max.ToStr = IIf(CkbSwitchData.Checked, dr.Cells(2).Value, dr.Cells(3).Value)
+                    clsRG.Max.CaptionFrom = IIf(CkbSwitchData.Checked, dr.Cells(5).Value.ToString.Trim, dr.Cells(4).Value.ToString.Trim)
+                    clsRG.max.CaptionTo = IIf(CkbSwitchData.Checked, dr.Cells(4).Value.ToString.Trim, dr.Cells(5).Value.ToString.Trim)
+                Case "min"
+                    clsRG.min.FromStr = IIf(CkbSwitchData.Checked, dr.Cells(3).Value, dr.Cells(2).Value)
+                    clsRG.min.ToStr = IIf(CkbSwitchData.Checked, dr.Cells(2).Value, dr.Cells(3).Value)
+                    clsRG.min.CaptionFrom = IIf(CkbSwitchData.Checked, dr.Cells(5).Value.ToString.Trim, dr.Cells(4).Value.ToString.Trim)
+                    clsRG.min.CaptionTo = IIf(CkbSwitchData.Checked, dr.Cells(4).Value.ToString.Trim, dr.Cells(5).Value.ToString.Trim)
+                Case "target"
+                    clsRG.target.FromStr = IIf(CkbSwitchData.Checked, dr.Cells(3).Value, dr.Cells(2).Value)
+                    clsRG.target.ToStr = IIf(CkbSwitchData.Checked, dr.Cells(2).Value, dr.Cells(3).Value)
+                    clsRG.target.CaptionFrom = IIf(CkbSwitchData.Checked, dr.Cells(5).Value.ToString.Trim, dr.Cells(4).Value.ToString.Trim)
+                    clsRG.target.CaptionTo = IIf(CkbSwitchData.Checked, dr.Cells(4).Value.ToString.Trim, dr.Cells(5).Value.ToString.Trim)
             End Select
         Next
 
@@ -188,6 +203,7 @@ Public Class FrmReplacementGauge
             .Columns(2).HeaderText = My.Resources.ResourcesLang.RFFrom
             .Columns(3).HeaderText = My.Resources.ResourcesLang.RFTo
             .Columns(4).HeaderText = My.Resources.ResourcesLang.RFAllowedDifference
+            .Columns(5).HeaderText = My.Resources.ResourcesLang.RFNewCaption
 
             .Sort(.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
         End With
@@ -213,6 +229,7 @@ Public Class FrmReplacementGauge
                 .TxtFrom.Text = dgvReplace.SelectedRows(0).Cells(2).Value
                 .TxtTo.Text = dgvReplace.SelectedRows(0).Cells(3).Value
                 .TxtRange.Text = dgvReplace.SelectedRows(0).Cells(4).Value
+                .TxtRangeTo.Text = dgvReplace.SelectedRows(0).Cells(5).Value
             End With
         End If
     End Sub
@@ -224,5 +241,9 @@ Public Class FrmReplacementGauge
                 dgvReplace.Rows.RemoveAt(i)
             End If
         End If
+    End Sub
+
+    Private Sub CkbSwitchData_CheckedChanged(sender As Object, e As EventArgs) Handles CkbSwitchData.CheckedChanged
+        LblInfo.Text = ""
     End Sub
 End Class

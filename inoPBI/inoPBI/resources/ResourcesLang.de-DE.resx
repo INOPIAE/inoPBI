@@ -492,4 +492,19 @@
   <data name="BtnSelectAll" xml:space="preserve">
     <value>Alle auswahlen</value>
   </data>
+  <data name="REMaximum" xml:space="preserve">
+    <value>Maximum</value>
+  </data>
+  <data name="REMinimum" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="RETargetValue" xml:space="preserve">
+    <value>Zielwert</value>
+  </data>
+  <data name="RFNewCaption" xml:space="preserve">
+    <value>Neue Beschriftung</value>
+  </data>
+  <data name="MsgAllowedDifferenceIsMissing" xml:space="preserve">
+    <value>Erlaubte Differenz/ aktuelle Beschriftung fehlt.</value>
+  </data>
 </root>

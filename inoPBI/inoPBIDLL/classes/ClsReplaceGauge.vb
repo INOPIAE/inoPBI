@@ -6,6 +6,9 @@ Public Class ClsReplaceGauge
     Public height As New ClsReplacementNum
     Public x As New Collection(Of ClsReplacementNum)
     Public y As New Collection(Of ClsReplacementNum)
+    Public max As New ClSReplacementStr
+    Public min As New ClSReplacementStr
+    Public target As New ClSReplacementStr
 
     Private strVisual As String = "gauge"
 
@@ -55,6 +58,27 @@ Public Class ClsReplaceGauge
                                 strLine = ReplaceNumValue(strLine, StrReplace, yt)
                             End If
                         Next
+                        If max.FromStr <> max.ToString Then
+                            Dim strValue As String = "\""MaxValue\"":[{\""queryRef\"":\""XXX\""}]"
+                            strLine = ReplaceStringValue(strLine, strValue, max)
+
+                            strValue = "\""YYY\""},\""Name\"":\""XXX\"",\""NativeReferenceName\"":\""YYY\""}"
+                            strLine = ReplaceStringValue2(strLine, strValue, max)
+                        End If
+                        If min.FromStr <> min.ToString Then
+                            Dim strValue As String = "\""MinValue\"":[{\""queryRef\"":\""XXX\""}]"
+                            strLine = ReplaceStringValue(strLine, strValue, min)
+
+                            strValue = "\""YYY\""},\""Name\"":\""XXX\"",\""NativeReferenceName\"":\""YYY\""}"
+                            strLine = ReplaceStringValue2(strLine, strValue, min)
+                        End If
+                        If target.FromStr <> target.ToString Then
+                            Dim strValue As String = "\""TargetValue\"":[{\""queryRef\"":\""XXX\""}]"
+                            strLine = ReplaceStringValue(strLine, strValue, target)
+
+                            strValue = "\""YYY\""},\""Name\"":\""XXX\"",\""NativeReferenceName\"":\""YYY\""}"
+                            strLine = ReplaceStringValue2(strLine, strValue, target)
+                        End If
                     Else
                         blnReplaceVisual = False
                     End If
@@ -120,4 +144,22 @@ Public Class ClsReplaceGauge
         End If
     End Function
 
+    Public Function ReplaceStringValue(strLine As String, StrReplace As String, Rep As ClSReplacementStr) As String
+        Dim strFrom As String = StrReplace.Replace("XXX", Rep.FromStr)
+        Dim strTo As String = StrReplace.Replace("XXX", Rep.ToStr)
+        strLine = strLine.Replace(strFrom, strTo)
+        Return strLine
+    End Function
+    Public Function ReplaceStringValue2(strLine As String, StrReplace As String, Rep As ClSReplacementStr) As String
+        Dim strFrom As String = StrReplace.Replace("XXX", Rep.FromStr)
+        strFrom = strFrom.Replace("YYY", Rep.CaptionFrom)
+        Dim strTo As String = StrReplace.Replace("XXX", Rep.ToStr)
+        If Rep.CaptionFrom <> Rep.CaptionTo And Rep.CaptionTo <> vbNullString Then
+            strTo = strTo.Replace("YYY", Rep.CaptionTo)
+        Else
+            strTo = strTo.Replace("YYY", Rep.CaptionFrom)
+        End If
+        strLine = strLine.Replace(strFrom, strTo)
+        Return strLine
+    End Function
 End Class

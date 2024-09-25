@@ -32,7 +32,7 @@ Namespace TestInoPBI
         End Sub
 
         <Test>
-        Public Sub TestGetReplacements()
+        Public Sub TestGetValue()
             Dim strFile As String = testPath & "\TestData\ConfigLine.txt"
             Dim strLine As String
             Using sr As New StreamReader(strFile)
@@ -74,7 +74,6 @@ Namespace TestInoPBI
             Assert.That(cRepI.StartPos, [Is].EqualTo(42))
             Assert.That(cRepI.EndPos, [Is].EqualTo(58))
         End Sub
-
 
     End Class
 End Namespace
