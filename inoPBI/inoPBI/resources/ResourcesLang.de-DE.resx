@@ -507,4 +507,7 @@
   <data name="MsgAllowedDifferenceIsMissing" xml:space="preserve">
     <value>Erlaubte Differenz/ aktuelle Beschriftung fehlt.</value>
   </data>
+  <data name="ReplacementNoReplacement" xml:space="preserve">
+    <value>Keine Ersetzung</value>
+  </data>
 </root>

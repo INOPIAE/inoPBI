@@ -44,183 +44,209 @@ Partial Class FrmTMDL
         CmdPDF = New Button()
         LblInfo = New Label()
         TT = New ToolTip(components)
+        ChkbReplacement = New CheckBox()
         SuspendLayout()
         ' 
         ' CmdEditReplacement
         ' 
-        CmdEditReplacement.Location = New Point(727, 78)
+        CmdEditReplacement.Location = New Point(636, 58)
+        CmdEditReplacement.Margin = New Padding(3, 2, 3, 2)
         CmdEditReplacement.Name = "CmdEditReplacement"
-        CmdEditReplacement.Size = New Size(108, 29)
-        CmdEditReplacement.TabIndex = 26
+        CmdEditReplacement.Size = New Size(94, 22)
+        CmdEditReplacement.TabIndex = 6
         CmdEditReplacement.Text = "Edit"
         CmdEditReplacement.UseVisualStyleBackColor = True
         ' 
         ' CmdClose
         ' 
-        CmdClose.Location = New Point(604, 353)
+        CmdClose.Location = New Point(521, 322)
+        CmdClose.Margin = New Padding(3, 2, 3, 2)
         CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(126, 53)
-        CmdClose.TabIndex = 38
+        CmdClose.Size = New Size(110, 40)
+        CmdClose.TabIndex = 20
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
         ' 
         ' CmdDocumentation
         ' 
-        CmdDocumentation.Location = New Point(189, 353)
+        CmdDocumentation.Location = New Point(31, 322)
+        CmdDocumentation.Margin = New Padding(3, 2, 3, 2)
         CmdDocumentation.Name = "CmdDocumentation"
-        CmdDocumentation.Size = New Size(126, 53)
-        CmdDocumentation.TabIndex = 36
+        CmdDocumentation.Size = New Size(110, 40)
+        CmdDocumentation.TabIndex = 18
         CmdDocumentation.Text = "Create Documentation"
         CmdDocumentation.UseVisualStyleBackColor = True
         ' 
         ' CmdReplace
         ' 
-        CmdReplace.Location = New Point(35, 353)
+        CmdReplace.Location = New Point(31, 265)
+        CmdReplace.Margin = New Padding(3, 2, 3, 2)
         CmdReplace.Name = "CmdReplace"
-        CmdReplace.Size = New Size(126, 53)
-        CmdReplace.TabIndex = 37
+        CmdReplace.Size = New Size(110, 40)
+        CmdReplace.TabIndex = 17
         CmdReplace.Text = "Replace"
         CmdReplace.UseVisualStyleBackColor = True
         ' 
         ' CmdFolderTarget
         ' 
-        CmdFolderTarget.Location = New Point(691, 112)
+        CmdFolderTarget.Location = New Point(605, 84)
+        CmdFolderTarget.Margin = New Padding(3, 2, 3, 2)
         CmdFolderTarget.Name = "CmdFolderTarget"
-        CmdFolderTarget.Size = New Size(30, 27)
-        CmdFolderTarget.TabIndex = 29
+        CmdFolderTarget.Size = New Size(26, 20)
+        CmdFolderTarget.TabIndex = 9
         CmdFolderTarget.Text = "..."
         CmdFolderTarget.UseVisualStyleBackColor = True
         ' 
         ' CmdFileDocu
         ' 
-        CmdFileDocu.Location = New Point(691, 236)
+        CmdFileDocu.Location = New Point(605, 177)
+        CmdFileDocu.Margin = New Padding(3, 2, 3, 2)
         CmdFileDocu.Name = "CmdFileDocu"
-        CmdFileDocu.Size = New Size(30, 27)
-        CmdFileDocu.TabIndex = 34
+        CmdFileDocu.Size = New Size(26, 20)
+        CmdFileDocu.TabIndex = 15
         CmdFileDocu.Text = "..."
         CmdFileDocu.UseVisualStyleBackColor = True
         ' 
         ' CmdFileReplacement
         ' 
-        CmdFileReplacement.Location = New Point(691, 78)
+        CmdFileReplacement.Location = New Point(605, 58)
+        CmdFileReplacement.Margin = New Padding(3, 2, 3, 2)
         CmdFileReplacement.Name = "CmdFileReplacement"
-        CmdFileReplacement.Size = New Size(30, 27)
-        CmdFileReplacement.TabIndex = 25
+        CmdFileReplacement.Size = New Size(26, 20)
+        CmdFileReplacement.TabIndex = 5
         CmdFileReplacement.Text = "..."
         CmdFileReplacement.UseVisualStyleBackColor = True
         ' 
         ' CmdFileOriginal
         ' 
-        CmdFileOriginal.Location = New Point(691, 46)
+        CmdFileOriginal.Location = New Point(605, 34)
+        CmdFileOriginal.Margin = New Padding(3, 2, 3, 2)
         CmdFileOriginal.Name = "CmdFileOriginal"
-        CmdFileOriginal.Size = New Size(30, 27)
-        CmdFileOriginal.TabIndex = 22
+        CmdFileOriginal.Size = New Size(26, 20)
+        CmdFileOriginal.TabIndex = 2
         CmdFileOriginal.Text = "..."
         CmdFileOriginal.UseVisualStyleBackColor = True
         ' 
         ' TxtCustomer
         ' 
-        TxtCustomer.Location = New Point(178, 144)
+        TxtCustomer.Location = New Point(156, 108)
+        TxtCustomer.Margin = New Padding(3, 2, 3, 2)
         TxtCustomer.Name = "TxtCustomer"
-        TxtCustomer.Size = New Size(172, 27)
-        TxtCustomer.TabIndex = 31
+        TxtCustomer.Size = New Size(151, 23)
+        TxtCustomer.TabIndex = 11
         ' 
         ' LblCustomer
         ' 
         LblCustomer.AutoSize = True
-        LblCustomer.Location = New Point(12, 146)
+        LblCustomer.Location = New Point(10, 110)
         LblCustomer.Name = "LblCustomer"
-        LblCustomer.Size = New Size(139, 20)
-        LblCustomer.TabIndex = 30
+        LblCustomer.Size = New Size(113, 15)
+        LblCustomer.TabIndex = 10
         LblCustomer.Text = "Customer Extension"
         ' 
         ' TxtTargetFolder
         ' 
-        TxtTargetFolder.Location = New Point(178, 110)
+        TxtTargetFolder.Location = New Point(156, 82)
+        TxtTargetFolder.Margin = New Padding(3, 2, 3, 2)
         TxtTargetFolder.Name = "TxtTargetFolder"
-        TxtTargetFolder.Size = New Size(507, 27)
-        TxtTargetFolder.TabIndex = 28
+        TxtTargetFolder.Size = New Size(444, 23)
+        TxtTargetFolder.TabIndex = 8
         ' 
         ' LblTargetFolder
         ' 
         LblTargetFolder.AutoSize = True
-        LblTargetFolder.Location = New Point(12, 112)
+        LblTargetFolder.Location = New Point(10, 84)
         LblTargetFolder.Name = "LblTargetFolder"
-        LblTargetFolder.Size = New Size(94, 20)
-        LblTargetFolder.TabIndex = 27
+        LblTargetFolder.Size = New Size(73, 15)
+        LblTargetFolder.TabIndex = 7
         LblTargetFolder.Text = "Target folder"
         ' 
         ' TxtFileDocu
         ' 
-        TxtFileDocu.Location = New Point(178, 236)
+        TxtFileDocu.Location = New Point(156, 177)
+        TxtFileDocu.Margin = New Padding(3, 2, 3, 2)
         TxtFileDocu.Name = "TxtFileDocu"
-        TxtFileDocu.Size = New Size(507, 27)
-        TxtFileDocu.TabIndex = 33
+        TxtFileDocu.Size = New Size(444, 23)
+        TxtFileDocu.TabIndex = 14
         ' 
         ' LblFileDocu
         ' 
         LblFileDocu.AutoSize = True
-        LblFileDocu.Location = New Point(12, 236)
+        LblFileDocu.Location = New Point(10, 177)
         LblFileDocu.Name = "LblFileDocu"
-        LblFileDocu.Size = New Size(137, 20)
-        LblFileDocu.TabIndex = 32
+        LblFileDocu.Size = New Size(109, 15)
+        LblFileDocu.TabIndex = 13
         LblFileDocu.Text = "Dokumentation file"
         ' 
         ' TxtReplace
         ' 
-        TxtReplace.Location = New Point(178, 78)
+        TxtReplace.Location = New Point(156, 58)
+        TxtReplace.Margin = New Padding(3, 2, 3, 2)
         TxtReplace.Name = "TxtReplace"
-        TxtReplace.Size = New Size(507, 27)
-        TxtReplace.TabIndex = 24
+        TxtReplace.Size = New Size(444, 23)
+        TxtReplace.TabIndex = 4
         ' 
         ' LblRepacement
         ' 
         LblRepacement.AutoSize = True
-        LblRepacement.Location = New Point(12, 79)
+        LblRepacement.Location = New Point(10, 59)
         LblRepacement.Name = "LblRepacement"
-        LblRepacement.Size = New Size(121, 20)
-        LblRepacement.TabIndex = 23
+        LblRepacement.Size = New Size(95, 15)
+        LblRepacement.TabIndex = 3
         LblRepacement.Text = "Replacement file"
         ' 
         ' TxtOrginal
         ' 
-        TxtOrginal.Location = New Point(178, 45)
+        TxtOrginal.Location = New Point(156, 34)
+        TxtOrginal.Margin = New Padding(3, 2, 3, 2)
         TxtOrginal.Name = "TxtOrginal"
-        TxtOrginal.Size = New Size(507, 27)
-        TxtOrginal.TabIndex = 21
+        TxtOrginal.Size = New Size(444, 23)
+        TxtOrginal.TabIndex = 1
         ' 
         ' LblOriginal
         ' 
         LblOriginal.AutoSize = True
-        LblOriginal.Location = New Point(12, 46)
+        LblOriginal.Location = New Point(10, 34)
         LblOriginal.Name = "LblOriginal"
-        LblOriginal.Size = New Size(62, 20)
-        LblOriginal.TabIndex = 20
+        LblOriginal.Size = New Size(49, 15)
+        LblOriginal.TabIndex = 0
         LblOriginal.Text = "Original"
         ' 
         ' CmdPDF
         ' 
-        CmdPDF.Location = New Point(321, 353)
+        CmdPDF.Location = New Point(147, 322)
+        CmdPDF.Margin = New Padding(3, 2, 3, 2)
         CmdPDF.Name = "CmdPDF"
-        CmdPDF.Size = New Size(126, 53)
-        CmdPDF.TabIndex = 36
+        CmdPDF.Size = New Size(110, 40)
+        CmdPDF.TabIndex = 19
         CmdPDF.Text = "Create PDF"
         CmdPDF.UseVisualStyleBackColor = True
         ' 
         ' LblInfo
         ' 
         LblInfo.AutoSize = True
-        LblInfo.Location = New Point(12, 299)
+        LblInfo.Location = New Point(10, 224)
         LblInfo.Name = "LblInfo"
-        LblInfo.Size = New Size(35, 20)
-        LblInfo.TabIndex = 39
+        LblInfo.Size = New Size(28, 15)
+        LblInfo.TabIndex = 16
         LblInfo.Text = "Info"
+        ' 
+        ' ChkbReplacement
+        ' 
+        ChkbReplacement.AutoSize = True
+        ChkbReplacement.Location = New Point(158, 143)
+        ChkbReplacement.Name = "ChkbReplacement"
+        ChkbReplacement.Size = New Size(114, 19)
+        ChkbReplacement.TabIndex = 12
+        ChkbReplacement.Text = "No Replacement"
+        ChkbReplacement.UseVisualStyleBackColor = True
         ' 
         ' FrmTMDL
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(842, 450)
+        ClientSize = New Size(737, 393)
+        Controls.Add(ChkbReplacement)
         Controls.Add(LblInfo)
         Controls.Add(CmdEditReplacement)
         Controls.Add(CmdClose)
@@ -241,6 +267,7 @@ Partial Class FrmTMDL
         Controls.Add(LblRepacement)
         Controls.Add(TxtOrginal)
         Controls.Add(LblOriginal)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "FrmTMDL"
         Text = "FrmTMDL"
         ResumeLayout(False)
@@ -268,4 +295,5 @@ Partial Class FrmTMDL
     Friend WithEvents CmdPDF As Button
     Friend WithEvents LblInfo As Label
     Friend WithEvents TT As ToolTip
+    Friend WithEvents ChkbReplacement As CheckBox
 End Class

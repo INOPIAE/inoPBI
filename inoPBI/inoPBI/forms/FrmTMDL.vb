@@ -60,9 +60,9 @@ Public Class FrmTMDL
 
     Private Sub CmdReplace_Click(sender As Object, e As EventArgs) Handles CmdReplace.Click
 
-        Dim fileNameSource As String = Path.Combine(TxtOrginal.Text, "definition", "expressions.tmdl")
-        Dim fileName As String = TxtTargetFolder.Text & "\" & Path.GetFileName(fileNameSource) & ".org"
-        Dim fileNameReplace As String = TxtTargetFolder.Text & "\" & Path.GetFileName(fileNameSource) & "." & TxtCustomer.Text
+        Dim fileNameSource = Path.Combine(TxtOrginal.Text, "definition", "expressions.tmdl")
+        Dim fileName = TxtTargetFolder.Text & "\" & Path.GetFileName(fileNameSource) & ".org"
+        Dim fileNameReplace = TxtTargetFolder.Text & "\" & Path.GetFileName(fileNameSource) & "." & TxtCustomer.Text
 
 
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingStarted
@@ -80,20 +80,22 @@ Public Class FrmTMDL
         My.Settings.LastReplacement = TxtReplace.Text
         My.Settings.LastFolder = TxtTargetFolder.Text
         My.Settings.LastCustomer = TxtCustomer.Text
+        My.Settings.LastReplacementOption = ChkbReplacement.Checked
         My.Settings.Save()
 
-
-        Try
-            If clsR.ReplaceReferenceTMDL(fileName, TxtReplace.Text, fileNameReplace) = False Then
-                MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong, My.Resources.ResourcesLang.MsgHint)
+        If ChkbReplacement.Checked = False Then
+            Try
+                If clsR.ReplaceReferenceTMDL(fileName, TxtReplace.Text, fileNameReplace) = False Then
+                    MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong, My.Resources.ResourcesLang.MsgHint)
+                    LblInfo.Text = My.Resources.ResourcesLang.ReplacementCanceledWithError
+                    Exit Sub
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, My.Resources.ResourcesLang.MsgHint)
                 LblInfo.Text = My.Resources.ResourcesLang.ReplacementCanceledWithError
                 Exit Sub
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, My.Resources.ResourcesLang.MsgHint)
-            LblInfo.Text = My.Resources.ResourcesLang.ReplacementCanceledWithError
-            Exit Sub
-        End Try
+            End Try
+        End If
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementCopyFiles
         Application.DoEvents()
 
@@ -142,6 +144,7 @@ Public Class FrmTMDL
         TxtCustomer.Text = My.Settings.LastCustomer
         TxtFileDocu.Text = My.Settings.LastDocumentation
         TxtFileDocu.Select(TxtFileDocu.Text.Length, 0)
+        ChkbReplacement.Checked = My.Settings.LastReplacementOption
 
         LblInfo.Text = ""
 
@@ -156,6 +159,8 @@ Public Class FrmTMDL
         LblTargetFolder.Text = My.Resources.ResourcesLang.ReplacementTargetFolder
         LblCustomer.Text = My.Resources.ResourcesLang.ReplacementCustomerExtension
         LblFileDocu.Text = My.Resources.ResourcesLang.PdfDocumentationFile
+
+        ChkbReplacement.Text = My.Resources.ResourcesLang.ReplacementNoReplacement
 
         CmdClose.Text = My.Resources.ResourcesLang.BtnClose
         CmdEditReplacement.Text = My.Resources.ResourcesLang.BtnEdit

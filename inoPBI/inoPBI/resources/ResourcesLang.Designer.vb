@@ -974,6 +974,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die No replacement ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property ReplacementNoReplacement() As String
+            Get
+                Return ResourceManager.GetString("ReplacementNoReplacement", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Orginal ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property ReplacementOriginal() As String

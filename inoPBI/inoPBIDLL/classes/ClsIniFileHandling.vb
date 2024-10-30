@@ -13,6 +13,7 @@ Public Class ClsIniFileHandling
         Public LastDocTitle As String
         Public LastPDFFile As String
         Public LastTMDLFile As String
+        Public LastReplacementOption As Boolean
 
     End Structure
     Public Function WriteProjectIniFile(FilePath As String, Data As IniData) As Boolean
@@ -32,6 +33,7 @@ Public Class ClsIniFileHandling
             sw.WriteLine("LastDocTitle:" & Data.LastDocTitle)
             sw.WriteLine("LastPDFFile:" & Data.LastPDFFile)
             sw.WriteLine("LastTMDLFile:" & Data.LastTMDLFile)
+            sw.WriteLine("LastReplacementOption:" & Data.LastReplacementOption)
             sw.Close()
         Catch ex As Exception
             MsgBox(ex.Message,, "Error Project Ini File")
@@ -76,6 +78,8 @@ Public Class ClsIniFileHandling
                     Case "LastPDFFile"
                         data.LastPDFFile = lSplit(1)
                     Case "LastTMDLFile"
+                        data.LastTMDLFile = lSplit(1)
+                    Case "LastReplacementOption"
                         data.LastTMDLFile = lSplit(1)
                 End Select
             End If

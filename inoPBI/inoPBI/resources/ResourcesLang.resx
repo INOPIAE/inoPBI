@@ -507,4 +507,7 @@
   <data name="MsgAllowedDifferenceIsMissing" xml:space="preserve">
     <value>Allowed difference/ current caption is missing.</value>
   </data>
+  <data name="ReplacementNoReplacement" xml:space="preserve">
+    <value>No replacement</value>
+  </data>
 </root>
