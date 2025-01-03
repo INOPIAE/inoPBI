@@ -57,9 +57,13 @@ Show PDF file defines if the pdf file is opend after the generation of the file.
 
 ## Installation
 
-Currently there is no installation package available so download the repository and open the solution in Visual Studio 2022 to build an exe file.
+Download the latest release from [https://github.com/INOPIAE/inoPBI/releases/](https://github.com/INOPIAE/inoPBI/releases/).
 
-(Working on the installation package)
+Unzip the zip file and use `setup.exe` to install the application inoPBI.
+
+![Screenshot Installation](/sources_documentation/install.png)
+
+During the installation you are prompted for an untrusted issuer. This is due to the fact that the certificate is not issued by a CA located in the general trust stores.
 
 
 ## Dependencies
