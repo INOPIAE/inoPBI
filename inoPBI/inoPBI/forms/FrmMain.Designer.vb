@@ -66,6 +66,7 @@ Partial Class FrmMain
         StatusBarToolStripMenuItem = New ToolStripMenuItem()
         ToolsMenu = New ToolStripMenuItem()
         OptionsToolStripMenuItem = New ToolStripMenuItem()
+        CleanupToolStripMenuItem = New ToolStripMenuItem()
         WindowsMenu = New ToolStripMenuItem()
         NewWindowToolStripMenuItem = New ToolStripMenuItem()
         CascadeToolStripMenuItem = New ToolStripMenuItem()
@@ -86,7 +87,6 @@ Partial Class FrmMain
         ToolStripStatusLabel = New ToolStripStatusLabel()
         TslCurrentProject = New ToolStripStatusLabel()
         ToolTip = New ToolTip(components)
-        CleanupToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip.SuspendLayout()
         ToolStrip.SuspendLayout()
         StatusStrip.SuspendLayout()
@@ -95,7 +95,7 @@ Partial Class FrmMain
         ' MenuStrip
         ' 
         MenuStrip.ImageScalingSize = New Size(20, 20)
-        MenuStrip.Items.AddRange(New ToolStripItem() {FileMenu, PowerBIToolsToolStripMenuItem, EditMenu, HelpMenu, ViewMenu, ToolsMenu, WindowsMenu})
+        MenuStrip.Items.AddRange(New ToolStripItem() {FileMenu, PowerBIToolsToolStripMenuItem, EditMenu, ViewMenu, ToolsMenu, WindowsMenu, HelpMenu})
         MenuStrip.Location = New Point(0, 0)
         MenuStrip.MdiWindowListItem = WindowsMenu
         MenuStrip.Name = "MenuStrip"
@@ -329,7 +329,7 @@ Partial Class FrmMain
         ' 
         ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem"
         ContentsToolStripMenuItem.ShortcutKeys = Keys.Control Or Keys.F1
-        ContentsToolStripMenuItem.Size = New Size(152, 22)
+        ContentsToolStripMenuItem.Size = New Size(184, 26)
         ContentsToolStripMenuItem.Text = "&Inhalt"
         ContentsToolStripMenuItem.Visible = False
         ' 
@@ -338,7 +338,7 @@ Partial Class FrmMain
         IndexToolStripMenuItem.Image = CType(resources.GetObject("IndexToolStripMenuItem.Image"), Image)
         IndexToolStripMenuItem.ImageTransparentColor = Color.Black
         IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
-        IndexToolStripMenuItem.Size = New Size(152, 22)
+        IndexToolStripMenuItem.Size = New Size(184, 26)
         IndexToolStripMenuItem.Text = "&Index"
         IndexToolStripMenuItem.Visible = False
         ' 
@@ -347,20 +347,20 @@ Partial Class FrmMain
         SearchToolStripMenuItem.Image = CType(resources.GetObject("SearchToolStripMenuItem.Image"), Image)
         SearchToolStripMenuItem.ImageTransparentColor = Color.Black
         SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        SearchToolStripMenuItem.Size = New Size(152, 22)
+        SearchToolStripMenuItem.Size = New Size(184, 26)
         SearchToolStripMenuItem.Text = "&Suchen"
         SearchToolStripMenuItem.Visible = False
         ' 
         ' ToolStripSeparator8
         ' 
         ToolStripSeparator8.Name = "ToolStripSeparator8"
-        ToolStripSeparator8.Size = New Size(149, 6)
+        ToolStripSeparator8.Size = New Size(181, 6)
         ToolStripSeparator8.Visible = False
         ' 
         ' AboutToolStripMenuItem
         ' 
         AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        AboutToolStripMenuItem.Size = New Size(152, 22)
+        AboutToolStripMenuItem.Size = New Size(184, 26)
         AboutToolStripMenuItem.Text = "&Info..."
         ' 
         ' ViewMenu
@@ -399,8 +399,14 @@ Partial Class FrmMain
         ' OptionsToolStripMenuItem
         ' 
         OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        OptionsToolStripMenuItem.Size = New Size(180, 22)
+        OptionsToolStripMenuItem.Size = New Size(124, 22)
         OptionsToolStripMenuItem.Text = "&Optionen"
+        ' 
+        ' CleanupToolStripMenuItem
+        ' 
+        CleanupToolStripMenuItem.Name = "CleanupToolStripMenuItem"
+        CleanupToolStripMenuItem.Size = New Size(124, 22)
+        CleanupToolStripMenuItem.Text = "Cleanup"
         ' 
         ' WindowsMenu
         ' 
@@ -541,12 +547,6 @@ Partial Class FrmMain
         TslCurrentProject.Name = "TslCurrentProject"
         TslCurrentProject.Size = New Size(119, 17)
         TslCurrentProject.Text = "ToolStripStatusLabel1"
-        ' 
-        ' CleanupToolStripMenuItem
-        ' 
-        CleanupToolStripMenuItem.Name = "CleanupToolStripMenuItem"
-        CleanupToolStripMenuItem.Size = New Size(180, 22)
-        CleanupToolStripMenuItem.Text = "Cleanup"
         ' 
         ' FrmMain
         ' 
