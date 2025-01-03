@@ -32,6 +32,7 @@ Public Class FrmPDF
             TxtFileDocu.Select()
             Exit Sub
         End If
+        SetFromEnable(Me, "CmdClose")
         Dim PdFOutput As String = vbNullString
 
         If TxtTargetFile.Text.Trim = vbNullString Then
@@ -101,6 +102,7 @@ Public Class FrmPDF
             p.StartInfo.UseShellExecute = True
             p.Start()
         End If
+        SetFromEnable(Me, "CmdClose")
     End Sub
 
     Private Sub CmdHeaderFile_Click(sender As Object, e As EventArgs) Handles CmdHeaderFile.Click
@@ -188,4 +190,5 @@ Public Class FrmPDF
         CmdEditHeader.Text = My.Resources.ResourcesLang.BtnEdit
         CmdDocumentation.Text = My.Resources.ResourcesLang.BtnCreatePDF
     End Sub
+
 End Class

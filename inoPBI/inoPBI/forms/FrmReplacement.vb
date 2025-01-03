@@ -40,7 +40,7 @@ Public Class FrmReplacement
         Dim fileName As String = TxtTargetFolder.Text & "\" & Path.GetFileName(TxtOrginal.Text) & ".org"
         Dim fileNameReplace As String = TxtTargetFolder.Text & "\" & Path.GetFileName(TxtOrginal.Text) & "." & TxtCustomer.Text
 
-
+        SetFromEnable(Me, "CmdClose")
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingStarted
         Application.DoEvents()
 
@@ -69,6 +69,7 @@ Public Class FrmReplacement
         My.Settings.Save()
 
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingFinished
+        SetFromEnable(Me, "CmdClose")
     End Sub
 
     Private Sub FrmReplacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -99,6 +100,7 @@ Public Class FrmReplacement
     End Sub
 
     Private Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
+        SetFromEnable(Me, "CmdClose")
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationStarted
         Application.DoEvents()
 
@@ -115,6 +117,7 @@ Public Class FrmReplacement
         My.Settings.Save()
 
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
+        SetFromEnable(Me, "CmdClose")
     End Sub
 
     Private Sub CmdEditReplacement_Click(sender As Object, e As EventArgs) Handles CmdEditReplacement.Click

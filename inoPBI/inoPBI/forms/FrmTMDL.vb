@@ -64,6 +64,7 @@ Public Class FrmTMDL
         Dim fileName = TxtTargetFolder.Text & "\" & Path.GetFileName(fileNameSource) & ".org"
         Dim fileNameReplace = TxtTargetFolder.Text & "\" & Path.GetFileName(fileNameSource) & "." & TxtCustomer.Text
 
+        SetFromEnable(Me, "CmdClose")
 
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingStarted
         Application.DoEvents()
@@ -101,12 +102,13 @@ Public Class FrmTMDL
 
         clsR.CopyPBIPTMDL(TxtOrginal.Text, TxtTargetFolder.Text, fileNameReplace)
 
-
+        SetFromEnable(Me, "CmdClose")
 
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementReplacingFinished
     End Sub
 
     Private Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
+        SetFromEnable(Me, "CmdClose")
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationStarted
         Application.DoEvents()
 
@@ -123,6 +125,7 @@ Public Class FrmTMDL
         My.Settings.Save()
 
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
+        SetFromEnable(Me, "CmdClose")
     End Sub
 
     Private Sub CmdClose_Click(sender As Object, e As EventArgs) Handles CmdClose.Click

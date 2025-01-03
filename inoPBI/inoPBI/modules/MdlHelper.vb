@@ -11,4 +11,12 @@
         End If
         Return False
     End Function
+
+    Public Sub SetFromEnable(frm As Form, ctrlCloseName As String)
+        For Each c As Control In frm.Controls
+            If c.Name <> ctrlCloseName Then
+                c.Enabled = Not c.Enabled
+            End If
+        Next
+    End Sub
 End Module
