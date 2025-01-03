@@ -80,7 +80,7 @@ Public Class ClsIniFileHandling
                     Case "LastTMDLFile"
                         data.LastTMDLFile = lSplit(1)
                     Case "LastReplacementOption"
-                        data.LastTMDLFile = lSplit(1)
+                        data.LastReplacementOption = lSplit(1)
                 End Select
             End If
         End While
