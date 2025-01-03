@@ -50,6 +50,24 @@ table _Measures
 		displayFolder: BWA
 		lineageTag: 98077da1-806e-4c76-b4d2-af16004cde9c
 
+	measure 'Durchschnittlich Score pro FrageNr' =
+			
+			AVERAGEX(
+				KEEPFILTERS(VALUES('Antworten 2024'[FrageNr])),
+				CALCULATE(AVERAGE('Antworten 2024'[Score]))
+			)
+		formatString: 0.00
+		displayFolder: Auswertung
+		lineageTag: 25214c64-c876-4fd9-91b9-b3d7f2580809
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "AveragePerCategory"
+				}
+
+		changedProperty = FormatString
+
 	partition _Measures-abee16bd-4406-47fe-a745-2df0ba6b26f3 = m
 		mode: import
 		source =

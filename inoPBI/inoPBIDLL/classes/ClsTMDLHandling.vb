@@ -82,7 +82,7 @@ Public Class ClsTMDLHandling
                         myElement.Type = ElementType.Measure
                         description = vbNullString
                         blnNew = True
-                        If m(1).Trim = "```" Then
+                        If m(1).Trim = "```" Or m(1).Trim = vbNullString Then
                             blnSource = True
                             delimiter = vbCrLf
                         End If
@@ -137,6 +137,8 @@ Public Class ClsTMDLHandling
                             Elements.Add(myElement)
                             blnNew = False
                         End If
+                    Case "formatString:"
+                        ' skip line
                     Case Else
                         If blnSource = True Then
                             myElement.Value &= delimiter & lineplain.Replace(vbTab, vbNullString)

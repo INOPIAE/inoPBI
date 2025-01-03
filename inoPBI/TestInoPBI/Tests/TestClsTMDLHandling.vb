@@ -41,7 +41,7 @@ Namespace TestInoPBI
 
             Dim testElements As List(Of ClsTMDLHandling.Element) = cTMDL.Elements
 
-            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(9))
+            Assert.That(testElements.Count, NUnit.Framework.Is.EqualTo(10))
 
 
             Dim table As String = "_Measures"
@@ -99,6 +99,18 @@ Namespace TestInoPBI
             TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos)
 
             pos = 8
+            mName = "Durchschnittlich Score pro FrageNr"
+            value = vbCrLf _
+                & "AVERAGEX(" _
+                & vbCrLf & "KEEPFILTERS(VALUES('Antworten 2024'[FrageNr]))," _
+                & vbCrLf & "CALCULATE(AVERAGE('Antworten 2024'[Score]))" _
+                & vbCrLf & ")"
+            description = vbNullString
+            displayFolder = "Auswertung"
+            eType = ClsTMDLHandling.ElementType.Measure
+            TestSingleElement(testElements, table, mName, description, value, displayFolder, eType, pos)
+
+            pos = 9
             mName = "_Measures"
             value = "let" & vbCrLf & "    Quelle = Table.FromRows"
             description = vbNullString
@@ -111,6 +123,7 @@ Namespace TestInoPBI
             Assert.That(testElements(pos).TableName, NUnit.Framework.Is.EqualTo(table))
             Assert.That(testElements(pos).Name, NUnit.Framework.Is.EqualTo(mName))
             Assert.That(testElements(pos).Description, NUnit.Framework.Is.EqualTo(description))
+
             If blnSource = True Then
                 Assert.That(testElements(pos).Value.Substring(0, value.Length), NUnit.Framework.Is.EqualTo(value))
             Else
