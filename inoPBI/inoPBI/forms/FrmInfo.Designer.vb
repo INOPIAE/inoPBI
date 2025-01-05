@@ -57,8 +57,8 @@ Partial Class FrmInfo
         TableLayoutPanel.Controls.Add(TextBoxDescription, 1, 4)
         TableLayoutPanel.Controls.Add(OKButton, 1, 5)
         TableLayoutPanel.Dock = DockStyle.Fill
-        TableLayoutPanel.Location = New Point(12, 14)
-        TableLayoutPanel.Margin = New Padding(4, 5, 4, 5)
+        TableLayoutPanel.Location = New Point(10, 10)
+        TableLayoutPanel.Margin = New Padding(4)
         TableLayoutPanel.Name = "TableLayoutPanel"
         TableLayoutPanel.RowCount = 6
         TableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 10F))
@@ -67,18 +67,18 @@ Partial Class FrmInfo
         TableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 10F))
         TableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 10F))
-        TableLayoutPanel.Size = New Size(528, 397)
+        TableLayoutPanel.Size = New Size(463, 299)
         TableLayoutPanel.TabIndex = 0
         ' 
         ' LogoPictureBox
         ' 
         LogoPictureBox.Dock = DockStyle.Fill
         LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), Image)
-        LogoPictureBox.Location = New Point(4, 5)
-        LogoPictureBox.Margin = New Padding(4, 5, 4, 5)
+        LogoPictureBox.Location = New Point(4, 4)
+        LogoPictureBox.Margin = New Padding(4)
         LogoPictureBox.Name = "LogoPictureBox"
         TableLayoutPanel.SetRowSpan(LogoPictureBox, 6)
-        LogoPictureBox.Size = New Size(166, 387)
+        LogoPictureBox.Size = New Size(144, 291)
         LogoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
         LogoPictureBox.TabIndex = 0
         LogoPictureBox.TabStop = False
@@ -86,11 +86,11 @@ Partial Class FrmInfo
         ' LabelProductName
         ' 
         LabelProductName.Dock = DockStyle.Fill
-        LabelProductName.Location = New Point(182, 0)
-        LabelProductName.Margin = New Padding(8, 0, 4, 0)
-        LabelProductName.MaximumSize = New Size(0, 26)
+        LabelProductName.Location = New Point(159, 0)
+        LabelProductName.Margin = New Padding(7, 0, 4, 0)
+        LabelProductName.MaximumSize = New Size(0, 20)
         LabelProductName.Name = "LabelProductName"
-        LabelProductName.Size = New Size(342, 26)
+        LabelProductName.Size = New Size(300, 20)
         LabelProductName.TabIndex = 0
         LabelProductName.Text = "Produktname"
         LabelProductName.TextAlign = ContentAlignment.MiddleLeft
@@ -98,11 +98,11 @@ Partial Class FrmInfo
         ' LabelVersion
         ' 
         LabelVersion.Dock = DockStyle.Fill
-        LabelVersion.Location = New Point(182, 39)
-        LabelVersion.Margin = New Padding(8, 0, 4, 0)
-        LabelVersion.MaximumSize = New Size(0, 26)
+        LabelVersion.Location = New Point(159, 29)
+        LabelVersion.Margin = New Padding(7, 0, 4, 0)
+        LabelVersion.MaximumSize = New Size(0, 20)
         LabelVersion.Name = "LabelVersion"
-        LabelVersion.Size = New Size(342, 26)
+        LabelVersion.Size = New Size(300, 20)
         LabelVersion.TabIndex = 0
         LabelVersion.Text = "Version"
         LabelVersion.TextAlign = ContentAlignment.MiddleLeft
@@ -110,11 +110,11 @@ Partial Class FrmInfo
         ' LabelCopyright
         ' 
         LabelCopyright.Dock = DockStyle.Fill
-        LabelCopyright.Location = New Point(182, 78)
-        LabelCopyright.Margin = New Padding(8, 0, 4, 0)
-        LabelCopyright.MaximumSize = New Size(0, 26)
+        LabelCopyright.Location = New Point(159, 58)
+        LabelCopyright.Margin = New Padding(7, 0, 4, 0)
+        LabelCopyright.MaximumSize = New Size(0, 20)
         LabelCopyright.Name = "LabelCopyright"
-        LabelCopyright.Size = New Size(342, 26)
+        LabelCopyright.Size = New Size(300, 20)
         LabelCopyright.TabIndex = 0
         LabelCopyright.Text = "Copyright"
         LabelCopyright.TextAlign = ContentAlignment.MiddleLeft
@@ -122,11 +122,11 @@ Partial Class FrmInfo
         ' LabelCompanyName
         ' 
         LabelCompanyName.Dock = DockStyle.Fill
-        LabelCompanyName.Location = New Point(182, 117)
-        LabelCompanyName.Margin = New Padding(8, 0, 4, 0)
-        LabelCompanyName.MaximumSize = New Size(0, 26)
+        LabelCompanyName.Location = New Point(159, 87)
+        LabelCompanyName.Margin = New Padding(7, 0, 4, 0)
+        LabelCompanyName.MaximumSize = New Size(0, 20)
         LabelCompanyName.Name = "LabelCompanyName"
-        LabelCompanyName.Size = New Size(342, 26)
+        LabelCompanyName.Size = New Size(300, 20)
         LabelCompanyName.TabIndex = 0
         LabelCompanyName.Text = "Firmenname"
         LabelCompanyName.TextAlign = ContentAlignment.MiddleLeft
@@ -134,13 +134,13 @@ Partial Class FrmInfo
         ' TextBoxDescription
         ' 
         TextBoxDescription.Dock = DockStyle.Fill
-        TextBoxDescription.Location = New Point(182, 161)
-        TextBoxDescription.Margin = New Padding(8, 5, 4, 5)
+        TextBoxDescription.Location = New Point(159, 120)
+        TextBoxDescription.Margin = New Padding(7, 4, 4, 4)
         TextBoxDescription.Multiline = True
         TextBoxDescription.Name = "TextBoxDescription"
         TextBoxDescription.ReadOnly = True
         TextBoxDescription.ScrollBars = ScrollBars.Both
-        TextBoxDescription.Size = New Size(342, 188)
+        TextBoxDescription.Size = New Size(300, 141)
         TextBoxDescription.TabIndex = 0
         TextBoxDescription.TabStop = False
         TextBoxDescription.Text = resources.GetString("TextBoxDescription.Text")
@@ -149,26 +149,26 @@ Partial Class FrmInfo
         ' 
         OKButton.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         OKButton.DialogResult = DialogResult.Cancel
-        OKButton.Location = New Point(424, 359)
-        OKButton.Margin = New Padding(4, 5, 4, 5)
+        OKButton.Location = New Point(371, 270)
+        OKButton.Margin = New Padding(4)
         OKButton.Name = "OKButton"
-        OKButton.Size = New Size(100, 33)
+        OKButton.Size = New Size(88, 25)
         OKButton.TabIndex = 0
         OKButton.Text = "&OK"
         ' 
         ' FrmInfo
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         CancelButton = OKButton
-        ClientSize = New Size(552, 425)
+        ClientSize = New Size(483, 319)
         Controls.Add(TableLayoutPanel)
         FormBorderStyle = FormBorderStyle.FixedDialog
-        Margin = New Padding(4, 5, 4, 5)
+        Margin = New Padding(4)
         MaximizeBox = False
         MinimizeBox = False
         Name = "FrmInfo"
-        Padding = New Padding(12, 14, 12, 14)
+        Padding = New Padding(10)
         ShowInTaskbar = False
         StartPosition = FormStartPosition.CenterParent
         Text = "FrmInfo"

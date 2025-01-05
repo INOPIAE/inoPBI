@@ -1,4 +1,6 @@
-﻿Public NotInheritable Class FrmInfo
+﻿Imports System.Reflection
+
+Public NotInheritable Class FrmInfo
 
     Private Sub FrmInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Legen Sie den Titel des Formulars fest.
@@ -13,8 +15,8 @@
         ' TODO: Die Assemblyinformationen der Anwendung im Bereich "Anwendung" des Dialogfelds für die 
         '    Projekteigenschaften (im Menü "Projekt") anpassen.
         Me.LabelProductName.Text = My.Application.Info.ProductName
-        Me.LabelVersion.Text = String.Format(My.Resources.ResourcesLang.InfoVersion, My.Application.Info.Version.ToString)
-        Me.LabelCopyright.Text = My.Resources.ResourcesLang.InfoCopyright & IIf(Year(Now) = 2023, Year(Now), "2023-" & Year(Now)) '  My.Application.Info.Copyright
+        Me.LabelVersion.Text = String.Format(My.Resources.ResourcesLang.InfoVersion, GetApplicationVersion)
+        Me.LabelCopyright.Text = My.Resources.ResourcesLang.InfoCopyright & IIf(Year(Now) = 2023, Year(Now), "2023-" & Year(Now))
         Me.LabelCompanyName.Text = My.Application.Info.CompanyName
         Me.TextBoxDescription.Text = My.Application.Info.Description
         OKButton.Text = My.Resources.ResourcesLang.BtnOK
@@ -24,4 +26,9 @@
         Me.Close()
     End Sub
 
+    Private Function GetApplicationVersion() As String
+        ' Retrieve the version from the assembly
+        Dim version As Version = Assembly.GetExecutingAssembly().GetName().Version
+        Return version.ToString()
+    End Function
 End Class
