@@ -55,12 +55,6 @@ Partial Class FrmMain
         PasteToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator7 = New ToolStripSeparator()
         SelectAllToolStripMenuItem = New ToolStripMenuItem()
-        HelpMenu = New ToolStripMenuItem()
-        ContentsToolStripMenuItem = New ToolStripMenuItem()
-        IndexToolStripMenuItem = New ToolStripMenuItem()
-        SearchToolStripMenuItem = New ToolStripMenuItem()
-        ToolStripSeparator8 = New ToolStripSeparator()
-        AboutToolStripMenuItem = New ToolStripMenuItem()
         ViewMenu = New ToolStripMenuItem()
         ToolBarToolStripMenuItem = New ToolStripMenuItem()
         StatusBarToolStripMenuItem = New ToolStripMenuItem()
@@ -74,6 +68,12 @@ Partial Class FrmMain
         TileHorizontalToolStripMenuItem = New ToolStripMenuItem()
         CloseAllToolStripMenuItem = New ToolStripMenuItem()
         ArrangeIconsToolStripMenuItem = New ToolStripMenuItem()
+        HelpMenu = New ToolStripMenuItem()
+        ContentsToolStripMenuItem = New ToolStripMenuItem()
+        IndexToolStripMenuItem = New ToolStripMenuItem()
+        SearchToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripSeparator8 = New ToolStripSeparator()
+        AboutToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip = New ToolStrip()
         NewToolStripButton = New ToolStripButton()
         OpenToolStripButton = New ToolStripButton()
@@ -87,6 +87,9 @@ Partial Class FrmMain
         ToolStripStatusLabel = New ToolStripStatusLabel()
         TslCurrentProject = New ToolStripStatusLabel()
         ToolTip = New ToolTip(components)
+        ToolStripSeparator9 = New ToolStripSeparator()
+        ToolStripSeparator10 = New ToolStripSeparator()
+        ToolStripSeparator11 = New ToolStripSeparator()
         MenuStrip.SuspendLayout()
         ToolStrip.SuspendLayout()
         StatusStrip.SuspendLayout()
@@ -201,7 +204,7 @@ Partial Class FrmMain
         ' 
         ' PowerBIToolsToolStripMenuItem
         ' 
-        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ReplacementTMDLToolStripMenuItem, ReplacementToolStripMenuItem, DocumentationToolStripMenuItem, EditFooterHeaderToolStripMenuItem, UsageToolStripMenuItem, SelectProjectToolStripMenuItem, ReplacementReportToolStripMenuItem})
+        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SelectProjectToolStripMenuItem, ToolStripSeparator9, EditFooterHeaderToolStripMenuItem, DocumentationToolStripMenuItem, ToolStripSeparator10, ReplacementTMDLToolStripMenuItem, ReplacementToolStripMenuItem, ToolStripSeparator11, UsageToolStripMenuItem, ReplacementReportToolStripMenuItem})
         PowerBIToolsToolStripMenuItem.Name = "PowerBIToolsToolStripMenuItem"
         PowerBIToolsToolStripMenuItem.Size = New Size(95, 20)
         PowerBIToolsToolStripMenuItem.Text = "Power BI Tools"
@@ -318,51 +321,6 @@ Partial Class FrmMain
         SelectAllToolStripMenuItem.Size = New Size(197, 22)
         SelectAllToolStripMenuItem.Text = "&Alle auswählen"
         ' 
-        ' HelpMenu
-        ' 
-        HelpMenu.DropDownItems.AddRange(New ToolStripItem() {ContentsToolStripMenuItem, IndexToolStripMenuItem, SearchToolStripMenuItem, ToolStripSeparator8, AboutToolStripMenuItem})
-        HelpMenu.Name = "HelpMenu"
-        HelpMenu.Size = New Size(44, 20)
-        HelpMenu.Text = "&Hilfe"
-        ' 
-        ' ContentsToolStripMenuItem
-        ' 
-        ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem"
-        ContentsToolStripMenuItem.ShortcutKeys = Keys.Control Or Keys.F1
-        ContentsToolStripMenuItem.Size = New Size(184, 26)
-        ContentsToolStripMenuItem.Text = "&Inhalt"
-        ContentsToolStripMenuItem.Visible = False
-        ' 
-        ' IndexToolStripMenuItem
-        ' 
-        IndexToolStripMenuItem.Image = CType(resources.GetObject("IndexToolStripMenuItem.Image"), Image)
-        IndexToolStripMenuItem.ImageTransparentColor = Color.Black
-        IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
-        IndexToolStripMenuItem.Size = New Size(184, 26)
-        IndexToolStripMenuItem.Text = "&Index"
-        IndexToolStripMenuItem.Visible = False
-        ' 
-        ' SearchToolStripMenuItem
-        ' 
-        SearchToolStripMenuItem.Image = CType(resources.GetObject("SearchToolStripMenuItem.Image"), Image)
-        SearchToolStripMenuItem.ImageTransparentColor = Color.Black
-        SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        SearchToolStripMenuItem.Size = New Size(184, 26)
-        SearchToolStripMenuItem.Text = "&Suchen"
-        SearchToolStripMenuItem.Visible = False
-        ' 
-        ' ToolStripSeparator8
-        ' 
-        ToolStripSeparator8.Name = "ToolStripSeparator8"
-        ToolStripSeparator8.Size = New Size(181, 6)
-        ToolStripSeparator8.Visible = False
-        ' 
-        ' AboutToolStripMenuItem
-        ' 
-        AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        AboutToolStripMenuItem.Size = New Size(184, 26)
-        AboutToolStripMenuItem.Text = "&Info..."
-        ' 
         ' ViewMenu
         ' 
         ViewMenu.DropDownItems.AddRange(New ToolStripItem() {ToolBarToolStripMenuItem, StatusBarToolStripMenuItem})
@@ -450,6 +408,51 @@ Partial Class FrmMain
         ArrangeIconsToolStripMenuItem.Name = "ArrangeIconsToolStripMenuItem"
         ArrangeIconsToolStripMenuItem.Size = New Size(174, 22)
         ArrangeIconsToolStripMenuItem.Text = "Symbole &anordnen"
+        ' 
+        ' HelpMenu
+        ' 
+        HelpMenu.DropDownItems.AddRange(New ToolStripItem() {ContentsToolStripMenuItem, IndexToolStripMenuItem, SearchToolStripMenuItem, ToolStripSeparator8, AboutToolStripMenuItem})
+        HelpMenu.Name = "HelpMenu"
+        HelpMenu.Size = New Size(44, 20)
+        HelpMenu.Text = "&Hilfe"
+        ' 
+        ' ContentsToolStripMenuItem
+        ' 
+        ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem"
+        ContentsToolStripMenuItem.ShortcutKeys = Keys.Control Or Keys.F1
+        ContentsToolStripMenuItem.Size = New Size(152, 22)
+        ContentsToolStripMenuItem.Text = "&Inhalt"
+        ContentsToolStripMenuItem.Visible = False
+        ' 
+        ' IndexToolStripMenuItem
+        ' 
+        IndexToolStripMenuItem.Image = CType(resources.GetObject("IndexToolStripMenuItem.Image"), Image)
+        IndexToolStripMenuItem.ImageTransparentColor = Color.Black
+        IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
+        IndexToolStripMenuItem.Size = New Size(152, 22)
+        IndexToolStripMenuItem.Text = "&Index"
+        IndexToolStripMenuItem.Visible = False
+        ' 
+        ' SearchToolStripMenuItem
+        ' 
+        SearchToolStripMenuItem.Image = CType(resources.GetObject("SearchToolStripMenuItem.Image"), Image)
+        SearchToolStripMenuItem.ImageTransparentColor = Color.Black
+        SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
+        SearchToolStripMenuItem.Size = New Size(152, 22)
+        SearchToolStripMenuItem.Text = "&Suchen"
+        SearchToolStripMenuItem.Visible = False
+        ' 
+        ' ToolStripSeparator8
+        ' 
+        ToolStripSeparator8.Name = "ToolStripSeparator8"
+        ToolStripSeparator8.Size = New Size(149, 6)
+        ToolStripSeparator8.Visible = False
+        ' 
+        ' AboutToolStripMenuItem
+        ' 
+        AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        AboutToolStripMenuItem.Size = New Size(152, 22)
+        AboutToolStripMenuItem.Text = "&Info..."
         ' 
         ' ToolStrip
         ' 
@@ -548,6 +551,21 @@ Partial Class FrmMain
         TslCurrentProject.Size = New Size(119, 17)
         TslCurrentProject.Text = "ToolStripStatusLabel1"
         ' 
+        ' ToolStripSeparator9
+        ' 
+        ToolStripSeparator9.Name = "ToolStripSeparator9"
+        ToolStripSeparator9.Size = New Size(178, 6)
+        ' 
+        ' ToolStripSeparator10
+        ' 
+        ToolStripSeparator10.Name = "ToolStripSeparator10"
+        ToolStripSeparator10.Size = New Size(178, 6)
+        ' 
+        ' ToolStripSeparator11
+        ' 
+        ToolStripSeparator11.Name = "ToolStripSeparator11"
+        ToolStripSeparator11.Size = New Size(178, 6)
+        ' 
         ' FrmMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -634,5 +652,8 @@ Partial Class FrmMain
     Friend WithEvents UsageToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReplacementReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CleanupToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator9 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator10 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator11 As ToolStripSeparator
 
 End Class

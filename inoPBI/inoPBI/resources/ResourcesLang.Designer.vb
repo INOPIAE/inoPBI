@@ -785,6 +785,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Power BI file ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PdfPowerBIFile() As String
+            Get
+                Return ResourceManager.GetString("PdfPowerBIFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Select Footer File ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property PdfSelectFooterFile() As String

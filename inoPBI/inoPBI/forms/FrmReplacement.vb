@@ -108,7 +108,8 @@ Public Class FrmReplacement
         Dim clsJSON As New ClsJSONHandling
         If clsJSON.ExtractMeasures(TxtOrginal.Text, TxtFileDocu.Text) = False Then
             MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
-            Exit Sub
+            LblInfo.Text = My.Resources.ResourcesLang.MsgSomethingWentWrong
+            GoTo More
         End If
 
 
@@ -116,7 +117,9 @@ Public Class FrmReplacement
         My.Settings.LastDocumentation = TxtFileDocu.Text
         My.Settings.Save()
 
+
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
+More:
         SetFromEnable(Me, "CmdClose")
     End Sub
 

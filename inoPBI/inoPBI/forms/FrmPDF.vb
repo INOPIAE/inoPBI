@@ -1,7 +1,12 @@
 ﻿
 Imports System.IO
+Imports inoPBIDLL
 Imports Markdown2Pdf
 Imports Markdown2Pdf.Options
+Imports Newtonsoft.Json.Converters
+Imports PuppeteerSharp
+Imports UglyToad.PdfPig.Fonts.Encodings
+Imports UglyToad.PdfPig.Graphics.Operations.InlineImages
 Public Class FrmPDF
     Private Sub CmdClose_Click(sender As Object, e As EventArgs) Handles CmdClose.Click
         Me.Close()
@@ -19,13 +24,14 @@ Public Class FrmPDF
         TxtDocTitle.Text = My.Settings.LastDocTitle
         TxtDocTitle.Select(TxtDocTitle.Text.Length, 0)
         CbShowPDF.Checked = My.Settings.ShowPDF
+        TxtPowerBIFile.Text = My.Settings.LastPowerBIFile
 
         LblInfo.Text = ""
-
+        GetMDSaveTime()
         TranslateForm()
     End Sub
 
-    Private Async Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
+    Private Async Sub CmdPDF_Click(sender As Object, e As EventArgs) Handles CmdPDF.Click
 
         If TxtFileDocu.Text = vbNullString Then
             MessageBox.Show(My.Resources.ResourcesLang.MsgNoFileGiven)
@@ -33,7 +39,7 @@ Public Class FrmPDF
             Exit Sub
         End If
         SetFromEnable(Me, "CmdClose")
-        Dim PdFOutput As String = vbNullString
+        Dim PdFOutput = vbNullString
 
         If TxtTargetFile.Text.Trim = vbNullString Then
             PdFOutput = TxtFileDocu.Text.Replace(".md", ".pdf")
@@ -93,6 +99,7 @@ Public Class FrmPDF
         My.Settings.LastPDFFile = TxtTargetFile.Text
         My.Settings.LastDocTitle = TxtDocTitle.Text
         My.Settings.ShowPDF = CbShowPDF.Checked
+        My.Settings.LastPowerBIFile = TxtPowerBIFile.Text
         My.Settings.Save()
 
         If CbShowPDF.Checked Then
@@ -140,6 +147,7 @@ Public Class FrmPDF
             End If
         End With
         LblInfo.Text = ""
+        GetMDSaveTime()
     End Sub
 
     Private Sub CmdEditHeader_Click(sender As Object, e As EventArgs) Handles CmdEditHeader.Click
@@ -182,13 +190,83 @@ Public Class FrmPDF
         LblHeader.Text = My.Resources.ResourcesLang.PdfHeaderFile
         LblFooter.Text = My.Resources.ResourcesLang.PdfFooterFile
         LblTargetFile.Text = My.Resources.ResourcesLang.PdfTargetFile
+        LblPowerBIFile.Text = My.Resources.ResourcesLang.PdfPowerBIFile
 
         CbShowPDF.Text = My.Resources.ResourcesLang.PdfShowPDF
 
         CmdClose.Text = My.Resources.ResourcesLang.BtnClose
         CmdEditFooter.Text = My.Resources.ResourcesLang.BtnEdit
         CmdEditHeader.Text = My.Resources.ResourcesLang.BtnEdit
-        CmdDocumentation.Text = My.Resources.ResourcesLang.BtnCreatePDF
+        CmdPDF.Text = My.Resources.ResourcesLang.BtnCreatePDF
+        CmdDocumentation.Text = My.Resources.ResourcesLang.BtnCreateDokumentation
     End Sub
 
+    Private Sub CmdPowerBIFile_Click(sender As Object, e As EventArgs) Handles CmdPowerBIFile.Click
+        Dim ofd As New OpenFileDialog
+        With ofd
+            .Filter = "Power BI project file (*.pbip)|*.pbip"
+            If .ShowDialog = DialogResult.OK Then
+                TxtPowerBIFile.Text = .FileName
+            End If
+        End With
+        LblInfo.Text = ""
+    End Sub
+
+    Private Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
+        If TxtPowerBIFile.Text = vbNullString Or File.Exists(TxtPowerBIFile.Text) = False Then
+            MessageBox.Show(My.Resources.ResourcesLang.MsgNoFileGiven)
+            TxtPowerBIFile.Select()
+            Exit Sub
+        End If
+
+        SetFromEnable(Me, "CmdClose")
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationStarted
+        Application.DoEvents()
+
+        Dim DocuPath As String = vbNullString
+        Dim DocuType As Int16 = 0
+        For Each Dir As String In Directory.GetDirectories(Path.GetDirectoryName(TxtPowerBIFile.Text))
+            If Dir.Contains("DataSet") And DocuPath = vbNullString Then
+                DocuPath = Dir
+                DocuType = 1
+            End If
+            If Dir.Contains("SemanticModel") Then
+                DocuPath = Dir
+                DocuType = 2
+            End If
+        Next
+        Select Case DocuType
+            Case 1
+                Dim clsJSON As New ClsJSONHandling
+                If clsJSON.ExtractMeasures(Path.Combine(DocuPath, "model.bim"), TxtFileDocu.Text) = False Then
+                    MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
+                    LblInfo.Text = My.Resources.ResourcesLang.MsgSomethingWentWrong
+                    GoTo More
+                End If
+            Case 2
+                Dim clsTMDL As New ClsTMDLHandling(DocuPath)
+                clsTMDL.columnHeader = My.Resources.ResourcesLang.ReplacementMDColumnHeader
+                If clsTMDL.ExtractMeasures(TxtFileDocu.Text) = False Then
+                    MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
+                    LblInfo.Text = My.Resources.ResourcesLang.MsgSomethingWentWrong
+                    GoTo More
+                End If
+        End Select
+
+        My.Settings.LastDocumentation = TxtFileDocu.Text
+        My.Settings.Save()
+
+        LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
+More:
+        SetFromEnable(Me, "CmdClose")
+        GetMDSaveTime()
+    End Sub
+
+    Private Sub GetMDSaveTime()
+        If File.Exists(TxtFileDocu.Text) Then
+            LblInfoMD.Text = String.Format("Last saved: {0}", File.GetLastWriteTime(TxtFileDocu.Text))
+        Else
+            LblInfoMD.Text = ""
+        End If
+    End Sub
 End Class

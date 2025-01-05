@@ -116,7 +116,8 @@ Public Class FrmTMDL
         clsTMDL.columnHeader = My.Resources.ResourcesLang.ReplacementMDColumnHeader
         If clsTMDL.ExtractMeasures(TxtFileDocu.Text) = False Then
             MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
-            Exit Sub
+            LblInfo.Text = My.Resources.ResourcesLang.MsgSomethingWentWrong
+            GoTo More
         End If
 
 
@@ -125,6 +126,7 @@ Public Class FrmTMDL
         My.Settings.Save()
 
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
+More:
         SetFromEnable(Me, "CmdClose")
     End Sub
 

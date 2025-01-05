@@ -510,4 +510,7 @@
   <data name="ReplacementNoReplacement" xml:space="preserve">
     <value>No replacement</value>
   </data>
+  <data name="PdfPowerBIFile" xml:space="preserve">
+    <value>Power BI file</value>
+  </data>
 </root>

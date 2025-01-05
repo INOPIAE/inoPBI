@@ -23,7 +23,7 @@ Partial Class FrmPDF
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         CmdClose = New Button()
-        CmdDocumentation = New Button()
+        CmdPDF = New Button()
         CmdTargetFile = New Button()
         CmdFileDocu = New Button()
         CmdFooterFile = New Button()
@@ -42,191 +42,259 @@ Partial Class FrmPDF
         CbShowPDF = New CheckBox()
         CmdEditHeader = New Button()
         CmdEditFooter = New Button()
+        LblPowerBIFile = New Label()
+        TxtPowerBIFile = New TextBox()
+        CmdPowerBIFile = New Button()
+        CmdDocumentation = New Button()
+        LblInfoMD = New Label()
         SuspendLayout()
         ' 
         ' CmdClose
         ' 
-        CmdClose.Location = New Point(548, 352)
+        CmdClose.Location = New Point(516, 265)
+        CmdClose.Margin = New Padding(3, 2, 3, 2)
         CmdClose.Name = "CmdClose"
-        CmdClose.Size = New Size(117, 53)
-        CmdClose.TabIndex = 19
+        CmdClose.Size = New Size(102, 40)
+        CmdClose.TabIndex = 22
         CmdClose.Text = "Close"
         CmdClose.UseVisualStyleBackColor = True
         ' 
-        ' CmdDocumentation
+        ' CmdPDF
         ' 
-        CmdDocumentation.Location = New Point(270, 353)
-        CmdDocumentation.Name = "CmdDocumentation"
-        CmdDocumentation.Size = New Size(117, 53)
-        CmdDocumentation.TabIndex = 17
-        CmdDocumentation.Text = "Create PDF"
-        CmdDocumentation.UseVisualStyleBackColor = True
+        CmdPDF.Location = New Point(341, 265)
+        CmdPDF.Margin = New Padding(3, 2, 3, 2)
+        CmdPDF.Name = "CmdPDF"
+        CmdPDF.Size = New Size(102, 40)
+        CmdPDF.TabIndex = 21
+        CmdPDF.Text = "Create PDF"
+        CmdPDF.UseVisualStyleBackColor = True
         ' 
         ' CmdTargetFile
         ' 
-        CmdTargetFile.Location = New Point(709, 145)
+        CmdTargetFile.Location = New Point(622, 145)
+        CmdTargetFile.Margin = New Padding(3, 2, 3, 2)
         CmdTargetFile.Name = "CmdTargetFile"
-        CmdTargetFile.Size = New Size(30, 27)
-        CmdTargetFile.TabIndex = 13
+        CmdTargetFile.Size = New Size(26, 20)
+        CmdTargetFile.TabIndex = 16
         CmdTargetFile.Text = "..."
         CmdTargetFile.UseVisualStyleBackColor = True
         ' 
         ' CmdFileDocu
         ' 
-        CmdFileDocu.Location = New Point(709, 45)
+        CmdFileDocu.Location = New Point(622, 70)
+        CmdFileDocu.Margin = New Padding(3, 2, 3, 2)
         CmdFileDocu.Name = "CmdFileDocu"
-        CmdFileDocu.Size = New Size(30, 27)
-        CmdFileDocu.TabIndex = 2
+        CmdFileDocu.Size = New Size(26, 20)
+        CmdFileDocu.TabIndex = 5
         CmdFileDocu.Text = "..."
         CmdFileDocu.UseVisualStyleBackColor = True
         ' 
         ' CmdFooterFile
         ' 
-        CmdFooterFile.Location = New Point(709, 111)
+        CmdFooterFile.Location = New Point(622, 119)
+        CmdFooterFile.Margin = New Padding(3, 2, 3, 2)
         CmdFooterFile.Name = "CmdFooterFile"
-        CmdFooterFile.Size = New Size(30, 27)
-        CmdFooterFile.TabIndex = 9
+        CmdFooterFile.Size = New Size(26, 20)
+        CmdFooterFile.TabIndex = 12
         CmdFooterFile.Text = "..."
         CmdFooterFile.UseVisualStyleBackColor = True
         ' 
         ' CmdHeaderFile
         ' 
-        CmdHeaderFile.Location = New Point(709, 79)
+        CmdHeaderFile.Location = New Point(622, 95)
+        CmdHeaderFile.Margin = New Padding(3, 2, 3, 2)
         CmdHeaderFile.Name = "CmdHeaderFile"
-        CmdHeaderFile.Size = New Size(30, 27)
-        CmdHeaderFile.TabIndex = 5
+        CmdHeaderFile.Size = New Size(26, 20)
+        CmdHeaderFile.TabIndex = 8
         CmdHeaderFile.Text = "..."
         CmdHeaderFile.UseVisualStyleBackColor = True
         ' 
         ' TxtDocTitle
         ' 
-        TxtDocTitle.Location = New Point(196, 177)
+        TxtDocTitle.Location = New Point(174, 169)
+        TxtDocTitle.Margin = New Padding(3, 2, 3, 2)
         TxtDocTitle.Name = "TxtDocTitle"
-        TxtDocTitle.Size = New Size(507, 27)
-        TxtDocTitle.TabIndex = 15
+        TxtDocTitle.Size = New Size(444, 23)
+        TxtDocTitle.TabIndex = 18
         ' 
         ' LblDocTitle
         ' 
         LblDocTitle.AutoSize = True
-        LblDocTitle.Location = New Point(23, 182)
+        LblDocTitle.Location = New Point(22, 172)
         LblDocTitle.Name = "LblDocTitle"
-        LblDocTitle.Size = New Size(108, 20)
-        LblDocTitle.TabIndex = 14
+        LblDocTitle.Size = New Size(86, 15)
+        LblDocTitle.TabIndex = 17
         LblDocTitle.Text = "Document title"
         ' 
         ' TxtTargetFile
         ' 
-        TxtTargetFile.Location = New Point(196, 143)
+        TxtTargetFile.Location = New Point(174, 143)
+        TxtTargetFile.Margin = New Padding(3, 2, 3, 2)
         TxtTargetFile.Name = "TxtTargetFile"
-        TxtTargetFile.Size = New Size(507, 27)
-        TxtTargetFile.TabIndex = 12
+        TxtTargetFile.Size = New Size(444, 23)
+        TxtTargetFile.TabIndex = 15
         ' 
         ' LblTargetFile
         ' 
         LblTargetFile.AutoSize = True
-        LblTargetFile.Location = New Point(23, 148)
+        LblTargetFile.Location = New Point(22, 147)
         LblTargetFile.Name = "LblTargetFile"
-        LblTargetFile.Size = New Size(75, 20)
-        LblTargetFile.TabIndex = 11
+        LblTargetFile.Size = New Size(58, 15)
+        LblTargetFile.TabIndex = 14
         LblTargetFile.Text = "Target file"
         ' 
         ' TxtFileDocu
         ' 
-        TxtFileDocu.Location = New Point(196, 45)
+        TxtFileDocu.Location = New Point(174, 70)
+        TxtFileDocu.Margin = New Padding(3, 2, 3, 2)
         TxtFileDocu.Name = "TxtFileDocu"
-        TxtFileDocu.Size = New Size(507, 27)
-        TxtFileDocu.TabIndex = 1
+        TxtFileDocu.Size = New Size(444, 23)
+        TxtFileDocu.TabIndex = 4
         ' 
         ' LblFileDocu
         ' 
         LblFileDocu.AutoSize = True
-        LblFileDocu.Location = New Point(23, 48)
+        LblFileDocu.Location = New Point(22, 72)
         LblFileDocu.Name = "LblFileDocu"
-        LblFileDocu.Size = New Size(137, 20)
-        LblFileDocu.TabIndex = 0
+        LblFileDocu.Size = New Size(109, 15)
+        LblFileDocu.TabIndex = 3
         LblFileDocu.Text = "Dokumentation file"
         ' 
         ' TxtFooter
         ' 
-        TxtFooter.Location = New Point(196, 111)
+        TxtFooter.Location = New Point(174, 119)
+        TxtFooter.Margin = New Padding(3, 2, 3, 2)
         TxtFooter.Name = "TxtFooter"
-        TxtFooter.Size = New Size(507, 27)
-        TxtFooter.TabIndex = 8
+        TxtFooter.Size = New Size(444, 23)
+        TxtFooter.TabIndex = 11
         ' 
         ' LblFooter
         ' 
         LblFooter.AutoSize = True
-        LblFooter.Location = New Point(23, 115)
+        LblFooter.Location = New Point(22, 122)
         LblFooter.Name = "LblFooter"
-        LblFooter.Size = New Size(122, 20)
-        LblFooter.TabIndex = 7
+        LblFooter.Size = New Size(97, 15)
+        LblFooter.TabIndex = 10
         LblFooter.Text = "Footer HTML File"
         ' 
         ' TxtHeader
         ' 
-        TxtHeader.Location = New Point(196, 78)
+        TxtHeader.Location = New Point(174, 94)
+        TxtHeader.Margin = New Padding(3, 2, 3, 2)
         TxtHeader.Name = "TxtHeader"
-        TxtHeader.Size = New Size(507, 27)
-        TxtHeader.TabIndex = 4
+        TxtHeader.Size = New Size(444, 23)
+        TxtHeader.TabIndex = 7
         ' 
         ' LblInfo
         ' 
         LblInfo.AutoSize = True
-        LblInfo.Location = New Point(112, 310)
+        LblInfo.Location = New Point(22, 232)
         LblInfo.Name = "LblInfo"
-        LblInfo.Size = New Size(35, 20)
-        LblInfo.TabIndex = 20
+        LblInfo.Size = New Size(28, 15)
+        LblInfo.TabIndex = 23
         LblInfo.Text = "Info"
         ' 
         ' LblHeader
         ' 
         LblHeader.AutoSize = True
-        LblHeader.Location = New Point(23, 82)
+        LblHeader.Location = New Point(22, 98)
         LblHeader.Name = "LblHeader"
-        LblHeader.Size = New Size(126, 20)
-        LblHeader.TabIndex = 3
+        LblHeader.Size = New Size(99, 15)
+        LblHeader.TabIndex = 6
         LblHeader.Text = "Header HTML file"
         ' 
         ' CbShowPDF
         ' 
         CbShowPDF.AutoSize = True
         CbShowPDF.CheckAlign = ContentAlignment.MiddleRight
-        CbShowPDF.Location = New Point(57, 220)
+        CbShowPDF.Location = New Point(19, 201)
+        CbShowPDF.Margin = New Padding(3, 2, 3, 2)
         CbShowPDF.Name = "CbShowPDF"
-        CbShowPDF.Size = New Size(124, 24)
-        CbShowPDF.TabIndex = 16
+        CbShowPDF.Size = New Size(100, 19)
+        CbShowPDF.TabIndex = 19
         CbShowPDF.Text = "Show PDF File"
         CbShowPDF.UseVisualStyleBackColor = True
         ' 
         ' CmdEditHeader
         ' 
-        CmdEditHeader.Location = New Point(745, 79)
+        CmdEditHeader.Location = New Point(684, 93)
+        CmdEditHeader.Margin = New Padding(3, 2, 3, 2)
         CmdEditHeader.Name = "CmdEditHeader"
-        CmdEditHeader.Size = New Size(116, 29)
-        CmdEditHeader.TabIndex = 6
+        CmdEditHeader.Size = New Size(102, 22)
+        CmdEditHeader.TabIndex = 9
         CmdEditHeader.Text = "Edit"
         CmdEditHeader.UseVisualStyleBackColor = True
         ' 
         ' CmdEditFooter
         ' 
-        CmdEditFooter.Location = New Point(745, 111)
+        CmdEditFooter.Location = New Point(684, 117)
+        CmdEditFooter.Margin = New Padding(3, 2, 3, 2)
         CmdEditFooter.Name = "CmdEditFooter"
-        CmdEditFooter.Size = New Size(116, 29)
-        CmdEditFooter.TabIndex = 10
+        CmdEditFooter.Size = New Size(102, 22)
+        CmdEditFooter.TabIndex = 13
         CmdEditFooter.Text = "Edit"
         CmdEditFooter.UseVisualStyleBackColor = True
         ' 
+        ' LblPowerBIFile
+        ' 
+        LblPowerBIFile.AutoSize = True
+        LblPowerBIFile.Location = New Point(22, 45)
+        LblPowerBIFile.Name = "LblPowerBIFile"
+        LblPowerBIFile.Size = New Size(72, 15)
+        LblPowerBIFile.TabIndex = 0
+        LblPowerBIFile.Text = "Power BI file"
+        ' 
+        ' TxtPowerBIFile
+        ' 
+        TxtPowerBIFile.Location = New Point(174, 43)
+        TxtPowerBIFile.Margin = New Padding(3, 2, 3, 2)
+        TxtPowerBIFile.Name = "TxtPowerBIFile"
+        TxtPowerBIFile.Size = New Size(444, 23)
+        TxtPowerBIFile.TabIndex = 1
+        ' 
+        ' CmdPowerBIFile
+        ' 
+        CmdPowerBIFile.Location = New Point(622, 43)
+        CmdPowerBIFile.Margin = New Padding(3, 2, 3, 2)
+        CmdPowerBIFile.Name = "CmdPowerBIFile"
+        CmdPowerBIFile.Size = New Size(26, 20)
+        CmdPowerBIFile.TabIndex = 2
+        CmdPowerBIFile.Text = "..."
+        CmdPowerBIFile.UseVisualStyleBackColor = True
+        ' 
+        ' CmdDocumentation
+        ' 
+        CmdDocumentation.Location = New Point(174, 265)
+        CmdDocumentation.Margin = New Padding(3, 2, 3, 2)
+        CmdDocumentation.Name = "CmdDocumentation"
+        CmdDocumentation.Size = New Size(102, 40)
+        CmdDocumentation.TabIndex = 20
+        CmdDocumentation.Text = "Create Documentation"
+        CmdDocumentation.UseVisualStyleBackColor = True
+        ' 
+        ' LblInfoMD
+        ' 
+        LblInfoMD.AutoSize = True
+        LblInfoMD.Location = New Point(654, 73)
+        LblInfoMD.Name = "LblInfoMD"
+        LblInfoMD.Size = New Size(41, 15)
+        LblInfoMD.TabIndex = 24
+        LblInfoMD.Text = "Label1"
+        ' 
         ' FrmPDF
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(915, 450)
+        ClientSize = New Size(825, 338)
+        Controls.Add(LblInfoMD)
         Controls.Add(CmdEditFooter)
         Controls.Add(CmdEditHeader)
         Controls.Add(CbShowPDF)
         Controls.Add(CmdClose)
         Controls.Add(CmdDocumentation)
+        Controls.Add(CmdPDF)
         Controls.Add(CmdTargetFile)
+        Controls.Add(CmdPowerBIFile)
         Controls.Add(CmdFileDocu)
         Controls.Add(CmdFooterFile)
         Controls.Add(CmdHeaderFile)
@@ -234,6 +302,8 @@ Partial Class FrmPDF
         Controls.Add(LblDocTitle)
         Controls.Add(TxtTargetFile)
         Controls.Add(LblTargetFile)
+        Controls.Add(TxtPowerBIFile)
+        Controls.Add(LblPowerBIFile)
         Controls.Add(TxtFileDocu)
         Controls.Add(LblFileDocu)
         Controls.Add(TxtFooter)
@@ -241,13 +311,14 @@ Partial Class FrmPDF
         Controls.Add(TxtHeader)
         Controls.Add(LblInfo)
         Controls.Add(LblHeader)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "FrmPDF"
         Text = "FrmPDF"
         ResumeLayout(False)
         PerformLayout()
     End Sub
     Friend WithEvents CmdClose As Button
-    Friend WithEvents CmdDocumentation As Button
+    Friend WithEvents CmdPDF As Button
     Friend WithEvents CmdTargetFile As Button
     Friend WithEvents CmdFileDocu As Button
     Friend WithEvents CmdFooterFile As Button
@@ -266,4 +337,9 @@ Partial Class FrmPDF
     Friend WithEvents CbShowPDF As CheckBox
     Friend WithEvents CmdEditHeader As Button
     Friend WithEvents CmdEditFooter As Button
+    Friend WithEvents LblPowerBIFile As Label
+    Friend WithEvents TxtPowerBIFile As TextBox
+    Friend WithEvents CmdPowerBIFile As Button
+    Friend WithEvents CmdDocumentation As Button
+    Friend WithEvents LblInfoMD As Label
 End Class
