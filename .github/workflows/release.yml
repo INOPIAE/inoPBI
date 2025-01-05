@@ -18,8 +18,10 @@ jobs:
         with:
           dotnet-version: '9.0.x'
 
+      # adjust path
       - name: Restore NuGet Packages
         run: dotnet restore
+        working-directory: ./inoPBI
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
@@ -28,6 +30,7 @@ jobs:
       - name: Build ClickOnce App
         run: |
           MSBuild.exe inoPBI.sln /p:Configuration=Release /target:publish /p:PublishDir=${{ github.workspace }}\bin\Release\publish
+        working-directory: ./inoPBI
 
       - name: Locate signtool.exe
         run: |
