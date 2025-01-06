@@ -1,5 +1,7 @@
 ﻿
 Imports System.IO
+Imports System.Runtime.Serialization
+Imports System.Security.Policy
 Imports inoPBIDLL
 Imports Markdown2Pdf
 Imports Markdown2Pdf.Options
@@ -204,9 +206,13 @@ Public Class FrmPDF
     Private Sub CmdPowerBIFile_Click(sender As Object, e As EventArgs) Handles CmdPowerBIFile.Click
         Dim ofd As New OpenFileDialog
         With ofd
-            .Filter = "Power BI project file (*.pbip)|*.pbip"
+            .Filter = String.Format(My.Resources.ResourcesLang.PDFPowerBIProjectFile, "(*.pbip)|*.pbip")
             If .ShowDialog = DialogResult.OK Then
-                TxtPowerBIFile.Text = .FileName
+                If Path.GetExtension(.FileName) = ".pbip" Then
+                    TxtPowerBIFile.Text = .FileName
+                Else
+                    MessageBox.Show(String.Format(My.Resources.ResourcesLang.MsgNoPowerBiFile, "(*.pbip)"))
+                End If
             End If
         End With
         LblInfo.Text = ""
@@ -253,6 +259,7 @@ Public Class FrmPDF
                 End If
         End Select
 
+        My.Settings.LastPowerBIFile = TxtPowerBIFile.Text
         My.Settings.LastDocumentation = TxtFileDocu.Text
         My.Settings.Save()
 

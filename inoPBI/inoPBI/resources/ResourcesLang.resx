@@ -513,4 +513,10 @@
   <data name="PdfPowerBIFile" xml:space="preserve">
     <value>Power BI file</value>
   </data>
+  <data name="PDFPowerBIProjectFile" xml:space="preserve">
+    <value>Power BI project file {0}</value>
+  </data>
+  <data name="MsgNoPowerBiFile" xml:space="preserve">
+    <value>Selected file is not a Power BI project file {0}</value>
+  </data>
 </root>

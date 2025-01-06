@@ -614,6 +614,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Selected file is not a Power BI project file {0} ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MsgNoPowerBiFile() As String
+            Get
+                Return ResourceManager.GetString("MsgNoPowerBiFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Nothing selected ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property MsgNothingSelected() As String
@@ -790,6 +799,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property PdfPowerBIFile() As String
             Get
                 Return ResourceManager.GetString("PdfPowerBIFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Power BI project file {0} ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property PDFPowerBIProjectFile() As String
+            Get
+                Return ResourceManager.GetString("PDFPowerBIProjectFile", resourceCulture)
             End Get
         End Property
         

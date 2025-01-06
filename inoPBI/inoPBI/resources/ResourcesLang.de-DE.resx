@@ -510,4 +510,13 @@
   <data name="ReplacementNoReplacement" xml:space="preserve">
     <value>Keine Ersetzung</value>
   </data>
+  <data name="PDFPowerBIProjectFile" xml:space="preserve">
+    <value>Power BI Projekt-Datei {0}</value>
+  </data>
+  <data name="PdfPowerBIFile" xml:space="preserve">
+    <value>Power BI Datei</value>
+  </data>
+  <data name="MsgNoPowerBiFile" xml:space="preserve">
+    <value>Die ausgewählte Datei ist keine Power BI Projekt-Datei {0}</value>
+  </data>
 </root>
