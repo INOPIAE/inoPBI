@@ -117,6 +117,8 @@ Public Class FrmMain
             .LastReplacement = My.Settings.LastReplacement
             .LastPDFFile = My.Settings.LastPDFFile
             .LastTMDLFile = My.Settings.LastTMDL
+            .LastReplacementOption = My.Settings.LastReplacementOption
+            .LastPowerBIFile = My.Settings.LastPowerBIFile
         End With
     End Sub
 
@@ -132,6 +134,8 @@ Public Class FrmMain
             My.Settings.LastReplacement = .LastReplacement
             My.Settings.LastPDFFile = .LastPDFFile
             My.Settings.LastTMDL = .LastTMDLFile
+            My.Settings.LastReplacementOption = .LastReplacementOption
+            My.Settings.LastPowerBIFile = .LastPowerBIFile
         End With
         My.Settings.Save()
     End Sub
@@ -148,6 +152,10 @@ Public Class FrmMain
         TslCurrentProject.Text = String.Format(My.Resources.ResourcesLang.MainTslCurrentProject, My.Settings.CurrentProject)
 
         TranslateForm()
+
+        If My.Settings.CurrentProject = vbNullString Then
+            FrmProjects.ShowDialog()
+        End If
 
     End Sub
 
