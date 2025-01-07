@@ -80,7 +80,7 @@ jobs:
           name: inoPBI Release ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}
           body: |
-            This release contains the # adjust name of exe deployment files for version ${{ github.ref_name }}.
+            This release contains the inoPBI.exe deployment files for version ${{ github.ref_name }}.
           files: inoPBI-release-${{ github.ref_name }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
