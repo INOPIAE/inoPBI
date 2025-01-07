@@ -159,7 +159,7 @@ Public Class FrmTMDL
                 LblInfo.Text = My.Resources.ResourcesLang.ReplacementCopyFiles
                 Application.DoEvents()
 
-                clsR.CopyPBIPTMDL(TxtPowerBIFile.Text, TxtTargetFolder.Text, fileNameReplace)
+                clsR.CopyPBIPTMDL(pt.Path, TxtTargetFolder.Text, fileNameReplace)
         End Select
 
         My.Settings.LastPowerBIFile = TxtPowerBIFile.Text
