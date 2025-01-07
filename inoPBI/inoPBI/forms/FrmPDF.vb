@@ -32,7 +32,7 @@ Public Class FrmPDF
         TxtPowerBIFile.Text = My.Settings.LastPowerBIFile
 
         LblInfo.Text = ""
-        GetMDSaveTime()
+        LblInfoMD.Text = GetSaveTime(TxtFileDocu.Text)
         TranslateForm()
     End Sub
 
@@ -163,7 +163,7 @@ Public Class FrmPDF
             End If
         End With
         LblInfo.Text = ""
-        GetMDSaveTime()
+        LblInfoMD.Text = GetSaveTime(TxtFileDocu.Text)
     End Sub
 
     Private Sub CmdEditHeader_Click(sender As Object, e As EventArgs) Handles CmdEditHeader.Click
@@ -274,14 +274,7 @@ Public Class FrmPDF
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
 More:
         SetFromEnable(Me, "CmdClose")
-        GetMDSaveTime()
+        LblInfoMD.Text = GetSaveTime(TxtFileDocu.Text)
     End Sub
 
-    Private Sub GetMDSaveTime()
-        If File.Exists(TxtFileDocu.Text) Then
-            LblInfoMD.Text = String.Format("Last saved: {0}", File.GetLastWriteTime(TxtFileDocu.Text))
-        Else
-            LblInfoMD.Text = ""
-        End If
-    End Sub
 End Class

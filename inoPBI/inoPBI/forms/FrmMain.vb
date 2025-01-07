@@ -93,10 +93,6 @@ Public Class FrmMain
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub ReplacementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplacementToolStripMenuItem.Click
-        FrmReplacement.Show()
-    End Sub
-
     Private Sub DocumentationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentationToolStripMenuItem.Click
         FrmPDF.Show()
     End Sub
@@ -195,7 +191,6 @@ Public Class FrmMain
 
         PowerBIToolsToolStripMenuItem.Text = My.Resources.ResourcesLang.MainPowerBITools
         ReplacementTMDLToolStripMenuItem.Text = My.Resources.ResourcesLang.MainReplaceTDML
-        ReplacementToolStripMenuItem.Text = My.Resources.ResourcesLang.MainReplaceBIM
         DocumentationToolStripMenuItem.Text = My.Resources.ResourcesLang.MainDocumentation
         EditFooterHeaderToolStripMenuItem.Text = My.Resources.ResourcesLang.MainEditFooterHeader
         UsageToolStripMenuItem.Text = My.Resources.ResourcesLang.MainUsage

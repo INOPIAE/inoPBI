@@ -289,7 +289,7 @@
     <value>Dokumentation abgeschlossen</value>
   </data>
   <data name="TDMLTitle" xml:space="preserve">
-    <value>Ersetzen von PBIP TDML Struktur</value>
+    <value>Ersetzen von PBIP Parametern</value>
   </data>
   <data name="ReplacementTitle" xml:space="preserve">
     <value>Ersetzten von  PBIP BIM Struktur</value>
@@ -334,7 +334,7 @@
     <value>Power BI Tools</value>
   </data>
   <data name="MainReplaceTDML" xml:space="preserve">
-    <value>Ersetzen TDML</value>
+    <value>Parameter ersetzen</value>
   </data>
   <data name="MainReplaceBIM" xml:space="preserve">
     <value>Ersetzen BIM</value>
@@ -521,5 +521,8 @@
   </data>
   <data name="MsgGivenFolderDoesNotExists" xml:space="preserve">
     <value>Der angegebene Ordner existiert nicht.</value>
+  </data>
+  <data name="MsgLastSaved" xml:space="preserve">
+    <value>Letzte Speicherung: {0}</value>
   </data>
 </root>

@@ -289,7 +289,7 @@
     <value>Documentation finished</value>
   </data>
   <data name="TDMLTitle" xml:space="preserve">
-    <value>Replacement of PBIP TDML stucture</value>
+    <value>Replacement of PBIP parameter</value>
   </data>
   <data name="ReplacementTitle" xml:space="preserve">
     <value>Replacement of PBIP BIM stucture</value>
@@ -334,7 +334,7 @@
     <value>Power BI Tools</value>
   </data>
   <data name="MainReplaceTDML" xml:space="preserve">
-    <value>Replacement TMDL</value>
+    <value>Replacement parameters</value>
   </data>
   <data name="MainReplaceBIM" xml:space="preserve">
     <value>Replacement BIM</value>
@@ -521,5 +521,8 @@
   </data>
   <data name="MsgGivenFolderDoesNotExists" xml:space="preserve">
     <value>Given folder does not exists.</value>
+  </data>
+  <data name="MsgLastSaved" xml:space="preserve">
+    <value>Last saved: {0}</value>
   </data>
 </root>

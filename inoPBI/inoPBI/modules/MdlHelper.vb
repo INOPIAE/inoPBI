@@ -42,4 +42,12 @@ Module MdlHelper
             Return True
         End If
     End Function
+
+    Public Function GetSaveTime(strFile As String) As String
+        If File.Exists(strFile) Then
+            Return String.Format(My.Resources.ResourcesLang.MsgLastSaved, File.GetLastWriteTime(strFile))
+        Else
+            Return vbNullString
+        End If
+    End Function
 End Module

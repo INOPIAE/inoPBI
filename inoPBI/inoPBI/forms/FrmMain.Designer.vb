@@ -39,12 +39,14 @@ Partial Class FrmMain
         ToolStripSeparator5 = New ToolStripSeparator()
         ExitToolStripMenuItem = New ToolStripMenuItem()
         PowerBIToolsToolStripMenuItem = New ToolStripMenuItem()
-        ReplacementTMDLToolStripMenuItem = New ToolStripMenuItem()
-        ReplacementToolStripMenuItem = New ToolStripMenuItem()
-        DocumentationToolStripMenuItem = New ToolStripMenuItem()
-        EditFooterHeaderToolStripMenuItem = New ToolStripMenuItem()
-        UsageToolStripMenuItem = New ToolStripMenuItem()
         SelectProjectToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripSeparator9 = New ToolStripSeparator()
+        EditFooterHeaderToolStripMenuItem = New ToolStripMenuItem()
+        DocumentationToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripSeparator10 = New ToolStripSeparator()
+        ReplacementTMDLToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripSeparator11 = New ToolStripSeparator()
+        UsageToolStripMenuItem = New ToolStripMenuItem()
         ReplacementReportToolStripMenuItem = New ToolStripMenuItem()
         EditMenu = New ToolStripMenuItem()
         UndoToolStripMenuItem = New ToolStripMenuItem()
@@ -87,9 +89,6 @@ Partial Class FrmMain
         ToolStripStatusLabel = New ToolStripStatusLabel()
         TslCurrentProject = New ToolStripStatusLabel()
         ToolTip = New ToolTip(components)
-        ToolStripSeparator9 = New ToolStripSeparator()
-        ToolStripSeparator10 = New ToolStripSeparator()
-        ToolStripSeparator11 = New ToolStripSeparator()
         MenuStrip.SuspendLayout()
         ToolStrip.SuspendLayout()
         StatusStrip.SuspendLayout()
@@ -204,28 +203,21 @@ Partial Class FrmMain
         ' 
         ' PowerBIToolsToolStripMenuItem
         ' 
-        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SelectProjectToolStripMenuItem, ToolStripSeparator9, EditFooterHeaderToolStripMenuItem, DocumentationToolStripMenuItem, ToolStripSeparator10, ReplacementTMDLToolStripMenuItem, ReplacementToolStripMenuItem, ToolStripSeparator11, UsageToolStripMenuItem, ReplacementReportToolStripMenuItem})
+        PowerBIToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SelectProjectToolStripMenuItem, ToolStripSeparator9, EditFooterHeaderToolStripMenuItem, DocumentationToolStripMenuItem, ToolStripSeparator10, ReplacementTMDLToolStripMenuItem, ToolStripSeparator11, UsageToolStripMenuItem, ReplacementReportToolStripMenuItem})
         PowerBIToolsToolStripMenuItem.Name = "PowerBIToolsToolStripMenuItem"
         PowerBIToolsToolStripMenuItem.Size = New Size(95, 20)
         PowerBIToolsToolStripMenuItem.Text = "Power BI Tools"
         ' 
-        ' ReplacementTMDLToolStripMenuItem
+        ' SelectProjectToolStripMenuItem
         ' 
-        ReplacementTMDLToolStripMenuItem.Name = "ReplacementTMDLToolStripMenuItem"
-        ReplacementTMDLToolStripMenuItem.Size = New Size(181, 22)
-        ReplacementTMDLToolStripMenuItem.Text = "Replacement TMDL"
+        SelectProjectToolStripMenuItem.Name = "SelectProjectToolStripMenuItem"
+        SelectProjectToolStripMenuItem.Size = New Size(181, 22)
+        SelectProjectToolStripMenuItem.Text = "Select Project"
         ' 
-        ' ReplacementToolStripMenuItem
+        ' ToolStripSeparator9
         ' 
-        ReplacementToolStripMenuItem.Name = "ReplacementToolStripMenuItem"
-        ReplacementToolStripMenuItem.Size = New Size(181, 22)
-        ReplacementToolStripMenuItem.Text = "Replacement BIM"
-        ' 
-        ' DocumentationToolStripMenuItem
-        ' 
-        DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
-        DocumentationToolStripMenuItem.Size = New Size(181, 22)
-        DocumentationToolStripMenuItem.Text = "Documentation"
+        ToolStripSeparator9.Name = "ToolStripSeparator9"
+        ToolStripSeparator9.Size = New Size(178, 6)
         ' 
         ' EditFooterHeaderToolStripMenuItem
         ' 
@@ -233,17 +225,33 @@ Partial Class FrmMain
         EditFooterHeaderToolStripMenuItem.Size = New Size(181, 22)
         EditFooterHeaderToolStripMenuItem.Text = "Edit Footer/Header"
         ' 
+        ' DocumentationToolStripMenuItem
+        ' 
+        DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
+        DocumentationToolStripMenuItem.Size = New Size(181, 22)
+        DocumentationToolStripMenuItem.Text = "Documentation"
+        ' 
+        ' ToolStripSeparator10
+        ' 
+        ToolStripSeparator10.Name = "ToolStripSeparator10"
+        ToolStripSeparator10.Size = New Size(178, 6)
+        ' 
+        ' ReplacementTMDLToolStripMenuItem
+        ' 
+        ReplacementTMDLToolStripMenuItem.Name = "ReplacementTMDLToolStripMenuItem"
+        ReplacementTMDLToolStripMenuItem.Size = New Size(181, 22)
+        ReplacementTMDLToolStripMenuItem.Text = "Replacement TMDL"
+        ' 
+        ' ToolStripSeparator11
+        ' 
+        ToolStripSeparator11.Name = "ToolStripSeparator11"
+        ToolStripSeparator11.Size = New Size(178, 6)
+        ' 
         ' UsageToolStripMenuItem
         ' 
         UsageToolStripMenuItem.Name = "UsageToolStripMenuItem"
         UsageToolStripMenuItem.Size = New Size(181, 22)
         UsageToolStripMenuItem.Text = "Usage"
-        ' 
-        ' SelectProjectToolStripMenuItem
-        ' 
-        SelectProjectToolStripMenuItem.Name = "SelectProjectToolStripMenuItem"
-        SelectProjectToolStripMenuItem.Size = New Size(181, 22)
-        SelectProjectToolStripMenuItem.Text = "Select Project"
         ' 
         ' ReplacementReportToolStripMenuItem
         ' 
@@ -551,21 +559,6 @@ Partial Class FrmMain
         TslCurrentProject.Size = New Size(119, 17)
         TslCurrentProject.Text = "ToolStripStatusLabel1"
         ' 
-        ' ToolStripSeparator9
-        ' 
-        ToolStripSeparator9.Name = "ToolStripSeparator9"
-        ToolStripSeparator9.Size = New Size(178, 6)
-        ' 
-        ' ToolStripSeparator10
-        ' 
-        ToolStripSeparator10.Name = "ToolStripSeparator10"
-        ToolStripSeparator10.Size = New Size(178, 6)
-        ' 
-        ' ToolStripSeparator11
-        ' 
-        ToolStripSeparator11.Name = "ToolStripSeparator11"
-        ToolStripSeparator11.Size = New Size(178, 6)
-        ' 
         ' FrmMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -643,7 +636,6 @@ Partial Class FrmMain
     Friend WithEvents StatusBarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolsMenu As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PowerBIToolsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReplacementToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DocumentationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SelectProjectToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TslCurrentProject As ToolStripStatusLabel

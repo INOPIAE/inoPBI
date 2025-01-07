@@ -461,7 +461,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement TMDL ähnelt.
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement parameters ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property MainReplaceTDML() As String
             Get
@@ -610,6 +610,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property MsgHint() As String
             Get
                 Return ResourceManager.GetString("MsgHint", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Last saved: {0} ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MsgLastSaved() As String
+            Get
+                Return ResourceManager.GetString("MsgLastSaved", resourceCulture)
             End Get
         End Property
         
@@ -1271,7 +1280,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement of PBIP TDML stucture ähnelt.
+        '''  Sucht eine lokalisierte Zeichenfolge, die Replacement of PBIP parameter ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property TDMLTitle() As String
             Get
