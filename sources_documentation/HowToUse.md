@@ -5,23 +5,34 @@ During the start of the application it is checked if a project is defined. If no
 # Menue
 ## File
 
-### Power BI Tools
+## Power BI Tools
 
 ![Screenshot Create pdf file](/sources_documentation/powerbitools.png)
 
+### Select Project
+
+![Screenshot project](/sources_documentation/projects.png)
+
+The application needs a project definition to store the different values fro  the forms.
+
 #### Select Project
+Selects the highligthed project.
 
-TBD
+#### New project
+Here a new project is defined
 
-#### Edit Footer/Header
+#### Rename project
+Rename the highligthed project
+
+### Edit Footer/Header
 
 ![Screenshot Edit Footer/Header](/sources_documentation/edithtml.png)
 
-#### Documentation
+### Documentation
 
 ![Screenshot Create pdf file](/sources_documentation/create_pdf.png)
 
-##### Create documentation 
+#### Create documentation 
 
 To create the documentation file give the path to the Power BI project file and define the location where the documentation file should be stored.
 
@@ -45,13 +56,13 @@ Show PDF file defines if the pdf file is opend after the generation of the file.
 
 `Create PDF` generated the documentation pdf file.
 
-#### Replacement TMDL - Replace PowerQuery parameters and generate documentation markdown file
+### Replacement Parameters - Replace PowerQuery parameters and generate documentation markdown file
 
 ![Screenshot Replace TDML](/sources_documentation/replace_tmdl.png)
 
-##### Replace PowerQuery parameters
+#### Replace PowerQuery parameters
 
-Orginal defines the folder SemanticModel or Dataset from the dashboard folder.
+Power BI file defines the Power BI project file (*.pbip).
 
 File with replacements defines the path to the file with the replacement information.
 
@@ -70,10 +81,10 @@ Use `Create documentation` to create markdown file
 
 `Create PDF` opens dialog for pdf generation
 
-### Tools
+## Tools
 
 ![Screenshot Settings](/sources_documentation/settings.png)
 
-### Windows
+## Windows
 
-### Help
+## Help
