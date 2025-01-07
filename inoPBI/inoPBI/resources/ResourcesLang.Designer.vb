@@ -596,6 +596,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Given folder does not exists. ähnelt.
+        '''</summary>
+        Friend Shared ReadOnly Property MsgGivenFolderDoesNotExists() As String
+            Get
+                Return ResourceManager.GetString("MsgGivenFolderDoesNotExists", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Hint ähnelt.
         '''</summary>
         Friend Shared ReadOnly Property MsgHint() As String

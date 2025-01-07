@@ -519,4 +519,7 @@
   <data name="MsgNoPowerBiFile" xml:space="preserve">
     <value>Die ausgewählte Datei ist keine Power BI Projekt-Datei {0}</value>
   </data>
+  <data name="MsgGivenFolderDoesNotExists" xml:space="preserve">
+    <value>Der angegebene Ordner existiert nicht.</value>
+  </data>
 </root>

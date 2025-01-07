@@ -38,16 +38,27 @@ Public Class FrmPDF
 
     Private Async Sub CmdPDF_Click(sender As Object, e As EventArgs) Handles CmdPDF.Click
 
-        If TxtFileDocu.Text = vbNullString Then
-            MessageBox.Show(My.Resources.ResourcesLang.MsgNoFileGiven)
+        If CheckFile(TxtFileDocu.Text) = False Then
             TxtFileDocu.Select()
             Exit Sub
         End If
+
         SetFromEnable(Me, "CmdClose")
         Dim PdFOutput = vbNullString
 
+        If CheckFile(TxtHeader.Text, True) = False Then
+            TxtHeader.Select()
+            Exit Sub
+        End If
+
+        If CheckFile(TxtFooter.Text, True) = False Then
+            TxtFooter.Select()
+            Exit Sub
+        End If
+
         If TxtTargetFile.Text.Trim = vbNullString Then
             PdFOutput = TxtFileDocu.Text.Replace(".md", ".pdf")
+            TxtFileDocu.Text = PdFOutput
         Else
             PdFOutput = TxtTargetFile.Text.Trim
         End If
@@ -222,9 +233,12 @@ Public Class FrmPDF
     End Sub
 
     Private Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
-        If TxtPowerBIFile.Text = vbNullString Or File.Exists(TxtPowerBIFile.Text) = False Then
-            MessageBox.Show(My.Resources.ResourcesLang.MsgNoFileGiven)
+        If CheckFile(TxtPowerBIFile.Text) = False Then
             TxtPowerBIFile.Select()
+            Exit Sub
+        End If
+        If CheckFileFolder(TxtFileDocu.Text) = False Then
+            TxtFileDocu.Select()
             Exit Sub
         End If
 
