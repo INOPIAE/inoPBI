@@ -3,6 +3,7 @@ Imports System.IO
 Imports System.Runtime.Serialization
 Imports System.Security.Policy
 Imports inoPBIDLL
+Imports inoPBIDLL.ClsHelper
 Imports Markdown2Pdf
 Imports Markdown2Pdf.Options
 Imports Newtonsoft.Json.Converters
@@ -10,6 +11,8 @@ Imports PuppeteerSharp
 Imports UglyToad.PdfPig.Fonts.Encodings
 Imports UglyToad.PdfPig.Graphics.Operations.InlineImages
 Public Class FrmPDF
+
+    Private cH As New ClsHelper
     Private Sub CmdClose_Click(sender As Object, e As EventArgs) Handles CmdClose.Click
         Me.Close()
     End Sub
@@ -229,28 +232,19 @@ Public Class FrmPDF
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationStarted
         Application.DoEvents()
 
-        Dim DocuPath As String = vbNullString
-        Dim DocuType As Int16 = 0
-        For Each Dir As String In Directory.GetDirectories(Path.GetDirectoryName(TxtPowerBIFile.Text))
-            If Dir.Contains("DataSet") And DocuPath = vbNullString Then
-                DocuPath = Dir
-                DocuType = 1
-            End If
-            If Dir.Contains("SemanticModel") Then
-                DocuPath = Dir
-                DocuType = 2
-            End If
-        Next
-        Select Case DocuType
+        Dim pt As New ProjectType
+        pt = cH.GetProjectType(TxtPowerBIFile.Text)
+
+        Select Case pt.Type
             Case 1
                 Dim clsJSON As New ClsJSONHandling
-                If clsJSON.ExtractMeasures(Path.Combine(DocuPath, "model.bim"), TxtFileDocu.Text) = False Then
+                If clsJSON.ExtractMeasures(Path.Combine(pt.Path, "model.bim"), TxtFileDocu.Text) = False Then
                     MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
                     LblInfo.Text = My.Resources.ResourcesLang.MsgSomethingWentWrong
                     GoTo More
                 End If
             Case 2
-                Dim clsTMDL As New ClsTMDLHandling(DocuPath)
+                Dim clsTMDL As New ClsTMDLHandling(pt.Path)
                 clsTMDL.columnHeader = My.Resources.ResourcesLang.ReplacementMDColumnHeader
                 If clsTMDL.ExtractMeasures(TxtFileDocu.Text) = False Then
                     MessageBox.Show(My.Resources.ResourcesLang.MsgSomethingWentWrong)
