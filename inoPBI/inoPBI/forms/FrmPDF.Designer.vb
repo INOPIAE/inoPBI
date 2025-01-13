@@ -217,7 +217,7 @@ Partial Class FrmPDF
         ' 
         ' CmdEditHeader
         ' 
-        CmdEditHeader.Location = New Point(684, 93)
+        CmdEditHeader.Location = New Point(706, 94)
         CmdEditHeader.Margin = New Padding(3, 2, 3, 2)
         CmdEditHeader.Name = "CmdEditHeader"
         CmdEditHeader.Size = New Size(102, 22)
@@ -227,7 +227,7 @@ Partial Class FrmPDF
         ' 
         ' CmdEditFooter
         ' 
-        CmdEditFooter.Location = New Point(684, 117)
+        CmdEditFooter.Location = New Point(706, 118)
         CmdEditFooter.Margin = New Padding(3, 2, 3, 2)
         CmdEditFooter.Name = "CmdEditFooter"
         CmdEditFooter.Size = New Size(102, 22)
@@ -285,7 +285,7 @@ Partial Class FrmPDF
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(825, 338)
+        ClientSize = New Size(887, 338)
         Controls.Add(LblInfoMD)
         Controls.Add(CmdEditFooter)
         Controls.Add(CmdEditHeader)

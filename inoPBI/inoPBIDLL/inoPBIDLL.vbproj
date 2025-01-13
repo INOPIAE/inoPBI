@@ -18,4 +18,30 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="resources\ResourcesLangDLL.de-DE.Designer.vb">
+      <DependentUpon>ResourcesLangDLL.de-DE.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="resources\ResourcesLangDLL.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourcesLangDLL.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="resources\ResourcesLangDLL.de-DE.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <LastGenOutput>ResourcesLangDLL.de-DE.Designer.vb</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="resources\ResourcesLangDLL.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesLangDLL.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

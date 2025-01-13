@@ -63,12 +63,16 @@ Public Class FrmTMDL
     End Sub
 
     Private Sub CmdReplace_Click(sender As Object, e As EventArgs) Handles CmdReplace.Click
-        If CheckFile(TxtPowerBIFile.Text) = False Then
+        Dim chkFile As String = cH.CheckFile(TxtPowerBIFile.Text)
+        If chkFile IsNot vbNullString Then
+            MessageBox.Show(chkFile)
             TxtPowerBIFile.Select()
             Exit Sub
         End If
 
-        If CheckFileFolder(TxtFileDocu.Text) = False Then
+        Dim chkFolder As String = cH.CheckFileFolder(TxtFileDocu.Text)
+        If chkFolder IsNot vbNullString Then
+            MessageBox.Show(chkFolder)
             TxtFileDocu.Select()
             Exit Sub
         End If
@@ -175,11 +179,16 @@ Public Class FrmTMDL
     End Sub
 
     Private Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
-        If CheckFile(TxtPowerBIFile.Text) = False Then
+        Dim chkFile As String = cH.CheckFile(TxtPowerBIFile.Text)
+        If chkFile IsNot vbNullString Then
+            MessageBox.Show(chkFile)
             TxtPowerBIFile.Select()
             Exit Sub
         End If
-        If CheckFileFolder(TxtFileDocu.Text) = False Then
+
+        Dim chkFolder As String = cH.CheckFileFolder(TxtFileDocu.Text)
+        If chkFolder IsNot vbNullString Then
+            MessageBox.Show(chkFolder)
             TxtFileDocu.Select()
             Exit Sub
         End If
@@ -216,7 +225,7 @@ Public Class FrmTMDL
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
 More:
         SetFromEnable(Me, "CmdClose")
-        LblInfoMD.Text = GetSaveTime(TxtFileDocu.Text)
+        LblInfoMD.Text = cH.GetSaveTime(TxtFileDocu.Text)
     End Sub
 
     Private Sub CmdClose_Click(sender As Object, e As EventArgs) Handles CmdClose.Click
@@ -241,7 +250,7 @@ More:
         ChkbReplacement.Checked = My.Settings.LastReplacementOption
 
         LblInfo.Text = ""
-        LblInfoMD.Text = GetSaveTime(TxtFileDocu.Text)
+        LblInfoMD.Text = cH.GetSaveTime(TxtFileDocu.Text)
 
         TranslateForm()
 

@@ -32,13 +32,15 @@ Public Class FrmPDF
         TxtPowerBIFile.Text = My.Settings.LastPowerBIFile
 
         LblInfo.Text = ""
-        LblInfoMD.Text = GetSaveTime(TxtFileDocu.Text)
+        LblInfoMD.Text = cH.GetSaveTime(TxtFileDocu.Text)
         TranslateForm()
     End Sub
 
     Private Async Sub CmdPDF_Click(sender As Object, e As EventArgs) Handles CmdPDF.Click
 
-        If CheckFile(TxtFileDocu.Text) = False Then
+        Dim chkFile As String = cH.CheckFile(TxtFileDocu.Text)
+        If chkFile IsNot vbNullString Then
+            MessageBox.Show(chkFile)
             TxtFileDocu.Select()
             Exit Sub
         End If
@@ -46,12 +48,16 @@ Public Class FrmPDF
         SetFromEnable(Me, "CmdClose")
         Dim PdFOutput = vbNullString
 
-        If CheckFile(TxtHeader.Text, True) = False Then
+        chkFile = cH.CheckFile(TxtHeader.Text, True)
+        If chkFile IsNot vbNullString Then
+            MessageBox.Show(chkFile)
             TxtHeader.Select()
             Exit Sub
         End If
 
-        If CheckFile(TxtFooter.Text, True) = False Then
+        chkFile = cH.CheckFile(TxtFooter.Text, True)
+        If chkFile IsNot vbNullString Then
+            MessageBox.Show(chkFile)
             TxtFooter.Select()
             Exit Sub
         End If
@@ -163,7 +169,7 @@ Public Class FrmPDF
             End If
         End With
         LblInfo.Text = ""
-        LblInfoMD.Text = GetSaveTime(TxtFileDocu.Text)
+        LblInfoMD.Text = cH.GetSaveTime(TxtFileDocu.Text)
     End Sub
 
     Private Sub CmdEditHeader_Click(sender As Object, e As EventArgs) Handles CmdEditHeader.Click
@@ -233,11 +239,16 @@ Public Class FrmPDF
     End Sub
 
     Private Sub CmdDocumentation_Click(sender As Object, e As EventArgs) Handles CmdDocumentation.Click
-        If CheckFile(TxtPowerBIFile.Text) = False Then
+        Dim chkFile As String = cH.CheckFile(TxtPowerBIFile.Text)
+        If chkFile IsNot vbNullString Then
+            MessageBox.Show(chkFile)
             TxtPowerBIFile.Select()
             Exit Sub
         End If
-        If CheckFileFolder(TxtFileDocu.Text) = False Then
+
+        Dim chkFolder As String = cH.CheckFileFolder(TxtFileDocu.Text)
+        If chkFolder IsNot vbNullString Then
+            MessageBox.Show(chkFolder)
             TxtFileDocu.Select()
             Exit Sub
         End If
@@ -274,7 +285,7 @@ Public Class FrmPDF
         LblInfo.Text = My.Resources.ResourcesLang.ReplacementDocumentationFinished
 More:
         SetFromEnable(Me, "CmdClose")
-        LblInfoMD.Text = GetSaveTime(TxtFileDocu.Text)
+        LblInfoMD.Text = cH.GetSaveTime(TxtFileDocu.Text)
     End Sub
 
 End Class

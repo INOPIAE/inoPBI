@@ -46,5 +46,71 @@ Namespace TestInoPBI
             Assert.That(pt.Path, NUnit.Framework.Is.EqualTo(Path.Combine(testPath, "tmdl", "Nordwind.Dataset")))
             Assert.That(pt.Type, NUnit.Framework.Is.EqualTo(2))
         End Sub
+
+        <Test>
+        Public Sub TestGetSaveTime()
+
+            Dim strFile As String = Path.Combine(testPath, "bim", "bim.pbip")
+            Dim lastTime As String = cH.GetSaveTime(strFile)
+
+            Assert.That(lastTime, NUnit.Framework.Is.EqualTo("Letzte Speicherung: 07.01.2025 06:30:20"))
+
+            strFile = Path.Combine(testPath, "bim", "bim.pbip1")
+            lastTime = cH.GetSaveTime(strFile)
+
+            Assert.That(lastTime, NUnit.Framework.Is.Null)
+
+        End Sub
+
+        <Test>
+        Public Sub TestCheckFileFolder()
+
+            Dim strFile As String = Path.Combine(testPath, "bim1", "bim.pbip")
+            Dim result As String = cH.CheckFileFolder(strFile)
+
+            Assert.That(result, NUnit.Framework.Is.EqualTo("Der angegebene Ordner existiert nicht."))
+
+            strFile = Path.Combine(testPath, "bim", "bim.pbip")
+            result = cH.CheckFileFolder(strFile)
+
+            Assert.That(result, NUnit.Framework.Is.Null)
+
+        End Sub
+
+        <Test>
+        Public Sub TestCheckFile()
+
+            Dim strFile As String = Path.Combine(testPath, "bim", "bim1.pbip")
+            Dim result As String = cH.CheckFile(strFile)
+
+            Assert.That(result, NUnit.Framework.Is.EqualTo("Keine Datei angegeben."))
+
+            strFile = Path.Combine(testPath, "bim", "bim.pbip")
+            result = cH.CheckFile(strFile)
+            Assert.That(result, NUnit.Framework.Is.Null)
+
+            strFile = Path.Combine(testPath, "bim", "bim1.pbip")
+            result = cH.CheckFile(strFile, False)
+            Assert.That(result, NUnit.Framework.Is.EqualTo("Keine Datei angegeben."))
+
+            strFile = Path.Combine(testPath, "bim", "bim1.pbip")
+            result = cH.CheckFile(strFile, True)
+            Assert.That(result, NUnit.Framework.Is.EqualTo("Keine Datei angegeben."))
+
+            strFile = Path.Combine(testPath, "bim", "bim.pbip")
+            result = cH.CheckFile(strFile, False)
+            Assert.That(result, NUnit.Framework.Is.Null)
+
+            strFile = Path.Combine(testPath, "bim", "bim.pbip")
+            result = cH.CheckFile(strFile, True)
+            Assert.That(result, NUnit.Framework.Is.Null)
+
+
+            result = cH.CheckFile(vbNullString, False)
+            Assert.That(result, NUnit.Framework.Is.EqualTo("Keine Datei angegeben."))
+
+            result = cH.CheckFile(vbNullString, True)
+            Assert.That(result, NUnit.Framework.Is.Null)
+        End Sub
     End Class
 End Namespace

@@ -24,4 +24,35 @@ Public Class ClsHelper
         Next
         Return pt
     End Function
+
+    Public Function CheckFile(strFile As String) As String
+        Return CheckFile(strFile, False)
+    End Function
+    Public Function CheckFile(strFile As String, blnEmpty As Boolean) As String
+        If blnEmpty = True And strFile = vbNullString Then
+            Return vbNullString
+        ElseIf blnEmpty = False And strFile = vbNullString Then
+            Return My.Resources.ResourcesLangDLL.MsgNoFileGiven
+        ElseIf File.Exists(strFile) = False Then
+            Return My.Resources.ResourcesLangDLL.MsgNoFileGiven
+        Else
+            Return vbNullString
+        End If
+    End Function
+
+    Public Function CheckFileFolder(strFile As String) As String
+        If Directory.Exists(Path.GetDirectoryName(strFile)) = False Then
+            Return My.Resources.ResourcesLangDLL.MsgGivenFolderDoesNotExists
+        Else
+            Return vbNullString
+        End If
+    End Function
+
+    Public Function GetSaveTime(strFile As String) As String
+        If File.Exists(strFile) Then
+            Return String.Format(My.Resources.ResourcesLangDLL.MsgLastSaved, File.GetLastWriteTime(strFile))
+        Else
+            Return vbNullString
+        End If
+    End Function
 End Class
